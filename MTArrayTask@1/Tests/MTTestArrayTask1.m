@@ -53,12 +53,11 @@
             
             [human movingHuman];
         }
+        
         [object movingHuman];
         
     }
-    
-    
-    
+
     return nil;
 }
 
