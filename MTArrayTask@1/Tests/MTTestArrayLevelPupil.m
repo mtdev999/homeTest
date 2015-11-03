@@ -13,17 +13,6 @@
 #import "MTRunner.h"
 #import "MTSwimmer.h"
 
-#import "ConstantsValue.h"
-
-@interface MTTestArrayLevelPupil ()
-
-+ (id)getHuman;
-+ (id)getCycler;
-+ (id)getRunner;
-+ (id)getSwimmer;
-
-@end
-
 @implementation MTTestArrayLevelPupil
 
 #pragma mark -
@@ -35,10 +24,10 @@
     
     NSMutableArray *humans = [NSMutableArray new];
     
-    [humans addObject:[MTTestArrayLevelPupil getHuman]];
-    [humans addObject:[MTTestArrayLevelPupil getCycler]];
-    [humans addObject:[MTTestArrayLevelPupil getRunner]];
-    [humans addObject:[MTTestArrayLevelPupil getSwimmer]];
+    [humans addObject:[MTHuman human]];
+    [humans addObject:[MTCycler humanCycler]];
+    [humans addObject:[MTRunner humanRunner]];
+    [humans addObject:[MTSwimmer humanSwimmer]];
 
     for (id object in humans) {
         if ([object isKindOfClass:[MTHuman class]]) {
@@ -50,33 +39,6 @@
     }
 
     return nil;
-}
-
-#pragma mark -
-#pragma mark Private Methods
-
-+ (id)getHuman {
-    return [[MTHuman alloc] initWithName:kMTHumanName
-                                  weight:kMTHumanValueWeight
-                                  height:kMTHumanValueHeight];
-}
-
-+ (id)getCycler {
-    return [[MTCycler alloc] initWithName:kMTCyclerName
-                                   weight:kMTCyclerValueWeight
-                                   height:kMTCyclerValueHeight];
-}
-
-+ (id)getRunner {
-    return [[MTRunner alloc] initWithName:kMTRunnerName
-                                   weight:kMTRunnerValueWeight
-                                   height:kMTRunnerValueHeight];
-}
-
-+ (id)getSwimmer {
-    return [[MTSwimmer alloc] initWithName:kMTSwimmerName
-                                    weight:kMTSwimmerValueWeight
-                                    height:kMTSwimmerValueHeight];
 }
 
 @end

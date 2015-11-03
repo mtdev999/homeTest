@@ -11,6 +11,15 @@
 @implementation MTRunner
 
 #pragma mark -
+#pragma mark Class Method
+
++ (MTRunner *)humanRunner {
+    return [[self alloc] initWithName:kMTRunnerName
+                               weight:kMTRunnerValueWeight
+                               height:kMTRunnerValueHeight];
+}
+
+#pragma mark -
 #pragma mark MTHuman
 
 - (void)movingHuman {
@@ -18,7 +27,10 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"name = %@, weight = %.2f, height = %.2f", self.name, self.weight, self.height];
+    return [NSString stringWithFormat:@"name = %@, weight = %.2f, height = %.2f",
+                                        self.name,
+                                        self.weight,
+                                        self.height];
 }
 
 @end

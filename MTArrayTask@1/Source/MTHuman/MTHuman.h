@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ConstantsValue.h"
+
 @interface MTHuman : NSObject
 @property (nonatomic, copy)     NSString    *name;
-@property (nonatomic, assign)   float       weight;
-@property (nonatomic, assign)   float       height;
-@property (nonatomic, assign)   BOOL        gender;
+@property (nonatomic, readonly)   float       weight;
+@property (nonatomic, readonly)   float       height;
+@property (nonatomic, readonly)   BOOL        gender;
+
++ (MTHuman *)human;
 
 - (instancetype)initWithName:(NSString *)name
                       weight:(float)weight

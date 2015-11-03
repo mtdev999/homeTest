@@ -10,4 +10,6 @@
 
 @interface MTSwimmer : MTHuman
 
++ (MTSwimmer *)humanSwimmer;
+
 @end

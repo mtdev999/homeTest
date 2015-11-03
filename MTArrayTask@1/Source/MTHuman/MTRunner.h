@@ -10,4 +10,6 @@
 
 @interface MTRunner : MTHuman
 
++ (MTRunner *)humanRunner;
+
 @end

@@ -8,7 +8,23 @@
 
 #import "MTHuman.h"
 
+@interface MTHuman ()
+@property (nonatomic, assign)   float       weight;
+@property (nonatomic, assign)   float       height;
+@property (nonatomic, assign)   BOOL        gender;
+
+@end
+
 @implementation MTHuman
+
+#pragma mark -
+#pragma mark Class Method
+
++ (MTHuman *)human {
+    return [[self alloc] initWithName:kMTHumanName
+                               weight:kMTHumanValueWeight
+                               height:kMTHumanValueHeight];
+}
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -39,7 +55,10 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"name = %@, weight = %.2f, height = %.2f", self.name, self.weight, self.height];
+    return [NSString stringWithFormat:@"name = %@, weight = %.2f, height = %.2f",
+                                        self.name,
+                                        self.weight,
+                                        self.height];
 }
 
 @end

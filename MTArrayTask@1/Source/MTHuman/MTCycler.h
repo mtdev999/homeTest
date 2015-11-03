@@ -10,4 +10,6 @@
 
 @interface MTCycler : MTHuman
 
++ (MTCycler *)humanCycler;
+
 @end

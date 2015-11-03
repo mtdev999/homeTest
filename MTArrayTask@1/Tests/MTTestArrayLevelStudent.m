@@ -14,18 +14,6 @@
 #import "MTSwimmer.h"
 #import "MTStudent.h"
 
-#import "ConstantsValue.h"
-
-@interface MTTestArrayLevelStudent ()
-
-+ (id)getHuman;
-+ (id)getCycler;
-+ (id)getRunner;
-+ (id)getSwimmer;
-+ (id)getStudent;
-
-@end
-
 @implementation MTTestArrayLevelStudent
 
 #pragma mark -
@@ -39,11 +27,11 @@
     
     NSMutableArray *humans = [NSMutableArray new];
     
-    [humans addObject:[MTTestArrayLevelStudent getHuman]];
-    [humans addObject:[MTTestArrayLevelStudent getCycler]];
-    [humans addObject:[MTTestArrayLevelStudent getRunner]];
-    [humans addObject:[MTTestArrayLevelStudent getSwimmer]];
-    [humans addObject:[MTTestArrayLevelStudent getStudent]];
+    [humans addObject:[MTHuman human]];
+    [humans addObject:[MTCycler humanCycler]];
+    [humans addObject:[MTRunner humanRunner]];
+    [humans addObject:[MTSwimmer humanSwimmer]];
+    [humans addObject:[MTStudent humanStudent]];
     
     for (id object in [humans reverseObjectEnumerator]) {
         if ([object isKindOfClass:[MTHuman class]]) {
@@ -59,39 +47,6 @@
     }
     
     return nil;
-}
-
-#pragma mark -
-#pragma mark Private Methods
-
-+ (id)getHuman {
-    return [[MTHuman alloc] initWithName:kMTHumanName
-                                  weight:kMTHumanValueWeight
-                                  height:kMTHumanValueHeight];
-}
-
-+ (id)getCycler {
-    return [[MTCycler alloc] initWithName:kMTCyclerName
-                                   weight:kMTCyclerValueWeight
-                                   height:kMTCyclerValueHeight];
-}
-
-+ (id)getRunner {
-    return [[MTRunner alloc] initWithName:kMTRunnerName
-                                   weight:kMTRunnerValueWeight
-                                   height:kMTRunnerValueHeight];
-}
-
-+ (id)getSwimmer {
-    return [[MTSwimmer alloc] initWithName:kMTSwimmerName
-                                    weight:kMTSwimmerValueWeight
-                                    height:kMTSwimmerValueHeight];
-}
-
-+ (id)getStudent {
-    return [[MTStudent alloc] initWithName:kMTStudentName
-                                    weight:kMTStudentValueWeight
-                                    height:kMTStudentValueHeight];
 }
 
 @end

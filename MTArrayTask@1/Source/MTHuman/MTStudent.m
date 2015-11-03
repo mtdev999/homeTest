@@ -8,16 +8,31 @@
 
 #import "MTStudent.h"
 
-#import "ConstantsValue.h"
-
 @implementation MTStudent
+
+#pragma mark -
+#pragma mark Class Method
+
++ (MTStudent *)humanStudent {
+    return [[self alloc] initWithName:kMTStudentName
+                               weight:kMTStudentValueWeight
+                               height:kMTStudentValueHeight];
+}
+
+#pragma mark -
+#pragma mark MTHuman
 
 - (void)movingHuman {
     NSLog(@"Student is moving;");
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"name = %@, weight = %.2f, height = %.2f age = %ld, univer = %@", self.name, self.weight, self.height, kMTStudentValueAge, kMTStudentUniversityName];
+    return [NSString stringWithFormat:@"name = %@, weight = %.2f, height = %.2f age = %ld, univer = %@",
+                                        self.name,
+                                        self.weight,
+                                        self.height,
+                                        kMTStudentValueAge,
+                                        kMTStudentUniversityName];
 }
 
 @end
