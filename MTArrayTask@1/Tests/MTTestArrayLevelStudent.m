@@ -16,6 +16,16 @@
 
 #import "ConstantsValue.h"
 
+@interface MTTestArrayLevelStudent ()
+
++ (id)getHuman;
++ (id)getCycler;
++ (id)getRunner;
++ (id)getSwimmer;
++ (id)getStudent;
+
+@end
+
 @implementation MTTestArrayLevelStudent
 
 #pragma mark -
@@ -35,7 +45,7 @@
     [humans addObject:[MTTestArrayLevelStudent getSwimmer]];
     [humans addObject:[MTTestArrayLevelStudent getStudent]];
     
-    for (id object in humans) {
+    for (id object in [humans reverseObjectEnumerator]) {
         if ([object isKindOfClass:[MTHuman class]]) {
             MTHuman *human = (MTHuman *)object;
             NSLog(@"%@", human.description);

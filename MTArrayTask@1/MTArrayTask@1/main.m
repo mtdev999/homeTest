@@ -13,7 +13,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        [MTTestArrayLevelPupil performTestArray];
+        [MTTestArrayLevelPupil performTestArrayLevelPupil];
         NSLog(@"\n");
         [MTTestArrayLevelStudent performTestArrayLevelStudent];
     }
