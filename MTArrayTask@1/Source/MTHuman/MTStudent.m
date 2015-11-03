@@ -8,10 +8,16 @@
 
 #import "MTStudent.h"
 
+#import "ConstantsValue.h"
+
 @implementation MTStudent
 
 - (void)movingHuman {
-    NSLog(@"Student is moving");
+    NSLog(@"Student is moving;");
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"name = %@, weight = %.2f, height = %.2f age = %ld, univer = %@", self.name, self.weight, self.height, kMTStudentValueAge, kMTStudentUniversityName];
 }
 
 @end

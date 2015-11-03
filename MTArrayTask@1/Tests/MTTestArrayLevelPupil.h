@@ -1,5 +1,5 @@
 //
-//  MTTestArray.h
+//  MTTestArrayLevelPupil.h
 //  MTArrayTask@1
 //
 //  Created by Mark Tezza on 02.11.15.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MTTestArray : NSObject
+@interface MTTestArrayLevelPupil : NSObject
 
-+ (id)performTestArray;
++ (id)performTestArrayLevelPupil;
 
 @end

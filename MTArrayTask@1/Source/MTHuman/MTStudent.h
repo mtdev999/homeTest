@@ -9,5 +9,7 @@
 #import "MTHuman.h"
 
 @interface MTStudent : MTHuman
+@property (nonatomic, assign)   NSUInteger  age;
+@property (nonatomic, copy)     NSString    *universityName;
 
 @end

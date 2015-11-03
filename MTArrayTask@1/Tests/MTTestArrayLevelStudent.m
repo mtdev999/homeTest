@@ -1,5 +1,5 @@
 //
-//  MTTestArrayLevelStudent.m
+//  MTTestArrayLevelPupilLevelStudent.m
 //  MTArrayTask@1
 //
 //  Created by Mark Tezza on 03.11.15.
@@ -12,6 +12,7 @@
 #import "MTCycler.h"
 #import "MTRunner.h"
 #import "MTSwimmer.h"
+#import "MTStudent.h"
 
 #import "ConstantsValue.h"
 
@@ -21,18 +22,29 @@
 #pragma mark Class Methods
 
 + (id)performTestArrayLevelStudent {
+    
     NSLog(@"Level - #Student#");
+    
+    MTHuman *people = [MTHuman new];
+    
     NSMutableArray *humans = [NSMutableArray new];
     
     [humans addObject:[MTTestArrayLevelStudent getHuman]];
     [humans addObject:[MTTestArrayLevelStudent getCycler]];
     [humans addObject:[MTTestArrayLevelStudent getRunner]];
     [humans addObject:[MTTestArrayLevelStudent getSwimmer]];
+    [humans addObject:[MTTestArrayLevelStudent getStudent]];
     
     for (id object in humans) {
         if ([object isKindOfClass:[MTHuman class]]) {
             MTHuman *human = (MTHuman *)object;
-            NSLog(@"name = %@, weight = %.2f, height = %.2f", human.name, human.weight, human.height);
+            NSLog(@"%@", human.description);
+            
+            if ([object isKindOfClass:[MTStudent class]]) {
+                [people movingHuman];
+            }
+           
+            [object movingHuman];
         }
     }
     
@@ -64,6 +76,12 @@
     return [[MTSwimmer alloc] initWithName:kMTSwimmerName
                                     weight:kMTSwimmerValueWeight
                                     height:kMTSwimmerValueHeight];
+}
+
++ (id)getStudent {
+    return [[MTStudent alloc] initWithName:kMTStudentName
+                                    weight:kMTStudentValueWeight
+                                    height:kMTStudentValueHeight];
 }
 
 @end

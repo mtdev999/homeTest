@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MTTestArray.h"
+#import "MTTestArrayLevelPupil.h"
+#import "MTTestArrayLevelStudent.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        [MTTestArray performTestArray];
+        [MTTestArrayLevelPupil performTestArray];
+        NSLog(@"\n");
+        [MTTestArrayLevelStudent performTestArrayLevelStudent];
     }
     return 0;
 }

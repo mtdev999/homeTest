@@ -13,6 +13,7 @@ static NSString * const kMTHumanName   = @"anyName";
 static NSString * const kMTCyclerName  = @"Cycler";
 static NSString * const kMTRunnerName  = @"Runner";
 static NSString * const kMTSwimmerName = @"Swimmer";
+static NSString * const kMTStudentName = @"Student";
 
 static float const kMTHumanValueWeight = 0.f;
 static float const kMTHumanValueHeight = 0.f;
@@ -25,5 +26,10 @@ static float const kMTRunnerValueHeight = 183.f;
 
 static float const kMTSwimmerValueWeight = 89.f;
 static float const kMTSwimmerValueHeight = 191.f;
+
+static float const kMTStudentValueWeight    = 72.f;
+static float const kMTStudentValueHeight    = 171.f;
+static NSUInteger const kMTStudentValueAge          = 21;
+static NSString * const kMTStudentUniversityName    = @"Horvard";
 
 #endif /* ConstantsValue_h */
