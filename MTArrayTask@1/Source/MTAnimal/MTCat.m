@@ -11,6 +11,15 @@
 @implementation MTCat
 
 #pragma mark -
+#pragma mark Class Method
+
++ (MTCat *)animalCat {
+    return [[self alloc] initWithAnimalClass:kMTAnimalClassCat
+                                       color:kMTCatColor
+                                   countFeet:kMTCountFeet];
+}
+
+#pragma mark -
 #pragma mark MTAnimal
 
 - (void)movingAnimal {

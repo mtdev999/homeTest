@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ConstantsValue.h"
+
 @interface MTAnimal : NSObject
 @property (nonatomic, copy)     NSString    *animalClass;
 @property (nonatomic, copy)     NSString    *color;
 @property (nonatomic, readonly) NSUInteger  countFeet;
+
++ (MTAnimal *)animal;
 
 - (instancetype)initWithAnimalClass:(NSString *)animalClass
                               color:(NSString *)color

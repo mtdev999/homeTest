@@ -10,4 +10,6 @@
 
 @interface MTDog : MTAnimal
 
++ (MTDog *)animalDog;
+
 @end

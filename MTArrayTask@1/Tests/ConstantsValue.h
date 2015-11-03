@@ -9,6 +9,9 @@
 #ifndef ConstantsValue_h
 #define ConstantsValue_h
 
+#pragma mark -
+#pragma mark Human ConstansValue
+
 static NSString * const kMTHumanName   = @"anyName";
 static NSString * const kMTCyclerName  = @"Cycler";
 static NSString * const kMTRunnerName  = @"Runner";
@@ -27,9 +30,24 @@ static float const kMTRunnerValueHeight = 183.f;
 static float const kMTSwimmerValueWeight = 89.f;
 static float const kMTSwimmerValueHeight = 191.f;
 
-static float const kMTStudentValueWeight    = 72.f;
-static float const kMTStudentValueHeight    = 171.f;
-static NSUInteger const kMTStudentValueAge          = 21;
-static NSString * const kMTStudentUniversityName    = @"Horvard";
+static float const kMTStudentValueWeight = 72.f;
+static float const kMTStudentValueHeight = 171.f;
+
+static NSUInteger const kMTStudentValueAge       = 21;
+static NSString * const kMTStudentUniversityName = @"Horvard";
+
+#pragma mark -
+#pragma mark Animal ConstansValue
+
+static NSString * const kMTAnimalClass = @"anyAnimalClass";
+static NSString * const kMTAnimalColor = @"anyColor";
+
+static NSString * const kMTAnimalClassDog = @"Dog";
+static NSString * const kMTAnimalClassCat = @"Cat";
+
+static NSString * const kMTDogColor = @"Black";
+static NSString * const kMTCatColor = @"White";
+
+static NSUInteger const kMTCountFeet = 4;
 
 #endif /* ConstantsValue_h */

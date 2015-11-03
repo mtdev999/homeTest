@@ -10,4 +10,6 @@
 
 @interface MTCat : MTAnimal
 
++ (MTCat *)animalCat;
+
 @end

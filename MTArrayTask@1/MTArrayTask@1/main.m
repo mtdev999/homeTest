@@ -10,12 +10,18 @@
 
 #import "MTTestArrayLevelPupil.h"
 #import "MTTestArrayLevelStudent.h"
+#import "MTTestArrayLevelMaster.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         [MTTestArrayLevelPupil performTestArrayLevelPupil];
         NSLog(@"\n");
+        
         [MTTestArrayLevelStudent performTestArrayLevelStudent];
+        NSLog(@"\n");
+        
+        [MTTestArrayLevelMaster performTestArrayLevelMaster];
     }
+    
     return 0;
 }
