@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B32629B1BE89C5800D41D38 /* MTTestArrayLevelStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32629A1BE89C5800D41D38 /* MTTestArrayLevelStudent.m */; };
+		1B32629E1BE89E5F00D41D38 /* MTStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32629D1BE89E5F00D41D38 /* MTStudent.m */; };
 		1B43718D1BE7A88700620D6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B43718C1BE7A88700620D6A /* main.m */; };
 		1B4371981BE7A94F00620D6A /* MTHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4371971BE7A94F00620D6A /* MTHuman.m */; };
 		1B43719B1BE7A97E00620D6A /* MTCycler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B43719A1BE7A97E00620D6A /* MTCycler.m */; };
@@ -29,6 +31,10 @@
 
 /* Begin PBXFileReference section */
 		1B3262981BE8906000D41D38 /* ConstantsValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsValue.h; sourceTree = "<group>"; };
+		1B3262991BE89C5800D41D38 /* MTTestArrayLevelStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTestArrayLevelStudent.h; sourceTree = "<group>"; };
+		1B32629A1BE89C5800D41D38 /* MTTestArrayLevelStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTestArrayLevelStudent.m; sourceTree = "<group>"; };
+		1B32629C1BE89E5F00D41D38 /* MTStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStudent.h; sourceTree = "<group>"; };
+		1B32629D1BE89E5F00D41D38 /* MTStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStudent.m; sourceTree = "<group>"; };
 		1B4371891BE7A88700620D6A /* MTArrayTask@1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "MTArrayTask@1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B43718C1BE7A88700620D6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B4371961BE7A94F00620D6A /* MTHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHuman.h; sourceTree = "<group>"; };
@@ -100,6 +106,8 @@
 				1B43719D1BE7A98C00620D6A /* MTRunner.m */,
 				1B43719F1BE7A99D00620D6A /* MTSwimmer.h */,
 				1B4371A01BE7A99D00620D6A /* MTSwimmer.m */,
+				1B32629C1BE89E5F00D41D38 /* MTStudent.h */,
+				1B32629D1BE89E5F00D41D38 /* MTStudent.m */,
 			);
 			path = MTHuman;
 			sourceTree = "<group>";
@@ -117,6 +125,8 @@
 				1B4371A61BE7B4C100620D6A /* MTTestArray.h */,
 				1B4371A71BE7B4C100620D6A /* MTTestArray.m */,
 				1B3262981BE8906000D41D38 /* ConstantsValue.h */,
+				1B3262991BE89C5800D41D38 /* MTTestArrayLevelStudent.h */,
+				1B32629A1BE89C5800D41D38 /* MTTestArrayLevelStudent.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -183,6 +193,8 @@
 				1B4371A81BE7B4C100620D6A /* MTTestArray.m in Sources */,
 				1B43719B1BE7A97E00620D6A /* MTCycler.m in Sources */,
 				1B43718D1BE7A88700620D6A /* main.m in Sources */,
+				1B32629E1BE89E5F00D41D38 /* MTStudent.m in Sources */,
+				1B32629B1BE89C5800D41D38 /* MTTestArrayLevelStudent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

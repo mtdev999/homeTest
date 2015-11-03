@@ -1,12 +1,12 @@
 //
-//  MTTestArray.m
+//  MTTestArrayLevelStudent.m
 //  MTArrayTask@1
 //
-//  Created by Mark Tezza on 02.11.15.
+//  Created by Mark Tezza on 03.11.15.
 //  Copyright © 2015 Mark Tezza. All rights reserved.
 //
 
-#import "MTTestArray.h"
+#import "MTTestArrayLevelStudent.h"
 
 #import "MTHuman.h"
 #import "MTCycler.h"
@@ -15,39 +15,27 @@
 
 #import "ConstantsValue.h"
 
-@interface MTTestArray ()
-@property (nonatomic, strong) MTHuman *human;
-
-+ (id)getHuman;
-+ (id)getCycler;
-+ (id)getRunner;
-+ (id)getSwimmer;
-
-@end
-
-@implementation MTTestArray
+@implementation MTTestArrayLevelStudent
 
 #pragma mark -
-#pragma mark Class Method
+#pragma mark Class Methods
 
-+ (id)performTestArray {
-    NSLog(@"Level - #Pupil#");
++ (id)performTestArrayLevelStudent {
+    NSLog(@"Level - #Student#");
     NSMutableArray *humans = [NSMutableArray new];
     
-    [humans addObject:[MTTestArray getHuman]];
-    [humans addObject:[MTTestArray getCycler]];
-    [humans addObject:[MTTestArray getRunner]];
-    [humans addObject:[MTTestArray getSwimmer]];
-
+    [humans addObject:[MTTestArrayLevelStudent getHuman]];
+    [humans addObject:[MTTestArrayLevelStudent getCycler]];
+    [humans addObject:[MTTestArrayLevelStudent getRunner]];
+    [humans addObject:[MTTestArrayLevelStudent getSwimmer]];
+    
     for (id object in humans) {
         if ([object isKindOfClass:[MTHuman class]]) {
-            MTHuman *people = (MTHuman *)object;
-            NSLog(@"name = %@, weight = %.2f, height = %.2f", people.name, people.weight, people.height);
+            MTHuman *human = (MTHuman *)object;
+            NSLog(@"name = %@, weight = %.2f, height = %.2f", human.name, human.weight, human.height);
         }
-        
-        [object movingHuman];
     }
-
+    
     return nil;
 }
 
