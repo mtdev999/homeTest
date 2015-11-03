@@ -1,5 +1,5 @@
 //
-//  MTTestArrayTask1.h
+//  MTTestArray.h
 //  MTArrayTask@1
 //
 //  Created by Mark Tezza on 02.11.15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MTTestArrayTask1 : NSObject
+@interface MTTestArray : NSObject
 
 + (id)performTestArray;
 

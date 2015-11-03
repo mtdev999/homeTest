@@ -8,14 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MTTestArrayTask1.h"
+#import "MTTestArray.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
-        [MTTestArrayTask1 performTestArray];
-
-        
+        [MTTestArray performTestArray];
     }
     return 0;
 }
