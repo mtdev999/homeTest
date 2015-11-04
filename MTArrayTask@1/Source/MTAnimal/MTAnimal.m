@@ -53,4 +53,11 @@
     NSLog(@"Animal is moving;");
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"- animal class = %@, animal color = %@, count feet = %ld",
+                                        self.animalClass,
+                                        self.color,
+                                        self.countFeet];
+}
+
 @end

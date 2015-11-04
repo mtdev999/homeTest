@@ -26,30 +26,42 @@
 + (id)performTestArrayLevelMaster {
     NSLog(@"Level - #Master#");
     
-    MTHuman *people = [MTHuman new];
-    
     NSMutableArray *humans = [NSMutableArray new];
-    
+
     [humans addObject:[MTHuman human]];
     [humans addObject:[MTCycler humanCycler]];
     [humans addObject:[MTRunner humanRunner]];
     [humans addObject:[MTSwimmer humanSwimmer]];
     [humans addObject:[MTStudent humanStudent]];
     
-    for (id object in [humans reverseObjectEnumerator]) {
+    NSMutableArray *animals = [NSMutableArray new];
+    
+    [animals addObject:[MTAnimal animal]];
+    [animals addObject:[MTDog animalDog]];
+    [animals addObject:[MTCat animalCat]];
+    
+    [animals addObjectsFromArray:humans];
+
+    for (id object in animals) {
+        NSLog(@"\n");
+        
         if ([object isKindOfClass:[MTHuman class]]) {
+            NSLog(@"Type of object: Human");
             MTHuman *human = (MTHuman *)object;
             NSLog(@"%@", human.description);
             
-            if ([object isKindOfClass:[MTStudent class]]) {
-                [people movingHuman];
-            }
-            
             [object movingHuman];
+        }
+        
+        if ([object isKindOfClass:[MTAnimal class]]) {
+            NSLog(@"Type of object: Animal");
+            MTAnimal *animal = (MTAnimal *)object;
+            NSLog(@"%@", animal.description);
+            
+            [animal movingAnimal];
         }
     }
 
-    
     return nil;
 }
 

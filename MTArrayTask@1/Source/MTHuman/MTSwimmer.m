@@ -27,7 +27,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"name = %@, weight = %.2f, height = %.2f",
+    return [NSString stringWithFormat:@"- name = %@, weight = %.2f, height = %.2f",
                                         self.name,
                                         self.weight,
                                         self.height];
