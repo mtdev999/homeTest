@@ -10,6 +10,6 @@
 
 @interface MTTestArrayLevelStudent : NSObject
 
-+ (id)performTestArrayLevelStudent;
++ (void)performTestArrayLevelStudent;
 
 @end

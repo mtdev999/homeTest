@@ -10,6 +10,6 @@
 
 @interface MTTestArrayLevelMaster : NSObject
 
-+ (id)performTestArrayLevelMaster;
++ (void)performTestArrayLevelMaster;
 
 @end

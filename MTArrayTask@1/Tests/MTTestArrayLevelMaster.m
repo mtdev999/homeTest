@@ -23,7 +23,7 @@
 #pragma mark -
 #pragma mark Public
 
-+ (id)performTestArrayLevelMaster {
++ (void)performTestArrayLevelMaster {
     NSLog(@"Level - #Master#");
     
     NSMutableArray *humans = [NSMutableArray new];
@@ -61,8 +61,6 @@
             [animal movingAnimal];
         }
     }
-
-    return nil;
 }
 
 @end

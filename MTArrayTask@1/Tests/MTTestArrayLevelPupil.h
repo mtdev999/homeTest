@@ -10,6 +10,6 @@
 
 @interface MTTestArrayLevelPupil : NSObject
 
-+ (id)performTestArrayLevelPupil;
++ (void)performTestArrayLevelPupil;
 
 @end

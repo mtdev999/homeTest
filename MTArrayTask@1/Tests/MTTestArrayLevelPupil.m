@@ -18,7 +18,7 @@
 #pragma mark -
 #pragma mark Class Method
 
-+ (id)performTestArrayLevelPupil {
++ (void)performTestArrayLevelPupil {
     
     NSLog(@"Level - #Pupil#");
     
@@ -37,8 +37,6 @@
         
         [object movingHuman];
     }
-
-    return nil;
 }
 
 @end
