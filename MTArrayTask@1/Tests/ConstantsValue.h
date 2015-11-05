@@ -40,13 +40,13 @@ static NSString * const kMTStudentUniversityName = @"Horvard";
 #pragma mark Animal ConstansValue
 
 static NSString * const kMTAnimalClass = @"anyAnimalClass";
-static NSString * const kMTAnimalColor = @"anyColor";
+static NSString * const kMTAnimalnickName = @"anynickName";
 
 static NSString * const kMTAnimalClassDog = @"Dog";
 static NSString * const kMTAnimalClassCat = @"Cat";
 
-static NSString * const kMTDogColor = @"Black";
-static NSString * const kMTCatColor = @"White";
+static NSString * const kMTDognickName = @"Black";
+static NSString * const kMTCatnickName = @"White";
 
 static NSUInteger const kMTCountFeet = 4;
 

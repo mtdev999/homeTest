@@ -20,7 +20,7 @@
 
 + (MTAnimal *)animal {
     return [[self alloc] initWithAnimalClass:kMTAnimalClass
-                                       color:kMTAnimalColor
+                                       nickName:kMTAnimalnickName
                                    countFeet:kMTCountFeet];
 }
 
@@ -29,17 +29,17 @@
 
 - (void)dealloc {
     self.animalClass = nil;
-    self.color = nil;
+    self.nickName = nil;
 }
 
 - (instancetype)initWithAnimalClass:(NSString *)animalClass
-                              color:(NSString *)color
+                              nickName:(NSString *)nickName
                           countFeet:(NSUInteger)countFeet
 {
     self = [super init];
     if (self) {
         self.animalClass = animalClass;
-        self.color = color;
+        self.nickName = nickName;
         self.countFeet = countFeet;
     }
     
@@ -54,9 +54,9 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"- animal class = %@, animal color = %@, count feet = %ld",
+    return [NSString stringWithFormat:@"- animal class = %@, animal nickName = %@, count feet = %ld",
                                         self.animalClass,
-                                        self.color,
+                                        self.nickName,
                                         self.countFeet];
 }
 

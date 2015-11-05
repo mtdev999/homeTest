@@ -12,6 +12,12 @@
 #import "MTTestArrayLevelStudent.h"
 #import "MTTestArrayLevelMaster.h"
 #import "MTTestArrayLevelStar.h"
+#import "MTTestArrayLevelSuperMan.h"
+
+@interface MTTestArrayLevelSuperMan ()
+@property (nonatomic, strong) MTTestArrayLevelSuperMan *test;
+
+@end
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -25,6 +31,10 @@ int main(int argc, const char * argv[]) {
         NSLog(@"\n");
         
         [MTTestArrayLevelStar performTestArrayLevelStar];
+        NSLog(@"\n");
+        
+        MTTestArrayLevelSuperMan *test = [MTTestArrayLevelSuperMan new];
+        [test performTestArrayLevelSuperMan];
     }
     
     return 0;

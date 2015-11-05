@@ -15,7 +15,7 @@
 
 + (MTCat *)animalCat {
     return [[self alloc] initWithAnimalClass:kMTAnimalClassCat
-                                       color:kMTCatColor
+                                       nickName:kMTCatnickName
                                    countFeet:kMTCountFeet];
 }
 
@@ -27,9 +27,9 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"- animal class = %@, animal color = %@, count feet = %ld",
+    return [NSString stringWithFormat:@"- animal class = %@, animal nickName = %@, count feet = %ld",
             self.animalClass,
-            self.color,
+            self.nickName,
             self.countFeet];
 }
 

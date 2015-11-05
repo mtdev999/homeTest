@@ -72,7 +72,6 @@
     NSUInteger humansCount = self.humans.count;
     NSUInteger animalsCount = self.animals.count;
     
-    
     for (NSUInteger interaction = 0; interaction < humansCount + animalsCount; interaction++) {
         if (interaction < humansCount) {
             NSLog(@"%@", self.humans[interaction]);
@@ -84,7 +83,7 @@
 }
 
 - (void)addingObjects {
-    NSMutableArray *humans = self.humans; //[NSMutableArray new];
+    NSMutableArray *humans = self.humans;
     
     [humans addObject:[MTHuman human]];
     [humans addObject:[MTCycler humanCycler]];
@@ -93,7 +92,7 @@
     [humans addObject:[MTStudent humanStudent]];
     self.humans = humans;
     
-    NSMutableArray *animals = self.animals; //[NSMutableArray new];
+    NSMutableArray *animals = self.animals;
     
     [animals addObject:[MTAnimal animal]];
     [animals addObject:[MTDog animalDog]];

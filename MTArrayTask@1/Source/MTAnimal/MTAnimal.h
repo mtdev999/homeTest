@@ -12,13 +12,13 @@
 
 @interface MTAnimal : NSObject
 @property (nonatomic, copy)     NSString    *animalClass;
-@property (nonatomic, copy)     NSString    *color;
+@property (nonatomic, copy)     NSString    *nickName;
 @property (nonatomic, readonly) NSUInteger  countFeet;
 
 + (MTAnimal *)animal;
 
 - (instancetype)initWithAnimalClass:(NSString *)animalClass
-                              color:(NSString *)color
+                              nickName:(NSString *)nickName
                           countFeet:(NSUInteger)countFeet;
 
 - (void)movingAnimal;
