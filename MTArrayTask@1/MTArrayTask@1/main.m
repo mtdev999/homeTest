@@ -15,14 +15,14 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-//        [MTTestArrayLevelPupil performTestArrayLevelPupil];
-//        NSLog(@"\n");
-//        
-//        [MTTestArrayLevelStudent performTestArrayLevelStudent];
-//        NSLog(@"\n");
-//        
-//        [MTTestArrayLevelMaster performTestArrayLevelMaster];
-//        NSLog(@"\n");
+        [MTTestArrayLevelPupil performTestArrayLevelPupil];
+        NSLog(@"\n");
+        
+        [MTTestArrayLevelStudent performTestArrayLevelStudent];
+        NSLog(@"\n");
+        
+        [MTTestArrayLevelMaster performTestArrayLevelMaster];
+        NSLog(@"\n");
         
         [MTTestArrayLevelStar performTestArrayLevelStar];
     }

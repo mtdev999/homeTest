@@ -11,10 +11,10 @@
 #import "ConstantsValue.h"
 
 @interface MTHuman : NSObject
-@property (nonatomic, copy)     NSString    *name;
-@property (nonatomic, readonly)   float       weight;
-@property (nonatomic, readonly)   float       height;
-@property (nonatomic, readonly)   BOOL        gender;
+@property (nonatomic, copy)         NSString    *name;
+@property (nonatomic, readonly)     float       weight;
+@property (nonatomic, readonly)     float       height;
+@property (nonatomic, readonly)     BOOL        gender;
 
 + (MTHuman *)human;
 

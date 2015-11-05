@@ -6,6 +6,18 @@
 //  Copyright © 2015 Mark Tezza. All rights reserved.
 //
 
+/*
+ 
+ Уровень Звезда:
+ (разобраться с тем чего Леша не объяснял! + реальная задача!)
+ 
+ 12. Поместить всех людей в один массив, а животных в другой массив (количество людей и животных должно быть разное)
+ 13. В одном цикле выводить сначала человека а потом животное, доставая данные поочередно из двух разных массивов, 
+ если в одном из массивов объектов больше, то в конце должны выводиться только объекты этого массива (так как д
+ ругих уже нет)
+ 
+ */
+
 #import "MTTestArrayLevelStar.h"
 
 #import "MTHuman.h"
@@ -19,7 +31,8 @@
 #import "MTCat.h"
 
 @interface MTTestArrayLevelStar ()
-@property (nonatomic, strong)   NSMutableArray *mutableArray;
+@property (nonatomic, strong)   NSMutableArray *humans;
+@property (nonatomic, strong)   NSMutableArray *animals;
 
 @end
 
@@ -29,49 +42,63 @@
 #pragma mark Class Method
 
 + (void)performTestArrayLevelStar {
+    NSLog(@"Level - #Star#");
     MTTestArrayLevelStar *test = [MTTestArrayLevelStar new];
     
     [test sortingObjects];
 }
 
 #pragma mark -
-#pragma mark
+#pragma mark Initializationa and Deallocations
+
+- (void)dealloc {
+    self.humans = nil;
+    self.animals = nil;
+}
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.mutableArray = [NSMutableArray new];
+        self.humans = [NSMutableArray new];
+        self.animals = [NSMutableArray new];
     }
     
     return self;
 }
 
 - (void)sortingObjects {
-
-    NSLog(@"Level - #Star#");
+    [self addingObjects];
     
-    NSMutableArray *humans = [NSMutableArray new];
+    NSUInteger humansCount = self.humans.count;
+    NSUInteger animalsCount = self.animals.count;
+    
+    
+    for (NSUInteger interaction = 0; interaction < humansCount + animalsCount; interaction++) {
+        if (interaction < humansCount) {
+            NSLog(@"%@", self.humans[interaction]);
+        }
+        if (interaction < animalsCount) {
+            NSLog(@"%@", self.animals[interaction]);
+        }
+    }
+}
+
+- (void)addingObjects {
+    NSMutableArray *humans = self.humans; //[NSMutableArray new];
     
     [humans addObject:[MTHuman human]];
     [humans addObject:[MTCycler humanCycler]];
     [humans addObject:[MTRunner humanRunner]];
     [humans addObject:[MTSwimmer humanSwimmer]];
     [humans addObject:[MTStudent humanStudent]];
+    self.humans = humans;
     
-    NSMutableArray *animals = [NSMutableArray new];
+    NSMutableArray *animals = self.animals; //[NSMutableArray new];
     
     [animals addObject:[MTAnimal animal]];
     [animals addObject:[MTDog animalDog]];
     [animals addObject:[MTCat animalCat]];
-    
-    for (NSUInteger interaction = 0; interaction < humans.count + animals.count; interaction++) {
-        if (interaction < humans.count) {
-            NSLog(@"%@", humans[interaction]);
-        }
-        if (interaction < animals.count) {
-            NSLog(@"%@", animals[interaction]);
-        }
-    }
+    self.animals = animals;
 }
 
 @end
