@@ -14,9 +14,9 @@
 #pragma mark Class Method
 
 + (MTCat *)animalCat {
-    return [[self alloc] initWithAnimalClass:kMTAnimalClassCat
-                                       nickName:kMTCatnickName
-                                   countFeet:kMTCountFeet];
+    return [[self alloc] initWithNickName:kMTCatnickName
+                              AnimalClass:kMTAnimalClassCat
+                                countFeet:kMTCountFeet];
 }
 
 #pragma mark -
@@ -24,13 +24,6 @@
 
 - (void)movingAnimal {
     NSLog(@"Cat is moving;");
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"- animal class = %@, animal nickName = %@, count feet = %ld",
-            self.animalClass,
-            self.nickName,
-            self.countFeet];
 }
 
 @end

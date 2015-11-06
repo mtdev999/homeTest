@@ -11,15 +11,15 @@
 #import "ConstantsValue.h"
 
 @interface MTAnimal : NSObject
-@property (nonatomic, copy)     NSString    *animalClass;
 @property (nonatomic, copy)     NSString    *nickName;
+@property (nonatomic, copy)     NSString    *animalClass;
 @property (nonatomic, readonly) NSUInteger  countFeet;
 
 + (MTAnimal *)animal;
 
-- (instancetype)initWithAnimalClass:(NSString *)animalClass
-                              nickName:(NSString *)nickName
-                          countFeet:(NSUInteger)countFeet;
+- (instancetype)initWithNickName:(NSString *)nickName
+                     AnimalClass:(NSString *)animalClass
+                       countFeet:(NSUInteger)countFeet;
 
 - (void)movingAnimal;
 

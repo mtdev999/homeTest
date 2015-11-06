@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B1518A11BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1518A01BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m */; };
-		1B1518A41BEB6D1E00F7D40B /* MTArrayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1518A31BEB6D1E00F7D40B /* MTArrayModel.m */; };
 		1B2156321BE90F2D00DBE90C /* MTTestArrayLevelMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2156311BE90F2D00DBE90C /* MTTestArrayLevelMaster.m */; };
 		1B2156351BE9100B00DBE90C /* MTAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2156341BE9100B00DBE90C /* MTAnimal.m */; };
 		1B2156381BE9114100DBE90C /* MTDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2156371BE9114100DBE90C /* MTDog.m */; };
@@ -39,8 +38,6 @@
 /* Begin PBXFileReference section */
 		1B15189F1BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTestArrayLevelSuperMan.h; sourceTree = "<group>"; };
 		1B1518A01BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTestArrayLevelSuperMan.m; sourceTree = "<group>"; };
-		1B1518A21BEB6D1E00F7D40B /* MTArrayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTArrayModel.h; sourceTree = "<group>"; };
-		1B1518A31BEB6D1E00F7D40B /* MTArrayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTArrayModel.m; sourceTree = "<group>"; };
 		1B2156301BE90F2D00DBE90C /* MTTestArrayLevelMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTestArrayLevelMaster.h; sourceTree = "<group>"; };
 		1B2156311BE90F2D00DBE90C /* MTTestArrayLevelMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTestArrayLevelMaster.m; sourceTree = "<group>"; };
 		1B2156331BE9100B00DBE90C /* MTAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAnimal.h; sourceTree = "<group>"; };
@@ -84,8 +81,6 @@
 		1B4371801BE7A88700620D6A = {
 			isa = PBXGroup;
 			children = (
-				1B1518A21BEB6D1E00F7D40B /* MTArrayModel.h */,
-				1B1518A31BEB6D1E00F7D40B /* MTArrayModel.m */,
 				1B4371A51BE7B47900620D6A /* Tests */,
 				1B4371931BE7A89700620D6A /* Source */,
 				1B43718B1BE7A88700620D6A /* MTArrayTask@1 */,
@@ -233,7 +228,6 @@
 				1B43719B1BE7A97E00620D6A /* MTCycler.m in Sources */,
 				1B43718D1BE7A88700620D6A /* main.m in Sources */,
 				1B32629E1BE89E5F00D41D38 /* MTStudent.m in Sources */,
-				1B1518A41BEB6D1E00F7D40B /* MTArrayModel.m in Sources */,
 				1B2156381BE9114100DBE90C /* MTDog.m in Sources */,
 				1B1518A11BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m in Sources */,
 				1B32629B1BE89C5800D41D38 /* MTTestArrayLevelStudent.m in Sources */,

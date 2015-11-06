@@ -50,4 +50,9 @@ static NSString * const kMTCatnickName = @"White";
 
 static NSUInteger const kMTCountFeet = 4;
 
+#pragma mark -
+#pragma mark Const
+
+static NSString * const kMTKeyForName = @"name";
+
 #endif /* ConstantsValue_h */

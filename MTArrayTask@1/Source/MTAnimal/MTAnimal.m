@@ -19,9 +19,9 @@
 #pragma mark Class Method
 
 + (MTAnimal *)animal {
-    return [[self alloc] initWithAnimalClass:kMTAnimalClass
-                                       nickName:kMTAnimalnickName
-                                   countFeet:kMTCountFeet];
+    return [[self alloc] initWithNickName:kMTAnimalnickName
+                              AnimalClass:kMTAnimalClass
+                                countFeet:kMTCountFeet];
 }
 
 #pragma mark -
@@ -32,14 +32,14 @@
     self.nickName = nil;
 }
 
-- (instancetype)initWithAnimalClass:(NSString *)animalClass
-                              nickName:(NSString *)nickName
-                          countFeet:(NSUInteger)countFeet
+- (instancetype)initWithNickName:(NSString *)nickName
+                     AnimalClass:(NSString *)animalClass
+                       countFeet:(NSUInteger)countFeet
 {
     self = [super init];
     if (self) {
-        self.animalClass = animalClass;
         self.nickName = nickName;
+        self.animalClass = animalClass;
         self.countFeet = countFeet;
     }
     
@@ -54,9 +54,9 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"- animal class = %@, animal nickName = %@, count feet = %ld",
-                                        self.animalClass,
+    return [NSString stringWithFormat:@"- nickName = %@, animalClass = %@, count feet = %ld",
                                         self.nickName,
+                                        self.animalClass,
                                         self.countFeet];
 }
 

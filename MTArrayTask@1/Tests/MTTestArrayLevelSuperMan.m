@@ -30,11 +30,13 @@
 #import "MTDog.h"
 #import "MTCat.h"
 
+#import "ConstantsValue.h"
+
 @implementation MTTestArrayLevelSuperMan
 
 - (void)performTestArrayLevelSuperMan {
     NSLog(@"Level - #SuperMan#");
-    
+    /*
     NSArray *sortArray = [[self arrayWithObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         if ([obj1 isKindOfClass:[MTHuman class]] &&
             [obj2 isKindOfClass:[MTHuman class]]) {
@@ -57,15 +59,19 @@
     }];
     
     NSLog(@"%@", sortArray);
+    */
+
+    NSMutableArray *arrayAll = [NSMutableArray new];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[self arrayWithObjects], kMTKeyForName,  nil];
     
-//    NSMutableArray *arrayAll = [NSMutableArray arrayWithArray:[self arrayWithObjects]];
-//    
-//    NSSortDescriptor *sortByType = [NSSortDescriptor sortDescriptorWithKey:@"type" ascending:NO];
-//    NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-//    [arrayAll sortUsingDescriptors:[NSArray arrayWithObjects:sortByType, sortByName, nil]];
-//    for (NSObject *objects in arrayAll) {
-//        NSLog(@"%@", objects);
-//    }
+    [arrayAll addObject:dict];
+    
+    NSSortDescriptor *sortName = [NSSortDescriptor sortDescriptorWithKey:kMTKeyForName ascending:YES];
+   [arrayAll sortUsingDescriptors:[NSArray arrayWithObjects:sortName, nil]];
+    
+    for (id object in arrayAll) {
+        NSLog(@"%@", object);
+    }
     
 }
 
