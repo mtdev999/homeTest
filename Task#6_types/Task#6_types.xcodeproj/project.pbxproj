@@ -42,6 +42,7 @@
 		1B67F12B1BF08A7B0035C198 = {
 			isa = PBXGroup;
 			children = (
+				1B67F14E1BF08C730035C198 /* Source */,
 				1B67F1361BF08A7B0035C198 /* Task#6_types */,
 				1B67F1351BF08A7B0035C198 /* Products */,
 			);
@@ -77,6 +78,13 @@
 				1B67F1381BF08A7B0035C198 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B67F14E1BF08C730035C198 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +307,7 @@
 				1B67F14D1BF08A7B0035C198 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
