@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B1518A11BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1518A01BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m */; };
+		1B2156321BE90F2D00DBE90C /* MTTestArrayLevelMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2156311BE90F2D00DBE90C /* MTTestArrayLevelMaster.m */; };
+		1B2156351BE9100B00DBE90C /* MTAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2156341BE9100B00DBE90C /* MTAnimal.m */; };
+		1B2156381BE9114100DBE90C /* MTDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2156371BE9114100DBE90C /* MTDog.m */; };
+		1B21563B1BE9115F00DBE90C /* MTCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B21563A1BE9115F00DBE90C /* MTCat.m */; };
+		1B21563E1BEA119B00DBE90C /* MTTestArrayLevelStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B21563D1BEA119B00DBE90C /* MTTestArrayLevelStar.m */; };
+		1B32629B1BE89C5800D41D38 /* MTTestArrayLevelStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32629A1BE89C5800D41D38 /* MTTestArrayLevelStudent.m */; };
+		1B32629E1BE89E5F00D41D38 /* MTStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32629D1BE89E5F00D41D38 /* MTStudent.m */; };
+		1B43718D1BE7A88700620D6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B43718C1BE7A88700620D6A /* main.m */; };
+		1B4371981BE7A94F00620D6A /* MTHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4371971BE7A94F00620D6A /* MTHuman.m */; };
+		1B43719B1BE7A97E00620D6A /* MTCycler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B43719A1BE7A97E00620D6A /* MTCycler.m */; };
+		1B43719E1BE7A98C00620D6A /* MTRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B43719D1BE7A98C00620D6A /* MTRunner.m */; };
+		1B4371A11BE7A99D00620D6A /* MTSwimmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4371A01BE7A99D00620D6A /* MTSwimmer.m */; };
+		1B4371A81BE7B4C100620D6A /* MTTestArrayLevelPupil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4371A71BE7B4C100620D6A /* MTTestArrayLevelPupil.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1B4371871BE7A88700620D6A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1B15189F1BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTestArrayLevelSuperMan.h; sourceTree = "<group>"; };
+		1B1518A01BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTestArrayLevelSuperMan.m; sourceTree = "<group>"; };
+		1B2156301BE90F2D00DBE90C /* MTTestArrayLevelMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTestArrayLevelMaster.h; sourceTree = "<group>"; };
+		1B2156311BE90F2D00DBE90C /* MTTestArrayLevelMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTestArrayLevelMaster.m; sourceTree = "<group>"; };
+		1B2156331BE9100B00DBE90C /* MTAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAnimal.h; sourceTree = "<group>"; };
+		1B2156341BE9100B00DBE90C /* MTAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTAnimal.m; sourceTree = "<group>"; };
+		1B2156361BE9114100DBE90C /* MTDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDog.h; sourceTree = "<group>"; };
+		1B2156371BE9114100DBE90C /* MTDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDog.m; sourceTree = "<group>"; };
+		1B2156391BE9115F00DBE90C /* MTCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCat.h; sourceTree = "<group>"; };
+		1B21563A1BE9115F00DBE90C /* MTCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCat.m; sourceTree = "<group>"; };
+		1B21563C1BEA119B00DBE90C /* MTTestArrayLevelStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTestArrayLevelStar.h; sourceTree = "<group>"; };
+		1B21563D1BEA119B00DBE90C /* MTTestArrayLevelStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTestArrayLevelStar.m; sourceTree = "<group>"; };
+		1B3262981BE8906000D41D38 /* ConstantsValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsValue.h; sourceTree = "<group>"; };
+		1B3262991BE89C5800D41D38 /* MTTestArrayLevelStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTestArrayLevelStudent.h; sourceTree = "<group>"; };
+		1B32629A1BE89C5800D41D38 /* MTTestArrayLevelStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTestArrayLevelStudent.m; sourceTree = "<group>"; };
+		1B32629C1BE89E5F00D41D38 /* MTStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStudent.h; sourceTree = "<group>"; };
+		1B32629D1BE89E5F00D41D38 /* MTStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStudent.m; sourceTree = "<group>"; };
+		1B4371891BE7A88700620D6A /* MTArrayTask@1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "MTArrayTask@1"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B43718C1BE7A88700620D6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B4371961BE7A94F00620D6A /* MTHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHuman.h; sourceTree = "<group>"; };
+		1B4371971BE7A94F00620D6A /* MTHuman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHuman.m; sourceTree = "<group>"; };
+		1B4371991BE7A97E00620D6A /* MTCycler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCycler.h; sourceTree = "<group>"; };
+		1B43719A1BE7A97E00620D6A /* MTCycler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCycler.m; sourceTree = "<group>"; };
+		1B43719C1BE7A98C00620D6A /* MTRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRunner.h; sourceTree = "<group>"; };
+		1B43719D1BE7A98C00620D6A /* MTRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRunner.m; sourceTree = "<group>"; };
+		1B43719F1BE7A99D00620D6A /* MTSwimmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSwimmer.h; sourceTree = "<group>"; };
+		1B4371A01BE7A99D00620D6A /* MTSwimmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSwimmer.m; sourceTree = "<group>"; };
+		1B4371A61BE7B4C100620D6A /* MTTestArrayLevelPupil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTestArrayLevelPupil.h; sourceTree = "<group>"; };
+		1B4371A71BE7B4C100620D6A /* MTTestArrayLevelPupil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTestArrayLevelPupil.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B4371861BE7A88700620D6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B4371801BE7A88700620D6A = {
+			isa = PBXGroup;
+			children = (
+				1B4371A51BE7B47900620D6A /* Tests */,
+				1B4371931BE7A89700620D6A /* Source */,
+				1B43718B1BE7A88700620D6A /* MTArrayTask@1 */,
+				1B43718A1BE7A88700620D6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B43718A1BE7A88700620D6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B4371891BE7A88700620D6A /* MTArrayTask@1 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B43718B1BE7A88700620D6A /* MTArrayTask@1 */ = {
+			isa = PBXGroup;
+			children = (
+				1B43718C1BE7A88700620D6A /* main.m */,
+			);
+			path = "MTArrayTask@1";
+			sourceTree = "<group>";
+		};
+		1B4371931BE7A89700620D6A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1B4371951BE7A92200620D6A /* MTAnimal */,
+				1B4371941BE7A8FE00620D6A /* MTHuman */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1B4371941BE7A8FE00620D6A /* MTHuman */ = {
+			isa = PBXGroup;
+			children = (
+				1B4371961BE7A94F00620D6A /* MTHuman.h */,
+				1B4371971BE7A94F00620D6A /* MTHuman.m */,
+				1B4371991BE7A97E00620D6A /* MTCycler.h */,
+				1B43719A1BE7A97E00620D6A /* MTCycler.m */,
+				1B43719C1BE7A98C00620D6A /* MTRunner.h */,
+				1B43719D1BE7A98C00620D6A /* MTRunner.m */,
+				1B43719F1BE7A99D00620D6A /* MTSwimmer.h */,
+				1B4371A01BE7A99D00620D6A /* MTSwimmer.m */,
+				1B32629C1BE89E5F00D41D38 /* MTStudent.h */,
+				1B32629D1BE89E5F00D41D38 /* MTStudent.m */,
+			);
+			path = MTHuman;
+			sourceTree = "<group>";
+		};
+		1B4371951BE7A92200620D6A /* MTAnimal */ = {
+			isa = PBXGroup;
+			children = (
+				1B2156331BE9100B00DBE90C /* MTAnimal.h */,
+				1B2156341BE9100B00DBE90C /* MTAnimal.m */,
+				1B2156361BE9114100DBE90C /* MTDog.h */,
+				1B2156371BE9114100DBE90C /* MTDog.m */,
+				1B2156391BE9115F00DBE90C /* MTCat.h */,
+				1B21563A1BE9115F00DBE90C /* MTCat.m */,
+			);
+			path = MTAnimal;
+			sourceTree = "<group>";
+		};
+		1B4371A51BE7B47900620D6A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1B3262981BE8906000D41D38 /* ConstantsValue.h */,
+				1B4371A61BE7B4C100620D6A /* MTTestArrayLevelPupil.h */,
+				1B4371A71BE7B4C100620D6A /* MTTestArrayLevelPupil.m */,
+				1B3262991BE89C5800D41D38 /* MTTestArrayLevelStudent.h */,
+				1B32629A1BE89C5800D41D38 /* MTTestArrayLevelStudent.m */,
+				1B2156301BE90F2D00DBE90C /* MTTestArrayLevelMaster.h */,
+				1B2156311BE90F2D00DBE90C /* MTTestArrayLevelMaster.m */,
+				1B21563C1BEA119B00DBE90C /* MTTestArrayLevelStar.h */,
+				1B21563D1BEA119B00DBE90C /* MTTestArrayLevelStar.m */,
+				1B15189F1BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.h */,
+				1B1518A01BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B4371881BE7A88700620D6A /* MTArrayTask@1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4371901BE7A88700620D6A /* Build configuration list for PBXNativeTarget "MTArrayTask@1" */;
+			buildPhases = (
+				1B4371851BE7A88700620D6A /* Sources */,
+				1B4371861BE7A88700620D6A /* Frameworks */,
+				1B4371871BE7A88700620D6A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MTArrayTask@1";
+			productName = "MTArrayTask@1";
+			productReference = 1B4371891BE7A88700620D6A /* MTArrayTask@1 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B4371811BE7A88700620D6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Mark Tezza";
+				TargetAttributes = {
+					1B4371881BE7A88700620D6A = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 1B4371841BE7A88700620D6A /* Build configuration list for PBXProject "MTArrayTask@1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B4371801BE7A88700620D6A;
+			productRefGroup = 1B43718A1BE7A88700620D6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B4371881BE7A88700620D6A /* MTArrayTask@1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B4371851BE7A88700620D6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B2156351BE9100B00DBE90C /* MTAnimal.m in Sources */,
+				1B43719E1BE7A98C00620D6A /* MTRunner.m in Sources */,
+				1B2156321BE90F2D00DBE90C /* MTTestArrayLevelMaster.m in Sources */,
+				1B21563B1BE9115F00DBE90C /* MTCat.m in Sources */,
+				1B4371981BE7A94F00620D6A /* MTHuman.m in Sources */,
+				1B4371A11BE7A99D00620D6A /* MTSwimmer.m in Sources */,
+				1B4371A81BE7B4C100620D6A /* MTTestArrayLevelPupil.m in Sources */,
+				1B21563E1BEA119B00DBE90C /* MTTestArrayLevelStar.m in Sources */,
+				1B43719B1BE7A97E00620D6A /* MTCycler.m in Sources */,
+				1B43718D1BE7A88700620D6A /* main.m in Sources */,
+				1B32629E1BE89E5F00D41D38 /* MTStudent.m in Sources */,
+				1B2156381BE9114100DBE90C /* MTDog.m in Sources */,
+				1B1518A11BEB6CF600F7D40B /* MTTestArrayLevelSuperMan.m in Sources */,
+				1B32629B1BE89C5800D41D38 /* MTTestArrayLevelStudent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1B43718E1BE7A88700620D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1B43718F1BE7A88700620D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1B4371911BE7A88700620D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1B4371921BE7A88700620D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B4371841BE7A88700620D6A /* Build configuration list for PBXProject "MTArrayTask@1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B43718E1BE7A88700620D6A /* Debug */,
+				1B43718F1BE7A88700620D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B4371901BE7A88700620D6A /* Build configuration list for PBXNativeTarget "MTArrayTask@1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4371911BE7A88700620D6A /* Debug */,
+				1B4371921BE7A88700620D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B4371811BE7A88700620D6A /* Project object */;
+}
