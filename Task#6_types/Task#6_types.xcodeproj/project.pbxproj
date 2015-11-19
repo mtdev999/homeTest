@@ -13,6 +13,7 @@
 		1B67F1421BF08A7B0035C198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B67F1401BF08A7B0035C198 /* Main.storyboard */; };
 		1B67F1441BF08A7B0035C198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B67F1431BF08A7B0035C198 /* Assets.xcassets */; };
 		1B67F1471BF08A7B0035C198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B67F1451BF08A7B0035C198 /* LaunchScreen.storyboard */; };
+		1B67F1511BF0BBE40035C198 /* MTRectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B67F1501BF0BBE40035C198 /* MTRectTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		1B67F1431BF08A7B0035C198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B67F1461BF08A7B0035C198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B67F1481BF08A7B0035C198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B67F14F1BF0BBE40035C198 /* MTRectTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRectTest.h; sourceTree = "<group>"; };
+		1B67F1501BF0BBE40035C198 /* MTRectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRectTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 		1B67F14E1BF08C730035C198 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1B67F14F1BF0BBE40035C198 /* MTRectTest.h */,
+				1B67F1501BF0BBE40035C198 /* MTRectTest.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			files = (
 				1B67F13F1BF08A7B0035C198 /* ViewController.m in Sources */,
 				1B67F13C1BF08A7B0035C198 /* AppDelegate.m in Sources */,
+				1B67F1511BF0BBE40035C198 /* MTRectTest.m in Sources */,
 				1B67F1391BF08A7B0035C198 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
