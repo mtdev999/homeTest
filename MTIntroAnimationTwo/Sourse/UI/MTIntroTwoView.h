@@ -23,6 +23,11 @@ typedef NS_ENUM(NSUInteger, MTPages) {
     MTPagesContact
 };
 
+typedef NS_ENUM(NSUInteger, MTPositionPages) {
+    MTPositionPagesHidden,
+    MTPositionPagesVisible
+};
+
 @interface MTIntroTwoView : UIView
 
 // buttons
@@ -47,10 +52,12 @@ typedef NS_ENUM(NSUInteger, MTPages) {
 @property (nonatomic, strong) IBOutlet UILabel      *textView;
 @property (nonatomic, strong) IBOutlet UIImageView  *imageView;
 
-@property (nonatomic, assign, getter=isCircleAnimating)  BOOL      circleAnimating;
+@property (nonatomic, assign, getter=isAnimatingCircles)    BOOL      animatingCircles;
+@property (nonatomic, assign, getter=isAnimatingPages)      BOOL      animatingPages;
 
 @property (nonatomic, assign) MTAnimateDuration     duration;
 @property (nonatomic, assign) MTPages               pages;
+@property (nonatomic, assign) MTPositionPages       position;
 
 - (void)animatecircle;
 

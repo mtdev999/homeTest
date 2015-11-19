@@ -44,22 +44,34 @@
 
 - (IBAction)homeButton:(id)sender {
     MTIntroTwoView *circleView = self.introView;
-    circleView.circleAnimating = !circleView.circleAnimating;
+    circleView.animatingCircles = !circleView.animatingCircles;
+    circleView.pages = MTPagesHome;
+    //circleView.position = MTPositionPagesHidden;
+    circleView.animatingPages = !circleView.animatingPages;
 }
 
 - (IBAction)aboutButton:(id)sender {
     MTIntroTwoView *circleView = self.introView;
-    circleView.circleAnimating = !circleView.circleAnimating;
+    circleView.animatingCircles = !circleView.animatingCircles;
+    circleView.pages = MTPagesAbout;
+    //circleView.position = MTPositionPagesHidden;
+    circleView.animatingPages = !circleView.animatingPages;
 }
 
 - (IBAction)photoButton:(id)sender {
     MTIntroTwoView *circleView = self.introView;
-    circleView.circleAnimating = !circleView.circleAnimating;
+    circleView.animatingCircles = !circleView.animatingCircles;
+    circleView.pages = MTPagesPhoto;
+    //circleView.position = MTPositionPagesHidden;
+    circleView.animatingPages = !circleView.animatingPages;
 }
 
 - (IBAction)contactButton:(id)sender {
     MTIntroTwoView *circleView = self.introView;
-    circleView.circleAnimating = !circleView.circleAnimating;
+    circleView.animatingCircles = !circleView.animatingCircles;
+    circleView.pages = MTPagesContact;
+    //circleView.position = MTPositionPagesHidden;
+    circleView.animatingPages = !circleView.animatingPages;
 }
 
 @end

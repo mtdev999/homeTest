@@ -19,11 +19,19 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setCircleAnimating:(BOOL)circleAnimating {
-    if (_circleAnimating != circleAnimating) {
-        _circleAnimating = circleAnimating;
+- (void)setAnimatingCircles:(BOOL)animatingCircles {
+    if (_animatingCircles != animatingCircles) {
+        _animatingCircles = animatingCircles;
         
         [self animateCirclesGroup];
+    }
+}
+
+- (void)setAnimatingPages:(BOOL)animatingPages {
+    if (_animatingPages != animatingPages) {
+        _animatingPages = animatingPages;
+        
+        [self animatingPages];
     }
 }
 
@@ -78,7 +86,6 @@
                          object.transform = CGAffineTransformMakeTranslation(-430, 0);
                      }
                      completion:^(BOOL finished) {
-                         NSLog(@"1 finished");
                      }];
 }
 
@@ -116,25 +123,20 @@
 #pragma mark Animating circles Group
 
 - (void)animateCirclesGroup {
-    if (self.circleAnimating) {
+    if (self.animatingCircles) {
         [UIView animateWithDuration:0.6
                          animations:^{
                              [self animatingButtonsLeftAndRight];
                          }
                          completion:^(BOOL finished) {
-                             NSLog(@"");
                          }];
-        
-        //[self animatingPages];
     } else {
         [UIView animateWithDuration:0.5
                          animations:^{
                              [self animatingButtonsLeftAndRight];
                          }
                          completion:^(BOOL finished) {
-                             NSLog(@"");
                          }];
-        //[self animatingPages];
     }
 }
 
@@ -144,7 +146,7 @@
     for (int i = 0; i < array.count; i++) {
         UIView *object = [array objectAtIndex:i];
         
-        if (self.circleAnimating) {
+        if (self.animatingCircles) {
             object.transform = CGAffineTransformMakeTranslation(-530, 0);
         } else {
             object.transform = CGAffineTransformMakeTranslation(-430, 0);
@@ -155,45 +157,51 @@
 #pragma mark -
 #pragma mark AnimatingHomeView
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-    
-    UITouch *touch = [touches anyObject];
-    NSLog(@"click");
-    if (touch.view == self.homeButton) {
+- (void)animatingPages {
+    if (self.pages == MTPagesHome) {
         [self animatingPagesWithPage:self.homeView];
+        
+    } else if (self.pages == MTPagesAbout) {
+        [self animatingPagesWithPage:self.aboutView];
+        
+    } else if (self.pages == MTPagesPhoto) {
+        [self animatingPagesWithPage:self.photoView];
+        
+    } else if (self.pages == MTPagesContact) {
+        [self animatingPagesWithPage:self.contactView];
     }
 }
 
-//- (void)animatingPages {
-//    NSMutableArray *array = self.pagesView;
-//    for (int i = 0; i < array.count; i++) {
-//        UITouch *touch = [UITouch new];
-//        if (touch == self.homeButton) {
-//            <#statements#>
-//        }
-//        [self animatingPagesWithPage:[array objectAtIndex:i]];
-//    }
-//}
-
 - (void)animatingPagesWithPage:(UIView *)page {
+    
+    if (self.position == MTPositionPagesVisible || self.animatingPages != 1) {
+        for (int i = 0; i < self.pagesView.count; i++) {
+            [self animatingPageOut:page];
+        }
+    } else {
+        [self animatingPageIn:page];
+    }
+}
 
+- (void)animatingPageIn:(UIView *)page {
+    
     [UIView animateWithDuration:0.7
                      animations:^{
-                         if (self.circleAnimating) {
-                             page.alpha = 0;
-                             page.transform = CGAffineTransformMakeTranslation(-330, 0);
-                             page.alpha = 0.8;
-                         } else {
-                             page.transform = CGAffineTransformMakeTranslation(350, 0);
-                             page.alpha = 0;
-                         }
-                         
-                     }
-                     completion:^(BOOL finished) {
-                         NSLog(@"");
+                         page.alpha = 0;
+                         page.transform = CGAffineTransformMakeTranslation(-330, 0);
+                         page.alpha = 0.8;
+                         self.position = MTPositionPagesVisible;
                      }];
+}
+
+- (void)animatingPageOut:(UIView *)page {
     
+    [UIView animateWithDuration:0.7
+                     animations:^{
+                         page.transform = CGAffineTransformMakeTranslation(350, 0);
+                         page.alpha = 0;
+                         self.position = MTPositionPagesHidden;
+                     }];
 }
 
 @end
