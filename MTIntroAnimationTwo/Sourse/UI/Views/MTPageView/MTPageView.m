@@ -43,7 +43,6 @@
     } else {
         [self animatingPageOut:self.homeView];
     }
-    
 }
 
 - (void)animatingPageIn:(UIView *)page {

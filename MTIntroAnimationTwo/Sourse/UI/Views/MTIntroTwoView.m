@@ -36,7 +36,6 @@
 
 - (void)showPageView {
     [self bindPageView];
-    
 }
 
 - (MTPageView *)newPageView {
@@ -156,56 +155,5 @@
         }
     }
 }
-
-
-//#pragma mark -
-//#pragma mark AnimatingHomeView
-//
-//- (void)animatingPages {
-//    if (self.pages == MTPagesHome) {
-//        [self animatingPagesWithPage:self.homeView];
-//        
-//    } else if (self.pages == MTPagesAbout) {
-//        [self animatingPagesWithPage:self.aboutView];
-//        
-//    } else if (self.pages == MTPagesPhoto) {
-//        [self animatingPagesWithPage:self.photoView];
-//        
-//    } else if (self.pages == MTPagesContact) {
-//        [self animatingPagesWithPage:self.contactView];
-//    }
-//}
-//
-//- (void)animatingPagesWithPage:(UIView *)page {
-//    
-//    if (self.position == MTPositionPagesVisible || self.animatingPages != 1) {
-//        for (int i = 0; i < self.pagesView.count; i++) {
-//            [self animatingPageOut:page];
-//        }
-//    } else {
-//        [self animatingPageIn:page];
-//    }
-//}
-//
-//- (void)animatingPageIn:(UIView *)page {
-//    
-//    [UIView animateWithDuration:0.7
-//                     animations:^{
-//                         page.alpha = 0;
-//                         page.transform = CGAffineTransformMakeTranslation(-330, 0);
-//                         page.alpha = 0.8;
-//                         self.position = MTPositionPagesVisible;
-//                     }];
-//}
-//
-//- (void)animatingPageOut:(UIView *)page {
-//    
-//    [UIView animateWithDuration:0.7
-//                     animations:^{
-//                         page.transform = CGAffineTransformMakeTranslation(350, 0);
-//                         page.alpha = 0;
-//                         self.position = MTPositionPagesHidden;
-//                     }];
-//}
 
 @end

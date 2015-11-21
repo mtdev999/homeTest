@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self.introView animateCircle];
 }
 
@@ -43,21 +43,22 @@
 #pragma mark Public
 
 - (IBAction)homeButton:(id)sender {
-    MTIntroTwoView *circleView = self.introView;
-    circleView.animatingCircles = !circleView.animatingCircles;
+    [self changeValue];
 }
 
 - (IBAction)aboutButton:(id)sender {
-    MTIntroTwoView *circleView = self.introView;
-    circleView.animatingCircles = !circleView.animatingCircles;
+    [self changeValue];
 }
 
 - (IBAction)photoButton:(id)sender {
-    MTIntroTwoView *circleView = self.introView;
-    circleView.animatingCircles = !circleView.animatingCircles;
+    [self changeValue];
 }
 
 - (IBAction)contactButton:(id)sender {
+    [self changeValue];
+}
+
+- (void)changeValue {
     MTIntroTwoView *circleView = self.introView;
     circleView.animatingCircles = !circleView.animatingCircles;
 }

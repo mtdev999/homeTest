@@ -37,9 +37,19 @@
                             <rect key="frame" x="27" y="35" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <state key="normal" title="home"/>
+                            <state key="normal" title="home">
+                                <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="homeButton:" destination="-1" eventType="touchUpInside" id="wQ7-AS-P1j"/>
+                                <action selector="homeButton:" destination="-1" eventType="touchUpInside" id="HdG-I5-WHK"/>
                             </connections>
                         </button>
                     </subviews>
@@ -68,7 +78,7 @@
                             <animations/>
                             <state key="normal" title="about"/>
                             <connections>
-                                <action selector="aboutButton:" destination="-1" eventType="touchUpInside" id="2sB-aw-efA"/>
+                                <action selector="aboutButton:" destination="-1" eventType="touchUpInside" id="KWl-rS-YtN"/>
                             </connections>
                         </button>
                     </subviews>
@@ -97,7 +107,7 @@
                             <animations/>
                             <state key="normal" title="photo"/>
                             <connections>
-                                <action selector="photoButton:" destination="-1" eventType="touchUpInside" id="Dql-JE-ulm"/>
+                                <action selector="photoButton:" destination="-1" eventType="touchUpInside" id="W9z-73-QUV"/>
                             </connections>
                         </button>
                     </subviews>
@@ -154,8 +164,10 @@
                 <outlet property="circleView2" destination="Z5k-gr-ctp" id="M0U-3T-MPU"/>
                 <outlet property="circleView3" destination="Dgl-Dy-yUr" id="2re-sS-ekw"/>
                 <outlet property="circleView4" destination="yFv-1K-Tdh" id="evr-6z-64O"/>
+                <outlet property="contactButton" destination="eBx-Hu-fpT" id="s1R-82-Ayy"/>
                 <outlet property="homeButton" destination="mQu-LZ-oM1" id="zRg-Xf-kuG"/>
                 <outlet property="imageView" destination="l5c-3p-Ukh" id="H2A-or-LpV"/>
+                <outlet property="photoButton" destination="23O-dV-V9H" id="y9G-Oi-rG3"/>
             </connections>
             <point key="canvasLocation" x="340" y="433"/>
         </view>
