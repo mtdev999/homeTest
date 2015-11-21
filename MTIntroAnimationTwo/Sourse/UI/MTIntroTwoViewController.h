@@ -15,5 +15,4 @@
 - (IBAction)photoButton:(id)sender;
 - (IBAction)contactButton:(id)sender;
 
-
 @end

@@ -12,8 +12,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="cQr-DY-xOl">
-                    <rect key="frame" x="330" y="80" width="280" height="480"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="330" y="80" width="395" height="580"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Всем привет! Вы находитесь на официальном сайте MWB Pet!! Мы рады что Вы доверились нам и решили найти свое счастье у нас!!!" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bzV-3Y-Rr4">
                             <rect key="frame" x="15" y="-60" width="250" height="250"/>
@@ -24,12 +24,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LPT-6z-Kqd">
-                            <rect key="frame" x="117" y="225" width="46" height="30"/>
+                            <rect key="frame" x="250" y="430" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <state key="normal" title="return"/>
                             <connections>
-                                <action selector="homeButton:" destination="-2" eventType="touchUpInside" id="Nzf-ZC-ffH"/>
+                                <action selector="homeButton:" destination="-2" eventType="touchUpInside" id="bog-k3-1f2"/>
                             </connections>
                         </button>
                     </subviews>

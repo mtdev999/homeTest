@@ -51,8 +51,8 @@
     [UIView animateWithDuration:0.7
                      animations:^{
                          page.alpha = 0;
-                         page.transform = CGAffineTransformMakeTranslation(-220, 0);
-                         page.alpha = 0.8;
+                         page.transform = CGAffineTransformMakeTranslation(-320, 0);
+                         page.alpha = 1;
                          self.visibleView = YES;
                      }];
 }

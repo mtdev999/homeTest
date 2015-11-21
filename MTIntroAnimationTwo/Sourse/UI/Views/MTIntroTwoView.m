@@ -14,6 +14,19 @@
 @property (nonatomic, strong) NSMutableArray    *circles;
 @property (nonatomic, strong) MTPageView        *pageView;
 
+- (void)animatingIntroButtons;
+- (void)getCircles;
+
+- (MTAnimateDuration)nextValueDuration;
+- (float)timeDuration:(MTAnimateDuration)duration;
+
+- (MTPageView *)newPageView;
+- (void)bindPageView;
+
+- (void)animateCirclesGroup;
+- (void)animatingButtonsLeftAndRight;
+
+
 @end
 
 @implementation MTIntroTwoView
@@ -80,11 +93,18 @@
 
 - (void)animateCircleWithObject:(UIView *)object {
     
+//    UIVisualEffectView *fxView = self.fxView;
+//    fxView.alpha = 0;
+    UIImageView *imageView = self.imageView;
+    imageView.alpha = 0;
+    
     [UIView animateWithDuration:[self timeDuration:[self nextValueDuration]]
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          object.transform = CGAffineTransformMakeTranslation(-430, 0);
+                        // fxView.alpha = 1;
+                         imageView.alpha = 1;
                      }
                      completion:^(BOOL finished) {
                      }];

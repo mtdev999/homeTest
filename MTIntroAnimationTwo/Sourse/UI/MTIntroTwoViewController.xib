@@ -29,6 +29,17 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
+                <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" id="zsw-rN-tzF">
+                    <rect key="frame" x="8" y="8" width="304" height="552"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pMV-Yf-PNc">
+                        <rect key="frame" x="0.0" y="0.0" width="304" height="552"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                    </view>
+                    <animations/>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
                 <view contentMode="scaleToFill" id="zyM-K0-Dtl">
                     <rect key="frame" x="500" y="80" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -165,6 +176,7 @@
                 <outlet property="circleView3" destination="Dgl-Dy-yUr" id="2re-sS-ekw"/>
                 <outlet property="circleView4" destination="yFv-1K-Tdh" id="evr-6z-64O"/>
                 <outlet property="contactButton" destination="eBx-Hu-fpT" id="s1R-82-Ayy"/>
+                <outlet property="fxView" destination="zsw-rN-tzF" id="5uj-3Y-Wor"/>
                 <outlet property="homeButton" destination="mQu-LZ-oM1" id="zRg-Xf-kuG"/>
                 <outlet property="imageView" destination="l5c-3p-Ukh" id="H2A-or-LpV"/>
                 <outlet property="photoButton" destination="23O-dV-V9H" id="y9G-Oi-rG3"/>

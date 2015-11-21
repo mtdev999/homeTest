@@ -31,7 +31,8 @@ typedef NS_ENUM(NSInteger, MTAnimateDuration) {
 @property (nonatomic, strong) IBOutlet UIButton     *photoButton;
 @property (nonatomic, strong) IBOutlet UIButton     *contactButton;
 
-@property (nonatomic, strong) IBOutlet UIImageView  *imageView;
+@property (nonatomic, strong) IBOutlet UIImageView          *imageView;
+@property (nonatomic, strong) IBOutlet UIVisualEffectView   *fxView;
 
 @property (nonatomic, assign, getter=isAnimatingCircles)    BOOL      animatingCircles;
 
