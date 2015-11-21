@@ -8,13 +8,16 @@
 
 #import "MTIntroTwoView.h"
 
+#import "MTPageView.h"
+
 @interface MTIntroTwoView ()
 @property (nonatomic, strong) NSMutableArray    *circles;
-@property (nonatomic, strong) NSMutableArray    *pagesView;
+@property (nonatomic, strong) MTPageView        *pageView;
 
 @end
 
 @implementation MTIntroTwoView
+@dynamic visiblePage;
 
 #pragma mark -
 #pragma mark Accessors
@@ -22,31 +25,41 @@
 - (void)setAnimatingCircles:(BOOL)animatingCircles {
     if (_animatingCircles != animatingCircles) {
         _animatingCircles = animatingCircles;
-        
-        [self animateCirclesGroup];
-    }
-}
 
-- (void)setAnimatingPages:(BOOL)animatingPages {
-    if (_animatingPages != animatingPages) {
-        _animatingPages = animatingPages;
-        
-        [self animatingPages];
+        [self animateCirclesGroup];
+        [self showPageView];
     }
 }
 
 #pragma mark -
 #pragma mark Public
 
-- (void)animatecircle {
-    [self getcircles];
+- (void)showPageView {
+    [self bindPageView];
+    
+}
+
+- (MTPageView *)newPageView {
+    return [MTPageView pageViewWithSuperview:self];
+}
+
+- (void)bindPageView {
+    if (!self.pageView) {
+        self.pageView = [self newPageView];
+    } else {
+       [self.pageView animationPage]; 
+    }
+}
+
+- (void)animateCircle {
+    [self getCircles];
     [self animatingIntroButtons];
 }
 
 #pragma mark -
 #pragma mark Private
 
-- (void)getcircles {
+- (void)getCircles {
     NSMutableArray *circles = [NSMutableArray new];
 
     [circles addObject:self.circleView1];
@@ -55,16 +68,6 @@
     [circles addObject:self.circleView4];
     
     self.circles = circles;
-    
-    NSMutableArray *pages = [NSMutableArray new];
-    
-    [pages addObject:self.homeView];
-    [pages addObject:self.aboutView];
-    [pages addObject:self.photoView];
-    [pages addObject:self.contactView];
-    
-    self.pagesView = pages;
-    
 }
 
 #pragma mark -
@@ -154,54 +157,55 @@
     }
 }
 
-#pragma mark -
-#pragma mark AnimatingHomeView
 
-- (void)animatingPages {
-    if (self.pages == MTPagesHome) {
-        [self animatingPagesWithPage:self.homeView];
-        
-    } else if (self.pages == MTPagesAbout) {
-        [self animatingPagesWithPage:self.aboutView];
-        
-    } else if (self.pages == MTPagesPhoto) {
-        [self animatingPagesWithPage:self.photoView];
-        
-    } else if (self.pages == MTPagesContact) {
-        [self animatingPagesWithPage:self.contactView];
-    }
-}
-
-- (void)animatingPagesWithPage:(UIView *)page {
-    
-    if (self.position == MTPositionPagesVisible || self.animatingPages != 1) {
-        for (int i = 0; i < self.pagesView.count; i++) {
-            [self animatingPageOut:page];
-        }
-    } else {
-        [self animatingPageIn:page];
-    }
-}
-
-- (void)animatingPageIn:(UIView *)page {
-    
-    [UIView animateWithDuration:0.7
-                     animations:^{
-                         page.alpha = 0;
-                         page.transform = CGAffineTransformMakeTranslation(-330, 0);
-                         page.alpha = 0.8;
-                         self.position = MTPositionPagesVisible;
-                     }];
-}
-
-- (void)animatingPageOut:(UIView *)page {
-    
-    [UIView animateWithDuration:0.7
-                     animations:^{
-                         page.transform = CGAffineTransformMakeTranslation(350, 0);
-                         page.alpha = 0;
-                         self.position = MTPositionPagesHidden;
-                     }];
-}
+//#pragma mark -
+//#pragma mark AnimatingHomeView
+//
+//- (void)animatingPages {
+//    if (self.pages == MTPagesHome) {
+//        [self animatingPagesWithPage:self.homeView];
+//        
+//    } else if (self.pages == MTPagesAbout) {
+//        [self animatingPagesWithPage:self.aboutView];
+//        
+//    } else if (self.pages == MTPagesPhoto) {
+//        [self animatingPagesWithPage:self.photoView];
+//        
+//    } else if (self.pages == MTPagesContact) {
+//        [self animatingPagesWithPage:self.contactView];
+//    }
+//}
+//
+//- (void)animatingPagesWithPage:(UIView *)page {
+//    
+//    if (self.position == MTPositionPagesVisible || self.animatingPages != 1) {
+//        for (int i = 0; i < self.pagesView.count; i++) {
+//            [self animatingPageOut:page];
+//        }
+//    } else {
+//        [self animatingPageIn:page];
+//    }
+//}
+//
+//- (void)animatingPageIn:(UIView *)page {
+//    
+//    [UIView animateWithDuration:0.7
+//                     animations:^{
+//                         page.alpha = 0;
+//                         page.transform = CGAffineTransformMakeTranslation(-330, 0);
+//                         page.alpha = 0.8;
+//                         self.position = MTPositionPagesVisible;
+//                     }];
+//}
+//
+//- (void)animatingPageOut:(UIView *)page {
+//    
+//    [UIView animateWithDuration:0.7
+//                     animations:^{
+//                         page.transform = CGAffineTransformMakeTranslation(350, 0);
+//                         page.alpha = 0;
+//                         self.position = MTPositionPagesHidden;
+//                     }];
+//}
 
 @end

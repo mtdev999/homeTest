@@ -16,6 +16,9 @@
 		1B3210A71BF9DC170080666B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3210A41BF9DC170080666B /* LaunchScreen.storyboard */; };
 		1B51AAAD1BFB3E4F0040B68E /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B51AAAC1BFB3E4F0040B68E /* UIView+MTExtensions.m */; };
 		1B51AAAF1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1B51AAAE1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg */; };
+		1B724BB41C00A37F008C0E5D /* MTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B724BB31C00A37F008C0E5D /* MTPageView.m */; };
+		1B724BB61C00A396008C0E5D /* MTPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B724BB51C00A396008C0E5D /* MTPageView.xib */; };
+		1B724BB91C00A528008C0E5D /* UINib+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B724BB81C00A528008C0E5D /* UINib+MTExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,11 @@
 		1B51AAAB1BFB3E4F0040B68E /* UIView+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtensions.h"; sourceTree = "<group>"; };
 		1B51AAAC1BFB3E4F0040B68E /* UIView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtensions.m"; sourceTree = "<group>"; };
 		1B51AAAE1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sphynx_cat_kitty_galore.jpg; sourceTree = "<group>"; };
+		1B724BB21C00A37F008C0E5D /* MTPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPageView.h; sourceTree = "<group>"; };
+		1B724BB31C00A37F008C0E5D /* MTPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPageView.m; sourceTree = "<group>"; };
+		1B724BB51C00A396008C0E5D /* MTPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTPageView.xib; sourceTree = "<group>"; };
+		1B724BB71C00A528008C0E5D /* UINib+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINib+MTExtensions.h"; path = "UINib+MTExtensions/UINib+MTExtensions.h"; sourceTree = "<group>"; };
+		1B724BB81C00A528008C0E5D /* UINib+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINib+MTExtensions.m"; path = "UINib+MTExtensions/UINib+MTExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +124,12 @@
 		1B32109A1BF9D9860080666B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1B724BB11C00A36D008C0E5D /* MTPageView */,
 				1B32109B1BF9D9B20080666B /* MTIntroTwoView.h */,
 				1B32109C1BF9D9B20080666B /* MTIntroTwoView.m */,
 			);
 			name = Views;
-			path = UI;
+			path = UI/Views;
 			sourceTree = "<group>";
 		};
 		1B3210A11BF9DBD40080666B /* Resource */ = {
@@ -146,8 +155,20 @@
 			children = (
 				1B51AAAB1BFB3E4F0040B68E /* UIView+MTExtensions.h */,
 				1B51AAAC1BFB3E4F0040B68E /* UIView+MTExtensions.m */,
+				1B724BB71C00A528008C0E5D /* UINib+MTExtensions.h */,
+				1B724BB81C00A528008C0E5D /* UINib+MTExtensions.m */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1B724BB11C00A36D008C0E5D /* MTPageView */ = {
+			isa = PBXGroup;
+			children = (
+				1B724BB21C00A37F008C0E5D /* MTPageView.h */,
+				1B724BB31C00A37F008C0E5D /* MTPageView.m */,
+				1B724BB51C00A396008C0E5D /* MTPageView.xib */,
+			);
+			path = MTPageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +232,7 @@
 				1B51AAAF1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg in Resources */,
 				1B3210A71BF9DC170080666B /* LaunchScreen.storyboard in Resources */,
 				1B3210A61BF9DC170080666B /* Assets.xcassets in Resources */,
+				1B724BB61C00A396008C0E5D /* MTPageView.xib in Resources */,
 				1B3210991BF9D9480080666B /* MTIntroTwoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,7 +247,9 @@
 				1B3210981BF9D9480080666B /* MTIntroTwoViewController.m in Sources */,
 				1B32109D1BF9D9B20080666B /* MTIntroTwoView.m in Sources */,
 				1B3210801BF9D8CE0080666B /* MTAppDelegate.m in Sources */,
+				1B724BB91C00A528008C0E5D /* UINib+MTExtensions.m in Sources */,
 				1B51AAAD1BFB3E4F0040B68E /* UIView+MTExtensions.m in Sources */,
+				1B724BB41C00A37F008C0E5D /* MTPageView.m in Sources */,
 				1B32107D1BF9D8CE0080666B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
