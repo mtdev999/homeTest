@@ -29,7 +29,7 @@
                             <animations/>
                             <state key="normal" title="return"/>
                             <connections>
-                                <action selector="homeButton:" destination="-2" eventType="touchUpInside" id="bog-k3-1f2"/>
+                                <action selector="homeButton:" destination="-2" eventType="touchUpInside" id="Nzf-ZC-ffH"/>
                             </connections>
                         </button>
                     </subviews>

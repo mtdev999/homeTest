@@ -33,17 +33,19 @@
     } 
 }
 
-- (IBAction)returnHome:(id)sender {
-    [self animationPage];
-}
+#pragma mark -
+#pragma mark Public
 
 - (void)animationPage {
-    if (self.visibleView == NO) {
+    if (!self.visibleView) {
         [self animatingPageIn:self.homeView];
     } else {
         [self animatingPageOut:self.homeView];
     }
 }
+
+#pragma mark -
+#pragma mark Private
 
 - (void)animatingPageIn:(UIView *)page {
     [UIView animateWithDuration:0.7

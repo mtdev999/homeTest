@@ -13,16 +13,22 @@ typedef NS_ENUM(NSUInteger, MTPositionPages) {
     MTPositionPagesVisible
 };
 
+typedef NS_ENUM(NSUInteger, MTButtonType) {
+    MTButtonTypeHome,
+    MTButtonTypeAbout,
+    MTButtonTypePhoto,
+    MTButtonTypeContact
+};
+
 @interface MTPageView : UIView
 @property (nonatomic, strong) IBOutlet      UIView      *homeView;
-@property (nonatomic, strong) IBOutlet      UIButton    *returnHome;
 @property (nonatomic, assign) MTPositionPages           position;
+@property (nonatomic, assign) MTButtonType              buttonType;
 
 @property (nonatomic, assign, getter=isVisibleView) BOOL visibleView;
 
 + (instancetype)pageViewWithSuperview:(UIView *)superview;
 
 - (void)animationPage;
-- (IBAction)returnHome:(id)sender;
 
 @end

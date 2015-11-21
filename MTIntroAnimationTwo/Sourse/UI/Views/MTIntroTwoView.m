@@ -17,7 +17,6 @@
 @end
 
 @implementation MTIntroTwoView
-@dynamic visiblePage;
 
 #pragma mark -
 #pragma mark Accessors
@@ -122,7 +121,7 @@
 }
 
 #pragma mark -
-#pragma mark Animating circles Group
+#pragma mark Animating Circles Group
 
 - (void)animateCirclesGroup {
     if (self.animatingCircles) {

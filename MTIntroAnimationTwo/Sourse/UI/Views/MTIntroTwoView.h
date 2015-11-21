@@ -18,26 +18,22 @@ typedef NS_ENUM(NSInteger, MTAnimateDuration) {
 
 @interface MTIntroTwoView : UIView
 
-// buttons
+// circles
+@property (nonatomic, assign) MTAnimateDuration     duration;
 @property (nonatomic, strong) IBOutlet UIView   *circleView1;
 @property (nonatomic, strong) IBOutlet UIView   *circleView2;
 @property (nonatomic, strong) IBOutlet UIView   *circleView3;
 @property (nonatomic, strong) IBOutlet UIView   *circleView4;
 
+// buttons
 @property (nonatomic, strong) IBOutlet UIButton     *homeButton;
 @property (nonatomic, strong) IBOutlet UIButton     *aboutButton;
 @property (nonatomic, strong) IBOutlet UIButton     *photoButton;
 @property (nonatomic, strong) IBOutlet UIButton     *contactButton;
 
-// other
-@property (nonatomic, strong) IBOutlet UITextView   *text;
-@property (nonatomic, strong) IBOutlet UILabel      *textView;
 @property (nonatomic, strong) IBOutlet UIImageView  *imageView;
 
 @property (nonatomic, assign, getter=isAnimatingCircles)    BOOL      animatingCircles;
-@property (nonatomic, assign, getter=isVisiblePage)         BOOL      visiblePage;
-
-@property (nonatomic, assign) MTAnimateDuration     duration;
 
 - (void)animateCircle;
 - (void)showPageView;
