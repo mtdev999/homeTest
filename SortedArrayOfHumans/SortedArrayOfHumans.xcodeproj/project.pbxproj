@@ -50,6 +50,9 @@
 		1B67F1261BF06C9C0035C198 /* MTDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDog.m; sourceTree = "<group>"; };
 		1B67F1281BF06CAD0035C198 /* MTCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCat.h; sourceTree = "<group>"; };
 		1B67F1291BF06CAD0035C198 /* MTCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCat.m; sourceTree = "<group>"; };
+		1BFE5A361C031DD8004DE49A /* MTJumpersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTJumpersProtocol.h; sourceTree = "<group>"; };
+		1BFE5A371C031DD8004DE49A /* MTRunnersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRunnersProtocol.h; sourceTree = "<group>"; };
+		1BFE5A381C031DD8004DE49A /* MTSwimmersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSwimmersProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,7 @@
 		1B1518F01BECA04200F7D40B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1BFE5A351C031DD8004DE49A /* Protocols */,
 				1B67F1211BF06C510035C198 /* MTAnimal */,
 				1B1518F21BECA08100F7D40B /* HumanModel */,
 			);
@@ -157,6 +161,16 @@
 				1B67F1291BF06CAD0035C198 /* MTCat.m */,
 			);
 			path = MTAnimal;
+			sourceTree = "<group>";
+		};
+		1BFE5A351C031DD8004DE49A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1BFE5A361C031DD8004DE49A /* MTJumpersProtocol.h */,
+				1BFE5A371C031DD8004DE49A /* MTRunnersProtocol.h */,
+				1BFE5A381C031DD8004DE49A /* MTSwimmersProtocol.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
