@@ -9,6 +9,7 @@
 #import "MTHuman.h"
 
 @implementation MTHuman
+@synthesize delegate;
 
 #pragma mark -
 #pragma mark Initialization and Deallocation
@@ -40,6 +41,10 @@
 }
 
 #pragma mark -
+#pragma mark Accessors
+
+
+#pragma mark -
 #pragma mark Public
 
 - (void)movingHuman {
@@ -53,5 +58,28 @@
                                                         self.heigtht,
                                                         self.gender ? @"Female":@"Male"];
 }
+
+#pragma mark -
+#pragma mark Protocol
+
+-(void)doRun {
+    SEL sel = @selector(endOfRunning);
+    if (delegate && [delegate respondsToSelector:sel]) {
+        [delegate performSelector:@selector(endOfRunning)];
+    }
+}
+
+-(void)doRunAfter:(float)sec {
+    [self performSelector:@selector(ShowInfoTwo) withObject:nil afterDelay:sec];
+}
+
+-(void)ShowInfoTwo {
+    SEL selector = @selector(endOfRunningTwo:);
+    if (delegate && [delegate respondsToSelector:selector]) {
+        [delegate performSelector:@selector(endOfRunningTwo:) withObject:@"running again"];
+    }
+}
+
+
 
 @end

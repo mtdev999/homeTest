@@ -27,6 +27,7 @@
     
     MTHuman *human = [[MTHuman alloc] initWithName:@"HUMAN" weight:0 height:0];
     MTCycler *cycler = [[MTCycler alloc] initWithName:@"CYCLER" weight:78 height:175];
+    
     MTRunner *runner = [[MTRunner alloc] initWithName:@"RUNNER" weight:69 height:176];
     MTSwimmer *swimmer = [[MTSwimmer alloc] initWithName:@"SWIMMER" weight:86 height:191];
     
@@ -136,6 +137,32 @@
     
     NSLog(@"%@", arrayObjects);
     
+    // ************Task_#7**************
+    
+    
+    for (id object in crow) {
+        MTHuman *humanDel = [MTHuman new];
+        humanDel.delegate = self;
+        if ([object isKindOfClass:[MTHuman class]]) {
+            NSLog(@"Human Class:");
+            MTHuman *people = (MTHuman *)object;
+            if ([people respondsToSelector:@selector(doRun)]) {
+                
+                [object doRun];
+            }
+            NSLog(@"_%@", people.description);
+            [object doRun];
+            [object movingHuman];
+        } else if ([object isKindOfClass:[MTAnimal class]]) {
+            NSLog(@"Animal Class:");
+            MTAnimal *animal = (MTAnimal *)object;
+            NSLog(@"_%@", animal.description);
+            [object movingAnimal];
+        }
+        
+        NSLog(@"__________");
+    }
+    NSLog(@"\n");
     
     return YES;
 }

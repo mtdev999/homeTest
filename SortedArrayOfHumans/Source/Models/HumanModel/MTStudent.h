@@ -8,7 +8,9 @@
 
 #import "MTHuman.h"
 
-@interface MTStudent : MTHuman
+#import "MTRunnersProtocol.h"
+
+@interface MTStudent : MTHuman <MTRunnersProtocol>
 @property (nonatomic, copy) NSString    *univerName;
 
 @end

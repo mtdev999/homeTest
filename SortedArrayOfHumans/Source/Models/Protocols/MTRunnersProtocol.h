@@ -9,16 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @protocol MTRunnersProtocol <NSObject>
-
-@required
-@property (nonatomic, assign)   float   maxSpeed;
-
-- (void)running;
-
 @optional
-@property (nonatomic, assign)   float   maxHightJump;
-
-- (void)swimming;
-- (void)jumping;
+- (void)endOfRunning;
+- (void)endOfRunningTwo:(NSString *)text;
 
 @end
+
+
+

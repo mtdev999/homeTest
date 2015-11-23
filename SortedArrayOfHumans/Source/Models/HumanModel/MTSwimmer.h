@@ -8,6 +8,8 @@
 
 #import "MTHuman.h"
 
-@interface MTSwimmer : MTHuman
+#import "MTSwimmersProtocol.h"
+
+@interface MTSwimmer : MTHuman <MTSwimmersProtocol>
 
 @end
