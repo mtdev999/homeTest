@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B32107D1BF9D8CE0080666B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32107C1BF9D8CE0080666B /* main.m */; };
+		1B3210801BF9D8CE0080666B /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32107F1BF9D8CE0080666B /* MTAppDelegate.m */; };
+		1B3210981BF9D9480080666B /* MTIntroTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3210961BF9D9480080666B /* MTIntroTwoViewController.m */; };
+		1B3210991BF9D9480080666B /* MTIntroTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3210971BF9D9480080666B /* MTIntroTwoViewController.xib */; };
+		1B32109D1BF9D9B20080666B /* MTIntroTwoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32109C1BF9D9B20080666B /* MTIntroTwoView.m */; };
+		1B3210A61BF9DC170080666B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3210A21BF9DC170080666B /* Assets.xcassets */; };
+		1B3210A71BF9DC170080666B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3210A41BF9DC170080666B /* LaunchScreen.storyboard */; };
+		1B51AAAD1BFB3E4F0040B68E /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B51AAAC1BFB3E4F0040B68E /* UIView+MTExtensions.m */; };
+		1B51AAAF1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1B51AAAE1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg */; };
+		1B724BB41C00A37F008C0E5D /* MTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B724BB31C00A37F008C0E5D /* MTPageView.m */; };
+		1B724BB61C00A396008C0E5D /* MTPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B724BB51C00A396008C0E5D /* MTPageView.xib */; };
+		1B724BB91C00A528008C0E5D /* UINib+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B724BB81C00A528008C0E5D /* UINib+MTExtensions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B3210781BF9D8CE0080666B /* MTIntroAnimationTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTIntroAnimationTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B32107C1BF9D8CE0080666B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B32107E1BF9D8CE0080666B /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
+		1B32107F1BF9D8CE0080666B /* MTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAppDelegate.m; sourceTree = "<group>"; };
+		1B32108C1BF9D8CE0080666B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B3210951BF9D9480080666B /* MTIntroTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTIntroTwoViewController.h; sourceTree = "<group>"; };
+		1B3210961BF9D9480080666B /* MTIntroTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTIntroTwoViewController.m; sourceTree = "<group>"; };
+		1B3210971BF9D9480080666B /* MTIntroTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTIntroTwoViewController.xib; sourceTree = "<group>"; };
+		1B32109B1BF9D9B20080666B /* MTIntroTwoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTIntroTwoView.h; sourceTree = "<group>"; };
+		1B32109C1BF9D9B20080666B /* MTIntroTwoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTIntroTwoView.m; sourceTree = "<group>"; };
+		1B3210A21BF9DC170080666B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B3210A51BF9DC170080666B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B51AAAB1BFB3E4F0040B68E /* UIView+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtensions.h"; sourceTree = "<group>"; };
+		1B51AAAC1BFB3E4F0040B68E /* UIView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtensions.m"; sourceTree = "<group>"; };
+		1B51AAAE1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sphynx_cat_kitty_galore.jpg; sourceTree = "<group>"; };
+		1B724BB21C00A37F008C0E5D /* MTPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPageView.h; sourceTree = "<group>"; };
+		1B724BB31C00A37F008C0E5D /* MTPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPageView.m; sourceTree = "<group>"; };
+		1B724BB51C00A396008C0E5D /* MTPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTPageView.xib; sourceTree = "<group>"; };
+		1B724BB71C00A528008C0E5D /* UINib+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINib+MTExtensions.h"; path = "UINib+MTExtensions/UINib+MTExtensions.h"; sourceTree = "<group>"; };
+		1B724BB81C00A528008C0E5D /* UINib+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINib+MTExtensions.m"; path = "UINib+MTExtensions/UINib+MTExtensions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B3210751BF9D8CE0080666B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B32106F1BF9D8CE0080666B = {
+			isa = PBXGroup;
+			children = (
+				1B51AAAA1BFB3E4F0040B68E /* Extensions */,
+				1B3210A11BF9DBD40080666B /* Resource */,
+				1B3210921BF9D8EB0080666B /* Source */,
+				1B32107A1BF9D8CE0080666B /* MTIntroAnimationTwo */,
+				1B3210791BF9D8CE0080666B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B3210791BF9D8CE0080666B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B3210781BF9D8CE0080666B /* MTIntroAnimationTwo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B32107A1BF9D8CE0080666B /* MTIntroAnimationTwo */ = {
+			isa = PBXGroup;
+			children = (
+				1B32107E1BF9D8CE0080666B /* MTAppDelegate.h */,
+				1B32107F1BF9D8CE0080666B /* MTAppDelegate.m */,
+				1B32108C1BF9D8CE0080666B /* Info.plist */,
+				1B32107B1BF9D8CE0080666B /* Supporting Files */,
+			);
+			path = MTIntroAnimationTwo;
+			sourceTree = "<group>";
+		};
+		1B32107B1BF9D8CE0080666B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B32107C1BF9D8CE0080666B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B3210921BF9D8EB0080666B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1B3210931BF9D9150080666B /* Models */,
+				1B3210941BF9D9150080666B /* UI */,
+				1B32109A1BF9D9860080666B /* Views */,
+			);
+			name = Source;
+			path = Sourse;
+			sourceTree = "<group>";
+		};
+		1B3210931BF9D9150080666B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B3210941BF9D9150080666B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1B3210951BF9D9480080666B /* MTIntroTwoViewController.h */,
+				1B3210961BF9D9480080666B /* MTIntroTwoViewController.m */,
+				1B3210971BF9D9480080666B /* MTIntroTwoViewController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1B32109A1BF9D9860080666B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B724BB11C00A36D008C0E5D /* MTPageView */,
+				1B32109B1BF9D9B20080666B /* MTIntroTwoView.h */,
+				1B32109C1BF9D9B20080666B /* MTIntroTwoView.m */,
+			);
+			name = Views;
+			path = UI/Views;
+			sourceTree = "<group>";
+		};
+		1B3210A11BF9DBD40080666B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1B51AAAE1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg */,
+				1B3210A21BF9DC170080666B /* Assets.xcassets */,
+				1B3210A31BF9DC170080666B /* Base.lproj */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		1B3210A31BF9DC170080666B /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				1B3210A41BF9DC170080666B /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		1B51AAAA1BFB3E4F0040B68E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B51AAAB1BFB3E4F0040B68E /* UIView+MTExtensions.h */,
+				1B51AAAC1BFB3E4F0040B68E /* UIView+MTExtensions.m */,
+				1B724BB71C00A528008C0E5D /* UINib+MTExtensions.h */,
+				1B724BB81C00A528008C0E5D /* UINib+MTExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1B724BB11C00A36D008C0E5D /* MTPageView */ = {
+			isa = PBXGroup;
+			children = (
+				1B724BB21C00A37F008C0E5D /* MTPageView.h */,
+				1B724BB31C00A37F008C0E5D /* MTPageView.m */,
+				1B724BB51C00A396008C0E5D /* MTPageView.xib */,
+			);
+			path = MTPageView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B3210771BF9D8CE0080666B /* MTIntroAnimationTwo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B32108F1BF9D8CE0080666B /* Build configuration list for PBXNativeTarget "MTIntroAnimationTwo" */;
+			buildPhases = (
+				1B3210741BF9D8CE0080666B /* Sources */,
+				1B3210751BF9D8CE0080666B /* Frameworks */,
+				1B3210761BF9D8CE0080666B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MTIntroAnimationTwo;
+			productName = MTIntroAnimationTwo;
+			productReference = 1B3210781BF9D8CE0080666B /* MTIntroAnimationTwo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B3210701BF9D8CE0080666B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Mark Tezza";
+				TargetAttributes = {
+					1B3210771BF9D8CE0080666B = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = Z662YN573K;
+					};
+				};
+			};
+			buildConfigurationList = 1B3210731BF9D8CE0080666B /* Build configuration list for PBXProject "MTIntroAnimationTwo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B32106F1BF9D8CE0080666B;
+			productRefGroup = 1B3210791BF9D8CE0080666B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B3210771BF9D8CE0080666B /* MTIntroAnimationTwo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B3210761BF9D8CE0080666B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B51AAAF1BFB41470040B68E /* Sphynx_cat_kitty_galore.jpg in Resources */,
+				1B3210A71BF9DC170080666B /* LaunchScreen.storyboard in Resources */,
+				1B3210A61BF9DC170080666B /* Assets.xcassets in Resources */,
+				1B724BB61C00A396008C0E5D /* MTPageView.xib in Resources */,
+				1B3210991BF9D9480080666B /* MTIntroTwoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B3210741BF9D8CE0080666B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B3210981BF9D9480080666B /* MTIntroTwoViewController.m in Sources */,
+				1B32109D1BF9D9B20080666B /* MTIntroTwoView.m in Sources */,
+				1B3210801BF9D8CE0080666B /* MTAppDelegate.m in Sources */,
+				1B724BB91C00A528008C0E5D /* UINib+MTExtensions.m in Sources */,
+				1B51AAAD1BFB3E4F0040B68E /* UIView+MTExtensions.m in Sources */,
+				1B724BB41C00A37F008C0E5D /* MTPageView.m in Sources */,
+				1B32107D1BF9D8CE0080666B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1B3210A41BF9DC170080666B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B3210A51BF9DC170080666B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B32108D1BF9D8CE0080666B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B32108E1BF9D8CE0080666B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B3210901BF9D8CE0080666B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MTIntroAnimationTwo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MT.MTIntroAnimationTwo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1B3210911BF9D8CE0080666B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MTIntroAnimationTwo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MT.MTIntroAnimationTwo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B3210731BF9D8CE0080666B /* Build configuration list for PBXProject "MTIntroAnimationTwo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B32108D1BF9D8CE0080666B /* Debug */,
+				1B32108E1BF9D8CE0080666B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B32108F1BF9D8CE0080666B /* Build configuration list for PBXNativeTarget "MTIntroAnimationTwo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B3210901BF9D8CE0080666B /* Debug */,
+				1B3210911BF9D8CE0080666B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B3210701BF9D8CE0080666B /* Project object */;
+}
