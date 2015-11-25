@@ -144,29 +144,28 @@
     
     NSLog(@"*****Protocol Tests******");
     for (id object in crow) {
-        if ([object isKindOfClass:[MTHuman class]]) {
-            NSLog(@"Human Class:");
-            
-            if ([object conformsToProtocol:@protocol(MTRunners)]) {
-                [object run];
-            }
-            
-            if ([object conformsToProtocol:@protocol(MTSwimmers)]) {
-                [object swim];
-            } else if (![object conformsToProtocol:@protocol(MTRunners)] &&
-                       ![object conformsToProtocol:@protocol(MTSwimmers)]) {
-                NSLog(@"object 'lazy bitch' ");
-            }
-            
-        } else if ([object isKindOfClass:[MTAnimal class]]) {
-            NSLog(@"Animal Class:");
-            MTAnimal *animal = (MTAnimal *)object;
-            NSLog(@"_%@", animal.description);
-            [object movingAnimal];
+        
+        BOOL result = (id)object ? [object isKindOfClass:[MTHuman class]]
+                                 : [object isKindOfClass:[MTAnimal class]];
+        
+        NSLog(@"%@", result ? @"Human class" : @"Animal class");
+        
+        if ([object conformsToProtocol:@protocol(MTRunners)]) {
+            [object run];
         }
         
+        if ([object conformsToProtocol:@protocol(MTSwimmers)]) {
+            [object swim];
+        } else if (![object conformsToProtocol:@protocol(MTRunners)] &&
+                   ![object conformsToProtocol:@protocol(MTSwimmers)]) {
+        
+            NSLog(@"object 'lazy bitch' ");
+        }
+        
+        NSLog(@"%@", [object description]);
         NSLog(@"__________");
     }
+    
     NSLog(@"\n");
     
     return YES;
