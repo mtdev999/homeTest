@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MTRunnersProtocol.h"
-
-@interface ViewController : UIViewController <MTRunnersProtocol>
+@interface ViewController : UIViewController
 
 
 @end

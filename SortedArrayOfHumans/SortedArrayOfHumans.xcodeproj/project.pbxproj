@@ -38,6 +38,9 @@
 		1B1518F41BECA0A300F7D40B /* MTHuman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHuman.m; sourceTree = "<group>"; };
 		1B1518F61BECA17E00F7D40B /* MTStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStudent.h; sourceTree = "<group>"; };
 		1B1518F71BECA17E00F7D40B /* MTStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStudent.m; sourceTree = "<group>"; };
+		1B32E3401C05CD430083116D /* MTJumpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTJumpers.h; sourceTree = "<group>"; };
+		1B32E3411C05CD510083116D /* MTSwimmers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSwimmers.h; sourceTree = "<group>"; };
+		1B32E3421C05CD5E0083116D /* MTRunners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRunners.h; sourceTree = "<group>"; };
 		1B67F1181BF05FFD0035C198 /* MTCycler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCycler.h; sourceTree = "<group>"; };
 		1B67F1191BF05FFD0035C198 /* MTCycler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCycler.m; sourceTree = "<group>"; };
 		1B67F11B1BF060090035C198 /* MTRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRunner.h; sourceTree = "<group>"; };
@@ -50,9 +53,6 @@
 		1B67F1261BF06C9C0035C198 /* MTDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDog.m; sourceTree = "<group>"; };
 		1B67F1281BF06CAD0035C198 /* MTCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCat.h; sourceTree = "<group>"; };
 		1B67F1291BF06CAD0035C198 /* MTCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCat.m; sourceTree = "<group>"; };
-		1BFE5A361C031DD8004DE49A /* MTJumpersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTJumpersProtocol.h; sourceTree = "<group>"; };
-		1BFE5A371C031DD8004DE49A /* MTRunnersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRunnersProtocol.h; sourceTree = "<group>"; };
-		1BFE5A381C031DD8004DE49A /* MTSwimmersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSwimmersProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +166,9 @@
 		1BFE5A351C031DD8004DE49A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				1BFE5A361C031DD8004DE49A /* MTJumpersProtocol.h */,
-				1BFE5A371C031DD8004DE49A /* MTRunnersProtocol.h */,
-				1BFE5A381C031DD8004DE49A /* MTSwimmersProtocol.h */,
+				1B32E3401C05CD430083116D /* MTJumpers.h */,
+				1B32E3411C05CD510083116D /* MTSwimmers.h */,
+				1B32E3421C05CD5E0083116D /* MTRunners.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

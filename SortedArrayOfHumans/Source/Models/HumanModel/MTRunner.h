@@ -8,8 +8,8 @@
 
 #import "MTHuman.h"
 
-#import "MTRunnersProtocol.h"
+#import "MTRunners.h"
 
-@interface MTRunner : MTHuman <MTRunnersProtocol>
+@interface MTRunner : MTHuman <MTRunners>
 
 @end

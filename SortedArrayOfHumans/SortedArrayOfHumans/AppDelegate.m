@@ -18,7 +18,10 @@
 #import "MTDog.h"
 #import "MTCat.h"
 
-@implementation AppDelegate
+#import "MTSwimmers.h"
+#import "MTRunners.h"
+
+@implementation AppDelegate 
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -30,7 +33,7 @@
     
     MTRunner *runner = [[MTRunner alloc] initWithName:@"RUNNER" weight:69 height:176];
     MTSwimmer *swimmer = [[MTSwimmer alloc] initWithName:@"SWIMMER" weight:86 height:191];
-    
+    swimmer.maxSpeed = 156.f;
     NSArray *humans = @[human, cycler, swimmer, runner];
     
     for (MTHuman *object in humans) {
@@ -139,20 +142,22 @@
     
     // ************Task_#7**************
     
-    
+    NSLog(@"*****Protocol Tests******");
     for (id object in crow) {
-        MTHuman *humanDel = [MTHuman new];
-        humanDel.delegate = self;
         if ([object isKindOfClass:[MTHuman class]]) {
             NSLog(@"Human Class:");
-            MTHuman *people = (MTHuman *)object;
-            if ([people respondsToSelector:@selector(doRun)]) {
-                
-                [object doRun];
+            
+            if ([object conformsToProtocol:@protocol(MTRunners)]) {
+                [object run];
             }
-            NSLog(@"_%@", people.description);
-            [object doRun];
-            [object movingHuman];
+            
+            if ([object conformsToProtocol:@protocol(MTSwimmers)]) {
+                [object swim];
+            } else if (![object conformsToProtocol:@protocol(MTRunners)] &&
+                       ![object conformsToProtocol:@protocol(MTSwimmers)]) {
+                NSLog(@"object 'lazy bitch' ");
+            }
+            
         } else if ([object isKindOfClass:[MTAnimal class]]) {
             NSLog(@"Animal Class:");
             MTAnimal *animal = (MTAnimal *)object;
