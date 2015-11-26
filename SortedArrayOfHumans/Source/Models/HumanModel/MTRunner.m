@@ -9,9 +9,24 @@
 #import "MTRunner.h"
 
 @implementation MTRunner
+@dynamic maxSpeed;
 
 - (void)movingHuman {
     NSLog(@"Runner is moving;");
 }
+
+#pragma mark -
+#pragma mark Runners
+
+- (void)run {
+    if ([self respondsToSelector:@selector(howAreYou)]) {
+        NSLog(@"%@",[self howAreYou]);
+    }
+    NSLog(@"Protocol: Runner is run very fast!!!!");
+}
+
+//- (NSString *)howAreYou {
+//    return [NSString stringWithFormat:@"Runner: I am is OK!"];
+//}
 
 @end

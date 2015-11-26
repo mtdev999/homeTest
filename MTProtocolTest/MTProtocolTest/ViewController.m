@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  SortedArrayOfHumans
+//  MTProtocolTest
 //
-//  Created by Mark Tezza on 06.11.15.
+//  Created by Mark Tezza on 23.11.15.
 //  Copyright © 2015 Mark Tezza. All rights reserved.
 //
 
@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

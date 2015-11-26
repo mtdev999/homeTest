@@ -8,6 +8,6 @@
 
 #import "MTHuman.h"
 
-@interface MTCycler : MTHuman
+@interface MTCycler : MTHuman 
 
 @end

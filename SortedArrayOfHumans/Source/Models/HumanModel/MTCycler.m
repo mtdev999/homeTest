@@ -8,10 +8,22 @@
 
 #import "MTCycler.h"
 
+@interface MTCycler ()
+
+@end
+
 @implementation MTCycler
+
+#pragma mark -
+#pragma mark Human Method
 
 - (void)movingHuman {
     NSLog(@"Cycler is moving;");
 }
+
+#pragma mark -
+#pragma mark Protocol
+
+
 
 @end

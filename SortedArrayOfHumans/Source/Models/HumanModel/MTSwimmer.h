@@ -8,6 +8,9 @@
 
 #import "MTHuman.h"
 
-@interface MTSwimmer : MTHuman
+#import "MTSwimmers.h"
+
+@interface MTSwimmer : MTHuman <MTSwimmers>
+@property (nonatomic, assign) float maxSpeed;
 
 @end

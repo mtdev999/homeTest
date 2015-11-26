@@ -34,6 +34,12 @@
             self.univerName];
 }
 
+- (void)swim {
+    NSLog(@"Student swim once at week");
+}
 
+- (void)run {
+    NSLog(@"Student run once at day");
+}
 
 @end

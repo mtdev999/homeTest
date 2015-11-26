@@ -8,7 +8,10 @@
 
 #import "MTHuman.h"
 
-@interface MTStudent : MTHuman
+#import "MTSwimmers.h"
+#import "MTRunners.h"
+
+@interface MTStudent : MTHuman <MTSwimmers, MTRunners>
 @property (nonatomic, copy) NSString    *univerName;
 
 @end
