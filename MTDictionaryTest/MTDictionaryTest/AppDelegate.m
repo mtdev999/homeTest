@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "MTStudent.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +18,26 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    NSMutableDictionary *dictionary = [NSMutableDictionary new];
+    for (int i = 1; i < 6; i++) {
+        MTStudent *student = [[MTStudent alloc] initWithFirstName:[NSString stringWithFormat:@"firstName%d",i]
+                                                         lastName:[NSString stringWithFormat:@"secondName%d",i]
+                                                        greetings:[NSString stringWithFormat:@"Hello! I am %d student", i]];
+        
+        NSString *stringKey = [NSString stringWithFormat:@"Number %d", i];
+       // NSDictionary *dictionary = [NSDictionary dictionaryWithObject:student forKey:stringKey];
+        [dictionary setObject:student forKey:stringKey];
+    }
+    
+    NSLog(@"%@", dictionary.description);
+    
+    for (NSString *key in dictionary) {
+        NSLog(@"key = %@", key);
+    }
+    
+    NSLog(@"%@", [dictionary objectForKey:@"Number 3"]);
+
     return YES;
 }
 

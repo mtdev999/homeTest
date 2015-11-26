@@ -13,6 +13,7 @@
 		1B05F7191C071C8D0054B0D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F7171C071C8D0054B0D6 /* Main.storyboard */; };
 		1B05F71B1C071C8E0054B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F71A1C071C8E0054B0D6 /* Assets.xcassets */; };
 		1B05F71E1C071C8E0054B0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05F71C1C071C8E0054B0D6 /* LaunchScreen.storyboard */; };
+		1B05F7281C071D3F0054B0D6 /* MTStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B05F7271C071D3F0054B0D6 /* MTStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		1B05F71A1C071C8E0054B0D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B05F71D1C071C8E0054B0D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B05F71F1C071C8E0054B0D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B05F7261C071D3F0054B0D6 /* MTStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStudent.h; sourceTree = "<group>"; };
+		1B05F7271C071D3F0054B0D6 /* MTStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +45,7 @@
 		1B05F7021C071C8D0054B0D6 = {
 			isa = PBXGroup;
 			children = (
+				1B05F7251C071D0C0054B0D6 /* Source */,
 				1B05F70D1C071C8D0054B0D6 /* MTDictionaryTest */,
 				1B05F70C1C071C8D0054B0D6 /* Products */,
 			);
@@ -77,6 +81,15 @@
 				1B05F70F1C071C8D0054B0D6 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B05F7251C071D0C0054B0D6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1B05F7261C071D3F0054B0D6 /* MTStudent.h */,
+				1B05F7271C071D3F0054B0D6 /* MTStudent.m */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +165,7 @@
 			files = (
 				1B05F7161C071C8D0054B0D6 /* ViewController.m in Sources */,
 				1B05F7131C071C8D0054B0D6 /* AppDelegate.m in Sources */,
+				1B05F7281C071D3F0054B0D6 /* MTStudent.m in Sources */,
 				1B05F7101C071C8D0054B0D6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
