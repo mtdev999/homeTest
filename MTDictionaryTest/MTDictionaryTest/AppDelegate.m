@@ -11,6 +11,7 @@
 #import "MTStudent.h"
 
 @interface AppDelegate ()
+@property (nonatomic, strong) MTStudent *student;
 
 @end
 
@@ -19,25 +20,51 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    for (int i = 1; i < 6; i++) {
-        MTStudent *student = [[MTStudent alloc] initWithFirstName:[NSString stringWithFormat:@"firstName%d",i]
-                                                         lastName:[NSString stringWithFormat:@"secondName%d",i]
+    // create massive with objects
+    NSLog(@"*******Pupil Level********");
+    NSMutableArray *array = [NSMutableArray new];
+    for (int i = 1; i < 9; i++) {
+        MTStudent *student = [[MTStudent alloc] initWithFirstName:[NSString stringWithFormat:@"myName%d",i]
+                                                         lastName:[NSString stringWithFormat:@"mysurName%d",i]
                                                         greetings:[NSString stringWithFormat:@"Hello! I am %d student", i]];
-        
-        NSString *stringKey = [NSString stringWithFormat:@"Number %d", i];
-       // NSDictionary *dictionary = [NSDictionary dictionaryWithObject:student forKey:stringKey];
-        [dictionary setObject:student forKey:stringKey];
+        [array addObject:student];
     }
     
-    NSLog(@"%@", dictionary.description);
+    // create dictionary with objects and keys
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:array, @"name", nil];
     
-    for (NSString *key in dictionary) {
-        NSLog(@"key = %@", key);
-    }
+    NSLog(@"%@", dictionary);
     
-    NSLog(@"%@", [dictionary objectForKey:@"Number 3"]);
+    NSLog(@"__________");
+    
+    // level -student
+    NSLog(@"******Student Level*******");
 
+    
+    for (NSString *name in [dictionary allKeys]) {
+        
+        id result = [dictionary objectForKey:name];
+        NSLog(@"%@", result);
+    }
+    
+    NSLog(@"__________");
+    
+    // level -master
+    NSLog(@"******Master Level*******");
+    NSArray *sortedObjects = [array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        
+        if ([obj1 isKindOfClass:[MTStudent class]] && [obj2 isKindOfClass:[MTStudent class]]) {
+            return [[obj2 firstName] compare:[obj1 firstName]];
+            
+        } else if ([obj1 isKindOfClass:[MTStudent class]]) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedDescending;
+        }
+    }];
+    
+    NSLog(@"%@", sortedObjects);
+    
     return YES;
 }
 
