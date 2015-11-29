@@ -41,22 +41,16 @@
     if (self.temperature > 36.6f) {
         [self.delegate patientFeelsBad:self];
     } else {
-        NSLog(@"%@: I am feel good!", self.name);
+        NSLog(@"%@: I am feels good!", self.name);
     }
 }
 
 - (void)takePill {
-    NSLog(@"- %@ receives a pill", self.name);
+    NSLog(@"- %@ takes a pill", self.name);
 }
 
 - (void)makeShot {
-    NSLog(@"- the %@ receives an injection", self.name);
-}
-
-- (BOOL)temeperatureIsDown {
-    BOOL result  = arc4random() % 2;
-    
-    return result;
+    NSLog(@"- %@ makes a shot", self.name);
 }
 
 #pragma mark -

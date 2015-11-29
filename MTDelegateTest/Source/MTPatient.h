@@ -28,8 +28,6 @@
 - (void)takePill;
 - (void)makeShot;
 
-- (BOOL)temeperatureIsDown;
-
 @end
 
 
