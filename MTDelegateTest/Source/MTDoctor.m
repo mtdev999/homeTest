@@ -8,27 +8,59 @@
 
 #import "MTDoctor.h"
 
-@implementation MTDoctor
+@interface MTDoctor ()
 
+- (void)performDoctorProcedureWithPatient:(MTPatient *)patient;
+- (void)checkConditionPatient:(MTPatient *)patient;
+- (void)droppedTemperaturePatient:(MTPatient *)patient;
+
+@end
+
+@implementation MTDoctor
 
 #pragma mark -
 #pragma mark MTPatientDelegate
 
 - (void)patientFeelsBad:(MTPatient *)patient {
-    NSLog(@"%@: I am feels bad!!! My temperature is %.1f",patient.name, patient.temperature);
+    NSLog(@"%@: I am feel bad! My temperature is %.1f",patient.name, patient.temperature);
     
-    if (patient.temperature >37.f && patient.temperature < 39.f) {
-        [patient takePill];
-    } else if (patient.temperature > 39.f) {
-        [patient makeShot];
-    } else {
-        NSLog(@"Patient %@ should rest", patient.name);
-    }
-    
+    [self performDoctorProcedureWithPatient:patient];
 }
 
 - (void)patient:(MTPatient *)patient hasQueation:(NSString *)question {
     NSLog(@"Patient %@ has a question: %@", patient.name, question);
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)performDoctorProcedureWithPatient:(MTPatient *)patient {
+    if (patient.temperature >37.f && patient.temperature < 39.f) {
+        [patient takePill];
+        [self checkConditionPatient:patient];
+        
+    } else if (patient.temperature > 39.f) {
+        [self patient:patient hasQueation:@"How much I have left to live?"];
+        [patient makeShot];
+        [self checkConditionPatient:patient];
+        
+    } else {
+        NSLog(@"Patient %@ should rest", patient.name);
+    }
+}
+
+- (void)checkConditionPatient:(MTPatient *)patient {
+    if ( [patient temeperatureIsDown] == YES) {
+        return NSLog(@"- %@ feels good already", patient.name);
+    } else {
+        [self droppedTemperaturePatient:patient];
+        [self patientFeelsBad:patient];
+    }
+}
+
+- (void)droppedTemperaturePatient:(MTPatient *)patient {
+    float i = 0.5f;
+    patient.temperature -= i;
 }
 
 @end
