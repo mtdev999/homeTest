@@ -22,7 +22,7 @@
 @property (nonatomic, assign)   float       temperature;
 @property (nonatomic, weak)     id <MTPatientDelegate> delegate;
 
-+ (MTPatient *)patientIsCame;
++ (MTPatient *)patientCame;
 
 - (void)howAreYou;
 - (void)takePill;

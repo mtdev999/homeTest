@@ -12,7 +12,7 @@
 
 @implementation MTPatient
 
-+ (MTPatient *)patientIsCame {
++ (MTPatient *)patientCame {
     return [[self alloc] init];
 }
 

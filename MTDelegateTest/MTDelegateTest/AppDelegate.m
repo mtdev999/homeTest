@@ -25,7 +25,7 @@
     MTDoctor *doctor = [[MTDoctor alloc] init];
     
     for (int i = 0; i < 5; i++) {
-        MTPatient *patient = [MTPatient patientIsCame];
+        MTPatient *patient = [MTPatient patientCame];
         
         patient.name = [NSString stringWithFormat:@"patient%d", i];
         patient.delegate = doctor;

@@ -28,7 +28,7 @@
 }
 
 - (void)patient:(MTPatient *)patient hasQueation:(NSString *)question {
-    NSLog(@"Patient %@ has a question: %@", patient.name, question);
+    NSLog(@"- %@ has a question: %@", patient.name, question);
 }
 
 #pragma mark -
