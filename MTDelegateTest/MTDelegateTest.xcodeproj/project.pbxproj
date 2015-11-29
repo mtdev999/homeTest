@@ -13,6 +13,9 @@
 		1B84C3791C09F25F0050B8C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B84C3771C09F25F0050B8C1 /* Main.storyboard */; };
 		1B84C37B1C09F25F0050B8C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B84C37A1C09F25F0050B8C1 /* Assets.xcassets */; };
 		1B84C37E1C09F25F0050B8C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B84C37C1C09F25F0050B8C1 /* LaunchScreen.storyboard */; };
+		1B84C38E1C09F7210050B8C1 /* MTPatient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84C38D1C09F7210050B8C1 /* MTPatient.m */; };
+		1B84C3931C09FCBA0050B8C1 /* MTDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84C3921C09FCBA0050B8C1 /* MTDoctor.m */; };
+		1B84C3971C0AADBA0050B8C1 /* MTRandomValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84C3951C0AADBA0050B8C1 /* MTRandomValues.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		1B84C37A1C09F25F0050B8C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B84C37D1C09F25F0050B8C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B84C37F1C09F25F0050B8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B84C38C1C09F7210050B8C1 /* MTPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPatient.h; sourceTree = "<group>"; };
+		1B84C38D1C09F7210050B8C1 /* MTPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPatient.m; sourceTree = "<group>"; };
+		1B84C3911C09FCBA0050B8C1 /* MTDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDoctor.h; sourceTree = "<group>"; };
+		1B84C3921C09FCBA0050B8C1 /* MTDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDoctor.m; sourceTree = "<group>"; };
+		1B84C3951C0AADBA0050B8C1 /* MTRandomValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRandomValues.m; sourceTree = "<group>"; };
+		1B84C3961C0AADBA0050B8C1 /* MTRandomValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRandomValues.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +51,8 @@
 		1B84C3621C09F25F0050B8C1 = {
 			isa = PBXGroup;
 			children = (
+				1B84C3941C0AAD8D0050B8C1 /* Extensions */,
+				1B84C3851C09F2FB0050B8C1 /* Source */,
 				1B84C36D1C09F25F0050B8C1 /* MTDelegateTest */,
 				1B84C36C1C09F25F0050B8C1 /* Products */,
 			);
@@ -77,6 +88,26 @@
 				1B84C36F1C09F25F0050B8C1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B84C3851C09F2FB0050B8C1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1B84C3911C09FCBA0050B8C1 /* MTDoctor.h */,
+				1B84C3921C09FCBA0050B8C1 /* MTDoctor.m */,
+				1B84C38C1C09F7210050B8C1 /* MTPatient.h */,
+				1B84C38D1C09F7210050B8C1 /* MTPatient.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1B84C3941C0AAD8D0050B8C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B84C3961C0AADBA0050B8C1 /* MTRandomValues.h */,
+				1B84C3951C0AADBA0050B8C1 /* MTRandomValues.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B84C3971C0AADBA0050B8C1 /* MTRandomValues.m in Sources */,
+				1B84C3931C09FCBA0050B8C1 /* MTDoctor.m in Sources */,
+				1B84C38E1C09F7210050B8C1 /* MTPatient.m in Sources */,
 				1B84C3761C09F25F0050B8C1 /* ViewController.m in Sources */,
 				1B84C3731C09F25F0050B8C1 /* AppDelegate.m in Sources */,
 				1B84C3701C09F25F0050B8C1 /* main.m in Sources */,

@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "MTPatient.h"
+#import "MTDoctor.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +19,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    NSMutableArray *patients = [NSMutableArray new];
+    MTDoctor *doctor = [[MTDoctor alloc] init];
+    
+    for (int i = 0; i < 5; i++) {
+        MTPatient *patient = [MTPatient patientIsCame];
+        patient.name = [NSString stringWithFormat:@"patient%d", i];
+        patient.delegate = doctor;
+        [patients addObject:patient];
+    }
+    
+    for (MTPatient *object in patients) {
+        NSLog(@"Doctor: %@, how are you?", object.name);
+        [object howAreYou];
+        NSLog(@"\n");
+    }
+    
     return YES;
 }
 
