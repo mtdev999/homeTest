@@ -10,8 +10,11 @@
 
 #import "MTPatient.h"
 #import "MTDoctor.h"
+#import "MTBadDoctor.h"
 
 @interface AppDelegate ()
+@property (nonatomic, strong)   NSMutableArray  *mutablePatients;
+@property (nonatomic, strong)   MTBadDoctor     *doctorKozlina;
 
 @end
 
@@ -21,9 +24,31 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     NSLog(@"********Level Pupil**********");
-    NSMutableArray *patients = [NSMutableArray new];
+    
     MTDoctor *doctor = [[MTDoctor alloc] init];
     
+    [self createNewPatientsWithDoctor:doctor];
+    [self performProcedureWithPatients];
+    
+   
+    NSLog(@"********Level Student**********");
+    
+    MTBadDoctor *friend1 = [[MTBadDoctor alloc] init];
+    MTBadDoctor *friend2 = [[MTBadDoctor alloc] init];
+
+    [self createNewPatientsWithDoctor:friend1];
+    [self performProcedureWithPatients];
+    
+    [self createNewPatientsWithDoctor:friend2];
+    [self performProcedureWithPatients];
+    
+    NSLog(@"********Level Master**********");
+    
+    return YES;
+}
+
+- (void)createNewPatientsWithDoctor:(id)doctor {
+    NSMutableArray *patients = [NSMutableArray new];
     for (int i = 0; i < 5; i++) {
         MTPatient *patient = [MTPatient patientCame];
         
@@ -31,17 +56,16 @@
         patient.delegate = doctor;
         
         [patients addObject:patient];
+        self.mutablePatients = patients;
     }
-    
-    for (MTPatient *object in patients) {
+}
+
+- (void)performProcedureWithPatients {
+    for (MTPatient *object in self.mutablePatients) {
         NSLog(@"Doctor: %@, how are you?", object.name);
         [object howAreYou];
         NSLog(@"\n");
     }
-    
-    NSLog(@"********Level Student**********");
-    
-    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

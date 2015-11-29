@@ -59,6 +59,12 @@
     return result;
 }
 
+- (BOOL)becameWorse {
+    BOOL result  = arc4random() % 2;
+    
+    return result;
+}
+
 #pragma mark -
 #pragma mark Private 
 

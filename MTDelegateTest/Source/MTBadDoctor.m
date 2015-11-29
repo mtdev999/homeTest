@@ -1,22 +1,28 @@
 //
-//  MTDoctor.m
+//  MTBadDoctor.m
 //  MTDelegateTest
 //
-//  Created by Mark Tezza on 28.11.15.
+//  Created by Mark Tezza on 29.11.15.
 //  Copyright © 2015 Mark Tezza. All rights reserved.
 //
 
-#import "MTDoctor.h"
+#import "MTBadDoctor.h"
 
-@interface MTDoctor ()
+#import "MTPatient.h"
 
-- (void)performDoctorProcedureWithPatient:(MTPatient *)patient;
-- (void)checkConditionPatient:(MTPatient *)patient;
-- (void)droppedTemperaturePatient:(MTPatient *)patient;
+@implementation MTBadDoctor
 
-@end
+#pragma mark -
+#pragma mark
 
-@implementation MTDoctor
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.name = _name;
+    }
+    return self;
+}
 
 #pragma mark -
 #pragma mark MTPatientDelegate
@@ -35,14 +41,14 @@
 #pragma mark Private
 
 - (void)performDoctorProcedureWithPatient:(MTPatient *)patient {
-    if (patient.temperature >37.f && patient.temperature < 39.f) {
+    if (patient.temperature >38.f && patient.temperature < 41.f) {
         [patient takePill];
         [self checkConditionPatient:patient];
         
-    } else if (patient.temperature > 39.f) {
+    } else if (patient.temperature > 41.f) {
         [self patient:patient hasQueation:@"How much I have left to live?"];
-        [patient makeShot];
-        [self checkConditionPatient:patient];
+        NSLog(@"Doctor%@: I can't help you, sorry", self);
+        //[self checkConditionPatient:patient];
         
     } else {
         NSLog(@"Patient %@ should rest", patient.name);
@@ -53,14 +59,11 @@
     if ( [patient becameWorse] == YES) {
         return NSLog(@"- %@ feels good already", patient.name);
     } else {
-        [self droppedTemperaturePatient:patient];
+        
         [self patientFeelsBad:patient];
     }
 }
 
-- (void)droppedTemperaturePatient:(MTPatient *)patient {
-    float i = 0.5f;
-    patient.temperature -= i;
-}
+
 
 @end
