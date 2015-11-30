@@ -8,6 +8,10 @@
 
 #import "MTDoctor.h"
 
+static float const kMTMinValue = 37.0f;
+static float const kMTMaxValue = 39.0f;
+static float const kMTStepValue = 0.5f;
+
 @interface MTDoctor ()
 
 - (void)performDoctorProcedureWithPatient:(MTPatient *)patient;
@@ -35,11 +39,11 @@
 #pragma mark Private
 
 - (void)performDoctorProcedureWithPatient:(MTPatient *)patient {
-    if (patient.temperature >37.f && patient.temperature < 39.f) {
+    if (patient.temperature >kMTMinValue && patient.temperature < kMTMaxValue) {
         [patient takePill];
         [self checkConditionPatient:patient];
         
-    } else if (patient.temperature > 39.f) {
+    } else if (patient.temperature > kMTMaxValue) {
         [self patient:patient hasQueation:@"How much I have left to live?"];
         [patient makeShot];
         [self checkConditionPatient:patient];
@@ -59,8 +63,7 @@
 }
 
 - (void)droppedTemperaturePatient:(MTPatient *)patient {
-    float i = 0.5f;
-    patient.temperature -= i;
+    patient.temperature -= kMTStepValue;
 }
 
 @end

@@ -10,7 +10,13 @@
 
 #import "MTRandomValues.h"
 
+static float const kMTMinValue = 36.6f;
+static float const kMTMaxValue = 42.0f;
+
 @implementation MTPatient
+
+#pragma mark -
+#pragma mark Class Method
 
 + (MTPatient *)patientCame {
     return [[self alloc] init];
@@ -23,12 +29,11 @@
     self.name = nil;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
-    
         self.temperature = [self temperatureRandom];
+        self.sourcePain = [self whatYouComplain];
     }
     
     return self;
@@ -38,7 +43,7 @@
 #pragma mark Public
 
 - (void)howAreYou {
-    if (self.temperature > 36.6f) {
+    if (self.temperature > kMTMinValue) {
         [self.delegate patientFeelsBad:self];
     } else {
         NSLog(@"%@: I am feel good!", self.name);
@@ -53,28 +58,24 @@
     NSLog(@"- the %@ receives an injection", self.name);
 }
 
-- (BOOL)temeperatureIsDown {
-    BOOL result  = arc4random() % 2;
-    
-    return result;
-}
-
 - (BOOL)becameWorse {
     BOOL result  = arc4random() % 2;
     
     return result;
 }
 
+- (NSUInteger)whatYouComplain {
+    return (self.sourcePain + 1) % MTSourceOfPainCount;
+}
+
 #pragma mark -
 #pragma mark Private 
 
 - (float)temperatureRandom {
+    float addedValue = MTRandomDouble();
+    float result = (float)MTRandomIntegerInRange(MTMakeRange(kMTMinValue, kMTMaxValue));
     
-    float i = MTRandomDouble();
-    
-    float result = (float)MTRandomIntegerInRange(MTMakeRange((float)36.6, 41));
-    
-    return result + i;
+    return result + addedValue;
 }
 
 @end

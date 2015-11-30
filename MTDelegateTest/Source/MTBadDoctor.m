@@ -13,18 +13,6 @@
 @implementation MTBadDoctor
 
 #pragma mark -
-#pragma mark
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.name = _name;
-    }
-    return self;
-}
-
-#pragma mark -
 #pragma mark MTPatientDelegate
 
 - (void)patientFeelsBad:(MTPatient *)patient {
@@ -48,8 +36,6 @@
     } else if (patient.temperature > 41.f) {
         [self patient:patient hasQueation:@"How much I have left to live?"];
         NSLog(@"Doctor%@: I can't help you, sorry", self);
-        //[self checkConditionPatient:patient];
-        
     } else {
         NSLog(@"Patient %@ should rest", patient.name);
     }
@@ -59,11 +45,8 @@
     if ( [patient becameWorse] == YES) {
         return NSLog(@"- %@ feels good already", patient.name);
     } else {
-        
         [self patientFeelsBad:patient];
     }
 }
-
-
 
 @end

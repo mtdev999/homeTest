@@ -11,6 +11,5 @@
 #import "MTPatient.h"
 
 @interface MTBadDoctor : NSObject <MTPatientDelegate>
-@property (nonatomic, copy) NSString    *name;
 
 @end

@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, MTSourceOfPain) {
+    MTSourceOfPainHead,
+    MTSourceOfPainBelly,
+    MTSourceOfPainNose,
+    MTSourceOfPainThroat,
+    MTSourceOfPainCount
+};
+
 @class MTPatient;
 
 @protocol MTPatientDelegate <NSObject>
@@ -21,10 +29,12 @@
 @property (nonatomic, copy)     NSString    *name;
 @property (nonatomic, assign)   float       temperature;
 @property (nonatomic, weak)     id <MTPatientDelegate> delegate;
+@property (nonatomic, assign)   MTSourceOfPain  sourcePain;
 
 + (MTPatient *)patientCame;
 
 - (void)howAreYou;
+- (NSUInteger)whatYouComplain;
 - (void)takePill;
 - (void)makeShot;
 
