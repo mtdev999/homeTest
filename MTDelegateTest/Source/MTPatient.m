@@ -99,40 +99,40 @@ static float const kMTMaxValue = 42.0f;
     return result + addedValue;
 }
 
-//- (NSString *)checkSourceOfPain:(MTSourceOfPain)source patient:(MTPatient *)patient {
-//    NSString *result = nil;
-//    
-//    switch (source) {
-//        case MTSourceOfPainHead:
-//            result = @"I have a headache";
-//            [patient takePillForHead];
-//            break;
-//            
-//        case MTSourceOfPainBelly:
-//            result = @"I have a stomach ache";
-//            [patient takePillForBally];
-//            break;
-//            
-//        case MTSourceOfPainNose:
-//            result = @"I have a sore nose";
-//            [patient takeNasalDrops];
-//            break;
-//            
-//        case MTSourceOfPainThroat:
-//            result = @"I have a sore throat";
-//            [patient takePowder];
-//            break;
-//        case MTSourceOfPainNoPain:
-//            result = @"I have no pain)))))";
-//            break;
-//            
-//        default:
-//            break;
-//    }
-//    
-//    self.sourcePain = source;
-//    
-//    return result;
-//}
+- (NSString *)checkSourceOfPain:(MTSourceOfPain)source patient:(MTPatient *)patient {
+    NSString *result = nil;
+    
+    switch (source) {
+        case MTSourceOfPainHead:
+            result = @"I have a headache";
+            [patient takePillForHead];
+            break;
+            
+        case MTSourceOfPainBelly:
+            result = @"I have a stomach ache";
+            [patient takePillForBally];
+            break;
+            
+        case MTSourceOfPainNose:
+            result = @"I have a sore nose";
+            [patient takeNasalDrops];
+            break;
+            
+        case MTSourceOfPainThroat:
+            result = @"I have a sore throat";
+            [patient takePowder];
+            break;
+        case MTSourceOfPainNoPain:
+            result = @"I have no pain)))))";
+            break;
+            
+        default:
+            break;
+    }
+    
+    self.sourcePain = source;
+    
+    return result;
+}
 
 @end

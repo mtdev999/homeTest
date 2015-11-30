@@ -43,6 +43,8 @@ typedef NS_ENUM(NSUInteger, MTSourceOfPain) {
 
 - (BOOL)becameWorse;
 
+- (NSString *)checkSourceOfPain:(MTSourceOfPain)source patient:(MTPatient *)patient;
+
 @end
 
 
