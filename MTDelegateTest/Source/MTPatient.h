@@ -13,14 +13,14 @@ typedef NS_ENUM(NSUInteger, MTSourceOfPain) {
     MTSourceOfPainBelly,
     MTSourceOfPainNose,
     MTSourceOfPainThroat,
-    MTSourceOfPainCount
+    MTSourceOfPainNoPain
 };
 
 @class MTPatient;
 
 @protocol MTPatientDelegate <NSObject>
 
-- (void)patientFeelsBad:(MTPatient *)patient;
+- (void)patientFeelsBad:(MTPatient *)patient sourceOfPain:(MTSourceOfPain)source;
 - (void)patient:(MTPatient *)patient hasQueation:(NSString *)question;
 
 @end
@@ -34,8 +34,11 @@ typedef NS_ENUM(NSUInteger, MTSourceOfPain) {
 + (MTPatient *)patientCame;
 
 - (void)howAreYou;
-- (NSUInteger)whatYouComplain;
 - (void)takePill;
+- (void)takePillForHead;
+- (void)takePillForBally;
+- (void)takePowder;
+- (void)takeNasalDrops;
 - (void)makeShot;
 
 - (BOOL)becameWorse;

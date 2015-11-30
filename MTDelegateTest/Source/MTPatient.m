@@ -33,18 +33,27 @@ static float const kMTMaxValue = 42.0f;
     self = [super init];
     if (self) {
         self.temperature = [self temperatureRandom];
-        self.sourcePain = [self whatYouComplain];
+        self.sourcePain = [self sourceOfPain];
     }
     
     return self;
+}
+
+- (NSUInteger)sourceOfPain {
+    MTSourceOfPain source = self.sourcePain;
+    source = arc4random() % 5;
+    NSLog(@"%lu", (unsigned long)source);
+    self.sourcePain = source;
+    
+    return source;
 }
 
 #pragma mark -
 #pragma mark Public
 
 - (void)howAreYou {
-    if (self.temperature > kMTMinValue) {
-        [self.delegate patientFeelsBad:self];
+    if (self.temperature > kMTMinValue || self.sourcePain != 0) {
+        [self.delegate patientFeelsBad:self sourceOfPain:self.sourcePain];
     } else {
         NSLog(@"%@: I am feel good!", self.name);
     }
@@ -52,6 +61,22 @@ static float const kMTMaxValue = 42.0f;
 
 - (void)takePill {
     NSLog(@"- %@ receives a pill", self.name);
+}
+
+- (void)takePillForHead {
+     NSLog(@"- %@ receives a pill for Head", self.name);
+}
+
+- (void)takePillForBally {
+    NSLog(@"- %@ receives a pill for Bally", self.name);
+}
+
+- (void)takePowder {
+    NSLog(@"- %@ receives powder for throat", self.name);
+}
+
+- (void)takeNasalDrops {
+    NSLog(@"- %@ receives nasal drops", self.name);
 }
 
 - (void)makeShot {
@@ -64,10 +89,6 @@ static float const kMTMaxValue = 42.0f;
     return result;
 }
 
-- (NSUInteger)whatYouComplain {
-    return (self.sourcePain + 1) % MTSourceOfPainCount;
-}
-
 #pragma mark -
 #pragma mark Private 
 
@@ -77,5 +98,41 @@ static float const kMTMaxValue = 42.0f;
     
     return result + addedValue;
 }
+
+//- (NSString *)checkSourceOfPain:(MTSourceOfPain)source patient:(MTPatient *)patient {
+//    NSString *result = nil;
+//    
+//    switch (source) {
+//        case MTSourceOfPainHead:
+//            result = @"I have a headache";
+//            [patient takePillForHead];
+//            break;
+//            
+//        case MTSourceOfPainBelly:
+//            result = @"I have a stomach ache";
+//            [patient takePillForBally];
+//            break;
+//            
+//        case MTSourceOfPainNose:
+//            result = @"I have a sore nose";
+//            [patient takeNasalDrops];
+//            break;
+//            
+//        case MTSourceOfPainThroat:
+//            result = @"I have a sore throat";
+//            [patient takePowder];
+//            break;
+//        case MTSourceOfPainNoPain:
+//            result = @"I have no pain)))))";
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    
+//    self.sourcePain = source;
+//    
+//    return result;
+//}
 
 @end

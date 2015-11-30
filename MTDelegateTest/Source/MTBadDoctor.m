@@ -15,10 +15,14 @@
 #pragma mark -
 #pragma mark MTPatientDelegate
 
-- (void)patientFeelsBad:(MTPatient *)patient {
-    NSLog(@"%@: I am feel bad! My temperature is %.1f",patient.name, patient.temperature);
+//- (void)patientFeelsBad:(MTPatient *)patient {
+//    NSLog(@"%@: I am feel bad! My temperature is %.1f",patient.name, patient.temperature);
+//    
+//    [self performDoctorProcedureWithPatient:patient];
+//}
+
+- (void)patientFeelsBad:(MTPatient *)patient sourceOfPain:(MTSourceOfPain)source {
     
-    [self performDoctorProcedureWithPatient:patient];
 }
 
 - (void)patient:(MTPatient *)patient hasQueation:(NSString *)question {
@@ -45,7 +49,7 @@
     if ( [patient becameWorse] == YES) {
         return NSLog(@"- %@ feels good already", patient.name);
     } else {
-        [self patientFeelsBad:patient];
+        [self patientFeelsBad:patient sourceOfPain:0];
     }
 }
 
