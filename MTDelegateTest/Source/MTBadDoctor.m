@@ -53,37 +53,58 @@ static float const kMTMaxValue = 40.0f;
 }
 
 - (void)giveReport {
-    NSLog(@"bad doctor:");
+    NSLog(@"Bad doctor report:");
     NSLog(@"1. Patients with a headache:");
-    for (MTPatient *object in self.report.head) {
-        NSLog(@"Patient name: %@", object.name);
-        NSLog(@"Patient temperature: %.1f", object.temperature);
-        NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+    if (self.report.head.count > 0) {
+        for (MTPatient *object in self.report.head) {
+            NSLog(@"Patient name: %@", object.name);
+            NSLog(@"Patient temperature: %.1f", object.temperature);
+            NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+        }
+    } else {
+        NSLog(@"Patients with such symptoms haven't been reported");
     }
+    
     NSLog(@"\n");
     NSLog(@"2. Patients with a stomach ache:");
-    for (MTPatient *object in self.report.bally) {
-        NSLog(@"Patient name: %@", object.name);
-        NSLog(@"Patient temperature: %.1f", object.temperature);
-        NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+    if (self.report.bally.count > 0) {
+        for (MTPatient *object in self.report.bally) {
+            NSLog(@"Patient name: %@", object.name);
+            NSLog(@"Patient temperature: %.1f", object.temperature);
+            NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+        }
+    } else {
+        NSLog(@"Patients with such symptoms haven't been reported");
     }
+    
     NSLog(@"\n");
     NSLog(@"3. Patients with a sore nose:");
-    for (MTPatient *object in self.report.nose) {
-        NSLog(@"Patient name: %@", object.name);
-        NSLog(@"Patient temperature: %.1f", object.temperature);
-        NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+    
+    if (self.report.nose.count > 0) {
+        for (MTPatient *object in self.report.nose) {
+            NSLog(@"Patient name: %@", object.name);
+            NSLog(@"Patient temperature: %.1f", object.temperature);
+            NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+        }
+    } else {
+        NSLog(@"Patients with such symptoms haven't been reported");
     }
+    
     NSLog(@"\n");
     NSLog(@"4. Patients with a sore throat:");
-    for (MTPatient *object in self.report.throat) {
-        NSLog(@"Patient name: %@", object.name);
-        NSLog(@"Patient temperature: %.1f", object.temperature);
-        NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+    
+    if (self.report.throat.count > 0) {
+        for (MTPatient *object in self.report.throat) {
+            NSLog(@"Patient name: %@", object.name);
+            NSLog(@"Patient temperature: %.1f", object.temperature);
+            NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+        }
+    } else {
+        NSLog(@"Patients with such symptoms haven't been reported");
     }
+    
     NSLog(@"\n");
 }
-
 #pragma mark -
 #pragma mark Private
 

@@ -44,8 +44,7 @@
 
 @interface AppDelegate ()
 @property (nonatomic, strong)   NSMutableArray  *mutablePatients;
-@property (nonatomic, strong)   MTBadDoctor     *doctorKozlina;
-@property (nonatomic, strong)   MTPatient        *patient;
+@property (nonatomic, strong)   MTPatient       *patient;
 
 @end
 
