@@ -8,13 +8,14 @@
 
 #import "MTDoctor.h"
 
+#import "MTMedicalRaport.h"
+
 static float const kMTMinValue = 37.0f;
 static float const kMTMaxValue = 39.0f;
 static float const kMTStepValue = 0.5f;
 
 @interface MTDoctor ()
 
-- (void)performDoctorProcedureWithPatient:(MTPatient *)patient sourceOfPain:(MTSourceOfPain)source;
 - (void)checkConditionPatient:(MTPatient *)patient;
 - (void)droppedTemperaturePatient:(MTPatient *)patient;
 
@@ -23,29 +24,30 @@ static float const kMTStepValue = 0.5f;
 @implementation MTDoctor
 
 #pragma mark -
-#pragma mark MTPatientDelegate
+#pragma mark Initializations and Deallocations
 
-- (void)patientFeelsBad:(MTPatient *)patient sourceOfPain:(MTSourceOfPain)source {
-    NSLog(@"%@: I am feel bad! My temperature is %.1f - %@",patient.name, patient.temperature, [patient checkSourceOfPain:source patient:patient]);
-    [self performDoctorProcedureWithPatient:patient sourceOfPain:source];
-}
-
-- (void)patient:(MTPatient *)patient hasQueation:(NSString *)question {
-    NSLog(@"- %@ has a question: %@", patient.name, question);
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.raport = [MTMedicalRaport new];
+    }
+    
+    return self;
 }
 
 #pragma mark -
-#pragma mark Private
+#pragma mark MTPatientDelegate
 
-- (void)performDoctorProcedureWithPatient:(MTPatient *)patient sourceOfPain:(MTSourceOfPain)source {
+- (void)patientFeelsBad:(MTPatient *)patient sourceOfPain:(MTSourceOfPain)source {
+    [self.raport addObject:patient source:source];
     if (patient.temperature >kMTMinValue && patient.temperature < kMTMaxValue) {
         [patient takePill];
-        [patient checkSourceOfPain:source patient:patient];
+        [patient performProcedureWithSourceOfPain:source];
         [self checkConditionPatient:patient];
         
     } else if (patient.temperature > kMTMaxValue) {
         [patient makeShot];
-        [patient checkSourceOfPain:source patient:patient];
+        [patient performProcedureWithSourceOfPain:source];
         [self checkConditionPatient:patient];
         
     } else {
@@ -53,9 +55,25 @@ static float const kMTStepValue = 0.5f;
     }
 }
 
+- (void)patient:(MTPatient *)patient hasQueation:(NSString *)question {
+    NSLog(@"- %@ has a question: %@", patient.name, question);
+}
+
+- (void)giveRaport {
+    NSLog(@"Patients with headache: %@", self.raport.head);
+    NSLog(@"Patients with a stomach ache: %@", self.raport.bally);
+    NSLog(@"Patients with a sore nose: %@", self.raport.nose);
+    NSLog(@"Patients with a sore throat: %@", self.raport.throat);
+}
+
+#pragma mark -
+#pragma mark Private
+
 - (void)checkConditionPatient:(MTPatient *)patient {
-    if ( [patient becameWorse] == YES) {
+    if ( [patient becameWorse] == NO) {
+        self.countHelpedPatients += 1;
         return NSLog(@"- %@ feels good already", patient.name);
+        
     } else {
         [self droppedTemperaturePatient:patient];
         [self patientFeelsBad:patient sourceOfPain:0];

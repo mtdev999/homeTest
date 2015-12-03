@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MTMedicalRaport.h"
 #import "MTPatient.h"
 
-@interface MTDoctor : NSObject <MTPatientDelegate>
+@interface MTDoctor : MTMedicalRaport <MTPatientDelegate>
+@property (nonatomic, strong)   MTMedicalRaport     *raport;
+
+- (void)giveRaport;
 
 @end

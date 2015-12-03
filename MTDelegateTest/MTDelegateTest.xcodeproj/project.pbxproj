@@ -17,6 +17,7 @@
 		1B84C3931C09FCBA0050B8C1 /* MTDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84C3921C09FCBA0050B8C1 /* MTDoctor.m */; };
 		1B84C3971C0AADBA0050B8C1 /* MTRandomValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84C3951C0AADBA0050B8C1 /* MTRandomValues.m */; };
 		1B84C39A1C0ADE550050B8C1 /* MTBadDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84C3991C0ADE550050B8C1 /* MTBadDoctor.m */; };
+		1B84C39D1C0D8EF30050B8C1 /* MTMedicalRaport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84C39C1C0D8EF30050B8C1 /* MTMedicalRaport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		1B84C3961C0AADBA0050B8C1 /* MTRandomValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRandomValues.h; sourceTree = "<group>"; };
 		1B84C3981C0ADE550050B8C1 /* MTBadDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBadDoctor.h; sourceTree = "<group>"; };
 		1B84C3991C0ADE550050B8C1 /* MTBadDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBadDoctor.m; sourceTree = "<group>"; };
+		1B84C39B1C0D8EF30050B8C1 /* MTMedicalRaport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMedicalRaport.h; sourceTree = "<group>"; };
+		1B84C39C1C0D8EF30050B8C1 /* MTMedicalRaport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMedicalRaport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				1B84C3921C09FCBA0050B8C1 /* MTDoctor.m */,
 				1B84C38C1C09F7210050B8C1 /* MTPatient.h */,
 				1B84C38D1C09F7210050B8C1 /* MTPatient.m */,
+				1B84C39B1C0D8EF30050B8C1 /* MTMedicalRaport.h */,
+				1B84C39C1C0D8EF30050B8C1 /* MTMedicalRaport.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				1B84C3931C09FCBA0050B8C1 /* MTDoctor.m in Sources */,
 				1B84C38E1C09F7210050B8C1 /* MTPatient.m in Sources */,
 				1B84C3761C09F25F0050B8C1 /* ViewController.m in Sources */,
+				1B84C39D1C0D8EF30050B8C1 /* MTMedicalRaport.m in Sources */,
 				1B84C3731C09F25F0050B8C1 /* AppDelegate.m in Sources */,
 				1B84C39A1C0ADE550050B8C1 /* MTBadDoctor.m in Sources */,
 				1B84C3701C09F25F0050B8C1 /* main.m in Sources */,
@@ -339,6 +345,7 @@
 				1B84C3841C09F25F0050B8C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

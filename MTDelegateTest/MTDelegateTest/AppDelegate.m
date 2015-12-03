@@ -45,35 +45,36 @@
 @interface AppDelegate ()
 @property (nonatomic, strong)   NSMutableArray  *mutablePatients;
 @property (nonatomic, strong)   MTBadDoctor     *doctorKozlina;
+@property (nonatomic, strong)   MTPatient        *patient;
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     NSLog(@"********Level Pupil**********");
-    
     MTDoctor *doctor = [[MTDoctor alloc] init];
     
     [self createNewPatientsWithDoctor:doctor];
     [self performProcedureWithPatients];
-    
-   
-//    NSLog(@"********Level Student**********");
-//    
-//    MTBadDoctor *friend1 = [[MTBadDoctor alloc] init];
-//    MTBadDoctor *friend2 = [[MTBadDoctor alloc] init];
-//
-//    [self createNewPatientsWithDoctor:friend1];
-//    [self performProcedureWithPatients];
-//    
-//    [self createNewPatientsWithDoctor:friend2];
-//    [self performProcedureWithPatients];
+
+    NSLog(@"********Level Student**********");
+    MTBadDoctor *friend1 = [[MTBadDoctor alloc] init];
+    MTBadDoctor *friend2 = [[MTBadDoctor alloc] init];
+
+    [self createNewPatientsWithDoctor:friend1];
+    [self performProcedureWithPatients];
+
+    [self createNewPatientsWithDoctor:friend2];
+    [self performProcedureWithPatients];
     
     NSLog(@"********Level Master**********");
     
+    [doctor giveRaport];
+    [friend1 giveRaport];
+    [friend2 giveRaport];
+
     return YES;
 }
 

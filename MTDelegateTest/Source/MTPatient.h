@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, MTSourceOfPain) {
-    MTSourceOfPainHead,
+    MTSourceOfPainNoPain = 0,
     MTSourceOfPainBelly,
     MTSourceOfPainNose,
     MTSourceOfPainThroat,
-    MTSourceOfPainNoPain
+    MTSourceOfPainHead
 };
 
 @class MTPatient;
@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, MTSourceOfPain) {
 
 - (BOOL)becameWorse;
 
-- (NSString *)checkSourceOfPain:(MTSourceOfPain)source patient:(MTPatient *)patient;
+- (id)performProcedureWithSourceOfPain:(MTSourceOfPain)source;
 
 @end
 

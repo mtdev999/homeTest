@@ -10,43 +10,61 @@
 
 #import "MTPatient.h"
 
+static float const kMTMinValue = 38.0f;
+static float const kMTMaxValue = 40.0f;
+
 @implementation MTBadDoctor
+
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.raport = [MTMedicalRaport new];
+    }
+    
+    return self;
+}
 
 #pragma mark -
 #pragma mark MTPatientDelegate
 
-//- (void)patientFeelsBad:(MTPatient *)patient {
-//    NSLog(@"%@: I am feel bad! My temperature is %.1f",patient.name, patient.temperature);
-//    
-//    [self performDoctorProcedureWithPatient:patient];
-//}
-
 - (void)patientFeelsBad:(MTPatient *)patient sourceOfPain:(MTSourceOfPain)source {
-    
+    [self.raport addObject:patient source:source];
+    if (patient.temperature >kMTMinValue && patient.temperature < kMTMaxValue) {
+        [patient takePill];
+        [patient performProcedureWithSourceOfPain:source];
+        [self checkConditionPatient:patient];
+        
+    } else if (patient.temperature > kMTMaxValue) {
+        [patient performProcedureWithSourceOfPain:source];
+        NSLog(@"Bad Doctor: I can't help you more, sorry");
+        NSLog(@"__Doctor can't help patient");
+        self.countNoHelpedPatients += 1;
+        
+    } else {
+        NSLog(@"Patient %@ should rest", patient.name);
+    }
 }
 
 - (void)patient:(MTPatient *)patient hasQueation:(NSString *)question {
     NSLog(@"- %@ has a question: %@", patient.name, question);
 }
 
+- (void)giveRaport {
+    NSLog(@"Patients with headache: %@", self.raport.head);
+    NSLog(@"Patients with a stomach ache: %@", self.raport.bally);
+    NSLog(@"Patients with a sore nose: %@", self.raport.nose);
+    NSLog(@"Patients with a sore throat: %@", self.raport.throat);
+}
+
 #pragma mark -
 #pragma mark Private
 
-- (void)performDoctorProcedureWithPatient:(MTPatient *)patient {
-    if (patient.temperature >38.f && patient.temperature < 41.f) {
-        [patient takePill];
-        [self checkConditionPatient:patient];
-        
-    } else if (patient.temperature > 41.f) {
-        [self patient:patient hasQueation:@"How much I have left to live?"];
-        NSLog(@"Doctor%@: I can't help you, sorry", self);
-    } else {
-        NSLog(@"Patient %@ should rest", patient.name);
-    }
-}
-
 - (void)checkConditionPatient:(MTPatient *)patient {
-    if ( [patient becameWorse] == YES) {
+    if ( [patient becameWorse] == NO) {
+        self.countHelpedPatients += 1;
         return NSLog(@"- %@ feels good already", patient.name);
     } else {
         [self patientFeelsBad:patient sourceOfPain:0];
