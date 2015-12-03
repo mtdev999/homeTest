@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MTMedicalRaport.h"
+#import "MTMedicalReport.h"
 #import "MTPatient.h"
 
-@interface MTDoctor : MTMedicalRaport <MTPatientDelegate>
-@property (nonatomic, strong)   MTMedicalRaport     *raport;
+@interface MTDoctor : MTMedicalReport <MTPatientDelegate>
+@property (nonatomic, strong)   MTMedicalReport     *report;
 
-- (void)giveRaport;
+- (void)giveReport;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "MTDoctor.h"
 
-#import "MTMedicalRaport.h"
+#import "MTMedicalReport.h"
 
 static float const kMTMinValue = 37.0f;
 static float const kMTMaxValue = 39.0f;
@@ -29,7 +29,7 @@ static float const kMTStepValue = 0.5f;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.raport = [MTMedicalRaport new];
+        self.report = [MTMedicalReport new];
     }
     
     return self;
@@ -39,7 +39,7 @@ static float const kMTStepValue = 0.5f;
 #pragma mark MTPatientDelegate
 
 - (void)patientFeelsBad:(MTPatient *)patient sourceOfPain:(MTSourceOfPain)source {
-    [self.raport addObject:patient source:source];
+    [self.report addObject:patient source:source];
     if (patient.temperature >kMTMinValue && patient.temperature < kMTMaxValue) {
         [patient takePill];
         [patient performProcedureWithSourceOfPain:source];
@@ -59,11 +59,36 @@ static float const kMTStepValue = 0.5f;
     NSLog(@"- %@ has a question: %@", patient.name, question);
 }
 
-- (void)giveRaport {
-    NSLog(@"Patients with headache: %@", self.raport.head);
-    NSLog(@"Patients with a stomach ache: %@", self.raport.bally);
-    NSLog(@"Patients with a sore nose: %@", self.raport.nose);
-    NSLog(@"Patients with a sore throat: %@", self.raport.throat);
+- (void)giveReport {
+    NSLog(@"doctor:");
+    NSLog(@"1. Patients with a headache:");
+    for (MTPatient *object in self.report.head) {
+        NSLog(@"Patient name: %@", object.name);
+        NSLog(@"Patient temperature: %.1f", object.temperature);
+        NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+    }
+    NSLog(@"\n");
+    NSLog(@"2. Patients with a stomach ache:");
+    for (MTPatient *object in self.report.bally) {
+        NSLog(@"Patient name: %@", object.name);
+        NSLog(@"Patient temperature: %.1f", object.temperature);
+        NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+    }
+    NSLog(@"\n");
+    NSLog(@"3. Patients with a sore nose:");
+    for (MTPatient *object in self.report.nose) {
+        NSLog(@"Patient name: %@", object.name);
+        NSLog(@"Patient temperature: %.1f", object.temperature);
+        NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+    }
+    NSLog(@"\n");
+    NSLog(@"4. Patients with a sore throat:");
+    for (MTPatient *object in self.report.throat) {
+        NSLog(@"Patient name: %@", object.name);
+        NSLog(@"Patient temperature: %.1f", object.temperature);
+        NSLog(@"Patient symptom: %@", [object stringSourceOfPainWithSource:object.sourcePain]);
+    }
+    NSLog(@"\n");
 }
 
 #pragma mark -

@@ -43,7 +43,8 @@ typedef NS_ENUM(NSUInteger, MTSourceOfPain) {
 
 - (BOOL)becameWorse;
 
-- (id)performProcedureWithSourceOfPain:(MTSourceOfPain)source;
+- (void)performProcedureWithSourceOfPain:(MTSourceOfPain)source;
+- (NSString *)stringSourceOfPainWithSource:(MTSourceOfPain)source;
 
 @end
 

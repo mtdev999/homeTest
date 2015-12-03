@@ -17,6 +17,12 @@ static float const kMTMaxValue = 42.0f;
 
 @interface MTPatient ()
 
+- (float)temperatureRandom;
+- (void)performProcedureWithSourceOfPain:(MTSourceOfPain)source;
+- (NSString *)description;
+- (NSString *)stringSourceOfPainWithSource:(MTSourceOfPain)source;
+- (NSUInteger)numberOfSourcePain;
+
 @end
 
 @implementation MTPatient
@@ -39,7 +45,7 @@ static float const kMTMaxValue = 42.0f;
     self = [super init];
     if (self) {
         self.temperature = [self temperatureRandom];
-        self.sourcePain = [self sourceOfPain];
+        self.sourcePain = [self numberOfSourcePain];
     }
     
     return self;
@@ -51,7 +57,11 @@ static float const kMTMaxValue = 42.0f;
 - (void)howAreYou {
     MTSourceOfPain source = self.sourcePain;
     if (self.temperature > kMTMinValue || self.sourcePain != 0) {
-         NSLog(@"%@: I am feel bad! My temperature is %.1f - %@", self.name, self.temperature, [self stringSourceOfPainWithSource:source]);
+         NSLog(@"%@: I am feel bad! My temperature is %.1f - I have %@",
+                                                                self.name,
+                                                                self.temperature,
+                                                                [self stringSourceOfPainWithSource:source]);
+        
         [self.delegate patientFeelsBad:self sourceOfPain:source];
     } else {
         NSLog(@"%@: I am feel good!", self.name);
@@ -105,62 +115,53 @@ static float const kMTMaxValue = 42.0f;
     return result + addedValue;
 }
 
-- (id)performProcedureWithSourceOfPain:(MTSourceOfPain)source {
-    id result = nil;
+- (void)performProcedureWithSourceOfPain:(MTSourceOfPain)source {
     switch (source) {
         case MTSourceOfPainHead:
-            result = @"I have a headache";
             [self takePillForHead];
             break;
             
         case MTSourceOfPainBelly:
-            result = @"I have a stomach ache";
             [self takePillForBally];
             break;
             
         case MTSourceOfPainNose:
-            result = @"I have a sore nose";
             [self takeNasalDrops];
             break;
             
         case MTSourceOfPainThroat:
-            result = @"I have a sore throat";
             [self takePowder];
             break;
             
         case MTSourceOfPainNoPain:
-            result = @"I have no pain)))))";
             break;
             
         default:
             break;
     }
-    
-    return result;
 }
 
 - (NSString *)stringSourceOfPainWithSource:(MTSourceOfPain)source {
     NSString *result = nil;
-    
     switch (source) {
         case MTSourceOfPainHead:
-            result = @"I have a headache";
+            result = @"a headache";
             break;
             
         case MTSourceOfPainBelly:
-            result = @"I have a stomach ache";
+            result = @"a stomach ache";
             break;
             
         case MTSourceOfPainNose:
-            result = @"I have a sore nose";
+            result = @"a sore nose";
             break;
             
         case MTSourceOfPainThroat:
-            result = @"I have a sore throat";
+            result = @"a sore throat";
             break;
             
         case MTSourceOfPainNoPain:
-            result = @"I have no pain)))))";
+            result = @"no pain)))))";
             break;
             
         default:
@@ -170,7 +171,7 @@ static float const kMTMaxValue = 42.0f;
     return result;
 }
 
-- (NSUInteger)sourceOfPain {
+- (NSUInteger)numberOfSourcePain {
     return self.sourcePain = arc4random() % 5;
 }
 

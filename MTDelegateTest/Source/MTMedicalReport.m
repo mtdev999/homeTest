@@ -1,16 +1,16 @@
 //
-//  MTMedicalRaport.m
+//  MTMedicalReport.m
 //  MTDelegateTest
 //
 //  Created by Mark Tezza on 01.12.15.
 //  Copyright © 2015 Mark Tezza. All rights reserved.
 //
 
-#import "MTMedicalRaport.h"
+#import "MTMedicalReport.h"
 
 #import "MTDoctor.h"
 
-@interface MTMedicalRaport ()
+@interface MTMedicalReport ()
 @property (nonatomic, strong)   NSMutableArray  *mutableCrow;
 
 @property (nonatomic, strong)   NSMutableArray  *mutableHead;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation MTMedicalRaport
+@implementation MTMedicalReport
 @dynamic crow;
 @dynamic head;
 @dynamic bally;

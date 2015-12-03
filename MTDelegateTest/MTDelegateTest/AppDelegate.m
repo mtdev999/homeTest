@@ -70,10 +70,9 @@
     [self performProcedureWithPatients];
     
     NSLog(@"********Level Master**********");
-    
-    [doctor giveRaport];
-    [friend1 giveRaport];
-    [friend2 giveRaport];
+    [doctor giveReport];
+    [friend1 giveReport];
+    [friend2 giveReport];
 
     return YES;
 }

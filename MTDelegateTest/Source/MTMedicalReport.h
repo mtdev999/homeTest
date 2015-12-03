@@ -1,5 +1,5 @@
 //
-//  MTMedicalRaport.h
+//  MTMedicalReport.h
 //  MTDelegateTest
 //
 //  Created by Mark Tezza on 01.12.15.
@@ -10,7 +10,7 @@
 
 #import "MTPatient.h"
 
-@interface MTMedicalRaport : NSObject
+@interface MTMedicalReport : NSObject
 @property (nonatomic, assign)   NSUInteger  countHelpedPatients;
 @property (nonatomic, assign)   NSUInteger  countNoHelpedPatients;
 
