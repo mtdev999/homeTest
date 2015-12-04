@@ -39,7 +39,7 @@ static float const kMTMaxValue = 40.0f;
         
     } else if (patient.temperature > kMTMaxValue) {
         [patient performProcedureWithSourceOfPain:source];
-        NSLog(@"Bad Doctor: I can't help you more, sorry");
+        NSLog(@"Doctor %@: I can't help you more, sorry", self.nameDoctor);
         NSLog(@"__Doctor can't help patient");
         self.countNoHelpedPatients += 1;
         
@@ -53,7 +53,7 @@ static float const kMTMaxValue = 40.0f;
 }
 
 - (void)giveReport {
-    NSLog(@"Bad doctor report:");
+    NSLog(@"Doctor '%@' report:", self.nameDoctor);
     NSLog(@"1. Patients with a headache:");
     if (self.report.head.count > 0) {
         for (MTPatient *object in self.report.head) {

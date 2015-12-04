@@ -60,7 +60,7 @@ static float const kMTStepValue = 0.5f;
 }
 
 - (void)giveReport {
-    NSLog(@"Doctor report:");
+    NSLog(@"Doctor '%@' report:", self.nameDoctor);
     NSLog(@"1. Patients with a headache:");
     if (self.report.head.count > 0) {
         for (MTPatient *object in self.report.head) {
@@ -118,6 +118,7 @@ static float const kMTStepValue = 0.5f;
 - (void)checkConditionPatient:(MTPatient *)patient {
     if ( [patient becameWorse] == NO) {
         self.countHelpedPatients += 1;
+        patient.evaluationDoctor += 1;
         return NSLog(@"- %@ feels good already", patient.name);
         
     } else {

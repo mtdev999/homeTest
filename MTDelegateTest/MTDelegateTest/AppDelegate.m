@@ -44,39 +44,62 @@
 
 @interface AppDelegate ()
 @property (nonatomic, strong)   NSMutableArray  *mutablePatients;
+@property (nonatomic, strong)   NSMutableSet    *allPatients;
 @property (nonatomic, strong)   MTPatient       *patient;
-
 @end
 
 @implementation AppDelegate
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.allPatients = [NSMutableSet new];
+    }
+    
+    return self;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     NSLog(@"********Level Pupil**********");
     MTDoctor *doctor = [[MTDoctor alloc] init];
+    doctor.nameDoctor = @"Stefansky";
     
-    [self createNewPatientsWithDoctor:doctor];
+    [self camePatientsToDoctor:doctor];
+    NSLog(@"Doctor %@:", doctor.nameDoctor);
     [self performProcedureWithPatients];
-
+    
     NSLog(@"********Level Student**********");
-    MTBadDoctor *friend1 = [[MTBadDoctor alloc] init];
-    MTBadDoctor *friend2 = [[MTBadDoctor alloc] init];
+    MTBadDoctor *doctor1 = [[MTBadDoctor alloc] init];
+    doctor1.nameDoctor = @"Sidorov";
 
-    [self createNewPatientsWithDoctor:friend1];
+    [self camePatientsToDoctor:doctor1];
+    NSLog(@"Doctor %@:",doctor1.nameDoctor);
     [self performProcedureWithPatients];
 
-    [self createNewPatientsWithDoctor:friend2];
-    [self performProcedureWithPatients];
+    MTBadDoctor *doctor2 = [[MTBadDoctor alloc] init];
+    doctor2.nameDoctor = @"Petrov";
     
+    [self camePatientsToDoctor:doctor2];
+    NSLog(@"Doctor %@:",doctor2.nameDoctor);
+    [self performProcedureWithPatients];
+
     NSLog(@"********Level Master**********");
     [doctor giveReport];
-    [friend1 giveReport];
-    [friend2 giveReport];
+    [doctor1 giveReport];
+    [doctor2 giveReport];
+    
+    NSLog(@"********Level SuperMan*******");
 
+    NSLog(@"%@", self.allPatients);
+    
     return YES;
 }
 
-- (void)createNewPatientsWithDoctor:(id)doctor {
+#pragma mark -
+#pragma mark Private
+
+- (void)camePatientsToDoctor:(id)doctor {
     NSMutableArray *patients = [NSMutableArray new];
     for (int i = 0; i < 5; i++) {
         MTPatient *patient = [MTPatient patientCame];
@@ -90,33 +113,14 @@
 }
 
 - (void)performProcedureWithPatients {
+    NSMutableSet *set = self.allPatients;
     for (MTPatient *object in self.mutablePatients) {
-        NSLog(@"Doctor: %@, how are you?", object.name);
+        NSLog(@"doctor: %@, how are you?", object.name);
         [object howAreYou];
+        [set addObject:object];
+        
         NSLog(@"\n");
     }
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end

@@ -13,6 +13,7 @@
 
 @interface MTBadDoctor : MTMedicalReport <MTPatientDelegate>
 @property (nonatomic, strong)   MTMedicalReport     *report;
+@property (nonatomic, copy)     NSString            *nameDoctor;
 
 - (void)giveReport;
 

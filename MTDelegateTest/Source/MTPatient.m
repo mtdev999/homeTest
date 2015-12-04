@@ -94,9 +94,10 @@ static float const kMTMaxValue = 42.0f;
 
 - (BOOL)becameWorse {
     BOOL result  = arc4random() % 2;
-    
+    NSLog(@"%@ became wors? %@", self.name, result ? @"YES" : @"NO");
     return result;
 }
+
 
 #pragma mark -
 #pragma mark Private 

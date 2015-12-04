@@ -26,10 +26,12 @@ typedef NS_ENUM(NSUInteger, MTSourceOfPain) {
 @end
 
 @interface MTPatient :NSObject
-@property (nonatomic, copy)     NSString    *name;
-@property (nonatomic, assign)   float       temperature;
 @property (nonatomic, weak)     id <MTPatientDelegate> delegate;
 @property (nonatomic, assign)   MTSourceOfPain  sourcePain;
+
+@property (nonatomic, copy)     NSString        *name;
+@property (nonatomic, assign)   BOOL            evaluationDoctor;
+@property (nonatomic, assign)   float           temperature;
 
 + (MTPatient *)patientCame;
 
