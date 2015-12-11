@@ -19,7 +19,7 @@
     if (self.salary < object.govSalary) {
         NSLog(@"Doctor is happy now! Government is increased salary on %.3f percent", [self increasedValue:object]);
     } else {
-        NSLog(@"Docotor fill bed! Government is lowered salary on %.3f percent", [self loweredValue:object]);
+        NSLog(@"Docotor feel bed! Government is lowered salary on %.3f percent", [self loweredValue:object]);
     }
 }
 

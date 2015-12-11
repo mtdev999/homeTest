@@ -91,7 +91,7 @@
     
     government.govSalary = 3540.f;
     government.govTaxLevel = 13.5f;
-    government.govPensin = 1200.f;
+    government.govPensin = 1145.f;
     government.govAveragePrice = 12.f;
 
     return YES;

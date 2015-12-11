@@ -19,7 +19,7 @@
     if (self.pesin < object.govPensin) {
         NSLog(@"Pensioner is happy! Government increased pensin on %.3f percent", [self increasedValue:object]);
     } else {
-        NSLog(@"Pensioner is fill bad! Government lowered pensin on %.3f percent", [self loweredValue:object]);
+        NSLog(@"Pensioner is feel bad! Government lowered pensin on %.3f percent", [self loweredValue:object]);
     }
 }
 

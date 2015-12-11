@@ -17,7 +17,7 @@
 
 - (void)changedTaxLevelWithObject:(MTGovernment *)object {
     if (self.taxLevel < object.govTaxLevel) {
-        NSLog(@"Businessman is fill very bad! Government increased taxes on %.3f percent", [self increasedValue:object]);
+        NSLog(@"Businessman is feel very bad! Government increased taxes on %.3f percent", [self increasedValue:object]);
     } else {
         NSLog(@"Bussinessman is happy now! Government lowered taxes on %.3f percent", [self loweredValue:object]);
     }
