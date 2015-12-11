@@ -48,33 +48,46 @@
 #import "MTPensioner.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) MTDoctor *doctor;
+@property (nonatomic, strong) MTBusinessman *businessman;
+@property (nonatomic, strong) MTPensioner *pensioner;
+@property (nonatomic, strong) MTGovernment *government;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
 
+    MTGovernment *government = [MTGovernment new];
+    NSLog(@"%@", government.description);
+    
     MTDoctor *doctor = [MTDoctor new];
     MTBusinessman *businessman = [MTBusinessman new];
     MTPensioner *pensioner = [MTPensioner new];
     
-
-    MTGovernment *government = [MTGovernment new];
     [government addObserver:doctor];
     [government addObserver:businessman];
     [government addObserver:pensioner];
     
+    doctor.salary = government.govSalary;
+    pensioner.pesin = government.govPensin;
+    businessman.taxLevel = government.govTaxLevel;
     
-    [government changeSalary:2500.f];
-    [government changeTaxLevel:15.f];
-    [government changePensin:960.f];
+    government.govSalary = 4000.f;
+    government.govTaxLevel = 6.f;
+    government.govPensin = 1500.f;
+    government.govAveragePrice = 12.f;
     
-    [government changeAveragePrice:15.f];
+    NSLog(@"%@", government.description);
+    
+    
     
     return YES;
+}
+
+- (void)dealloc {
+    [self.government removeAllObservers];
 }
 
 @end

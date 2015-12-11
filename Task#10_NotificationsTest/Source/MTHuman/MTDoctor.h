@@ -1,5 +1,5 @@
 //
-//  MTHuman.h
+//  MTDoctor.h
 //  Task#10_NotificationsTest
 //
 //  Created by Mark Tezza on 07.12.15.
@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MTHuman : NSObject
-@property (nonatomic, assign)   float   averangePrice;
+#import "MTGovernment.h"
 
-- (void)didChangeAveragePrice:(float)price;
+@interface MTDoctor : NSObject
+@property (nonatomic, assign)   float   salary;
+
+- (void)changedSalaryWithObject:(id)object;
 
 @end

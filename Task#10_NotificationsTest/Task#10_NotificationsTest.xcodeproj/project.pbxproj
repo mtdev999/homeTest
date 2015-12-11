@@ -13,12 +13,11 @@
 		1B84C3EA1C11B56C0050B8C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B84C3E81C11B56C0050B8C1 /* Main.storyboard */; };
 		1B84C3EC1C11B56C0050B8C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B84C3EB1C11B56C0050B8C1 /* Assets.xcassets */; };
 		1B84C3EF1C11B56C0050B8C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B84C3ED1C11B56C0050B8C1 /* LaunchScreen.storyboard */; };
-		1B8756C91C1597420014D569 /* MTDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756C81C1597420014D569 /* MTDoctor.m */; };
-		1B8756CC1C15977E0014D569 /* MTBusinessman.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756CB1C15977E0014D569 /* MTBusinessman.m */; };
-		1B8756CF1C1597AD0014D569 /* MTPensioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756CE1C1597AD0014D569 /* MTPensioner.m */; };
-		1B8756D21C15A9B10014D569 /* MTGovernment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756D11C15A9B10014D569 /* MTGovernment.m */; };
 		1B8756D71C15AA760014D569 /* MTObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756D61C15AA760014D569 /* MTObservableObject.m */; };
-		1B8756DA1C15D2040014D569 /* MTHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756D91C15D2040014D569 /* MTHuman.m */; };
+		1B8756E71C16DA130014D569 /* MTGovernment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756DD1C16DA130014D569 /* MTGovernment.m */; };
+		1B8756E81C16DA130014D569 /* MTBusinessman.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756E01C16DA130014D569 /* MTBusinessman.m */; };
+		1B8756E91C16DA130014D569 /* MTDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756E21C16DA130014D569 /* MTDoctor.m */; };
+		1B8756EB1C16DA130014D569 /* MTPensioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756E61C16DA130014D569 /* MTPensioner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,18 +31,16 @@
 		1B84C3EB1C11B56C0050B8C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B84C3EE1C11B56C0050B8C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B84C3F01C11B56C0050B8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B8756C71C1597420014D569 /* MTDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDoctor.h; sourceTree = "<group>"; };
-		1B8756C81C1597420014D569 /* MTDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDoctor.m; sourceTree = "<group>"; };
-		1B8756CA1C15977E0014D569 /* MTBusinessman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBusinessman.h; sourceTree = "<group>"; };
-		1B8756CB1C15977E0014D569 /* MTBusinessman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBusinessman.m; sourceTree = "<group>"; };
-		1B8756CD1C1597AD0014D569 /* MTPensioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPensioner.h; sourceTree = "<group>"; };
-		1B8756CE1C1597AD0014D569 /* MTPensioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPensioner.m; sourceTree = "<group>"; };
-		1B8756D01C15A9B10014D569 /* MTGovernment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGovernment.h; sourceTree = "<group>"; };
-		1B8756D11C15A9B10014D569 /* MTGovernment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGovernment.m; sourceTree = "<group>"; };
 		1B8756D51C15AA760014D569 /* MTObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTObservableObject.h; sourceTree = "<group>"; };
 		1B8756D61C15AA760014D569 /* MTObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTObservableObject.m; sourceTree = "<group>"; };
-		1B8756D81C15D2040014D569 /* MTHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHuman.h; sourceTree = "<group>"; };
-		1B8756D91C15D2040014D569 /* MTHuman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHuman.m; sourceTree = "<group>"; };
+		1B8756DC1C16DA130014D569 /* MTGovernment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGovernment.h; sourceTree = "<group>"; };
+		1B8756DD1C16DA130014D569 /* MTGovernment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGovernment.m; sourceTree = "<group>"; };
+		1B8756DF1C16DA130014D569 /* MTBusinessman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBusinessman.h; sourceTree = "<group>"; };
+		1B8756E01C16DA130014D569 /* MTBusinessman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBusinessman.m; sourceTree = "<group>"; };
+		1B8756E11C16DA130014D569 /* MTDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDoctor.h; sourceTree = "<group>"; };
+		1B8756E21C16DA130014D569 /* MTDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDoctor.m; sourceTree = "<group>"; };
+		1B8756E51C16DA130014D569 /* MTPensioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPensioner.h; sourceTree = "<group>"; };
+		1B8756E61C16DA130014D569 /* MTPensioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPensioner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,16 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				1B8756D41C15AA3B0014D569 /* MTObservableObject */,
-				1B8756C71C1597420014D569 /* MTDoctor.h */,
-				1B8756C81C1597420014D569 /* MTDoctor.m */,
-				1B8756CA1C15977E0014D569 /* MTBusinessman.h */,
-				1B8756CB1C15977E0014D569 /* MTBusinessman.m */,
-				1B8756CD1C1597AD0014D569 /* MTPensioner.h */,
-				1B8756CE1C1597AD0014D569 /* MTPensioner.m */,
-				1B8756D01C15A9B10014D569 /* MTGovernment.h */,
-				1B8756D11C15A9B10014D569 /* MTGovernment.m */,
-				1B8756D81C15D2040014D569 /* MTHuman.h */,
-				1B8756D91C15D2040014D569 /* MTHuman.m */,
+				1B8756DB1C16DA130014D569 /* MTGovernment */,
+				1B8756DE1C16DA130014D569 /* MTHuman */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -123,6 +112,28 @@
 				1B8756D61C15AA760014D569 /* MTObservableObject.m */,
 			);
 			path = MTObservableObject;
+			sourceTree = "<group>";
+		};
+		1B8756DB1C16DA130014D569 /* MTGovernment */ = {
+			isa = PBXGroup;
+			children = (
+				1B8756DC1C16DA130014D569 /* MTGovernment.h */,
+				1B8756DD1C16DA130014D569 /* MTGovernment.m */,
+			);
+			path = MTGovernment;
+			sourceTree = "<group>";
+		};
+		1B8756DE1C16DA130014D569 /* MTHuman */ = {
+			isa = PBXGroup;
+			children = (
+				1B8756DF1C16DA130014D569 /* MTBusinessman.h */,
+				1B8756E01C16DA130014D569 /* MTBusinessman.m */,
+				1B8756E11C16DA130014D569 /* MTDoctor.h */,
+				1B8756E21C16DA130014D569 /* MTDoctor.m */,
+				1B8756E51C16DA130014D569 /* MTPensioner.h */,
+				1B8756E61C16DA130014D569 /* MTPensioner.m */,
+			);
+			path = MTHuman;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,15 +207,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B8756CF1C1597AD0014D569 /* MTPensioner.m in Sources */,
-				1B8756CC1C15977E0014D569 /* MTBusinessman.m in Sources */,
 				1B84C3E71C11B56C0050B8C1 /* ViewController.m in Sources */,
-				1B8756C91C1597420014D569 /* MTDoctor.m in Sources */,
+				1B8756E91C16DA130014D569 /* MTDoctor.m in Sources */,
 				1B8756D71C15AA760014D569 /* MTObservableObject.m in Sources */,
 				1B84C3E41C11B56C0050B8C1 /* AppDelegate.m in Sources */,
+				1B8756E81C16DA130014D569 /* MTBusinessman.m in Sources */,
 				1B84C3E11C11B56C0050B8C1 /* main.m in Sources */,
-				1B8756DA1C15D2040014D569 /* MTHuman.m in Sources */,
-				1B8756D21C15A9B10014D569 /* MTGovernment.m in Sources */,
+				1B8756EB1C16DA130014D569 /* MTPensioner.m in Sources */,
+				1B8756E71C16DA130014D569 /* MTGovernment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

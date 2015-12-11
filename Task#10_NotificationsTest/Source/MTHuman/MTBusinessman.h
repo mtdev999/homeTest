@@ -1,5 +1,5 @@
 //
-//  MTPensioner.h
+//  MTBusinessman.h
 //  Task#10_NotificationsTest
 //
 //  Created by Mark Tezza on 07.12.15.
@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MTHuman.h"
+@interface MTBusinessman : NSObject
+@property (nonatomic, assign)   float   taxLevel;
 
-@interface MTPensioner : MTHuman
-@property (nonatomic, assign)   float   pensin;
-
-- (void)didChangePensin:(float)pensin;
+- (void)changedTaxLevelWithObject:(id)object;
 
 @end

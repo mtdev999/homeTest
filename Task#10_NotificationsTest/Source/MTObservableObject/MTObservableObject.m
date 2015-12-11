@@ -68,8 +68,9 @@
     @synchronized (self.mutableObservers) {
         for (id observer in self.mutableObservers) {
             if ([observer respondsToSelector:selector]) {
-//    NSLog(@"object %@ send for observer %@ notify: '%@'", object, observer, NSStringFromSelector(selector));
-                [observer performSelector:selector];
+                //NSLog(@"object %@ send for observer %@ notify: '%@'", object, observer, NSStringFromSelector(selector));
+                [observer performSelector:selector withObject:object withObject:nil];
+               // [observer performSelector:selector]; // может привести к утечке, так как его селектор неизвестен
             }
         }
     }
