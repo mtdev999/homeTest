@@ -23,6 +23,9 @@
     }
 }
 
+#pragma mark -
+#pragma mark Private
+
 - (float)loweredValue:(MTGovernment *)object {
     float result = ((self.pesin - object.govPensin) * 100) / self.pesin;
     return result;

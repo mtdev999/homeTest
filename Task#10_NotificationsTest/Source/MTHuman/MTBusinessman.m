@@ -23,6 +23,9 @@
     }
 }
 
+#pragma mark -
+#pragma mark Private
+
 - (float)loweredValue:(MTGovernment *)object {
     float result = ((self.taxLevel - object.govTaxLevel) * 100) / self.taxLevel;
     return result;

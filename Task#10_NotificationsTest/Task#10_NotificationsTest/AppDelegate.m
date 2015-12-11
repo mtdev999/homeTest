@@ -71,6 +71,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    NSLog(@"********Level Pupil*********");
     MTGovernment *government = self.government;
     MTDoctor *doctor = self.doctor;
     MTBusinessman *businessman = self.businessman;
