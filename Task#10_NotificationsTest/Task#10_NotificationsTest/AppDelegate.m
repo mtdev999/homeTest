@@ -56,38 +56,62 @@
 
 @implementation AppDelegate
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.doctor = [MTDoctor new];
+        self.businessman = [MTBusinessman new];
+        self.pensioner = [MTPensioner new];
+        self.government = [MTGovernment new];
+    }
+    
+    return self;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    MTGovernment *government = [MTGovernment new];
-    NSLog(@"%@", government.description);
-    
-    MTDoctor *doctor = [MTDoctor new];
-    MTBusinessman *businessman = [MTBusinessman new];
-    MTPensioner *pensioner = [MTPensioner new];
+    MTGovernment *government = self.government;
+    MTDoctor *doctor = self.doctor;
+    MTBusinessman *businessman = self.businessman;
+    MTPensioner *pensioner = self.pensioner;
     
     [government addObserver:doctor];
     [government addObserver:businessman];
     [government addObserver:pensioner];
     
-    doctor.salary = government.govSalary;
-    pensioner.pesin = government.govPensin;
-    businessman.taxLevel = government.govTaxLevel;
+    [self saveVAlue];
     
-    government.govSalary = 4000.f;
-    government.govTaxLevel = 6.f;
-    government.govPensin = 1500.f;
+    government.govSalary = 3780.f;
+    government.govTaxLevel = 11.f;
+    government.govPensin = 1280.f;
     government.govAveragePrice = 12.f;
     
-    NSLog(@"%@", government.description);
+    [self saveVAlue];
     
-    
-    
+    government.govSalary = 3540.f;
+    government.govTaxLevel = 13.5f;
+    government.govPensin = 1200.f;
+    government.govAveragePrice = 12.f;
+
     return YES;
+}
+
+- (void)saveVAlue {
+    MTGovernment *government = self.government;
+
+    self.doctor.salary = government.govSalary;
+    self.businessman.taxLevel = government.govTaxLevel;
+    self.pensioner.pesin = government.govPensin;
 }
 
 - (void)dealloc {
     [self.government removeAllObservers];
+    
+    self.doctor = nil;
+    self.businessman = nil;
+    self.pensioner = nil;
+    self.government = nil;
 }
 
 @end

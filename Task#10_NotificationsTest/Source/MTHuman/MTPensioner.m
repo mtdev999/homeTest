@@ -17,10 +17,20 @@
 
 - (void)changedPesinWithObject:(MTGovernment *)object {
     if (self.pesin < object.govPensin) {
-        NSLog(@"Pensioner is happy");
+        NSLog(@"Pensioner is happy! Government increased pensin on %.3f percent", [self increasedValue:object]);
     } else {
-        NSLog(@"_______Pensioner is fill bad!!!");
+        NSLog(@"Pensioner is fill bad! Government lowered pensin on %.3f percent", [self loweredValue:object]);
     }
+}
+
+- (float)loweredValue:(MTGovernment *)object {
+    float result = ((self.pesin - object.govPensin) * 100) / self.pesin;
+    return result;
+}
+
+- (float)increasedValue:(MTGovernment *)object {
+    float result = ((object.govPensin - self.pesin) * 100) / self.pesin;
+    return result;
 }
 
 @end

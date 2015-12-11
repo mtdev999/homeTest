@@ -17,10 +17,20 @@
 
 - (void)changedSalaryWithObject:(MTGovernment *)object {
     if (self.salary < object.govSalary) {
-        NSLog(@"Doctor is happy now");
+        NSLog(@"Doctor is happy now! Government is increased salary on %.3f percent", [self increasedValue:object]);
     } else {
-        NSLog(@"Docotor fill bed");
+        NSLog(@"Docotor fill bed! Government is lowered salary on %.3f percent", [self loweredValue:object]);
     }
+}
+
+- (float)loweredValue:(MTGovernment *)object {
+    float result = ((self.salary - object.govSalary) * 100) / self.salary;
+    return result;
+}
+
+- (float)increasedValue:(MTGovernment *)object {
+    float result = ((object.govSalary - self.salary) * 100) / self.salary;
+    return result;
 }
 
 @end

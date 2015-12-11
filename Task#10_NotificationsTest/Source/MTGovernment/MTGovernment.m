@@ -28,7 +28,7 @@
     if (self) {
         self.govSalary = 3000.f;
         self.govPensin = 1200.f;
-        self.govTaxLevel = 12.5f;
+        self.govTaxLevel = 10.f;
         self.govAveragePrice = 10.f;
     }
     
