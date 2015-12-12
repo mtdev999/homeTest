@@ -85,7 +85,7 @@
     NSLog(@" ____ The government's step:");
     government.govSalary = 3780.f;
     government.govTaxLevel = 11.f;
-    government.govPensin = 1280.f;
+    government.govPension = 1280.f;
     government.govAveragePrice = 12.f;
     
     [self setNewValuesForCitizens];
@@ -93,7 +93,7 @@
     NSLog(@" ____ The government's step:");
     government.govSalary = 3540.f;
     government.govTaxLevel = 13.5f;
-    government.govPensin = 1145.f;
+    government.govPension = 1145.f;
     government.govAveragePrice = 11.f;
 
     return YES;
@@ -108,7 +108,7 @@
     doctor.salary = government.govSalary;
     doctor.averagePrice = pensioner.averagePrice = businessman.averagePrice = government.govAveragePrice;
     businessman.taxLevel = government.govTaxLevel;
-    pensioner.pesin = government.govPensin;
+    pensioner.pension = government.govPension;
     
 }
 

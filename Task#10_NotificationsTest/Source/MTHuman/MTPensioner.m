@@ -15,26 +15,18 @@
 #pragma mark -
 #pragma mark Observable Object
 
-- (void)changedPesinWithObject:(MTGovernment *)object {
-    NSLog(@" - change pesin = %.2f", object.govPensin);
-    if (self.pesin < object.govPensin) {
-        NSLog(@"Pensioner is happy! Government increased pensin on %.3f percent", [self increasedValue:object]);
+- (void)changedpensionWithObject:(MTGovernment *)object {
+    float pension = self.pension;
+    float govPension = object.govPension;
+    
+    NSLog(@" - change pension = %.2f", govPension);
+    if (pension < govPension) {
+        NSLog(@"Pensioner is happy! Government increased pensin on %.3f percent", [super increasedValue:pension
+                                                                                            objectValue:govPension]);
     } else {
-        NSLog(@"Pensioner is feel bad! Government lowered pensin on %.3f percent", [self loweredValue:object]);
+        NSLog(@"Pensioner is feel bad! Government lowered pensin on %.3f percent", [super loweredValue:pension
+                                                                                           objectValue:govPension]);
     }
-}
-
-#pragma mark -
-#pragma mark Private
-
-- (float)loweredValue:(MTGovernment *)object {
-    float result = ((self.pesin - object.govPensin) * 100) / self.pesin;
-    return result;
-}
-
-- (float)increasedValue:(MTGovernment *)object {
-    float result = ((object.govPensin - self.pesin) * 100) / self.pesin;
-    return result;
 }
 
 #pragma mark -

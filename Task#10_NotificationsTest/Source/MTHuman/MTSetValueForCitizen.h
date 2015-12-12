@@ -11,5 +11,9 @@
 #import "MTAveragePrice.h"
 
 @interface MTSetValueForCitizen : NSObject <MTAveragePrice>
+@property (nonatomic, assign)   float   averagePrice;
+
+- (float)increasedValue:(float)value objectValue:(float)value2;
+- (float)loweredValue:(float)value objectValue:(float)value2;
 
 @end

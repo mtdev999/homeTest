@@ -10,33 +10,23 @@
 
 #import "MTGovernment.h"
 
-static NSUInteger const kMTValuePercent = 100;
-
 @implementation MTBusinessman
 
 #pragma mark -
 #pragma mark Observable Object 
 
 - (void)changedTaxLevelWithObject:(MTGovernment *)object {
-    NSLog(@" - change tax level = %.2f", object.govTaxLevel);
-    if (self.taxLevel < object.govTaxLevel) {
-        NSLog(@"Businessman is feel very bad! Government increased taxes on %.3f percent", [self increasedValue:object]);
+    float taxLevel = self.taxLevel;
+    float govTaxLevel = object.govTaxLevel;
+    
+    NSLog(@" - change tax level = %.2f", govTaxLevel);
+    if (taxLevel < govTaxLevel) {
+        NSLog(@"Businessman is feel very bad! Government increased taxes on %.3f percent", [super increasedValue:taxLevel
+                                                                                                     objectValue:govTaxLevel]);
     } else {
-        NSLog(@"Bussinessman is happy now! Government lowered taxes on %.3f percent", [self loweredValue:object]);
+        NSLog(@"Bussinessman is happy now! Government lowered taxes on %.3f percent", [super loweredValue:taxLevel
+                                                                                              objectValue:govTaxLevel]);
     }
-}
-
-#pragma mark -
-#pragma mark Private
-
-- (float)loweredValue:(MTGovernment *)object {
-    float result = ((self.taxLevel - object.govTaxLevel) * kMTValuePercent) / self.taxLevel;
-    return result;
-}
-
-- (float)increasedValue:(MTGovernment *)object {
-    float result = (object.govTaxLevel - self.taxLevel) * kMTValuePercent / self.taxLevel;
-    return result;
 }
 
 #pragma mark -

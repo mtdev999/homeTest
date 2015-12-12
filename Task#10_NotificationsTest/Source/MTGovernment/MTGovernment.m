@@ -21,7 +21,7 @@
     self = [super init];
     if (self) {
         self.govSalary = 3000.f;
-        self.govPensin = 1200.f;
+        self.govPension = 1200.f;
         self.govTaxLevel = 10.f;
         self.govAveragePrice = 8.f;
     }
@@ -40,11 +40,11 @@
     }
 }
 
-- (void)setGovPensin:(float)govPensin {
-    if (_govPensin != govPensin) {
-        _govPensin = govPensin;
+- (void)setgovPension:(float)govPension {
+    if (_govPension != govPension) {
+        _govPension = govPension;
         
-        [self notifyObserversWithSelector:@selector(changedPesinWithObject:) object:self];
+        [self notifyObserversWithSelector:@selector(changedpensionWithObject:) object:self];
     }
 }
 

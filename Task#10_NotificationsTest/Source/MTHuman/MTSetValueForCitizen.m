@@ -8,6 +8,25 @@
 
 #import "MTSetValueForCitizen.h"
 
+#import "MTGovernment.h"
+
 @implementation MTSetValueForCitizen
+
+- (float)loweredValue:(float)value objectValue:(float)value2; {
+    float result = ((value - value2) * 100) / value;
+    return result;
+}
+
+- (float)increasedValue:(float)value objectValue:(float)value2 {
+    float result = ((value2 - value) * 100) / value;
+    return result;
+}
+
+#pragma mark -
+#pragma mark Average Price
+
+- (void)changedAveragePrice:(MTGovernment *)object {
+    
+}
 
 @end

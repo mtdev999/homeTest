@@ -13,7 +13,7 @@
 @interface MTGovernment : MTObservableObject
 @property (nonatomic, assign)   float     govTaxLevel;
 @property (nonatomic, assign)   float     govSalary;
-@property (nonatomic, assign)   float     govPensin;
+@property (nonatomic, assign)   float     govPension;
 @property (nonatomic, assign)   float     govAveragePrice;
 
 @end

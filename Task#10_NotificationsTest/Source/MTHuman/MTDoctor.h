@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MTAveragePrice.h"
+#import "MTSetValueForCitizen.h"
 
-@interface MTDoctor : NSObject <MTAveragePrice>
-@property (nonatomic, assign)   float   averagePrice;
+@interface MTDoctor : MTSetValueForCitizen
 @property (nonatomic, assign)   float   salary;
 
 - (void)changedSalaryWithObject:(id)object;

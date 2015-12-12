@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MTAveragePrice.h"
+#import "MTSetValueForCitizen.h"
 
-@interface MTBusinessman : NSObject <MTAveragePrice>
-@property (nonatomic, assign)   float   averagePrice;
+@interface MTBusinessman : MTSetValueForCitizen
 @property (nonatomic, assign)   float   taxLevel;
 
 - (void)changedTaxLevelWithObject:(id)object;
