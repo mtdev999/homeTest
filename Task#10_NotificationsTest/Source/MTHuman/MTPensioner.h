@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MTPensioner : NSObject
+#import "MTAveragePrice.h"
+
+@interface MTPensioner : NSObject <MTAveragePrice>
+@property (nonatomic, assign)   float   averagePrice;
 @property (nonatomic, assign)   float    pesin;
 
 - (void)changedPesinWithObject:(id)object;

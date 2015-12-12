@@ -68,7 +68,6 @@
     return self;
 }
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     NSLog(@"********Level Pupil*********");
@@ -81,29 +80,36 @@
     [government addObserver:businessman];
     [government addObserver:pensioner];
     
-    [self saveVAlue];
+    [self setNewValuesForCitizens];
     
+    NSLog(@" ____ The government's step:");
     government.govSalary = 3780.f;
     government.govTaxLevel = 11.f;
     government.govPensin = 1280.f;
     government.govAveragePrice = 12.f;
     
-    [self saveVAlue];
+    [self setNewValuesForCitizens];
     
+    NSLog(@" ____ The government's step:");
     government.govSalary = 3540.f;
     government.govTaxLevel = 13.5f;
     government.govPensin = 1145.f;
-    government.govAveragePrice = 12.f;
+    government.govAveragePrice = 11.f;
 
     return YES;
 }
 
-- (void)saveVAlue {
+- (void)setNewValuesForCitizens {
     MTGovernment *government = self.government;
+    MTDoctor *doctor = self.doctor;
+    MTBusinessman *businessman = self.businessman;
+    MTPensioner *pensioner = self.pensioner;
 
-    self.doctor.salary = government.govSalary;
-    self.businessman.taxLevel = government.govTaxLevel;
-    self.pensioner.pesin = government.govPensin;
+    doctor.salary = government.govSalary;
+    doctor.averagePrice = pensioner.averagePrice = businessman.averagePrice = government.govAveragePrice;
+    businessman.taxLevel = government.govTaxLevel;
+    pensioner.pesin = government.govPensin;
+    
 }
 
 - (void)dealloc {

@@ -18,6 +18,7 @@
 		1B8756E81C16DA130014D569 /* MTBusinessman.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756E01C16DA130014D569 /* MTBusinessman.m */; };
 		1B8756E91C16DA130014D569 /* MTDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756E21C16DA130014D569 /* MTDoctor.m */; };
 		1B8756EB1C16DA130014D569 /* MTPensioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756E61C16DA130014D569 /* MTPensioner.m */; };
+		1B8756EF1C1BE43E0014D569 /* MTSetValueForCitizen.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8756EE1C1BE43E0014D569 /* MTSetValueForCitizen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,9 @@
 		1B8756E21C16DA130014D569 /* MTDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDoctor.m; sourceTree = "<group>"; };
 		1B8756E51C16DA130014D569 /* MTPensioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPensioner.h; sourceTree = "<group>"; };
 		1B8756E61C16DA130014D569 /* MTPensioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPensioner.m; sourceTree = "<group>"; };
+		1B8756EC1C1BD2960014D569 /* MTAveragePrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAveragePrice.h; sourceTree = "<group>"; };
+		1B8756ED1C1BE43E0014D569 /* MTSetValueForCitizen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSetValueForCitizen.h; sourceTree = "<group>"; };
+		1B8756EE1C1BE43E0014D569 /* MTSetValueForCitizen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSetValueForCitizen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 		1B84C3F61C11B65A0050B8C1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1B8756EC1C1BD2960014D569 /* MTAveragePrice.h */,
 				1B8756D41C15AA3B0014D569 /* MTObservableObject */,
 				1B8756DB1C16DA130014D569 /* MTGovernment */,
 				1B8756DE1C16DA130014D569 /* MTHuman */,
@@ -126,12 +131,14 @@
 		1B8756DE1C16DA130014D569 /* MTHuman */ = {
 			isa = PBXGroup;
 			children = (
-				1B8756DF1C16DA130014D569 /* MTBusinessman.h */,
-				1B8756E01C16DA130014D569 /* MTBusinessman.m */,
+				1B8756ED1C1BE43E0014D569 /* MTSetValueForCitizen.h */,
+				1B8756EE1C1BE43E0014D569 /* MTSetValueForCitizen.m */,
 				1B8756E11C16DA130014D569 /* MTDoctor.h */,
 				1B8756E21C16DA130014D569 /* MTDoctor.m */,
 				1B8756E51C16DA130014D569 /* MTPensioner.h */,
 				1B8756E61C16DA130014D569 /* MTPensioner.m */,
+				1B8756DF1C16DA130014D569 /* MTBusinessman.h */,
+				1B8756E01C16DA130014D569 /* MTBusinessman.m */,
 			);
 			path = MTHuman;
 			sourceTree = "<group>";
@@ -213,6 +220,7 @@
 				1B84C3E41C11B56C0050B8C1 /* AppDelegate.m in Sources */,
 				1B8756E81C16DA130014D569 /* MTBusinessman.m in Sources */,
 				1B84C3E11C11B56C0050B8C1 /* main.m in Sources */,
+				1B8756EF1C1BE43E0014D569 /* MTSetValueForCitizen.m in Sources */,
 				1B8756EB1C16DA130014D569 /* MTPensioner.m in Sources */,
 				1B8756E71C16DA130014D569 /* MTGovernment.m in Sources */,
 			);

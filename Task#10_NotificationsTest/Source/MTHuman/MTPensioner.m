@@ -16,6 +16,7 @@
 #pragma mark Observable Object
 
 - (void)changedPesinWithObject:(MTGovernment *)object {
+    NSLog(@" - change pesin = %.2f", object.govPensin);
     if (self.pesin < object.govPensin) {
         NSLog(@"Pensioner is happy! Government increased pensin on %.3f percent", [self increasedValue:object]);
     } else {
@@ -34,6 +35,18 @@
 - (float)increasedValue:(MTGovernment *)object {
     float result = ((object.govPensin - self.pesin) * 100) / self.pesin;
     return result;
+}
+
+#pragma mark -
+#pragma mark Average Price
+
+- (void)changedAveragePrice:(MTGovernment *)object {
+    NSLog(@" - change average price = %.2f", object.govAveragePrice);
+    if (self.averagePrice < object.govAveragePrice) {
+        NSLog(@"Pensioner feel bad, average price is increased ");
+    } else {
+        NSLog(@"Pensioner is happy, average price is lowered ");
+    }
 }
 
 @end

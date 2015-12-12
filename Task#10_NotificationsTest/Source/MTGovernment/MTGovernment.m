@@ -12,13 +12,7 @@
 #import "MTPensioner.h"
 #import "MTBusinessman.h"
 
-@interface MTGovernment ()
-//@property (nonatomic, strong)   MTDoctor *doc;
-
-@end
-
 @implementation MTGovernment
-
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -29,18 +23,10 @@
         self.govSalary = 3000.f;
         self.govPensin = 1200.f;
         self.govTaxLevel = 10.f;
-        self.govAveragePrice = 10.f;
+        self.govAveragePrice = 8.f;
     }
     
     return self;
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"govSalary = %.2f, govPesin = %.2f, govTaxLevel = %.2f, govAveragePrce = %.2f, ",
-                                        self.govSalary,
-                                        self.govPensin,
-                                        self.govTaxLevel,
-                                        self.govAveragePrice];
 }
 
 #pragma mark -
@@ -67,6 +53,14 @@
         _govTaxLevel = govTaxLevel;
         
         [self notifyObserversWithSelector:@selector(changedTaxLevelWithObject:) object:self];
+    }
+}
+
+- (void)setGovAveragePrice:(float)govAveragePrice {
+    if (_govAveragePrice != govAveragePrice) {
+        _govAveragePrice = govAveragePrice;
+        
+        [self notifyObserversWithSelector:@selector(changedAveragePrice:) object:self];
     }
 }
 

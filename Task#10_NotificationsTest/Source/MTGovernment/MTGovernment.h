@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "MTObservableObject.h"
 
 @interface MTGovernment : MTObservableObject
@@ -14,7 +15,5 @@
 @property (nonatomic, assign)   float     govSalary;
 @property (nonatomic, assign)   float     govPensin;
 @property (nonatomic, assign)   float     govAveragePrice;
-
-//- (void)performChangeValueOfSalary:(float)salary;
 
 @end
