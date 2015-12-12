@@ -20,10 +20,10 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.govSalary = 3000.f;
-        self.govPension = 1200.f;
-        self.govTaxLevel = 10.f;
-        self.govAveragePrice = 8.f;
+        self.govSalary = 0.f;
+        self.govPension = 0.f;
+        self.govTaxLevel = 0.f;
+        self.govAveragePrice = 0.f;
     }
     
     return self;
@@ -40,11 +40,11 @@
     }
 }
 
-- (void)setgovPension:(float)govPension {
+- (void)setGovPension:(float)govPension {
     if (_govPension != govPension) {
         _govPension = govPension;
         
-        [self notifyObserversWithSelector:@selector(changedpensionWithObject:) object:self];
+        [self notifyObserversWithSelector:@selector(changedPensionWithObject:) object:self];
     }
 }
 

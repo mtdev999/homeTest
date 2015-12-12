@@ -13,6 +13,18 @@
 @implementation MTDoctor
 
 #pragma mark -
+#pragma mark Initializations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.salary = 2000.f;
+    }
+    
+    return self;
+}
+
+#pragma mark -
 #pragma mark Observable Object 
 
 - (void)changedSalaryWithObject:(MTGovernment *)object {
@@ -28,18 +40,21 @@
         NSLog(@"Docotor feel bed! Government is lowered salary on %.3f percent", [super loweredValue:salary
                                                                                          objectValue:govSalary]);
     }
+    self.salary = govSalary;
 }
 
 #pragma mark -
 #pragma mark Average Price
 
 - (void)changedAveragePrice:(MTGovernment *)object {
-    NSLog(@" - change average price = %.2f", object.govAveragePrice);
+    [super changedAveragePrice:object];
+    
     if (self.averagePrice < object.govAveragePrice) {
         NSLog(@"Doctor feel bad, average price is increased");
     } else {
         NSLog(@"Doctor is happy, average price is lowered");
     }
+    self.averagePrice = object.govAveragePrice;
 }
 
 @end

@@ -48,13 +48,25 @@
 #import "MTPensioner.h"
 
 @interface AppDelegate ()
-@property (nonatomic, strong) MTDoctor *doctor;
-@property (nonatomic, strong) MTBusinessman *businessman;
-@property (nonatomic, strong) MTPensioner *pensioner;
-@property (nonatomic, strong) MTGovernment *government;
+@property (nonatomic, strong)   MTDoctor      *doctor;
+@property (nonatomic, strong)   MTBusinessman *businessman;
+@property (nonatomic, strong)   MTPensioner   *pensioner;
+@property (nonatomic, strong)   MTGovernment  *government;
 @end
 
 @implementation AppDelegate
+
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    [self.government removeAllObservers];
+    
+    self.doctor = nil;
+    self.businessman = nil;
+    self.pensioner = nil;
+    self.government = nil;
+}
 
 - (instancetype)init {
     self = [super init];
@@ -80,45 +92,19 @@
     [government addObserver:businessman];
     [government addObserver:pensioner];
     
-    [self setNewValuesForCitizens];
-    
     NSLog(@" ____ The government's step:");
-    government.govSalary = 3780.f;
+    government.govSalary = 2500.f;
     government.govTaxLevel = 11.f;
-    government.govPension = 1280.f;
+    government.govPension = 940.f;
     government.govAveragePrice = 12.f;
     
-    [self setNewValuesForCitizens];
-    
     NSLog(@" ____ The government's step:");
-    government.govSalary = 3540.f;
+    government.govSalary = 2300.f;
     government.govTaxLevel = 13.5f;
-    government.govPension = 1145.f;
-    government.govAveragePrice = 11.f;
+    government.govPension = 910.f;
+    government.govAveragePrice = 15.f;
 
     return YES;
-}
-
-- (void)setNewValuesForCitizens {
-    MTGovernment *government = self.government;
-    MTDoctor *doctor = self.doctor;
-    MTBusinessman *businessman = self.businessman;
-    MTPensioner *pensioner = self.pensioner;
-
-    doctor.salary = government.govSalary;
-    doctor.averagePrice = pensioner.averagePrice = businessman.averagePrice = government.govAveragePrice;
-    businessman.taxLevel = government.govTaxLevel;
-    pensioner.pension = government.govPension;
-    
-}
-
-- (void)dealloc {
-    [self.government removeAllObservers];
-    
-    self.doctor = nil;
-    self.businessman = nil;
-    self.pensioner = nil;
-    self.government = nil;
 }
 
 @end

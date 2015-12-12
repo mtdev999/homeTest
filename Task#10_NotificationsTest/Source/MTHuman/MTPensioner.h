@@ -13,6 +13,6 @@
 @interface MTPensioner : MTSetValueForCitizen
 @property (nonatomic, assign)   float    pension;
 
-- (void)changedpensionWithObject:(id)object;
+- (void)changedPensionWithObject:(id)object;
 
 @end

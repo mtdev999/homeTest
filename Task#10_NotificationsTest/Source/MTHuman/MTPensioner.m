@@ -13,9 +13,21 @@
 @implementation MTPensioner
 
 #pragma mark -
+#pragma mark Initializations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.pension = 860.f;
+    }
+    
+    return self;
+}
+
+#pragma mark -
 #pragma mark Observable Object
 
-- (void)changedpensionWithObject:(MTGovernment *)object {
+- (void)changedPensionWithObject:(MTGovernment *)object {
     float pension = self.pension;
     float govPension = object.govPension;
     
@@ -27,18 +39,20 @@
         NSLog(@"Pensioner is feel bad! Government lowered pensin on %.3f percent", [super loweredValue:pension
                                                                                            objectValue:govPension]);
     }
+    self.pension = govPension;
 }
 
 #pragma mark -
 #pragma mark Average Price
 
 - (void)changedAveragePrice:(MTGovernment *)object {
-    NSLog(@" - change average price = %.2f", object.govAveragePrice);
+    [super changedAveragePrice:object];
     if (self.averagePrice < object.govAveragePrice) {
         NSLog(@"Pensioner feel bad, average price is increased ");
     } else {
         NSLog(@"Pensioner is happy, average price is lowered ");
     }
+    self.averagePrice = object.govAveragePrice;
 }
 
 @end

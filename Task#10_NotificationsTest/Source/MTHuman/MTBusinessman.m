@@ -13,6 +13,18 @@
 @implementation MTBusinessman
 
 #pragma mark -
+#pragma mark Initializations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.taxLevel = 12.f;
+    }
+    
+    return self;
+}
+
+#pragma mark -
 #pragma mark Observable Object 
 
 - (void)changedTaxLevelWithObject:(MTGovernment *)object {
@@ -27,18 +39,20 @@
         NSLog(@"Bussinessman is happy now! Government lowered taxes on %.3f percent", [super loweredValue:taxLevel
                                                                                               objectValue:govTaxLevel]);
     }
+    self.taxLevel = govTaxLevel;
 }
 
 #pragma mark -
 #pragma mark Average Price
 
 - (void)changedAveragePrice:(MTGovernment *)object {
-    NSLog(@" - change average price = %.2f", object.govAveragePrice);
+    [super changedAveragePrice:object];
     if (self.averagePrice < object.govAveragePrice) {
         NSLog(@"Businessman feel bad, average price is increased ");
     } else {
         NSLog(@"Businessman is happy, average price is lowered ");
     }
+    self.averagePrice = object.govAveragePrice;
 }
 
 @end

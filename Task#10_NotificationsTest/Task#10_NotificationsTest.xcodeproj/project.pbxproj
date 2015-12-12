@@ -31,7 +31,7 @@
 		1B84C3E91C11B56C0050B8C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B84C3EB1C11B56C0050B8C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B84C3EE1C11B56C0050B8C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1B84C3F01C11B56C0050B8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B84C3F01C11B56C0050B8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Task#10_NotificationsTest/Info.plist"; sourceTree = "<group>"; };
 		1B8756D51C15AA760014D569 /* MTObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTObservableObject.h; sourceTree = "<group>"; };
 		1B8756D61C15AA760014D569 /* MTObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTObservableObject.m; sourceTree = "<group>"; };
 		1B8756DC1C16DA130014D569 /* MTGovernment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGovernment.h; sourceTree = "<group>"; };
@@ -64,6 +64,7 @@
 				1B84C3F61C11B65A0050B8C1 /* Source */,
 				1B84C3DE1C11B56C0050B8C1 /* Task#10_NotificationsTest */,
 				1B84C3DD1C11B56C0050B8C1 /* Products */,
+				1B84C3F01C11B56C0050B8C1 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +86,6 @@
 				1B84C3E81C11B56C0050B8C1 /* Main.storyboard */,
 				1B84C3EB1C11B56C0050B8C1 /* Assets.xcassets */,
 				1B84C3ED1C11B56C0050B8C1 /* LaunchScreen.storyboard */,
-				1B84C3F01C11B56C0050B8C1 /* Info.plist */,
 				1B84C3DF1C11B56C0050B8C1 /* Supporting Files */,
 			);
 			path = "Task#10_NotificationsTest";

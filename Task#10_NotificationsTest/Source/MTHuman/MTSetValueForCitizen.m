@@ -12,6 +12,9 @@
 
 @implementation MTSetValueForCitizen
 
+#pragma mark -
+#pragma mark Public
+
 - (float)loweredValue:(float)value objectValue:(float)value2; {
     float result = ((value - value2) * 100) / value;
     return result;
@@ -26,6 +29,7 @@
 #pragma mark Average Price
 
 - (void)changedAveragePrice:(MTGovernment *)object {
+    NSLog(@" - change average price = %.2f", object.govAveragePrice);
     
 }
 
