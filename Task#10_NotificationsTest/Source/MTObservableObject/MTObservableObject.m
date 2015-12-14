@@ -64,6 +64,9 @@
     [self notifyObserversWithSelector:selector object:object object:nil];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 - (void)notifyObserversWithSelector:(SEL)selector object:(id)object object:(id)object2  {
     @synchronized (self.mutableObservers) {
         for (id observer in self.mutableObservers) {
@@ -75,5 +78,7 @@
         }
     }
 }
+
+#pragma clang diagnostic pop
 
 @end

@@ -11,6 +11,22 @@
 #import "MTGovernment.h"
 
 @implementation MTSetValueForCitizen
+@dynamic activingApp;
+
+#pragma mark -
+#pragma mark
+
+- (void)setActivingApp:(BOOL)activingApp {
+    if (self.activingApp != activingApp) {
+        self.activingApp = activingApp;
+        
+        [self currentStage];
+    }
+}
+
+- (void)currentStage {
+    
+}
 
 #pragma mark -
 #pragma mark Public
@@ -30,7 +46,6 @@
 
 - (void)changedAveragePrice:(MTGovernment *)object {
     NSLog(@" - change average price = %.2f", object.govAveragePrice);
-    
 }
 
 @end

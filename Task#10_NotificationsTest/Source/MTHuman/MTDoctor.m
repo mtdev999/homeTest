@@ -43,6 +43,24 @@
     self.salary = govSalary;
 }
 
+- (void)goingWakeUp {
+    NSLog(@"Doctor Wake Up!");
+}
+
+- (void)goingSleep {
+    NSLog(@"Doctor Go Sleep!");
+}
+
+//- (void)currentStage {
+//    BOOL result = self.activingApp;
+//    if (result == NO) {
+//        NSLog(@"WAKE UP!!!");
+//    } else {
+//        NSLog(@"GO SLEEP!!!");
+//    }
+//}
+
+
 #pragma mark -
 #pragma mark Average Price
 

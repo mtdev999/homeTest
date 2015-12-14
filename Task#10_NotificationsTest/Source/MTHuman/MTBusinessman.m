@@ -42,6 +42,24 @@
     self.taxLevel = govTaxLevel;
 }
 
+- (void)goingWakeUp {
+    NSLog(@"Businessman Wake Up!");
+}
+
+- (void)goingSleep {
+    NSLog(@"Businessman Go Sleep!");
+}
+
+//- (void)currentStage {
+//    BOOL result = self.activingApp;
+//    if (result == NO) {
+//        NSLog(@"WAKE UP!!!");
+//    } else {
+//        NSLog(@"GO SLEEP!!!");
+//    }
+//}
+
+
 #pragma mark -
 #pragma mark Average Price
 

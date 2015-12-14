@@ -52,6 +52,7 @@
 @property (nonatomic, strong)   MTBusinessman *businessman;
 @property (nonatomic, strong)   MTPensioner   *pensioner;
 @property (nonatomic, strong)   MTGovernment  *government;
+
 @end
 
 @implementation AppDelegate
@@ -92,6 +93,7 @@
     [government addObserver:businessman];
     [government addObserver:pensioner];
     
+    
     NSLog(@" ____ The government's step:");
     government.govSalary = 2500.f;
     government.govTaxLevel = 11.f;
@@ -105,6 +107,14 @@
     government.govAveragePrice = 15.f;
 
     return YES;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [self.government notifyObserversWithSelector:@selector(goingSleep)];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [self.government notifyObserversWithSelector:@selector(goingWakeUp) object:self];
 }
 
 @end

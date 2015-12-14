@@ -10,7 +10,10 @@
 
 @protocol MTAveragePrice <NSObject>
 @property (nonatomic, assign)   float   averagePrice;
+@property (nonatomic, assign, getter=isActivingApp)   BOOL    activingApp;
 
 - (void)changedAveragePrice:(id)object;
+- (void)goingWakeUp;
+- (void)goingSleep;
 
 @end

@@ -42,6 +42,24 @@
     self.pension = govPension;
 }
 
+- (void)goingWakeUp {
+    NSLog(@"Pensioner Wake Up!");
+}
+
+- (void)goingSleep {
+    NSLog(@"Pensioner Go Sleep!");
+}
+
+//- (void)currentStage {
+//    BOOL result = self.activingApp;
+//    if (result == NO) {
+//        NSLog(@"WAKE UP!!!");
+//    } else {
+//        NSLog(@"GO SLEEP!!!");
+//    }
+//}
+
+
 #pragma mark -
 #pragma mark Average Price
 
