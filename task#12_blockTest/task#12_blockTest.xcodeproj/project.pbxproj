@@ -13,6 +13,7 @@
 		1BC3CD761C21788A0065E457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC3CD741C21788A0065E457 /* Main.storyboard */; };
 		1BC3CD781C21788A0065E457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC3CD771C21788A0065E457 /* Assets.xcassets */; };
 		1BC3CD7B1C21788A0065E457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC3CD791C21788A0065E457 /* LaunchScreen.storyboard */; };
+		1BC3CD841C21A3AC0065E457 /* MTStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC3CD831C21A3AC0065E457 /* MTStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		1BC3CD771C21788A0065E457 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BC3CD7A1C21788A0065E457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BC3CD7C1C21788A0065E457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC3CD821C21A3AC0065E457 /* MTStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStudent.h; sourceTree = "<group>"; };
+		1BC3CD831C21A3AC0065E457 /* MTStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		1BC3CD6A1C21788A0065E457 /* task#12_blockTest */ = {
 			isa = PBXGroup;
 			children = (
+				1BC3CD821C21A3AC0065E457 /* MTStudent.h */,
+				1BC3CD831C21A3AC0065E457 /* MTStudent.m */,
 				1BC3CD6E1C21788A0065E457 /* AppDelegate.h */,
 				1BC3CD6F1C21788A0065E457 /* AppDelegate.m */,
 				1BC3CD711C21788A0065E457 /* ViewController.h */,
@@ -152,6 +157,7 @@
 			files = (
 				1BC3CD731C21788A0065E457 /* ViewController.m in Sources */,
 				1BC3CD701C21788A0065E457 /* AppDelegate.m in Sources */,
+				1BC3CD841C21A3AC0065E457 /* MTStudent.m in Sources */,
 				1BC3CD6D1C21788A0065E457 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
