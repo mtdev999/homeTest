@@ -12,8 +12,8 @@
 
 #import "MTRandomValues.h"
 
-static float const kMTMinValue = 36.6f;
-static float const kMTMaxValue = 42.0f;
+static float const kMTMinValue = 36;
+static float const kMTMaxValue = 42;
 
 @interface MTPatient ()
 

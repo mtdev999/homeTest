@@ -10,8 +10,8 @@
 
 #import "MTRandomValues.h"
 
-static float const kMTMinValue = 36.6f;
-static float const kMTMaxValue = 42.0f;
+static float const kMTMinValue = 36;
+static float const kMTMaxValue = 41;
 
 @interface MTPatient ()
 
@@ -76,8 +76,8 @@ static float const kMTMaxValue = 42.0f;
 - (float)temperatureRandom {
     float addedValue = MTRandomDouble();
     float result = (float)MTRandomIntegerInRange(MTMakeRange(kMTMinValue, kMTMaxValue));
-    
-    return result + addedValue;
+//    float result = (float)(arc4random() %55 + 366) / 10.f;
+    return  result + addedValue; //result;
 }
 
 
