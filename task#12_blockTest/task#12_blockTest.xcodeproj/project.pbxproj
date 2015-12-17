@@ -14,6 +14,8 @@
 		1BC3CD781C21788A0065E457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC3CD771C21788A0065E457 /* Assets.xcassets */; };
 		1BC3CD7B1C21788A0065E457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC3CD791C21788A0065E457 /* LaunchScreen.storyboard */; };
 		1BC3CD841C21A3AC0065E457 /* MTStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC3CD831C21A3AC0065E457 /* MTStudent.m */; };
+		1BC3CD871C22A71D0065E457 /* MTPatient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC3CD861C22A71D0065E457 /* MTPatient.m */; };
+		1BC3CD8B1C22A8580065E457 /* MTRandomValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC3CD8A1C22A8580065E457 /* MTRandomValues.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		1BC3CD7C1C21788A0065E457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BC3CD821C21A3AC0065E457 /* MTStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStudent.h; sourceTree = "<group>"; };
 		1BC3CD831C21A3AC0065E457 /* MTStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStudent.m; sourceTree = "<group>"; };
+		1BC3CD851C22A71D0065E457 /* MTPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPatient.h; sourceTree = "<group>"; };
+		1BC3CD861C22A71D0065E457 /* MTPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPatient.m; sourceTree = "<group>"; };
+		1BC3CD891C22A8580065E457 /* MTRandomValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRandomValues.h; sourceTree = "<group>"; };
+		1BC3CD8A1C22A8580065E457 /* MTRandomValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRandomValues.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 		1BC3CD5F1C21788A0065E457 = {
 			isa = PBXGroup;
 			children = (
+				1BC3CD881C22A8580065E457 /* Extensions */,
 				1BC3CD6A1C21788A0065E457 /* task#12_blockTest */,
 				1BC3CD691C21788A0065E457 /* Products */,
 			);
@@ -61,6 +68,8 @@
 		1BC3CD6A1C21788A0065E457 /* task#12_blockTest */ = {
 			isa = PBXGroup;
 			children = (
+				1BC3CD851C22A71D0065E457 /* MTPatient.h */,
+				1BC3CD861C22A71D0065E457 /* MTPatient.m */,
 				1BC3CD821C21A3AC0065E457 /* MTStudent.h */,
 				1BC3CD831C21A3AC0065E457 /* MTStudent.m */,
 				1BC3CD6E1C21788A0065E457 /* AppDelegate.h */,
@@ -82,6 +91,16 @@
 				1BC3CD6C1C21788A0065E457 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BC3CD881C22A8580065E457 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1BC3CD891C22A8580065E457 /* MTRandomValues.h */,
+				1BC3CD8A1C22A8580065E457 /* MTRandomValues.m */,
+			);
+			name = Extensions;
+			path = "task#12_blockTest/Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BC3CD731C21788A0065E457 /* ViewController.m in Sources */,
+				1BC3CD8B1C22A8580065E457 /* MTRandomValues.m in Sources */,
 				1BC3CD701C21788A0065E457 /* AppDelegate.m in Sources */,
 				1BC3CD841C21A3AC0065E457 /* MTStudent.m in Sources */,
 				1BC3CD6D1C21788A0065E457 /* main.m in Sources */,
+				1BC3CD871C22A71D0065E457 /* MTPatient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

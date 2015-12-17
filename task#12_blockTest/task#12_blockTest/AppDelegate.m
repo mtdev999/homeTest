@@ -36,9 +36,10 @@
 #import "AppDelegate.h"
 
 #import "MTStudent.h"
+#import "MTPatient.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong)   MTPatient   *patient;
 @end
 
 @implementation AppDelegate
@@ -47,14 +48,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"*********Level Pupil*********");
     
-    // void block
+    //create void block
     void(^block)(void) = ^{
         NSLog(@"test Block");
     };
     
     block();
     
-    // block with parametr
+    //create block with parameter
     void(^blockWithParam)(NSString *) = ^(NSString *string) {
         NSLog(@"test block with parametr: string - '%@'", string);
     };
@@ -63,7 +64,7 @@
     blockWithParam(@"string1");
     blockWithParam(@"string2");
    
-    // block with parametrs
+    //create block with parameters
     void(^blockWithParametrs)(NSString *, NSUInteger) = ^(NSString *string, NSUInteger intValue){
         NSLog(@"test block with parametrs: string - '%@', intValue = '%lu'", string, intValue);
     };
@@ -72,7 +73,7 @@
     blockWithParametrs(@"string2", 222);
     blockWithParametrs(@"string3", 333);
     
-    // block with type and parametr
+    //create block with type and parameter
     NSString *(^blockWithReturnValueWithParametrs)(NSString*,NSUInteger) = ^(NSString *string2, NSUInteger intValue2) {
         return [NSString stringWithFormat:@"block return value with parametrs: %@, %lu", string2, intValue2];
     };
@@ -88,26 +89,31 @@
     [self testBlockWithParameterString:^(NSString *string) {
         NSLog(@"Block with string was called: %@", string);
     }];
+    NSLog(@"\n");
     
     NSLog(@"*********Level Student********");
-    
+    // create new array
     NSMutableArray *students = [NSMutableArray new];
     
+    /*
+     //create new students
     for (int i = 1; i < 10; i++) {
         MTStudent *student = [MTStudent new];
         student.name = [NSString stringWithFormat:@"name%d", i];
         student.surname = [NSString stringWithFormat:@"surname%d", i];
         [students addObject:student];
     }
-    
+     
+    //create new students with same surname
     for (int i = 1; i <=3 ; i++) {
         MTStudent *student = [MTStudent new];
         student.name = [NSString stringWithFormat:@"a-name%d", i];
         student.surname = [NSString stringWithFormat:@"surname%d", i];
         [students addObject:student];
     }
+     */
   
-    /*
+  //  /*
     MTStudent *student1 = [MTStudent new];
     MTStudent *student2 = [MTStudent new];
     MTStudent *student3 = [MTStudent new];
@@ -150,22 +156,50 @@
     [students addObject:student8];
     [students addObject:student9];
     [students addObject:student10];
-    */
+//    */
     
     NSArray *sortedObjects = [students sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         MTStudent *stud1 = (MTStudent *)obj1;
         MTStudent *stud2 = (MTStudent *)obj2;
         
-        return [[stud1 surname] compare:[stud2 surname]];
+        if ([[stud1 surname] isEqualToString:[stud2 surname]]) {
+            return [[stud1 name] compare:[stud2 name]];
+        } else {
+            return [[stud1 surname] compare:[stud2 surname]];
+        }
     }];
     
     NSLog(@"Sorted students:");
     for (MTStudent *object in sortedObjects) {
         NSLog(@" %@ %@", object.surname, object.name);
     }
+    NSLog(@"\n");
     
     NSLog(@"********Level Master*********");
     
+    // create some patients
+    NSMutableArray *patiens = [NSMutableArray new];
+    for (int i = 0; i < 10; i++) {
+        [patiens addObject:[MTPatient patientCame]];
+    }
+
+    int i = 0;
+    
+    // use method with block
+    for (MTPatient *object in patiens) {
+        
+        object.name =[NSString stringWithFormat:@"patient%d",i++];
+        
+        [object patientFeelsBad:^(MTPatient *patient) {
+            sleep(1);
+            if (object.temperature >37.f && object.temperature < 39.f) {
+                [object takePill];
+            } else if (object.temperature >= 39.f) {
+                [object makeShot];
+            }
+        }];
+    }
+
     return YES;
 }
 
