@@ -35,6 +35,8 @@
 
 #import "AppDelegate.h"
 
+#import "MTStudent.h"
+
 @interface AppDelegate ()
 
 @end
@@ -89,7 +91,80 @@
     
     NSLog(@"*********Level Student********");
     
+    NSMutableArray *students = [NSMutableArray new];
     
+    for (int i = 1; i < 10; i++) {
+        MTStudent *student = [MTStudent new];
+        student.name = [NSString stringWithFormat:@"name%d", i];
+        student.surname = [NSString stringWithFormat:@"surname%d", i];
+        [students addObject:student];
+    }
+    
+    for (int i = 1; i <=3 ; i++) {
+        MTStudent *student = [MTStudent new];
+        student.name = [NSString stringWithFormat:@"a-name%d", i];
+        student.surname = [NSString stringWithFormat:@"surname%d", i];
+        [students addObject:student];
+    }
+  
+    /*
+    MTStudent *student1 = [MTStudent new];
+    MTStudent *student2 = [MTStudent new];
+    MTStudent *student3 = [MTStudent new];
+    MTStudent *student4 = [MTStudent new];
+    MTStudent *student5 = [MTStudent new];
+    MTStudent *student6 = [MTStudent new];
+    MTStudent *student7 = [MTStudent new];
+    MTStudent *student8 = [MTStudent new];
+    MTStudent *student9 = [MTStudent new];
+    MTStudent *student10 = [MTStudent new];
+    
+    student1.surname = @"Petrov";
+    student1.name = @"Artem";
+    student2.surname = @"Sidorov";
+    student2.name = @"Danil";
+    student3.surname = @"Kalmikov";
+    student3.name = @"Andrey";
+    student4.surname = @"Baranova";
+    student4.name = @"Masha";
+    student5.surname = @"Blinov";
+    student5.name = @"Vadim";
+    student6.surname = @"Sergeev";
+    student6.name = @"Denis";
+    student7.surname = @"Petrov";
+    student7.name = @"Petya";
+    student8.surname = @"Sidorov";
+    student8.name = @"Kolya";
+    student9.surname = @"Avdeev";
+    student9.name = @"Anton";
+    student10.surname = @"Kuznecov";
+    student10.name = @"Kostya";
+    
+    [students addObject:student1];
+    [students addObject:student2];
+    [students addObject:student3];
+    [students addObject:student4];
+    [students addObject:student5];
+    [students addObject:student6];
+    [students addObject:student7];
+    [students addObject:student8];
+    [students addObject:student9];
+    [students addObject:student10];
+    */
+    
+    NSArray *sortedObjects = [students sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        MTStudent *stud1 = (MTStudent *)obj1;
+        MTStudent *stud2 = (MTStudent *)obj2;
+        
+        return [[stud1 surname] compare:[stud2 surname]];
+    }];
+    
+    NSLog(@"Sorted students:");
+    for (MTStudent *object in sortedObjects) {
+        NSLog(@" %@ %@", object.surname, object.name);
+    }
+    
+    NSLog(@"********Level Master*********");
     
     return YES;
 }
