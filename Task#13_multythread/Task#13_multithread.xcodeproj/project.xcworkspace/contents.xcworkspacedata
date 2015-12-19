@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Task#13_multythread.xcodeproj">
+      location = "self:/Users/Kuzmenko/homeTest/Task#13_multythread/Task#13_multithread.xcodeproj">
    </FileRef>
 </Workspace>

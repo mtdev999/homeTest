@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1BB483081C25796900CA7168 /* Task#13_multythread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task#13_multythread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BB483081C25796900CA7168 /* Task#13_multithread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task#13_multithread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB4830C1C25796900CA7168 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1BB4830E1C25796900CA7168 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BB4830F1C25796900CA7168 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		1BB482FF1C25796900CA7168 = {
 			isa = PBXGroup;
 			children = (
-				1BB4830A1C25796900CA7168 /* Task#13_multythread */,
+				1BB4830A1C25796900CA7168 /* Task#13_multithread */,
 				1BB483091C25796900CA7168 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		1BB483091C25796900CA7168 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1BB483081C25796900CA7168 /* Task#13_multythread.app */,
+				1BB483081C25796900CA7168 /* Task#13_multithread.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1BB4830A1C25796900CA7168 /* Task#13_multythread */ = {
+		1BB4830A1C25796900CA7168 /* Task#13_multithread */ = {
 			isa = PBXGroup;
 			children = (
 				1BB4830E1C25796900CA7168 /* AppDelegate.h */,
@@ -68,6 +68,7 @@
 				1BB4831C1C25796900CA7168 /* Info.plist */,
 				1BB4830B1C25796900CA7168 /* Supporting Files */,
 			);
+			name = "Task#13_multithread";
 			path = "Task#13_multythread";
 			sourceTree = "<group>";
 		};
@@ -82,9 +83,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1BB483071C25796900CA7168 /* Task#13_multythread */ = {
+		1BB483071C25796900CA7168 /* Task#13_multithread */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1BB4831F1C25796900CA7168 /* Build configuration list for PBXNativeTarget "Task#13_multythread" */;
+			buildConfigurationList = 1BB4831F1C25796900CA7168 /* Build configuration list for PBXNativeTarget "Task#13_multithread" */;
 			buildPhases = (
 				1BB483041C25796900CA7168 /* Sources */,
 				1BB483051C25796900CA7168 /* Frameworks */,
@@ -94,9 +95,9 @@
 			);
 			dependencies = (
 			);
-			name = "Task#13_multythread";
+			name = "Task#13_multithread";
 			productName = "Task#13_multythread";
-			productReference = 1BB483081C25796900CA7168 /* Task#13_multythread.app */;
+			productReference = 1BB483081C25796900CA7168 /* Task#13_multithread.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1BB483031C25796900CA7168 /* Build configuration list for PBXProject "Task#13_multythread" */;
+			buildConfigurationList = 1BB483031C25796900CA7168 /* Build configuration list for PBXProject "Task#13_multithread" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -127,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1BB483071C25796900CA7168 /* Task#13_multythread */,
+				1BB483071C25796900CA7168 /* Task#13_multithread */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +266,7 @@
 				INFOPLIST_FILE = "Task#13_multythread/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MT.Task-13-multythread";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Task#13_multithread";
 			};
 			name = Debug;
 		};
@@ -276,14 +277,14 @@
 				INFOPLIST_FILE = "Task#13_multythread/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MT.Task-13-multythread";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Task#13_multithread";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1BB483031C25796900CA7168 /* Build configuration list for PBXProject "Task#13_multythread" */ = {
+		1BB483031C25796900CA7168 /* Build configuration list for PBXProject "Task#13_multithread" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BB4831D1C25796900CA7168 /* Debug */,
@@ -292,7 +293,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1BB4831F1C25796900CA7168 /* Build configuration list for PBXNativeTarget "Task#13_multythread" */ = {
+		1BB4831F1C25796900CA7168 /* Build configuration list for PBXNativeTarget "Task#13_multithread" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BB483201C25796900CA7168 /* Debug */,
