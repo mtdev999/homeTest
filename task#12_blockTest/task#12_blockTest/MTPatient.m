@@ -1,0 +1,100 @@
+//
+//  MTPatient.m
+//  MTDelegateTest
+//
+//  Created by Mark Tezza on 28.11.15.
+//  Copyright © 2015 Mark Tezza. All rights reserved.
+//
+
+#import "MTPatient.h"
+
+#import "MTRandomValues.h"
+#import "MTMacros.h"
+
+//static float const kMTMinValue = 36;
+//static float const kMTMaxValue = 41;
+
+@interface MTPatient ()
+
+- (float)temperatureRandom;
+
+@end
+
+@implementation MTPatient
+
+#pragma mark -
+#pragma mark Class Method
+
++ (MTPatient *)patientCame {
+    return [[self alloc] init];
+}
+
+#pragma mark -
+#pragma mark Initializtiona and Deallocations
+
+- (void)dealloc {
+    self.name = nil;
+}
+
+- (instancetype)initWithBlock:(void(^)(MTPatient *))blockObj {
+    self = [super init];
+    if (self) {
+        self.temperature = [self temperatureRandom];
+        NSTimeInterval timer = arc4random() % 4;
+        [self performSelector:@selector(feelsBad:) withObject:blockObj afterDelay:timer];
+    }
+    
+    return self;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.temperature = [self temperatureRandom];
+    }
+    
+    return self;
+}
+
+#pragma mark -
+#pragma mark Public
+
+- (void)takePill {
+    NSLog(@"- %@ receives a pill", self.name);
+}
+
+- (void)makeShot {
+    NSLog(@"- the %@ receives an injection", self.name);
+}
+
+- (void)patientFeelsBad:(void(^)(MTPatient *))patientBlock {
+    if (self.temperature < 37) {
+        NSLog(@"%@: I am feel good! My temperature is %.1f ",self.name, self.temperature);
+    } else {
+        NSLog(@"%@: I am feel bad! My temperature is %.1f ",self.name, self.temperature);
+        __weak MTPatient *weakSelf = self;
+        patientBlock(weakSelf);
+    }
+}
+
+- (void)feelsBad:(void(^)(MTPatient *))blockObj {
+    blockObj(self);
+}
+
+#pragma mark -
+#pragma mark Private 
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"name = %@, temperature = %.1f",
+            self.name,
+            self.temperature];
+}
+
+- (float)temperatureRandom {
+//    float addedValue = MTRandomDouble();
+//    float result = (float)MTRandomIntegerInRange(MTMakeRange(kMTMinValue, kMTMaxValue));
+    float result = (float)(arc4random() %55 + 366) / 10.f;
+    return  result; //result + addedValue;
+}
+
+@end
