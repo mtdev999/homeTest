@@ -39,7 +39,8 @@
 #import "MTPatient.h"
 
 @interface AppDelegate ()
-@property (nonatomic, strong)   MTPatient   *patient;
+@property (nonatomic, strong)   MTPatient       *patient;
+@property (nonatomic, strong)   NSMutableArray  *patients;
 @end
 
 @implementation AppDelegate
@@ -176,28 +177,40 @@
     NSLog(@"\n");
     
     NSLog(@"********Level Master*********");
+ 
+    // create block
+    void(^blockObj)(MTPatient *) = ^(MTPatient *object) {
+        if (object.temperature >37.f && object.temperature < 39.f) {
+            [object takePill];
+        } else if (object.temperature >= 39.f) {
+            [object makeShot];
+        }
+    };
     
-    // create some patients
-    NSMutableArray *patiens = [NSMutableArray new];
     for (int i = 0; i < 10; i++) {
-        [patiens addObject:[MTPatient patientCame]];
+        MTPatient *patient = [MTPatient new]; // here used only init
+        //sleep(1);
+        patient.name = [NSString stringWithFormat:@"patient%d", i];
+        [patient patientFeelsBad:blockObj];
+        [self.patients addObject:patient];
     }
 
-    int i = 0;
+    NSLog(@"\n");
     
-    // use method with block
-    for (MTPatient *object in patiens) {
-        
-        object.name =[NSString stringWithFormat:@"patient%d",i++];
-        
-        [object patientFeelsBad:^(MTPatient *patient) {
-            sleep(1);
-            if (object.temperature >37.f && object.temperature < 39.f) {
-                [object takePill];
-            } else if (object.temperature >= 39.f) {
-                [object makeShot];
-            }
-        }];
+    NSLog(@"********Level Superman*********");
+ 
+    void(^blockPatient)(MTPatient *)= ^(MTPatient *patient) {
+        if (patient.temperature < 37) {
+            NSLog(@"%@: I am feel good! My temperature is %.1f ", patient.name, patient.temperature);
+        } else {
+            NSLog(@"%@: I am feel bad! My temperature is %.1f ", patient.name, patient.temperature);
+        }
+    };
+
+    for (int i = 0; i < 10; i++) {
+        MTPatient *patient = [[MTPatient alloc] initWithBlock:blockPatient]; // here used initialization with block
+        patient.name = [NSString stringWithFormat:@"patient%d", i];
+        [self.patients addObject:patient];
     }
 
     return YES;

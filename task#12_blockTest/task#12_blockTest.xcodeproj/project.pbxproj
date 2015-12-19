@@ -35,6 +35,7 @@
 		1BC3CD861C22A71D0065E457 /* MTPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPatient.m; sourceTree = "<group>"; };
 		1BC3CD891C22A8580065E457 /* MTRandomValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRandomValues.h; sourceTree = "<group>"; };
 		1BC3CD8A1C22A8580065E457 /* MTRandomValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRandomValues.m; sourceTree = "<group>"; };
+		1BC3CD8C1C22C0D10065E457 /* MTMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		1BC3CD6A1C21788A0065E457 /* task#12_blockTest */ = {
 			isa = PBXGroup;
 			children = (
+				1BC3CD8C1C22C0D10065E457 /* MTMacros.h */,
 				1BC3CD851C22A71D0065E457 /* MTPatient.h */,
 				1BC3CD861C22A71D0065E457 /* MTPatient.m */,
 				1BC3CD821C21A3AC0065E457 /* MTStudent.h */,

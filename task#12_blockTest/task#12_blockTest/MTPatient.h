@@ -13,10 +13,12 @@
 @property (nonatomic, assign)   float           temperature;
 
 + (MTPatient *)patientCame;
+- (instancetype)initWithBlock:(void(^)(MTPatient *))patientBlock;
 
 - (void)takePill;
 - (void)makeShot;
 - (void)patientFeelsBad:(void(^)(MTPatient *patient))patientBlock;
+- (void)feelsBad:(void(^)(MTPatient *))blockObj;
 
 @end
 

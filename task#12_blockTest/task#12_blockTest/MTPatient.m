@@ -9,9 +9,10 @@
 #import "MTPatient.h"
 
 #import "MTRandomValues.h"
+#import "MTMacros.h"
 
-static float const kMTMinValue = 36;
-static float const kMTMaxValue = 41;
+//static float const kMTMinValue = 36;
+//static float const kMTMaxValue = 41;
 
 @interface MTPatient ()
 
@@ -35,6 +36,17 @@ static float const kMTMaxValue = 41;
     self.name = nil;
 }
 
+- (instancetype)initWithBlock:(void(^)(MTPatient *))blockObj {
+    self = [super init];
+    if (self) {
+        self.temperature = [self temperatureRandom];
+        NSTimeInterval timer = arc4random() % 4;
+        [self performSelector:@selector(feelsBad:) withObject:blockObj afterDelay:timer];
+    }
+    
+    return self;
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -55,13 +67,18 @@ static float const kMTMaxValue = 41;
     NSLog(@"- the %@ receives an injection", self.name);
 }
 
-- (void)patientFeelsBad:(void(^)(MTPatient *patient))patientBlock {
+- (void)patientFeelsBad:(void(^)(MTPatient *))patientBlock {
     if (self.temperature < 37) {
         NSLog(@"%@: I am feel good! My temperature is %.1f ",self.name, self.temperature);
     } else {
         NSLog(@"%@: I am feel bad! My temperature is %.1f ",self.name, self.temperature);
-        patientBlock(self);
+        __weak MTPatient *weakSelf = self;
+        patientBlock(weakSelf);
     }
+}
+
+- (void)feelsBad:(void(^)(MTPatient *))blockObj {
+    blockObj(self);
 }
 
 #pragma mark -
@@ -74,11 +91,10 @@ static float const kMTMaxValue = 41;
 }
 
 - (float)temperatureRandom {
-    float addedValue = MTRandomDouble();
-    float result = (float)MTRandomIntegerInRange(MTMakeRange(kMTMinValue, kMTMaxValue));
-//    float result = (float)(arc4random() %55 + 366) / 10.f;
-    return  result + addedValue; //result;
+//    float addedValue = MTRandomDouble();
+//    float result = (float)MTRandomIntegerInRange(MTMakeRange(kMTMinValue, kMTMaxValue));
+    float result = (float)(arc4random() %55 + 366) / 10.f;
+    return  result; //result + addedValue;
 }
-
 
 @end
