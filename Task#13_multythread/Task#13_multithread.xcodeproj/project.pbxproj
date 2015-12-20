@@ -13,6 +13,7 @@
 		1BB483161C25796900CA7168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BB483141C25796900CA7168 /* Main.storyboard */; };
 		1BB483181C25796900CA7168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB483171C25796900CA7168 /* Assets.xcassets */; };
 		1BB4831B1C25796900CA7168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BB483191C25796900CA7168 /* LaunchScreen.storyboard */; };
+		1BB4834A1C26CD3C00CA7168 /* MTStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB483491C26CD3C00CA7168 /* MTStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		1BB483171C25796900CA7168 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BB4831A1C25796900CA7168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BB4831C1C25796900CA7168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BB483481C26CD3C00CA7168 /* MTStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStudent.h; sourceTree = "<group>"; };
+		1BB483491C26CD3C00CA7168 /* MTStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		1BB4830A1C25796900CA7168 /* Task#13_multithread */ = {
 			isa = PBXGroup;
 			children = (
+				1BB483481C26CD3C00CA7168 /* MTStudent.h */,
+				1BB483491C26CD3C00CA7168 /* MTStudent.m */,
 				1BB4830E1C25796900CA7168 /* AppDelegate.h */,
 				1BB4830F1C25796900CA7168 /* AppDelegate.m */,
 				1BB483111C25796900CA7168 /* ViewController.h */,
@@ -153,6 +158,7 @@
 			files = (
 				1BB483131C25796900CA7168 /* ViewController.m in Sources */,
 				1BB483101C25796900CA7168 /* AppDelegate.m in Sources */,
+				1BB4834A1C26CD3C00CA7168 /* MTStudent.m in Sources */,
 				1BB4830D1C25796900CA7168 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +306,7 @@
 				1BB483211C25796900CA7168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
