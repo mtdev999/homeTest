@@ -10,6 +10,11 @@
 
 #import <UIKit/UIKit.h>
 
+@interface MTStudent ()
+@property (nonatomic, assign)   double      timer;
+
+@end
+
 @implementation MTStudent
 
 #pragma mark -
@@ -34,15 +39,37 @@
     dispatch_async(studentQueue, ^{
 
         NSUInteger randomNumber = arc4random() % range;
-        CFTimeInterval timer = CACurrentMediaTime();
-        
+        CFTimeInterval timer = self.timer;
+        timer = CACurrentMediaTime();
+
         while (randomNumber != number) {
             randomNumber = arc4random() % range;
         }
         
         self.timer = CACurrentMediaTime() - timer;
         
-        NSLog(@"Student: %@ performed task in %f", self.name, self.timer);
+        NSLog(@"%@ performed task in %f", self.name, self.timer);
+    });
+}
+
+- (void)guessNumber:(NSUInteger)number range:(NSUInteger)range resultBlock:(void(^)(NSString *,float))resultBlock {
+    dispatch_queue_t studentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(studentQueue, ^{
+        
+        NSUInteger randomNumber = arc4random() % range;
+        CFTimeInterval timer = self.timer;
+        timer = CACurrentMediaTime();
+        
+        while (randomNumber != number) {
+            randomNumber = arc4random() % range;
+        }
+        
+        self.timer = CACurrentMediaTime() - timer;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            __weak MTStudent *weakSelf = self;
+            resultBlock(weakSelf.name, weakSelf.timer);
+        });
+        
     });
 }
 

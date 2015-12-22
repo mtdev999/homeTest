@@ -10,10 +10,10 @@
 
 @interface MTStudent : NSObject
 @property (nonatomic, copy)     NSString    *name;
-@property (nonatomic, assign)   double      timer;
 
 - (instancetype)initWithName:(NSString *)name;
 
 - (void)guessNumber:(NSUInteger)number range:(NSUInteger)range;
+- (void)guessNumber:(NSUInteger)number range:(NSUInteger)range resultBlock:(void(^)(NSString *,float))resultBlock;
 
 @end

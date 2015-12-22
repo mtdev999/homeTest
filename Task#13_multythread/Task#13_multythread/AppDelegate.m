@@ -61,23 +61,28 @@
     return self;
 }
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   
-    
-    for (int i = 0; i < 10; i++) {
-        MTStudent *student = [[MTStudent alloc] initWithName:[NSString stringWithFormat:@"student%d", i]];
+    for (int i = 1; i <= 5; i++) {
+        MTStudent *student = [[MTStudent alloc] initWithName:[NSString stringWithFormat:@"Student%d", i]];
         [self.mutableArray addObject:student];
     }
     
-    NSUInteger rang = 1000000;
-    NSUInteger number = 123;
-    
+    NSUInteger range = 600;
+    NSLog(@"range = %lu", (unsigned long)range);
+    NSUInteger number = arc4random_uniform(100)+500;
+    NSLog(@"number = %lu", (unsigned long)number);
+    NSLog(@"*******Level Pupil******");
     for (MTStudent *object in self.mutableArray) {
-            [object guessNumber:number range:rang];
+            [object guessNumber:number range:range];
         }
-    
-    
+    sleep(2);
+    NSLog(@"*******Level Student******");
+    for (MTStudent *object in self.mutableArray) {
+        [object guessNumber:number range:range resultBlock:^(NSString *name, float timer) {
+            NSLog(@"name: %@ time: %f", name, timer);
+        }];
+    }
+
     return YES;
 }
 
