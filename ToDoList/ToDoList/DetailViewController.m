@@ -9,6 +9,9 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
+@property (nonatomic, strong)   IBOutlet UITextField    *textField;
+@property (nonatomic, strong)   IBOutlet UIDatePicker   *datePicker;
+@property (nonatomic, strong)   IBOutlet UIButton       *buttonSave;
 
 @end
 
@@ -23,5 +26,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark -
+#pragma mark Private
+
+- (void)saveButton {
+    NSLog(@"save");
+}
+
+
 
 @end
