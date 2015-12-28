@@ -14,12 +14,19 @@
 @property (strong, nonatomic) IBOutlet UIButton         *buttonSave;
 
 
+
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // setting minimum value of date
+    self.datePicker.minimumDate = [NSDate date];
+    
+    // call method 'changeValueDatePicker' when an event occurs
+    [self.datePicker addTarget:self action:@selector(changeValueDatePicker) forControlEvents:UIControlEventValueChanged];
     
     [self.buttonSave addTarget:self action:@selector(save) forControlEvents:UIControlEventTouchUpInside];
     
@@ -37,6 +44,12 @@
 
 #pragma mark -
 #pragma mark Private
+
+// this method for outputting info about date to consol;
+- (void)changeValueDatePicker {
+    self.eventDate = self.datePicker.date;
+    NSLog(@"event date%@", self.eventDate);
+}
 
 - (void)handleEndEditing {
     [self.view endEditing:YES];
