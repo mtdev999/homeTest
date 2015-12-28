@@ -8,6 +8,8 @@
 
 #import "MainTableViewController.h"
 
+#import "DetailViewController.h"
+
 @interface MainTableViewController ()
 @property (nonatomic, strong)   NSMutableArray *arrayEvents;
 
@@ -26,7 +28,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.arrayEvents = [[NSMutableArray alloc] initWithObjects:@"AAA",@"BBB",@"CCC", nil];
+    
+    
+    NSArray *array = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    self.arrayEvents = [[NSMutableArray alloc] initWithArray:array];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,15 +52,26 @@
     
     NSString *indentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier forIndexPath:indexPath];
-    NSString *string = [self.arrayEvents objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = string;
+    UILocalNotification *notification = [self.arrayEvents objectAtIndex:indexPath.row];
     
+    NSDictionary *dict = notification.userInfo;
+    
+    cell.textLabel.text = [dict objectForKey:@"eventInfo"];
+    cell.detailTextLabel.text = [dict objectForKey:@"eventDate"];
     // Configure the cell...
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    DetailViewController *detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
+    
+    // переход на другую страницу
+    [self.navigationController pushViewController:detailView animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.
