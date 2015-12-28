@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="181" y="406"/>
         </scene>
-        <!--Root View Controller-->
+        <!--ToDo List-->
         <scene sceneID="JcK-Ec-72K">
             <objects>
                 <tableViewController id="q3M-bW-bF6" customClass="MainTableViewController" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="7SY-OP-Fd7">
+                    <navigationItem key="navigationItem" title="ToDo List" id="7SY-OP-Fd7">
                         <barButtonItem key="backBarButtonItem" title="back" id="1f8-B5-CMR"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bUm-ge-w0z">
                             <connections>
