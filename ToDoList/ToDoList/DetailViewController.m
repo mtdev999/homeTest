@@ -13,8 +13,6 @@
 @property (strong, nonatomic) IBOutlet UIDatePicker     *datePicker;
 @property (strong, nonatomic) IBOutlet UIButton         *buttonSave;
 
-
-
 @end
 
 @implementation DetailViewController
@@ -54,11 +52,32 @@
 }
 
 - (void)handleEndEditing {
-    [self.view endEditing:YES];
+    
+    if ([self.textField.text length] != 0) { // user can't write an empty note
+        [self.view endEditing:YES];
+        self.buttonSave.userInteractionEnabled = YES;
+    } else {
+        [self showAlertWithMerssage:@"You can’t save empty field. Please, write your message!"];
+    }
 }
 
 - (void)save {
-    
+    if (self.eventDate) {
+        
+        if ([self.eventDate compare:[NSDate date]] == NSOrderedSame) {
+            [self showAlertWithMerssage:@"Date of future events may not coincide with the current date."];
+        } else if ([self.eventDate compare:[NSDate date]] == NSOrderedAscending) {
+            [self showAlertWithMerssage:@"Date of future events can not be before the current date."];
+        } else {
+            [self setNotification];
+        }
+   
+    } else {
+        [self showAlertWithMerssage:@"To save the event, change the date to a later."];
+    }
+}
+
+- (void)setNotification {
     NSString *eventInfo = self.textField.text;
     
     NSDateFormatter *formater = [NSDateFormatter new];
@@ -81,14 +100,20 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:notify];
 }
 
+#pragma mark -
+#pragma mark Protocol
+
 // this method is responsible for closing the keyboard (button 'DONE')
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([textField isEqual:self.textField]) {
+        
         if ([self.textField.text length] != 0) { // user can't write an empty note
             [self.textField resignFirstResponder];
+            
             self.buttonSave.userInteractionEnabled = YES;
+            return YES;
         } else {
-            [self showAlertWithMerssage:@"Enter text in text field."];
+            [self showAlertWithMerssage:@"You can’t save empty field. Please, write your message!"];
         }
     }
     
@@ -96,35 +121,20 @@
 }
 
 - (void)showAlertWithMerssage:(NSString *)message {
-    /*
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention!!!"
-                                                    message:message
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil, nil];
-    */
+
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!!!"
                                                                    message:message
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
-
-    UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"OK"
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK"
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction * action) {
                                                           //Handel your yes please button action here
                                                           [alert dismissViewControllerAnimated:YES completion:nil];
                                                       }];
-//
-//    UIAlertAction* noButton = [UIAlertAction actionWithTitle:@"No, thanks"
-//                                                       style:UIAlertActionStyleDefault
-//                                                     handler:^(UIAlertAction * action) {
-//                                                        [alert dismissViewControllerAnimated:YES completion:nil];
-//                                   
-//                                                     }];
-//    
-    [alert addAction:yesButton];
-//    [alert addAction:noButton];
     
+    [alert addAction:okButton];
+
     [self presentViewController:alert animated:YES completion:nil];
 }
 
