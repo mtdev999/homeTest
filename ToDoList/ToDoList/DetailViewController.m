@@ -6,16 +6,16 @@
 //  Copyright © 2015 Mark Tezza. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "DetailViewController.h"
 
-@interface ViewController ()
+@interface DetailViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 
 @end
 
-@implementation ViewController
+@implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
