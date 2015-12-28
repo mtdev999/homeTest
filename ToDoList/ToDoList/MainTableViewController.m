@@ -20,6 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSArray *array = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    self.arrayEvents = [[NSMutableArray alloc] initWithArray:array];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableViewWhenNewEvent) name:@"NewEvent" object:nil];
+    
+    
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -27,8 +35,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)reloadTableViewWhenNewEvent {
     
+    [self.arrayEvents removeAllObjects];
     
     NSArray *array = [[UIApplication sharedApplication] scheduledLocalNotifications];
     self.arrayEvents = [[NSMutableArray alloc] initWithArray:array];

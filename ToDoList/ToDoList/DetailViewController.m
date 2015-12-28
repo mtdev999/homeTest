@@ -113,6 +113,7 @@
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notify];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NewEvent" object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
