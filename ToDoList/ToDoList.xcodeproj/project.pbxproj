@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BD833121C30300900F7C12F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD833111C30300900F7C12F /* main.m */; };
-		1BD833151C30300900F7C12F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD833141C30300900F7C12F /* AppDelegate.m */; };
-		1BD833181C30300900F7C12F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD833171C30300900F7C12F /* DetailViewController.m */; };
-		1BD8331B1C30300900F7C12F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD833191C30300900F7C12F /* Main.storyboard */; };
-		1BD8331D1C30300900F7C12F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD8331C1C30300900F7C12F /* Assets.xcassets */; };
-		1BD833201C30300900F7C12F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD8331E1C30300900F7C12F /* LaunchScreen.storyboard */; };
+		1BD8335E1C31318400F7C12F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8335D1C31318400F7C12F /* main.m */; };
+		1BD833611C31318400F7C12F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD833601C31318400F7C12F /* AppDelegate.m */; };
+		1BD833641C31318400F7C12F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD833631C31318400F7C12F /* ViewController.m */; };
+		1BD833671C31318400F7C12F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD833651C31318400F7C12F /* Main.storyboard */; };
+		1BD833691C31318400F7C12F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD833681C31318400F7C12F /* Assets.xcassets */; };
+		1BD8336C1C31318400F7C12F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD8336A1C31318400F7C12F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1BD8330D1C30300900F7C12F /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BD833111C30300900F7C12F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1BD833131C30300900F7C12F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1BD833141C30300900F7C12F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1BD833161C30300900F7C12F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		1BD833171C30300900F7C12F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		1BD8331A1C30300900F7C12F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1BD8331C1C30300900F7C12F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1BD8331F1C30300900F7C12F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1BD833211C30300900F7C12F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BD833591C31318300F7C12F /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BD8335D1C31318400F7C12F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1BD8335F1C31318400F7C12F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1BD833601C31318400F7C12F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1BD833621C31318400F7C12F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1BD833631C31318400F7C12F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1BD833661C31318400F7C12F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1BD833681C31318400F7C12F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BD8336B1C31318400F7C12F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1BD8336D1C31318400F7C12F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1BD8330A1C30300900F7C12F /* Frameworks */ = {
+		1BD833561C31318300F7C12F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,42 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1BD833041C30300900F7C12F = {
+		1BD833501C31318300F7C12F = {
 			isa = PBXGroup;
 			children = (
-				1BD8330F1C30300900F7C12F /* ToDoList */,
-				1BD8330E1C30300900F7C12F /* Products */,
+				1BD8335B1C31318300F7C12F /* ToDoList */,
+				1BD8335A1C31318300F7C12F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1BD8330E1C30300900F7C12F /* Products */ = {
+		1BD8335A1C31318300F7C12F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1BD8330D1C30300900F7C12F /* ToDoList.app */,
+				1BD833591C31318300F7C12F /* ToDoList.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1BD8330F1C30300900F7C12F /* ToDoList */ = {
+		1BD8335B1C31318300F7C12F /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				1BD833131C30300900F7C12F /* AppDelegate.h */,
-				1BD833141C30300900F7C12F /* AppDelegate.m */,
-				1BD833161C30300900F7C12F /* DetailViewController.h */,
-				1BD833171C30300900F7C12F /* DetailViewController.m */,
-				1BD833191C30300900F7C12F /* Main.storyboard */,
-				1BD8331C1C30300900F7C12F /* Assets.xcassets */,
-				1BD8331E1C30300900F7C12F /* LaunchScreen.storyboard */,
-				1BD833211C30300900F7C12F /* Info.plist */,
-				1BD833101C30300900F7C12F /* Supporting Files */,
+				1BD8335F1C31318400F7C12F /* AppDelegate.h */,
+				1BD833601C31318400F7C12F /* AppDelegate.m */,
+				1BD833621C31318400F7C12F /* ViewController.h */,
+				1BD833631C31318400F7C12F /* ViewController.m */,
+				1BD833651C31318400F7C12F /* Main.storyboard */,
+				1BD833681C31318400F7C12F /* Assets.xcassets */,
+				1BD8336A1C31318400F7C12F /* LaunchScreen.storyboard */,
+				1BD8336D1C31318400F7C12F /* Info.plist */,
+				1BD8335C1C31318400F7C12F /* Supporting Files */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
 		};
-		1BD833101C30300900F7C12F /* Supporting Files */ = {
+		1BD8335C1C31318400F7C12F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1BD833111C30300900F7C12F /* main.m */,
+				1BD8335D1C31318400F7C12F /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -82,13 +82,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1BD8330C1C30300900F7C12F /* ToDoList */ = {
+		1BD833581C31318300F7C12F /* ToDoList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1BD833241C30300900F7C12F /* Build configuration list for PBXNativeTarget "ToDoList" */;
+			buildConfigurationList = 1BD833701C31318400F7C12F /* Build configuration list for PBXNativeTarget "ToDoList" */;
 			buildPhases = (
-				1BD833091C30300900F7C12F /* Sources */,
-				1BD8330A1C30300900F7C12F /* Frameworks */,
-				1BD8330B1C30300900F7C12F /* Resources */,
+				1BD833551C31318300F7C12F /* Sources */,
+				1BD833561C31318300F7C12F /* Frameworks */,
+				1BD833571C31318300F7C12F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -96,25 +96,25 @@
 			);
 			name = ToDoList;
 			productName = ToDoList;
-			productReference = 1BD8330D1C30300900F7C12F /* ToDoList.app */;
+			productReference = 1BD833591C31318300F7C12F /* ToDoList.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1BD833051C30300900F7C12F /* Project object */ = {
+		1BD833511C31318300F7C12F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Mark Tezza";
 				TargetAttributes = {
-					1BD8330C1C30300900F7C12F = {
+					1BD833581C31318300F7C12F = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = Z662YN573K;
 					};
 				};
 			};
-			buildConfigurationList = 1BD833081C30300900F7C12F /* Build configuration list for PBXProject "ToDoList" */;
+			buildConfigurationList = 1BD833541C31318300F7C12F /* Build configuration list for PBXProject "ToDoList" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -122,55 +122,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 1BD833041C30300900F7C12F;
-			productRefGroup = 1BD8330E1C30300900F7C12F /* Products */;
+			mainGroup = 1BD833501C31318300F7C12F;
+			productRefGroup = 1BD8335A1C31318300F7C12F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1BD8330C1C30300900F7C12F /* ToDoList */,
+				1BD833581C31318300F7C12F /* ToDoList */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1BD8330B1C30300900F7C12F /* Resources */ = {
+		1BD833571C31318300F7C12F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD833201C30300900F7C12F /* LaunchScreen.storyboard in Resources */,
-				1BD8331D1C30300900F7C12F /* Assets.xcassets in Resources */,
-				1BD8331B1C30300900F7C12F /* Main.storyboard in Resources */,
+				1BD8336C1C31318400F7C12F /* LaunchScreen.storyboard in Resources */,
+				1BD833691C31318400F7C12F /* Assets.xcassets in Resources */,
+				1BD833671C31318400F7C12F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1BD833091C30300900F7C12F /* Sources */ = {
+		1BD833551C31318300F7C12F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD833181C30300900F7C12F /* DetailViewController.m in Sources */,
-				1BD833151C30300900F7C12F /* AppDelegate.m in Sources */,
-				1BD833121C30300900F7C12F /* main.m in Sources */,
+				1BD833641C31318400F7C12F /* ViewController.m in Sources */,
+				1BD833611C31318400F7C12F /* AppDelegate.m in Sources */,
+				1BD8335E1C31318400F7C12F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1BD833191C30300900F7C12F /* Main.storyboard */ = {
+		1BD833651C31318400F7C12F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BD8331A1C30300900F7C12F /* Base */,
+				1BD833661C31318400F7C12F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1BD8331E1C30300900F7C12F /* LaunchScreen.storyboard */ = {
+		1BD8336A1C31318400F7C12F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BD8331F1C30300900F7C12F /* Base */,
+				1BD8336B1C31318400F7C12F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1BD833221C30300900F7C12F /* Debug */ = {
+		1BD8336E1C31318400F7C12F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -221,7 +221,7 @@
 			};
 			name = Debug;
 		};
-		1BD833231C30300900F7C12F /* Release */ = {
+		1BD8336F1C31318400F7C12F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -258,7 +258,7 @@
 			};
 			name = Release;
 		};
-		1BD833251C30300900F7C12F /* Debug */ = {
+		1BD833711C31318400F7C12F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -269,7 +269,7 @@
 			};
 			name = Debug;
 		};
-		1BD833261C30300900F7C12F /* Release */ = {
+		1BD833721C31318400F7C12F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -283,25 +283,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1BD833081C30300900F7C12F /* Build configuration list for PBXProject "ToDoList" */ = {
+		1BD833541C31318300F7C12F /* Build configuration list for PBXProject "ToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1BD833221C30300900F7C12F /* Debug */,
-				1BD833231C30300900F7C12F /* Release */,
+				1BD8336E1C31318400F7C12F /* Debug */,
+				1BD8336F1C31318400F7C12F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1BD833241C30300900F7C12F /* Build configuration list for PBXNativeTarget "ToDoList" */ = {
+		1BD833701C31318400F7C12F /* Build configuration list for PBXNativeTarget "ToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1BD833251C30300900F7C12F /* Debug */,
-				1BD833261C30300900F7C12F /* Release */,
+				1BD833711C31318400F7C12F /* Debug */,
+				1BD833721C31318400F7C12F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1BD833051C30300900F7C12F /* Project object */;
+	rootObject = 1BD833511C31318300F7C12F /* Project object */;
 }
