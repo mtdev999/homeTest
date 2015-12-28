@@ -22,7 +22,11 @@
     
     if (self.isDetail) {
         self.textField.text = self.eventInfo;
-        self.datePicker.date = self.eventDate;
+        self.textField.userInteractionEnabled = NO;
+        self.datePicker.userInteractionEnabled = NO;
+        self.buttonSave.alpha = 0;
+        
+        [self performSelector:@selector(setDatePickerWithAnimation) withObject:nil afterDelay:0.5];
     }
     
     self.buttonSave.userInteractionEnabled = NO;
@@ -41,6 +45,11 @@
     // added creating gesterRecognizer on view;
     [self.view addGestureRecognizer:handleTap];
 }
+
+- (void)setDatePickerWithAnimation {
+    [self.datePicker setDate:self.eventDate animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
