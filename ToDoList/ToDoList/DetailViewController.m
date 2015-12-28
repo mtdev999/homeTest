@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.buttonSave.userInteractionEnabled = NO;
+    
     // setting minimum value of date
     self.datePicker.minimumDate = [NSDate date];
     
@@ -82,10 +84,77 @@
 // this method is responsible for closing the keyboard (button 'DONE')
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([textField isEqual:self.textField]) {
-        [self.textField resignFirstResponder];
+        if ([self.textField.text length] != 0) { // user can't write an empty note
+            [self.textField resignFirstResponder];
+            self.buttonSave.userInteractionEnabled = YES;
+        } else {
+            [self showAlertWithMerssage:@"Enter text in text field."];
+        }
     }
     
-    return YES;
+    return NO;
 }
+
+- (void)showAlertWithMerssage:(NSString *)message {
+    /*
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention!!!"
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil, nil];
+    */
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!!!"
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+
+    UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"OK"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action) {
+                                                          //Handel your yes please button action here
+                                                          [alert dismissViewControllerAnimated:YES completion:nil];
+                                                      }];
+//
+//    UIAlertAction* noButton = [UIAlertAction actionWithTitle:@"No, thanks"
+//                                                       style:UIAlertActionStyleDefault
+//                                                     handler:^(UIAlertAction * action) {
+//                                                        [alert dismissViewControllerAnimated:YES completion:nil];
+//                                   
+//                                                     }];
+//    
+    [alert addAction:yesButton];
+//    [alert addAction:noButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+/*
+ 
+ UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Title"
+                                                                  message:@"Message"
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+ 
+ UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"Yes, please"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action)
+                                                   {
+                                                   //Handel your yes please button action here
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+ 
+                                                }];
+ UIAlertAction* noButton = [UIAlertAction actionWithTitle:@"No, thanks"
+                                                    style:UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction * action)
+                                                  {
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+                                                 
+                                                }];
+ 
+ [alert addAction:yesButton];
+ [alert addAction:noButton];
+ 
+ [self presentViewController:alert animated:YES completion:nil];
+ 
+ */
 
 @end
