@@ -112,6 +112,8 @@
     notify.soundName = UILocalNotificationDefaultSoundName;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notify];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -
