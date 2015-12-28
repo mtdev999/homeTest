@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : UIViewController
-@property (strong, nonatomic)   NSDate  *eventDate;
+@property (nonatomic, strong)   NSDate      *eventDate;
+@property (nonatomic, strong)   NSString    *eventInfo;
+@property (nonatomic, assign)   BOOL        isDetail;
 
 @end
 

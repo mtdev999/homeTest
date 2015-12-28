@@ -9,9 +9,9 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()<UITextFieldDelegate>
-@property (strong, nonatomic) IBOutlet UITextField      *textField;
-@property (strong, nonatomic) IBOutlet UIDatePicker     *datePicker;
-@property (strong, nonatomic) IBOutlet UIButton         *buttonSave;
+@property (nonatomic, strong) IBOutlet UITextField      *textField;
+@property (nonatomic, strong) IBOutlet UIDatePicker     *datePicker;
+@property (nonatomic, strong) IBOutlet UIButton         *buttonSave;
 
 @end
 
@@ -19,6 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.isDetail) {
+        self.textField.text = self.eventInfo;
+        self.datePicker.date = self.eventDate;
+    }
     
     self.buttonSave.userInteractionEnabled = NO;
     
