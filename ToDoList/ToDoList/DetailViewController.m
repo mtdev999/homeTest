@@ -56,7 +56,27 @@
 }
 
 - (void)save {
-    NSLog(@"save");
+    
+    NSString *eventInfo = self.textField.text;
+    
+    NSDateFormatter *formater = [NSDateFormatter new];
+    formater.dateFormat = @"HH:mm dd.MMM.yyyy";
+    
+    NSString *eventDate = [formater stringFromDate:self.eventDate];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          eventInfo, @"eventInfo",
+                          eventDate, @"eventDate",
+                          nil];
+    
+    UILocalNotification *notify = [UILocalNotification new];
+    notify.userInfo = dict;
+    notify.timeZone = [NSTimeZone defaultTimeZone];
+    notify.fireDate = self.eventDate;
+    notify.alertBody = eventInfo;
+    notify.applicationIconBadgeNumber = 1;
+    notify.soundName = UILocalNotificationDefaultSoundName;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notify];
 }
 
 // this method is responsible for closing the keyboard (button 'DONE')
