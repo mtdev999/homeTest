@@ -14,6 +14,7 @@
 		1B18903F1C3A4C2B004AFADA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B18903E1C3A4C2B004AFADA /* Assets.xcassets */; };
 		1B1890421C3A4C2B004AFADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1890401C3A4C2B004AFADA /* LaunchScreen.storyboard */; };
 		1B1890501C3A6792004AFADA /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B18904F1C3A6792004AFADA /* UIView+MTExtensions.m */; };
+		1B1890581C3AAF11004AFADA /* MTViewDeskWithCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1890571C3AAF11004AFADA /* MTViewDeskWithCells.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		1B1890431C3A4C2B004AFADA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B18904E1C3A6792004AFADA /* UIView+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtensions.h"; sourceTree = "<group>"; };
 		1B18904F1C3A6792004AFADA /* UIView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtensions.m"; sourceTree = "<group>"; };
+		1B1890561C3AAF11004AFADA /* MTViewDeskWithCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTViewDeskWithCells.h; sourceTree = "<group>"; };
+		1B1890571C3AAF11004AFADA /* MTViewDeskWithCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTViewDeskWithCells.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				1B18904D1C3A6792004AFADA /* UIView+MTExtensions */,
+				1B1890541C3AAECB004AFADA /* Sourse */,
 				1B1890311C3A4C2B004AFADA /* Checkers */,
 				1B1890301C3A4C2B004AFADA /* Products */,
 			);
@@ -90,6 +94,23 @@
 				1B18904F1C3A6792004AFADA /* UIView+MTExtensions.m */,
 			);
 			path = "UIView+MTExtensions";
+			sourceTree = "<group>";
+		};
+		1B1890541C3AAECB004AFADA /* Sourse */ = {
+			isa = PBXGroup;
+			children = (
+				1B1890551C3AAF11004AFADA /* Views */,
+			);
+			path = Sourse;
+			sourceTree = "<group>";
+		};
+		1B1890551C3AAF11004AFADA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B1890561C3AAF11004AFADA /* MTViewDeskWithCells.h */,
+				1B1890571C3AAF11004AFADA /* MTViewDeskWithCells.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B18903A1C3A4C2B004AFADA /* ViewController.m in Sources */,
+				1B1890581C3AAF11004AFADA /* MTViewDeskWithCells.m in Sources */,
 				1B1890501C3A6792004AFADA /* UIView+MTExtensions.m in Sources */,
 				1B1890371C3A4C2B004AFADA /* AppDelegate.m in Sources */,
 				1B1890341C3A4C2B004AFADA /* main.m in Sources */,
