@@ -15,6 +15,7 @@
 		1B1890421C3A4C2B004AFADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1890401C3A4C2B004AFADA /* LaunchScreen.storyboard */; };
 		1B1890501C3A6792004AFADA /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B18904F1C3A6792004AFADA /* UIView+MTExtensions.m */; };
 		1B1890581C3AAF11004AFADA /* MTViewDeskWithCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1890571C3AAF11004AFADA /* MTViewDeskWithCells.m */; };
+		1B6DD6F71C41119B002A8C44 /* MTChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DD6F61C41119B002A8C44 /* MTChecker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		1B18904F1C3A6792004AFADA /* UIView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtensions.m"; sourceTree = "<group>"; };
 		1B1890561C3AAF11004AFADA /* MTViewDeskWithCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTViewDeskWithCells.h; sourceTree = "<group>"; };
 		1B1890571C3AAF11004AFADA /* MTViewDeskWithCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTViewDeskWithCells.m; sourceTree = "<group>"; };
+		1B6DD6F51C41119B002A8C44 /* MTChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTChecker.h; sourceTree = "<group>"; };
+		1B6DD6F61C41119B002A8C44 /* MTChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTChecker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				1B1890561C3AAF11004AFADA /* MTViewDeskWithCells.h */,
 				1B1890571C3AAF11004AFADA /* MTViewDeskWithCells.m */,
+				1B6DD6F51C41119B002A8C44 /* MTChecker.h */,
+				1B6DD6F61C41119B002A8C44 /* MTChecker.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			files = (
 				1B18903A1C3A4C2B004AFADA /* ViewController.m in Sources */,
 				1B1890581C3AAF11004AFADA /* MTViewDeskWithCells.m in Sources */,
+				1B6DD6F71C41119B002A8C44 /* MTChecker.m in Sources */,
 				1B1890501C3A6792004AFADA /* UIView+MTExtensions.m in Sources */,
 				1B1890371C3A4C2B004AFADA /* AppDelegate.m in Sources */,
 				1B1890341C3A4C2B004AFADA /* main.m in Sources */,
@@ -338,6 +344,7 @@
 				1B1890481C3A4C2B004AFADA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

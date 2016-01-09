@@ -8,7 +8,10 @@
 
 #import "MTViewDeskWithCells.h"
 
+#import "MTChecker.h"
+
 @interface MTViewDeskWithCells ()
+@property (nonatomic, strong)   MTChecker   *checkerView;
 @property (nonatomic, assign, getter=isColorBlack)           BOOL    firstCellIsBlack;
 
 @end
@@ -65,6 +68,12 @@
     
     
     [self fillingDeskViewOfCells];
+
+//    MTChecker *checker = [[MTChecker alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.deskView.bounds),
+//                                                                     CGRectGetMinY(self.deskView.bounds), 50, 50)];
+    MTChecker *checker = [MTChecker newChecker];
+    
+    [self.deskView addSubview:checker];
 }
 
 #pragma mark -
