@@ -14,6 +14,7 @@
 @property (nonatomic, strong)   UIView              *backSideDeskView;
 @property (nonatomic, strong)   UIView              *frontSideDeskView;
 @property (nonatomic, strong)   UIView              *dragginView;
+@property (nonatomic, strong)   UIView              *checkerView;
 
 @property (nonatomic, assign)   CGPoint             touchOffset;
 @property (nonatomic, assign)   CGPoint             correctPoint;
@@ -53,8 +54,8 @@
     
     // prepare desk with cells
     [self createBackSideOfDesk];
-    [self fillingDeskViewOfCells];
-    [self createFrontSideOfDesk];
+//    [self fillingDeskViewOfCells];
+//    [self createFrontSideOfDesk];
     
     [self createCheckerView];
 }
@@ -63,12 +64,41 @@
 #pragma mark Checkers
 
 - (void)createCheckerView {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    view.backgroundColor = [UIColor redColor];
-    view.layer.cornerRadius = 20.f;
-    
-    [self.frontSideDeskView addSubview:view];
-    
+    [self getWhiteCheckers];
+    [self getBlackCheckers];
+   
+}
+
+- (void)getBlackCheckers {
+    for (int i = 0; i < 4; i++) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.cellView.bounds)*2*i +
+                                                                CGRectGetHeight(self.cellView.bounds),
+                                                                CGRectGetMinY(self.frontSideDeskView.bounds) +
+                                                                CGRectGetHeight(self.cellView.bounds)*7,
+                                                                40, 40)];
+        
+        view.backgroundColor = [UIColor blackColor];
+        view.layer.borderWidth = 2.f;
+        view.layer.borderColor = [UIColor grayColor].CGColor;
+        view.layer.cornerRadius = 20.f;
+        
+        self.checkerView = view;
+        [self.frontSideDeskView addSubview:view];
+    }
+}
+
+- (void)getWhiteCheckers {
+    for (int i = 0; i < 4; i++) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.cellView.bounds)*2*i, 0, 40, 40)];
+        
+        view.backgroundColor = [UIColor whiteColor];
+        view.layer.borderWidth = 2.f;
+        view.layer.borderColor = [UIColor grayColor].CGColor;
+        view.layer.cornerRadius = 20.f;
+        
+        self.checkerView = view;
+        [self.frontSideDeskView addSubview:view];
+    }
 }
 
 #pragma mark -
@@ -77,8 +107,8 @@
 - (void)onTouchesStarted {
     [UIView animateWithDuration:0.2
                      animations:^{
-                         self.dragginView.transform = CGAffineTransformMakeScale(1.2f, 1.2f);
-                         self.dragginView.alpha = 0.7f;
+                         self.dragginView.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
+                         self.dragginView.alpha = 0.8f;
                      }];
 }
 
@@ -100,17 +130,19 @@
     UIView *frontDeskView = self.frontSideDeskView;
     UITouch *touch = [touches anyObject];
     CGPoint pointOnMainView = [touch locationInView:frontDeskView];
-    self.startPoint = pointOnMainView;
+
     UIView *view = [frontDeskView hitTest:pointOnMainView withEvent:event];
     
-    if (![view isEqual:self.frontSideDeskView]) {
+    self.startPoint = pointOnMainView;
+    
+    if (![view isEqual:frontDeskView]) {
         self.dragginView = view;
         [frontDeskView bringSubviewToFront:view];
         
-        CGPoint touchPoint = [touch locationInView:self.dragginView];
+        CGPoint touchPoint = [touch locationInView:view];
 
-        self.touchOffset = CGPointMake(CGRectGetMidX(self.dragginView.bounds) - touchPoint.x,
-                                       CGRectGetMidY(self.dragginView.bounds) - touchPoint.y);
+        self.touchOffset = CGPointMake(CGRectGetMidX(view.bounds) - touchPoint.x,
+                                       CGRectGetMidY(view.bounds) - touchPoint.y);
         [self onTouchesStarted];
     } else {
         self.dragginView = nil;
@@ -122,11 +154,11 @@
         UIView *frontDeskView = self.frontSideDeskView;
         UITouch *touch = [touches anyObject];
         CGPoint pointOnMainView = [touch locationInView:frontDeskView];
+        
         CGPoint correction = CGPointMake(pointOnMainView.x + self.touchOffset.x,
                                          pointOnMainView.y + self.touchOffset.y);
         
         self.dragginView.center = correction;
-
     }
 }
 
@@ -138,7 +170,7 @@
         for (UIView *object in self.mutableCellsDesk) {
             BOOL result = CGRectContainsPoint(object.frame, pointOnMainView);
             
-            if (result && [object.backgroundColor isEqual:[UIColor colorWithWhite:0 alpha:1]]) {
+            if (result && [object.backgroundColor isEqual:[UIColor colorWithWhite:0 alpha:0.8]]) {
 
                 [UIView animateWithDuration:0.3
                                  animations:^{
@@ -168,32 +200,23 @@
 #pragma mark Sides of Desk
 
 - (void)createBackSideOfDesk {
-    CGPoint point = CGPointZero;
-    point.x = 0;
-    point.y = CGRectGetMidY(self.bounds) - CGRectGetWidth(self.bounds)/2;
-    
-    CGSize size = CGSizeZero;
-    size.width = CGRectGetWidth(self.frame);
-    size.height = CGRectGetWidth(self.bounds);
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(point.x, point.y, size.width, size.height)];
-    view.backgroundColor = [UIColor redColor];
+    CGRect rect = self.bounds;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(rect),
+                                                            CGRectGetMidY(rect) - CGRectGetWidth(rect)/2,
+                                                            CGRectGetWidth(rect),
+                                                            CGRectGetWidth(rect))];
+    view.backgroundColor = [UIColor orangeColor];
     view.autoresizingMask = [self masks];
     
     [self addSubview:view];
     self.backSideDeskView = view;
+    
+    [self fillingDeskViewOfCells];
 }
 
 - (void)createFrontSideOfDesk {
-    CGPoint point = CGPointZero;
-    point.x = CGRectGetMinX(self.backSideDeskView.bounds)- 1;
-    point.y = CGRectGetMinY(self.backSideDeskView.bounds) - 1;
-    
-    CGSize size = CGSizeZero;
-    size.width = CGRectGetWidth(self.backSideDeskView.frame) + 1;
-    size.height = CGRectGetHeight(self.backSideDeskView.frame) + 1;
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(point.x, point.y, size.width, size.height)];
+    UIView *view = [UIView new];
+    view.frame = self.backSideDeskView.bounds;
     view.backgroundColor = [UIColor clearColor];
     view.layer.borderWidth = 2.f;
     view.layer.borderColor = [UIColor grayColor].CGColor;
@@ -227,6 +250,7 @@
     }
     
     self.mutableCellsDesk = array;
+    [self createFrontSideOfDesk];
 }
 
 - (NSMutableArray *)viewCells {
@@ -253,11 +277,11 @@
 
 - (void)changeColorForFirstCell:(UIView *)viewCell numberIteraction:(NSUInteger)number {
     if (self.firstCellIsBlack) {
-        (0 == number % 2) ? (viewCell.backgroundColor = [UIColor whiteColor])
-        : (viewCell.backgroundColor = [UIColor blackColor]);
+        (0 == number % 2) ? (viewCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8])
+        : (viewCell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8]);
     } else {
-        (0 == number % 2) ? (viewCell.backgroundColor = [UIColor blackColor])
-        : (viewCell.backgroundColor = [UIColor whiteColor]);
+        (0 == number % 2) ? (viewCell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8])
+        : (viewCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8]);
     }
 }
 
