@@ -7,14 +7,21 @@
 //
 
 #import "MTCheckersView.h"
+#import "MTCheckers.h"
 
 @interface MTCheckersView ()
+@property (nonatomic, strong)   MTCheckers  *checkers;
+
 @property (nonatomic, strong)   NSMutableArray      *mutableCellsDesk;
+@property (nonatomic, strong)   NSMutableArray      *blackCheckers;
+@property (nonatomic, strong)   NSMutableArray      *whiteCheckers;
 
 @property (nonatomic, strong)   UIView              *backSideDeskView;
 @property (nonatomic, strong)   UIView              *frontSideDeskView;
 @property (nonatomic, strong)   UIView              *dragginView;
 @property (nonatomic, strong)   UIView              *checkerView;
+@property (nonatomic, strong)   UIView              *checkerWhiteView;
+@property (nonatomic, strong)   UIView              *checkerBlackView;
 
 @property (nonatomic, assign)   CGPoint             touchOffset;
 @property (nonatomic, assign)   CGPoint             correctPoint;
@@ -54,9 +61,7 @@
     
     // prepare desk with cells
     [self createBackSideOfDesk];
-//    [self fillingDeskViewOfCells];
-//    [self createFrontSideOfDesk];
-    
+
     [self createCheckerView];
 }
 
@@ -64,45 +69,71 @@
 #pragma mark Checkers
 
 - (void)createCheckerView {
-    [self getWhiteCheckers];
-    [self getBlackCheckers];
-   
-}
 
-- (void)getBlackCheckers {
-    for (int i = 0; i < 4; i++) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.cellView.bounds)*2*i +
-                                                                CGRectGetHeight(self.cellView.bounds),
-                                                                CGRectGetMinY(self.frontSideDeskView.bounds) +
-                                                                CGRectGetHeight(self.cellView.bounds)*7,
-                                                                40, 40)];
-        
-        view.backgroundColor = [UIColor blackColor];
-        view.layer.borderWidth = 2.f;
-        view.layer.borderColor = [UIColor grayColor].CGColor;
-        view.layer.cornerRadius = 20.f;
-        
-        self.checkerView = view;
-        [self.frontSideDeskView addSubview:view];
+    for (int i = 0; i < 3; i++) {
+        [self getWhiteCheckersWithRow:i];
+        [self getBlackCheckersWithRow:i];
     }
+    
+    
 }
 
-- (void)getWhiteCheckers {
+- (void)getBlackCheckersWithRow:(NSUInteger)numberRow {
+    NSMutableArray *array = [NSMutableArray new];
+    UIView *view = self.cellView;
     for (int i = 0; i < 4; i++) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.cellView.bounds)*2*i, 0, 40, 40)];
+        UIView *checker = [MTCheckers createCheckerWithColor:[UIColor blackColor]];
+        checker.alpha = 0;
+        [UIView animateWithDuration:1.5f
+                         animations:^{
+                             checker.center = CGPointMake(CGRectGetWidth(view.bounds) * 2 * i +
+                                                          CGRectGetHeight(view.bounds) +
+                                                          CGRectGetWidth(view.bounds) / 2 -
+                                                          ((numberRow %2) ? CGRectGetWidth(view.bounds): 0),
+                                                          CGRectGetMidY(view.bounds) +
+                                                          CGRectGetHeight(view.bounds) * 5  +
+                                                          CGRectGetHeight(view.bounds) * numberRow);
+                             checker.alpha = 1.f;
+                         }];
         
-        view.backgroundColor = [UIColor whiteColor];
-        view.layer.borderWidth = 2.f;
-        view.layer.borderColor = [UIColor grayColor].CGColor;
-        view.layer.cornerRadius = 20.f;
+        //[self onCheckersStartedAnimation:checker withIteraction:i];
         
-        self.checkerView = view;
-        [self.frontSideDeskView addSubview:view];
+        [array addObject:checker];
+
+        self.checkerBlackView = checker;
+        [self.frontSideDeskView addSubview:checker];
+    }
+    
+    self.blackCheckers = array;
+}
+
+- (void)getWhiteCheckersWithRow:(NSUInteger)numberRow {
+    for (int i = 0; i < 4; i++) {
+        UIView *checker = [MTCheckers createCheckerWithColor:[UIColor whiteColor]];
+        UIView *view = self.cellView;
+        
+        checker.alpha = 0;
+        [UIView animateWithDuration:1.5f
+                         animations:^{
+                             checker.center = CGPointMake(CGRectGetWidth(view.bounds) * 2 * i +
+                                                          CGRectGetWidth(view.bounds) / 2 +
+                                                          ((numberRow %2) ? CGRectGetWidth(view.bounds): 0),
+                                                          CGRectGetMidY(view.bounds)*2*numberRow +
+                                                          CGRectGetWidth(view.bounds) / 2);
+                             checker.alpha = 1.f;
+                         }];
+        
+        self.checkerView = checker;
+        [self.frontSideDeskView addSubview:checker];
     }
 }
 
 #pragma mark -
-#pragma mark Animation For Cells
+#pragma mark Animation 
+
+- (void)onCheckersStartedAnimation:(UIView *)checker withIteraction:(NSUInteger)number {
+    
+}
 
 - (void)onTouchesStarted {
     [UIView animateWithDuration:0.2

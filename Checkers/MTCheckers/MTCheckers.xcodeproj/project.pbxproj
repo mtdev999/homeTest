@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B2DF1261C42851E00935CEE /* MTCheckers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2DF1251C42851E00935CEE /* MTCheckers.m */; };
 		1B6DD7061C412EA8002A8C44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DD7051C412EA8002A8C44 /* main.m */; };
 		1B6DD7091C412EA8002A8C44 /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DD7081C412EA8002A8C44 /* MTAppDelegate.m */; };
 		1B6DD7231C412F65002A8C44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DD71C1C412F65002A8C44 /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B2DF1241C42851E00935CEE /* MTCheckers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCheckers.h; sourceTree = "<group>"; };
+		1B2DF1251C42851E00935CEE /* MTCheckers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCheckers.m; sourceTree = "<group>"; };
 		1B6DD7011C412EA8002A8C44 /* MTCheckers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTCheckers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6DD7051C412EA8002A8C44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B6DD7071C412EA8002A8C44 /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				1B6DD7281C412FEF002A8C44 /* MTCheckersViewController.xib */,
 				1B6DD72B1C413011002A8C44 /* MTCheckersView.h */,
 				1B6DD72C1C413011002A8C44 /* MTCheckersView.m */,
+				1B2DF1241C42851E00935CEE /* MTCheckers.h */,
+				1B2DF1251C42851E00935CEE /* MTCheckers.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 		1B6DD6F91C412EA8002A8C44 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MT;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Mark Tezza";
 				TargetAttributes = {
@@ -180,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B6DD7091C412EA8002A8C44 /* MTAppDelegate.m in Sources */,
+				1B2DF1261C42851E00935CEE /* MTCheckers.m in Sources */,
 				1B6DD7291C412FEF002A8C44 /* MTCheckersViewController.m in Sources */,
 				1B6DD7061C412EA8002A8C44 /* main.m in Sources */,
 				1B6DD72D1C413011002A8C44 /* MTCheckersView.m in Sources */,
@@ -323,6 +330,7 @@
 				1B6DD71A1C412EA8002A8C44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
