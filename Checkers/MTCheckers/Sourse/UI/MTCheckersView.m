@@ -17,6 +17,7 @@
 
 @property (nonatomic, assign)   CGPoint             touchOffset;
 @property (nonatomic, assign)   CGPoint             correctPoint;
+@property (nonatomic, assign)   CGPoint             startPoint;
 
 @property (nonatomic, assign, getter=isColorBlack)           BOOL    firstCellIsBlack;
 
@@ -49,14 +50,17 @@
 #pragma mark Public
 
 - (void)setupDeskWithCells {
-    NSLog(@"called method");
     
+    // prepare desk with cells
     [self createBackSideOfDesk];
     [self fillingDeskViewOfCells];
     [self createFrontSideOfDesk];
     
     [self createCheckerView];
 }
+
+#pragma mark -
+#pragma mark Checkers
 
 - (void)createCheckerView {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
@@ -68,7 +72,7 @@
 }
 
 #pragma mark -
-#pragma mark Animation
+#pragma mark Animation For Cells
 
 - (void)onTouchesStarted {
     [UIView animateWithDuration:0.2
@@ -96,7 +100,7 @@
     UIView *frontDeskView = self.frontSideDeskView;
     UITouch *touch = [touches anyObject];
     CGPoint pointOnMainView = [touch locationInView:frontDeskView];
-    
+    self.startPoint = pointOnMainView;
     UIView *view = [frontDeskView hitTest:pointOnMainView withEvent:event];
     
     if (![view isEqual:self.frontSideDeskView]) {
@@ -134,10 +138,20 @@
         for (UIView *object in self.mutableCellsDesk) {
             BOOL result = CGRectContainsPoint(object.frame, pointOnMainView);
             
-            if (result == YES) {
+            if (result && [object.backgroundColor isEqual:[UIColor colorWithWhite:0 alpha:1]]) {
+
                 [UIView animateWithDuration:0.3
                                  animations:^{
                                      self.dragginView.center = object.center;
+                                     [self onTuochesEnded];
+                                 }];
+            } else {
+                [UIView animateWithDuration:0.3
+                                 animations:^{
+                                     CGPoint correction = CGPointMake(self.startPoint.x + self.touchOffset.x,
+                                                                      self.startPoint.y + self.touchOffset.y);
+                                     
+                                     self.dragginView.center = correction;
                                  }];
             }
         }
