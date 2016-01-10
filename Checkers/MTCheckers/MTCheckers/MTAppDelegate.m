@@ -1,22 +1,30 @@
 //
 //  AppDelegate.m
-//  Checkers
+//  MTCheckers
 //
-//  Created by Mark Tezza on 04.01.16.
+//  Created by Mark Tezza on 09.01.16.
 //  Copyright © 2016 Mark Tezza. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "MTAppDelegate.h"
 
-@interface AppDelegate ()
+#import "MTCheckersViewController.h"
+
+@interface MTAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation MTAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = window;
+    
+    window.rootViewController = [[MTCheckersViewController alloc] initWithNibName:@"MTCheckersViewController"
+                                                                           bundle:nil];
+    [window makeKeyAndVisible];
+    
     return YES;
 }
 
