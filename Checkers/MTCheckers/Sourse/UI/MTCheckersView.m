@@ -60,7 +60,7 @@
 - (void)setupDeskWithCells {
     
     // prepare desk with cells
-    [self createBackSideOfDesk];
+    [self createDeskWithCells];
 
     [self createCheckerView];
 }
@@ -177,9 +177,8 @@
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
     if (self.dragginView) {
-        UIView *frontDeskView = self.frontSideDeskView;
         UITouch *touch = [touches anyObject];
-        CGPoint pointOnMainView = [touch locationInView:frontDeskView];
+        CGPoint pointOnMainView = [touch locationInView:self.frontSideDeskView];
         
         CGPoint correction = CGPointMake(pointOnMainView.x + self.touchOffset.x,
                                          pointOnMainView.y + self.touchOffset.y);
@@ -225,7 +224,7 @@
 #pragma mark -
 #pragma mark Sides of Desk
 
-- (void)createBackSideOfDesk {
+- (void)createDeskWithCells {
     CGRect rect = self.bounds;
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(rect),
                                                             CGRectGetMidY(rect) - CGRectGetWidth(rect)/2,
@@ -237,7 +236,7 @@
     [self addSubview:view];
     self.backSideDeskView = view;
     
-    [self fillingDeskViewOfCells];
+    [self fillingCellsOfDesk];
 }
 
 - (void)createFrontSideOfDesk {
@@ -255,14 +254,15 @@
 #pragma mark -
 #pragma mark Cells for Desk
 
-- (void)fillingDeskViewOfCells {
+- (void)fillingCellsOfDesk {
+    NSMutableArray *array = [NSMutableArray new];
     self.firstCellIsBlack = NO;
     for (int i = 0; i < 8; i++) {
-        [self viewCellsWithNimberRow:i];
+        [array addObjectsFromArray:[self viewCellsWithNimberRow:i]];
         
         self.firstCellIsBlack = !self.firstCellIsBlack;
     }
-
+    self.mutableCellsDesk = array;
     [self createFrontSideOfDesk];
 }
 
@@ -296,10 +296,10 @@
 - (void)changeColorForFirstCell:(UIView *)viewCell numberIteraction:(NSUInteger)number {
     if (self.firstCellIsBlack) {
         (0 == number % 2) ? (viewCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8])
-        : (viewCell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8]);
+                          : (viewCell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8]);
     } else {
         (0 == number % 2) ? (viewCell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8])
-        : (viewCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8]);
+                          : (viewCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8]);
     }
 }
 
