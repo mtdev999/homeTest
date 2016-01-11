@@ -10,7 +10,7 @@
 #import "MTCheckers.h"
 
 @interface MTCheckersView ()
-@property (nonatomic, strong)   MTCheckers  *checkers;
+@property (nonatomic, strong)   MTCheckers          *checkers;
 
 @property (nonatomic, strong)   NSMutableArray      *mutableCellsDesk;
 @property (nonatomic, strong)   NSMutableArray      *blackCheckers;
@@ -24,26 +24,13 @@
 @property (nonatomic, strong)   UIView              *checkerBlackView;
 
 @property (nonatomic, assign)   CGPoint             touchOffset;
-@property (nonatomic, assign)   CGPoint             correctPoint;
 @property (nonatomic, assign)   CGPoint             startPoint;
 
-@property (nonatomic, assign, getter=isColorBlack)           BOOL    firstCellIsBlack;
+@property (nonatomic, assign, getter=isColorBlack)  BOOL    firstCellIsBlack;
 
 @end
 
 @implementation MTCheckersView
-
-#pragma mark -
-#pragma mark Initializationa and Deallocations
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.mutableCellsDesk = [NSMutableArray new];
-    }
-    return self;
-}
 
 #pragma mark -
 #pragma mark Accessors
@@ -103,6 +90,7 @@
 }
 
 - (void)getWhiteCheckersWithRow:(NSUInteger)numberRow {
+    NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 4; i++) {
         UIView *checker = [MTCheckers createCheckerWithColor:[UIColor whiteColor]];
         UIView *view = self.cellView;
@@ -117,10 +105,13 @@
                                                           CGRectGetWidth(view.bounds) / 2);
                              checker.alpha = 1.f;
                          }];
+        [array addObject:checker];
         
         self.checkerView = checker;
         [self.frontSideDeskView addSubview:checker];
     }
+    
+    self.whiteCheckers = array;
 }
 
 #pragma mark -
@@ -192,11 +183,12 @@
         UITouch *touch = [touches anyObject];
         CGPoint pointOnMainView = [touch locationInView:self.frontSideDeskView];
         
+        
+        
         for (UIView *object in self.mutableCellsDesk) {
             BOOL result = CGRectContainsPoint(object.frame, pointOnMainView);
-            
-            if (result && [object.backgroundColor isEqual:[UIColor colorWithWhite:0 alpha:0.8]]) {
 
+            if (result && [object.backgroundColor isEqual:[UIColor colorWithWhite:0 alpha:0.8]]) {
                 [UIView animateWithDuration:0.3
                                  animations:^{
                                      self.dragginView.center = object.center;
