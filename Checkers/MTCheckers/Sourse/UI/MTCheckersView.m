@@ -69,13 +69,10 @@
 #pragma mark Checkers
 
 - (void)createCheckerView {
-
     for (int i = 0; i < 3; i++) {
         [self getWhiteCheckersWithRow:i];
         [self getBlackCheckersWithRow:i];
     }
-    
-    
 }
 
 - (void)getBlackCheckersWithRow:(NSUInteger)numberRow {
@@ -95,8 +92,6 @@
                                                           CGRectGetHeight(view.bounds) * numberRow);
                              checker.alpha = 1.f;
                          }];
-        
-        //[self onCheckersStartedAnimation:checker withIteraction:i];
         
         [array addObject:checker];
 
@@ -261,39 +256,31 @@
 #pragma mark Cells for Desk
 
 - (void)fillingDeskViewOfCells {
-    CGPoint correction = self.correctPoint;
-    correction = CGPointMake(CGRectGetMinX(self.backSideDeskView.bounds),
-                             CGRectGetMinY(self.backSideDeskView.bounds));
-    
     self.firstCellIsBlack = NO;
-    
-    NSMutableArray *array = [NSMutableArray new];
-    
-    for (int i = 1; i <= 8; i++) {
-        [array addObjectsFromArray:[self viewCells]];
-        
-        correction.x = CGRectGetMinX(self.backSideDeskView.bounds);
-        correction.y = CGRectGetMinY(self.backSideDeskView.bounds) + CGRectGetHeight(self.cellView.frame);
-        
-        self.correctPoint = CGPointMake(correction.x, correction.y*i);
+    for (int i = 0; i < 8; i++) {
+        [self viewCellsWithNimberRow:i];
         
         self.firstCellIsBlack = !self.firstCellIsBlack;
     }
-    
-    self.mutableCellsDesk = array;
+
     [self createFrontSideOfDesk];
 }
 
-- (NSMutableArray *)viewCells {
+- (NSMutableArray *)viewCellsWithNimberRow:(NSUInteger)number {
     NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 8; i++) {
-        CGPoint point = self.correctPoint;
+        CGPoint point = CGPointZero;
+        point.x = CGRectGetMinX(self.bounds);
+        point.y = CGRectGetMinY(self.bounds) + CGRectGetHeight(self.cellView.frame);
+        
         CGSize size = CGSizeZero;
         size.width = CGRectGetWidth(self.frame) / 8;
         size.height = CGRectGetWidth(self.frame) / 8;
         
-        UIView *viewCell = [[UIView alloc] initWithFrame:CGRectMake(point.x + size.width*i, point.y,
-                                                                    size.width, size.height)];
+        UIView *viewCell = [[UIView alloc] initWithFrame:CGRectMake(point.x + size.width*i,
+                                                                    point.y * number,
+                                                                    size.width,
+                                                                    size.height)];
         [self changeColorForFirstCell:viewCell numberIteraction:i];
         
         self.cellView = viewCell;
