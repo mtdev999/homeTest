@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MTCheckersView : UIView
-@property (nonatomic, strong)   UIView  *cellView;
+//@property (nonatomic, strong)   UIView  *cellView;
 @property (nonatomic, strong)   UIView  *deskView;
 
 - (void)setupDeskWithCells;

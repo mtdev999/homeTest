@@ -15,6 +15,7 @@
 		1B6DD7291C412FEF002A8C44 /* MTCheckersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DD7271C412FEF002A8C44 /* MTCheckersViewController.m */; };
 		1B6DD72A1C412FEF002A8C44 /* MTCheckersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DD7281C412FEF002A8C44 /* MTCheckersViewController.xib */; };
 		1B6DD72D1C413011002A8C44 /* MTCheckersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DD72C1C413011002A8C44 /* MTCheckersView.m */; };
+		1B9B89211C437EA6008D1B2A /* MTCellsOfDesk.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9B89201C437EA6008D1B2A /* MTCellsOfDesk.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		1B6DD7281C412FEF002A8C44 /* MTCheckersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCheckersViewController.xib; sourceTree = "<group>"; };
 		1B6DD72B1C413011002A8C44 /* MTCheckersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCheckersView.h; sourceTree = "<group>"; };
 		1B6DD72C1C413011002A8C44 /* MTCheckersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCheckersView.m; sourceTree = "<group>"; };
+		1B9B891F1C437EA6008D1B2A /* MTCellsOfDesk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCellsOfDesk.h; sourceTree = "<group>"; };
+		1B9B89201C437EA6008D1B2A /* MTCellsOfDesk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCellsOfDesk.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				1B6DD72C1C413011002A8C44 /* MTCheckersView.m */,
 				1B2DF1241C42851E00935CEE /* MTCheckers.h */,
 				1B2DF1251C42851E00935CEE /* MTCheckers.m */,
+				1B9B891F1C437EA6008D1B2A /* MTCellsOfDesk.h */,
+				1B9B89201C437EA6008D1B2A /* MTCellsOfDesk.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9B89211C437EA6008D1B2A /* MTCellsOfDesk.m in Sources */,
 				1B6DD7091C412EA8002A8C44 /* MTAppDelegate.m in Sources */,
 				1B2DF1261C42851E00935CEE /* MTCheckers.m in Sources */,
 				1B6DD7291C412FEF002A8C44 /* MTCheckersViewController.m in Sources */,

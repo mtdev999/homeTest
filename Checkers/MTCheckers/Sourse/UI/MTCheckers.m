@@ -37,21 +37,4 @@
     return self;
 }
 
-#pragma mark -
-#pragma mark Private
-
-
-//- (UIView *)checker {
-//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-//    
-//    view.backgroundColor = [UIColor whiteColor];
-//    view.layer.borderWidth = 2.f;
-//    view.layer.borderColor = [UIColor grayColor].CGColor;
-//    view.layer.cornerRadius = 20.f;
-//    
-//    self.borderColor = (__bridge UIColor *)(view.layer.borderColor);
-//    
-//    return view;
-//}
-
 @end

@@ -8,14 +8,17 @@
 
 #import "MTCheckersView.h"
 #import "MTCheckers.h"
+#import "MTCellsOfDesk.h"
 
 @interface MTCheckersView ()
 @property (nonatomic, strong)   MTCheckers          *checkers;
+@property (nonatomic, strong)   MTCellsOfDesk       *cell;
 
 @property (nonatomic, strong)   NSMutableArray      *mutableCellsDesk;
 @property (nonatomic, strong)   NSMutableArray      *blackCheckers;
 @property (nonatomic, strong)   NSMutableArray      *whiteCheckers;
 
+@property (nonatomic, strong)   UIView              *cellsView;
 @property (nonatomic, strong)   UIView              *backSideDeskView;
 @property (nonatomic, strong)   UIView              *frontSideDeskView;
 @property (nonatomic, strong)   UIView              *dragginView;
@@ -64,7 +67,7 @@
 
 - (void)getBlackCheckersWithRow:(NSUInteger)numberRow {
     NSMutableArray *array = [NSMutableArray new];
-    UIView *view = self.cellView;
+    UIView *view = self.cellsView;
     for (int i = 0; i < 4; i++) {
         UIView *checker = [MTCheckers createCheckerWithColor:[UIColor blackColor]];
         checker.alpha = 0;
@@ -93,7 +96,7 @@
     NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 4; i++) {
         UIView *checker = [MTCheckers createCheckerWithColor:[UIColor whiteColor]];
-        UIView *view = self.cellView;
+        UIView *view = self.cellsView;
         
         checker.alpha = 0;
         [UIView animateWithDuration:1.5f
@@ -115,11 +118,7 @@
 }
 
 #pragma mark -
-#pragma mark Animation 
-
-- (void)onCheckersStartedAnimation:(UIView *)checker withIteraction:(NSUInteger)number {
-    
-}
+#pragma mark Animation
 
 - (void)onTouchesStarted {
     [UIView animateWithDuration:0.2
@@ -261,21 +260,22 @@
 - (NSMutableArray *)viewCellsWithNimberRow:(NSUInteger)number {
     NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 8; i++) {
-        CGPoint point = CGPointZero;
-        point.x = CGRectGetMinX(self.bounds);
-        point.y = CGRectGetMinY(self.bounds) + CGRectGetHeight(self.cellView.frame);
-        
+    
         CGSize size = CGSizeZero;
         size.width = CGRectGetWidth(self.frame) / 8;
         size.height = CGRectGetWidth(self.frame) / 8;
         
-        UIView *viewCell = [[UIView alloc] initWithFrame:CGRectMake(point.x + size.width*i,
-                                                                    point.y * number,
-                                                                    size.width,
-                                                                    size.height)];
+        CGPoint point = CGPointZero;
+        point.x = CGRectGetMinX(self.bounds)+ size.width*i;
+        point.y = (CGRectGetMinY(self.bounds) + size.height) * number;
+        
+        UIView *viewCell = [[MTCellsOfDesk alloc] initWithFrame:CGRectMake(point.x,
+                                                                           point.y ,
+                                                                           size.width,
+                                                                           size.height)];
         [self changeColorForFirstCell:viewCell numberIteraction:i];
         
-        self.cellView = viewCell;
+        self.cellsView = viewCell;
         [self.backSideDeskView addSubview:viewCell];
         
         [array addObject:viewCell];
