@@ -15,6 +15,7 @@
 @property (nonatomic, strong)   MTCellsOfDesk       *cell;
 
 @property (nonatomic, strong)   NSMutableArray      *mutableCellsDesk;
+@property (nonatomic, strong)   NSMutableArray      *mutableCheckers;
 @property (nonatomic, strong)   NSMutableArray      *blackCheckers;
 @property (nonatomic, strong)   NSMutableArray      *whiteCheckers;
 
@@ -22,12 +23,14 @@
 @property (nonatomic, strong)   UIView              *backSideDeskView;
 @property (nonatomic, strong)   UIView              *frontSideDeskView;
 @property (nonatomic, strong)   UIView              *dragginView;
+
 @property (nonatomic, strong)   UIView              *checkerView;
 @property (nonatomic, strong)   UIView              *checkerWhiteView;
 @property (nonatomic, strong)   UIView              *checkerBlackView;
 
 @property (nonatomic, assign)   CGPoint             touchOffset;
 @property (nonatomic, assign)   CGPoint             startPoint;
+@property (nonatomic, assign)   CGPoint             checkerPoint;
 
 @property (nonatomic, assign, getter=isColorBlack)  BOOL    firstCellIsBlack;
 
@@ -59,15 +62,19 @@
 #pragma mark Checkers
 
 - (void)createCheckerView {
+    NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 3; i++) {
-        [self getWhiteCheckersWithRow:i];
-        [self getBlackCheckersWithRow:i];
+        [array addObjectsFromArray:[self getWhiteCheckersWithRow:i]];
+        [array addObjectsFromArray:[self getBlackCheckersWithRow:i]];
     }
+    self.mutableCheckers = array;
+    NSLog(@"arrayBlackCheckers: %lu", self.mutableCheckers.count);
 }
 
-- (void)getBlackCheckersWithRow:(NSUInteger)numberRow {
+- (NSMutableArray *)getBlackCheckersWithRow:(NSUInteger)numberRow {
     NSMutableArray *array = [NSMutableArray new];
     UIView *view = self.cellsView;
+    
     for (int i = 0; i < 4; i++) {
         UIView *checker = [MTCheckers createCheckerWithColor:[UIColor blackColor]];
         checker.alpha = 0;
@@ -89,10 +96,10 @@
         [self.frontSideDeskView addSubview:checker];
     }
     
-    self.blackCheckers = array;
+    return self.blackCheckers = array;
 }
 
-- (void)getWhiteCheckersWithRow:(NSUInteger)numberRow {
+- (NSMutableArray *)getWhiteCheckersWithRow:(NSUInteger)numberRow {
     NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 4; i++) {
         UIView *checker = [MTCheckers createCheckerWithColor:[UIColor whiteColor]];
@@ -107,6 +114,7 @@
                                                           CGRectGetMidY(view.bounds)*2*numberRow +
                                                           CGRectGetWidth(view.bounds) / 2);
                              checker.alpha = 1.f;
+                             self.checkerPoint = checker.center;
                          }];
         [array addObject:checker];
         
@@ -114,26 +122,43 @@
         [self.frontSideDeskView addSubview:checker];
     }
     
-    self.whiteCheckers = array;
+    return self.whiteCheckers = array;
 }
 
 #pragma mark -
 #pragma mark Animation
 
-- (void)onTouchesStarted {
+- (void)onTouchesStarted:(CGPoint)point {
     [UIView animateWithDuration:0.2
                      animations:^{
                          self.dragginView.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
                          self.dragginView.alpha = 0.8f;
                      }];
+    for (MTCellsOfDesk *cell in self.mutableCellsDesk) {
+        BOOL result = CGRectContainsPoint(cell.frame, point);
+        
+        if (result) {
+            cell.cellBusy = NO;
+            self.cellsView = cell;
+        }
+    }
 }
 
-- (void)onTuochesEnded {
+- (void)onTuochesEnded:(CGPoint)point {
     [UIView animateWithDuration:0.2
                      animations:^{
                          self.dragginView.transform = CGAffineTransformIdentity;
                          self.dragginView.alpha = 1.0f;
                      }];
+    
+    for (MTCellsOfDesk *cell in self.mutableCellsDesk) {
+        BOOL result = CGRectContainsPoint(cell.frame, point);
+        
+        if (result) {
+            cell.cellBusy = YES;
+            self.cellsView = cell;
+        }
+    }
     
     self.dragginView = nil;
 }
@@ -159,7 +184,7 @@
 
         self.touchOffset = CGPointMake(CGRectGetMidX(view.bounds) - touchPoint.x,
                                        CGRectGetMidY(view.bounds) - touchPoint.y);
-        [self onTouchesStarted];
+        [self onTouchesStarted:pointOnMainView];
     } else {
         self.dragginView = nil;
     }
@@ -182,16 +207,19 @@
         UITouch *touch = [touches anyObject];
         CGPoint pointOnMainView = [touch locationInView:self.frontSideDeskView];
         
-        
-        
-        for (UIView *object in self.mutableCellsDesk) {
-            BOOL result = CGRectContainsPoint(object.frame, pointOnMainView);
-
-            if (result && [object.backgroundColor isEqual:[UIColor colorWithWhite:0 alpha:0.8]]) {
+        for (MTCellsOfDesk *cell in self.mutableCellsDesk) {
+            
+            BOOL result = [self containsPointInView:pointOnMainView];
+                
+            if (CGRectContainsPoint(cell.frame, pointOnMainView) && !result
+                
+                && [cell.backgroundColor isEqual:[UIColor colorWithWhite:0 alpha:0.8]]) {
+                
                 [UIView animateWithDuration:0.3
                                  animations:^{
-                                     self.dragginView.center = object.center;
-                                     [self onTuochesEnded];
+                                     self.dragginView.center = cell.center;
+                                     
+                                     [self onTuochesEnded:pointOnMainView];
                                  }];
             } else {
                 [UIView animateWithDuration:0.3
@@ -202,18 +230,37 @@
                                      self.dragginView.center = correction;
                                  }];
             }
+            
+
+            
+            
+            
+            
+        }
+    }
+    CGPoint point = self.checkerPoint;
+    [self onTuochesEnded:point];
+}
+
+- (BOOL)containsPointInView:(CGPoint)point {
+    BOOL result = NO;
+    for (MTCheckers *object in self.mutableCheckers) {
+        result = CGRectContainsPoint(object.frame, point);
+        if (result) {
+            return result;
         }
     }
     
-    [self onTuochesEnded];
+    return NO;
 }
 
 - (void)touchesCancelled:(nullable NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
-    [self onTuochesEnded];
+    CGPoint point = self.checkerPoint;
+    [self onTuochesEnded:point];
 }
 
 #pragma mark -
-#pragma mark Sides of Desk
+#pragma mark Layers of Desk
 
 - (void)createDeskWithCells {
     CGRect rect = self.bounds;
@@ -269,13 +316,14 @@
         point.x = CGRectGetMinX(self.bounds)+ size.width*i;
         point.y = (CGRectGetMinY(self.bounds) + size.height) * number;
         
-        UIView *viewCell = [[MTCellsOfDesk alloc] initWithFrame:CGRectMake(point.x,
-                                                                           point.y ,
-                                                                           size.width,
-                                                                           size.height)];
+        CGRect rect = CGRectMake(point.x, point.y, size.width, size.height);
+        
+        UIView *viewCell = [MTCellsOfDesk createCellWithFrame:rect];
+        
         [self changeColorForFirstCell:viewCell numberIteraction:i];
         
         self.cellsView = viewCell;
+        
         [self.backSideDeskView addSubview:viewCell];
         
         [array addObject:viewCell];

@@ -13,30 +13,30 @@
 #pragma mark -
 #pragma mark Class Method
 
-//+ (UIView *)createCell {
-//    return [[self alloc] initWithFrame:];
-//}
++ (UIView *)createCellWithFrame:(CGRect)frame {
+    return [[self alloc] initWithFrame:frame];
+}
 
 #pragma mark -
 #pragma mark Initializationa and Deallocations
 
-- (instancetype)initWithFrame:(CGRect)frame color:(UIColor *)color {
-    self = [super init];
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
         self.frame = frame;
-        self.backgroundColor = color;
-        self.cellFree = YES;
+        self.cellBusy = NO;
     }
     
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setCellBusy:(BOOL)cellBusy {
+    if (_cellBusy != cellBusy) {
+        _cellBusy = cellBusy;
+    }
 }
-*/
 
 @end

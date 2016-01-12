@@ -8,10 +8,10 @@
 
 #import "MTCheckersView.h"
 
-@interface MTCellsOfDesk : MTCheckersView
-@property (nonatomic, strong)   UIView          *cellView;
-@property (nonatomic, assign, getter=isCellFree)   BOOL            cellFree;
+@interface MTCellsOfDesk : UIView
+@property (nonatomic, strong)   UIView          *view;
+@property (nonatomic, assign, getter=isCellBusy)   BOOL            cellBusy;
 
-- (instancetype)initWithFrame:(CGRect)frame color:(UIColor *)color;
++ (UIView *)createCellWithFrame:(CGRect)frame;
 
 @end
