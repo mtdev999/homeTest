@@ -51,10 +51,7 @@
 #pragma mark Public
 
 - (void)setupDeskWithCells {
-    
-    // prepare desk with cells
     [self createDeskWithCells];
-
     [self createCheckerView];
 }
 
@@ -128,37 +125,20 @@
 #pragma mark -
 #pragma mark Animation
 
-- (void)onTouchesStarted:(CGPoint)point {
+- (void)onTouchesStarted {
     [UIView animateWithDuration:0.2
                      animations:^{
                          self.dragginView.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
                          self.dragginView.alpha = 0.8f;
                      }];
-    for (MTCellsOfDesk *cell in self.mutableCellsDesk) {
-        BOOL result = CGRectContainsPoint(cell.frame, point);
-        
-        if (result) {
-            cell.cellBusy = NO;
-            self.cellsView = cell;
-        }
-    }
 }
 
-- (void)onTuochesEnded:(CGPoint)point {
+- (void)onTuochesEnded {
     [UIView animateWithDuration:0.2
                      animations:^{
                          self.dragginView.transform = CGAffineTransformIdentity;
                          self.dragginView.alpha = 1.0f;
                      }];
-    
-    for (MTCellsOfDesk *cell in self.mutableCellsDesk) {
-        BOOL result = CGRectContainsPoint(cell.frame, point);
-        
-        if (result) {
-            cell.cellBusy = YES;
-            self.cellsView = cell;
-        }
-    }
     
     self.dragginView = nil;
 }
@@ -184,7 +164,7 @@
 
         self.touchOffset = CGPointMake(CGRectGetMidX(view.bounds) - touchPoint.x,
                                        CGRectGetMidY(view.bounds) - touchPoint.y);
-        [self onTouchesStarted:pointOnMainView];
+        [self onTouchesStarted];
     } else {
         self.dragginView = nil;
     }
@@ -219,7 +199,7 @@
                                  animations:^{
                                      self.dragginView.center = cell.center;
                                      
-                                     [self onTuochesEnded:pointOnMainView];
+                                     [self onTuochesEnded];
                                  }];
             } else {
                 [UIView animateWithDuration:0.3
@@ -230,33 +210,14 @@
                                      self.dragginView.center = correction;
                                  }];
             }
-            
-
-            
-            
-            
-            
-        }
-    }
-    CGPoint point = self.checkerPoint;
-    [self onTuochesEnded:point];
-}
-
-- (BOOL)containsPointInView:(CGPoint)point {
-    BOOL result = NO;
-    for (MTCheckers *object in self.mutableCheckers) {
-        result = CGRectContainsPoint(object.frame, point);
-        if (result) {
-            return result;
         }
     }
     
-    return NO;
+    [self onTuochesEnded];
 }
 
 - (void)touchesCancelled:(nullable NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
-    CGPoint point = self.checkerPoint;
-    [self onTuochesEnded:point];
+    [self onTuochesEnded];
 }
 
 #pragma mark -
@@ -323,15 +284,16 @@
         [self changeColorForFirstCell:viewCell numberIteraction:i];
         
         self.cellsView = viewCell;
-        
         [self.backSideDeskView addSubview:viewCell];
-        
         [array addObject:viewCell];
     }
     
     self.mutableCellsDesk = array;
     return self.mutableCellsDesk;
 }
+
+#pragma mark -
+#pragma mark Private
 
 - (void)changeColorForFirstCell:(UIView *)viewCell numberIteraction:(NSUInteger)number {
     if (self.firstCellIsBlack) {
@@ -346,6 +308,18 @@
 - (UIViewAutoresizing)masks {
     return UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |
     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+}
+
+- (BOOL)containsPointInView:(CGPoint)point {
+    BOOL result = NO;
+    for (MTCheckers *object in self.mutableCheckers) {
+        result = CGRectContainsPoint(object.frame, point);
+        if (result) {
+            return result;
+        }
+    }
+    
+    return NO;
 }
 
 @end

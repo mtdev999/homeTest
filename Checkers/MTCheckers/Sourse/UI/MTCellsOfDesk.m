@@ -24,19 +24,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.frame = frame;
-        self.cellBusy = NO;
     }
     
     return self;
-}
-
-#pragma mark -
-#pragma mark Accessors
-
-- (void)setCellBusy:(BOOL)cellBusy {
-    if (_cellBusy != cellBusy) {
-        _cellBusy = cellBusy;
-    }
 }
 
 @end

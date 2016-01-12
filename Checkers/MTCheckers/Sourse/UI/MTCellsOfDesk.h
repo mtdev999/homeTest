@@ -10,7 +10,6 @@
 
 @interface MTCellsOfDesk : UIView
 @property (nonatomic, strong)   UIView          *view;
-@property (nonatomic, assign, getter=isCellBusy)   BOOL            cellBusy;
 
 + (UIView *)createCellWithFrame:(CGRect)frame;
 
