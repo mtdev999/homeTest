@@ -12,6 +12,7 @@
 
 @interface MTCheckersViewController ()
 @property (nonatomic, strong)   MTCheckersView  *checkersView;
+@property (strong, nonatomic) IBOutlet UIButton *stopButton;
 
 @end
 
@@ -32,12 +33,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.checkersView setupDeskWithCells];
+    //[self.checkersView setupDeskWithCells];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onStartAction:(id)sender {
+    
+    self.checkersView.newGame = !self.checkersView.newGame;
+    //[self.checkersView createCheckerView];
+}
+
+
+- (IBAction)onStopAction:(id)sender {
+    //self.checkersView = nil;
 }
 
 /*

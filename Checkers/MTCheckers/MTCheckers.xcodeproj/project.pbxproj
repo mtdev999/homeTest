@@ -16,6 +16,7 @@
 		1B6DD72A1C412FEF002A8C44 /* MTCheckersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DD7281C412FEF002A8C44 /* MTCheckersViewController.xib */; };
 		1B6DD72D1C413011002A8C44 /* MTCheckersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DD72C1C413011002A8C44 /* MTCheckersView.m */; };
 		1B9B89211C437EA6008D1B2A /* MTCellsOfDesk.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9B89201C437EA6008D1B2A /* MTCellsOfDesk.m */; };
+		1B9B89701C452E4D008D1B2A /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9B896F1C452E4D008D1B2A /* UIView+MTExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		1B6DD72C1C413011002A8C44 /* MTCheckersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCheckersView.m; sourceTree = "<group>"; };
 		1B9B891F1C437EA6008D1B2A /* MTCellsOfDesk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCellsOfDesk.h; sourceTree = "<group>"; };
 		1B9B89201C437EA6008D1B2A /* MTCellsOfDesk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCellsOfDesk.m; sourceTree = "<group>"; };
+		1B9B896E1C452E4D008D1B2A /* UIView+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtensions.h"; sourceTree = "<group>"; };
+		1B9B896F1C452E4D008D1B2A /* UIView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 		1B6DD6F81C412EA8002A8C44 = {
 			isa = PBXGroup;
 			children = (
+				1B9B896D1C452E4D008D1B2A /* UIView+MTExtensions */,
 				1B6DD71B1C412F65002A8C44 /* Resourse */,
 				1B6DD7211C412F65002A8C44 /* Sourse */,
 				1B6DD7031C412EA8002A8C44 /* MTCheckers */,
@@ -116,6 +120,15 @@
 				1B9B89201C437EA6008D1B2A /* MTCellsOfDesk.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		1B9B896D1C452E4D008D1B2A /* UIView+MTExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B9B896E1C452E4D008D1B2A /* UIView+MTExtensions.h */,
+				1B9B896F1C452E4D008D1B2A /* UIView+MTExtensions.m */,
+			);
+			path = "UIView+MTExtensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +208,7 @@
 				1B2DF1261C42851E00935CEE /* MTCheckers.m in Sources */,
 				1B6DD7291C412FEF002A8C44 /* MTCheckersViewController.m in Sources */,
 				1B6DD7061C412EA8002A8C44 /* main.m in Sources */,
+				1B9B89701C452E4D008D1B2A /* UIView+MTExtensions.m in Sources */,
 				1B6DD72D1C413011002A8C44 /* MTCheckersView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

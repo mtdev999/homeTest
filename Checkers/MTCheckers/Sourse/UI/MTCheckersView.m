@@ -38,12 +38,29 @@
 
 @implementation MTCheckersView
 
+- (void)dealloc {
+    self.mutableCheckers = nil;
+    self.mutableCellsDesk = nil;
+    self.blackCheckers = nil;
+    self.whiteCheckers = nil;
+    self.checkers = nil;
+    self.cell = nil;
+}
+
 #pragma mark -
 #pragma mark Accessors
 
 - (void)setFirstCellIsBlack:(BOOL)firstCellIsBlack {
     if (_firstCellIsBlack != firstCellIsBlack) {
         _firstCellIsBlack = firstCellIsBlack;
+    }
+}
+
+- (void)setNewGame:(BOOL)newGame {
+    if (_newGame != newGame) {
+        _newGame = newGame;
+        
+        [self setupDeskWithCells];
     }
 }
 
@@ -61,11 +78,14 @@
 - (void)createCheckerView {
     NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 3; i++) {
-        [array addObjectsFromArray:[self getWhiteCheckersWithRow:i]];
-        [array addObjectsFromArray:[self getBlackCheckersWithRow:i]];
+        [UIView animateWithDuration:0.4
+                         animations:^{
+                             [array addObjectsFromArray:[self getWhiteCheckersWithRow:i]];
+                             [array addObjectsFromArray:[self getBlackCheckersWithRow:i]];
+                         }];
     }
+    
     self.mutableCheckers = array;
-    NSLog(@"arrayBlackCheckers: %lu", self.mutableCheckers.count);
 }
 
 - (NSMutableArray *)getBlackCheckersWithRow:(NSUInteger)numberRow {
@@ -75,7 +95,10 @@
     for (int i = 0; i < 4; i++) {
         UIView *checker = [MTCheckers createCheckerWithColor:[UIColor blackColor]];
         checker.alpha = 0;
-        [UIView animateWithDuration:1.5f
+        
+        [UIView animateWithDuration:0.5f
+                              delay:0.5
+                            options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              checker.center = CGPointMake(CGRectGetWidth(view.bounds) * 2 * i +
                                                           CGRectGetHeight(view.bounds) +
@@ -85,8 +108,11 @@
                                                           CGRectGetHeight(view.bounds) * 5  +
                                                           CGRectGetHeight(view.bounds) * numberRow);
                              checker.alpha = 1.f;
+                         }
+                         completion:^(BOOL finished) {
+                             NSLog(@"");
                          }];
-        
+
         [array addObject:checker];
 
         self.checkerBlackView = checker;
@@ -101,9 +127,10 @@
     for (int i = 0; i < 4; i++) {
         UIView *checker = [MTCheckers createCheckerWithColor:[UIColor whiteColor]];
         UIView *view = self.cellsView;
-        
         checker.alpha = 0;
-        [UIView animateWithDuration:1.5f
+        [UIView animateWithDuration:0.5f
+                              delay:0.7
+                            options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              checker.center = CGPointMake(CGRectGetWidth(view.bounds) * 2 * i +
                                                           CGRectGetWidth(view.bounds) / 2 +
@@ -112,7 +139,11 @@
                                                           CGRectGetWidth(view.bounds) / 2);
                              checker.alpha = 1.f;
                              self.checkerPoint = checker.center;
+                         }
+                         completion:^(BOOL finished) {
+                             NSLog(@"");
                          }];
+        
         [array addObject:checker];
         
         self.checkerView = checker;
@@ -142,7 +173,6 @@
     
     self.dragginView = nil;
 }
-
 
 #pragma mark -
 #pragma mark Touches
@@ -258,9 +288,9 @@
     self.firstCellIsBlack = NO;
     for (int i = 0; i < 8; i++) {
         [array addObjectsFromArray:[self viewCellsWithNimberRow:i]];
-        
         self.firstCellIsBlack = !self.firstCellIsBlack;
     }
+    
     self.mutableCellsDesk = array;
     [self createFrontSideOfDesk];
 }
@@ -268,7 +298,6 @@
 - (NSMutableArray *)viewCellsWithNimberRow:(NSUInteger)number {
     NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 8; i++) {
-    
         CGSize size = CGSizeZero;
         size.width = CGRectGetWidth(self.frame) / 8;
         size.height = CGRectGetWidth(self.frame) / 8;
@@ -278,7 +307,7 @@
         point.y = (CGRectGetMinY(self.bounds) + size.height) * number;
         
         CGRect rect = CGRectMake(point.x, point.y, size.width, size.height);
-        
+               
         UIView *viewCell = [MTCellsOfDesk createCellWithFrame:rect];
         
         [self changeColorForFirstCell:viewCell numberIteraction:i];

@@ -10,4 +10,7 @@
 
 @interface MTCheckersViewController : UIViewController
 
+- (IBAction)onStartAction:(id)sender;
+- (IBAction)onStopAction:(id)sender;
+
 @end
