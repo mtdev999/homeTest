@@ -29,15 +29,15 @@
 
 - (void)changedSalaryWithObject:(MTGovernment *)object {
     float govSalary = object.govSalary;
-    float salary = self.salary;
+    float currentSalary = self.salary;
     
     NSLog(@" - change salary = %.2f", govSalary);
     
-    if (salary < govSalary) {
-        NSLog(@"Doctor is happy now! Government is increased salary on %.3f percent", [super increasedValue:salary
+    if (currentSalary < govSalary) {
+        NSLog(@"Doctor is happy now! Government is increased salary on %.3f percent", [super increasedValue:currentSalary
                                                                                                 objectValue:govSalary]);
     } else {
-        NSLog(@"Docotor feel bed! Government is lowered salary on %.3f percent", [super loweredValue:salary
+        NSLog(@"Docotor feel bed! Government is lowered salary on %.3f percent", [super loweredValue:currentSalary
                                                                                          objectValue:govSalary]);
     }
     self.salary = govSalary;

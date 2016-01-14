@@ -28,15 +28,15 @@
 #pragma mark Observable Object 
 
 - (void)changedTaxLevelWithObject:(MTGovernment *)object {
-    float taxLevel = self.taxLevel;
+    float currentTaxLevel = self.taxLevel;
     float govTaxLevel = object.govTaxLevel;
     
     NSLog(@" - change tax level = %.2f", govTaxLevel);
-    if (taxLevel < govTaxLevel) {
-        NSLog(@"Businessman is feel very bad! Government increased taxes on %.3f percent", [super increasedValue:taxLevel
+    if (currentTaxLevel < govTaxLevel) {
+        NSLog(@"Businessman is feel very bad! Government increased taxes on %.3f percent", [super increasedValue:currentTaxLevel
                                                                                                      objectValue:govTaxLevel]);
     } else {
-        NSLog(@"Bussinessman is happy now! Government lowered taxes on %.3f percent", [super loweredValue:taxLevel
+        NSLog(@"Bussinessman is happy now! Government lowered taxes on %.3f percent", [super loweredValue:currentTaxLevel
                                                                                               objectValue:govTaxLevel]);
     }
     self.taxLevel = govTaxLevel;

@@ -28,15 +28,15 @@
 #pragma mark Observable Object
 
 - (void)changedPensionWithObject:(MTGovernment *)object {
-    float pension = self.pension;
+    float currentPension = self.pension;
     float govPension = object.govPension;
     
     NSLog(@" - change pension = %.2f", govPension);
-    if (pension < govPension) {
-        NSLog(@"Pensioner is happy! Government increased pensin on %.3f percent", [super increasedValue:pension
+    if (currentPension < govPension) {
+        NSLog(@"Pensioner is happy! Government increased pensin on %.3f percent", [super increasedValue:currentPension
                                                                                             objectValue:govPension]);
     } else {
-        NSLog(@"Pensioner is feel bad! Government lowered pensin on %.3f percent", [super loweredValue:pension
+        NSLog(@"Pensioner is feel bad! Government lowered pensin on %.3f percent", [super loweredValue:currentPension
                                                                                            objectValue:govPension]);
     }
     self.pension = govPension;
