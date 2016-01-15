@@ -10,6 +10,9 @@
 
 #import "MTMainView.h"
 
+#import "MTRamdomValues.h"
+#import "UIColor+MTExtension.h"
+
 @interface MTViewController ()
 @property (nonatomic, strong)   MTMainView  *mainView;
 

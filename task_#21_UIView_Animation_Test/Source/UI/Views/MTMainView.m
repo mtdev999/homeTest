@@ -15,30 +15,35 @@
 
 @interface MTMainView ()
 @property (nonatomic, strong)   NSMutableArray  *mutableViews;
+@property (nonatomic, strong)   NSMutableArray  *mutableSquare;
 
 @end
 
 @implementation MTMainView
 
+#pragma mark -
+#pragma mark Public
+
 - (void)setupView {
     [self createSomeViews];
     [self animationView];
+    
+    [self createSquare];
 }
+
+#pragma mark -
+#pragma mark Private
 
 - (void)createSomeViews {
     NSMutableArray *array = [NSMutableArray new];
     for (int i = 0; i < 4; i++) {
         CGRect frame = self.bounds;
-
-        CGRect rect = CGRectMake(CGRectGetMinX(frame),
-                                 CGRectGetMinY(frame) +
-                                 CGRectGetWidth(frame)/4 +
-                                 CGRectGetWidth(frame)/4 * i,
-                                 CGRectGetWidth(frame) / 4,
-                                 CGRectGetWidth(frame) / 4);
-        
-        UIView *view = [[UIView alloc] initWithFrame:rect];
-
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame) + CGRectGetWidth(frame)/4,
+                                                                CGRectGetMinY(frame) +
+                                                                CGRectGetWidth(frame)/4 + CGRectGetWidth(frame)/4 * i,
+                                                                CGRectGetWidth(frame) / 4,
+                                                                CGRectGetWidth(frame) / 4)];
+        view.backgroundColor = [UIColor randomColor];
         [array addObject:view];
         
         [self addSubview:view];
@@ -50,34 +55,40 @@
 
 - (void)animationView {
     for (int i = 0; i < self.mutableViews.count; i++) {
-        [self setViewOptions:[self nextOptions:i] view:[self.mutableViews objectAtIndex:i]];
+        [self setViewOptions:[self optionsAnimationFromNumber:i] view:[self.mutableViews objectAtIndex:i]];
     }
 }
 
-- (UIViewAnimationOptions)nextOptions:(NSUInteger)number {
-    if (number == 0) {
-        return UIViewAnimationOptionCurveEaseInOut;
-    } else if (number == 1) {
-        return UIViewAnimationOptionCurveEaseIn;
-    } else if (number == 2) {
-        return UIViewAnimationOptionCurveEaseOut;
-    }
-    
-    return UIViewAnimationOptionCurveLinear;
+- (UIViewAnimationOptions)optionsAnimationFromNumber:(NSUInteger)number {
+    return number << 16 | 1 << 3 | 1 << 4;
 }
 
 - (void)setViewOptions:(UIViewAnimationOptions)options view:(UIView *)view {
     [UIView animateWithDuration:2
                           delay:0
-                        options:options | UIViewAnimationOptionAutoreverse | UIViewAnimationOptionRepeat
+                        options:options
                      animations:^{
-                         view.transform = CGAffineTransformMakeTranslation(CGRectGetMaxX(self.bounds),
+                         view.transform = CGAffineTransformMakeTranslation(CGRectGetWidth(self.bounds) - CGRectGetWidth(self.bounds)/2,
                                                                            CGRectGetMinY(self.bounds));
                          view.backgroundColor = [UIColor randomColor];
+                         
                      }
                      completion:^(BOOL finished) {
-                            [self animationView];
                      }];
+}
+
+- (void)createSquare {
+    NSMutableArray *array = [NSMutableArray new];
+    for (int i = 0; i < 4; i++) {
+        UIView *square = [[UIView alloc] initWithFrame:self.testView.bounds];
+        
+        square.backgroundColor = [UIColor randomColor];
+        
+        [array addObject:square];
+        [self addSubview:square];
+    }
+    
+    self.mutableSquare = array;
 }
 
 /*

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B41F47C1C493B8F005C87F2 /* MTSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F47B1C493B8F005C87F2 /* MTSquare.m */; };
 		1BCDC2C51C48BF890072FAAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2C41C48BF890072FAAC /* main.m */; };
 		1BCDC2C81C48BF890072FAAC /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2C71C48BF890072FAAC /* MTAppDelegate.m */; };
 		1BCDC2D01C48BF8A0072FAAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCDC2CF1C48BF8A0072FAAC /* Assets.xcassets */; };
@@ -21,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		1B41F4711C490B81005C87F2 /* MTMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTMacros.h; sourceTree = "<group>"; };
+		1B41F47A1C493B8F005C87F2 /* MTSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSquare.h; sourceTree = "<group>"; };
+		1B41F47B1C493B8F005C87F2 /* MTSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSquare.m; sourceTree = "<group>"; };
 		1BCDC2C01C48BF890072FAAC /* task_#21_UIView_Animation_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "task_#21_UIView_Animation_Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCDC2C41C48BF890072FAAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1BCDC2C61C48BF890072FAAC /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 			children = (
 				1BCDC2E31C48C6160072FAAC /* MTMainView.h */,
 				1BCDC2E41C48C6160072FAAC /* MTMainView.m */,
+				1B41F47A1C493B8F005C87F2 /* MTSquare.h */,
+				1B41F47B1C493B8F005C87F2 /* MTSquare.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				1BCDC2E11C48C5FC0072FAAC /* MTViewController.m in Sources */,
 				1BCDC2F21C48C92A0072FAAC /* UIView+MTExtensions.m in Sources */,
 				1BCDC2C51C48BF890072FAAC /* main.m in Sources */,
+				1B41F47C1C493B8F005C87F2 /* MTSquare.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
