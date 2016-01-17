@@ -7,23 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B41F47C1C493B8F005C87F2 /* MTSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F47B1C493B8F005C87F2 /* MTSquare.m */; };
+		1B41F4941C4B8B95005C87F2 /* MTRamdomValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F4821C4B8B95005C87F2 /* MTRamdomValues.m */; };
+		1B41F4951C4B8B95005C87F2 /* UIColor+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F4851C4B8B95005C87F2 /* UIColor+MTExtension.m */; };
+		1B41F4961C4B8B95005C87F2 /* UIViewController+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F4881C4B8B95005C87F2 /* UIViewController+MTExtension.m */; };
+		1B41F4971C4B8B95005C87F2 /* UIWindow+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F48B1C4B8B95005C87F2 /* UIWindow+MTExtension.m */; };
+		1B41F4981C4B8B95005C87F2 /* MTSquareHolderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F4901C4B8B95005C87F2 /* MTSquareHolderView.m */; };
+		1B41F4991C4B8B95005C87F2 /* MTSquareHolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F4921C4B8B95005C87F2 /* MTSquareHolderViewController.m */; };
+		1B41F49A1C4B8B95005C87F2 /* MTSquareHolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B41F4931C4B8B95005C87F2 /* MTSquareHolderViewController.xib */; };
 		1BCDC2C51C48BF890072FAAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2C41C48BF890072FAAC /* main.m */; };
 		1BCDC2C81C48BF890072FAAC /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2C71C48BF890072FAAC /* MTAppDelegate.m */; };
 		1BCDC2D01C48BF8A0072FAAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCDC2CF1C48BF8A0072FAAC /* Assets.xcassets */; };
 		1BCDC2D31C48BF8A0072FAAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BCDC2D11C48BF8A0072FAAC /* LaunchScreen.storyboard */; };
-		1BCDC2E11C48C5FC0072FAAC /* MTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2DF1C48C5FC0072FAAC /* MTViewController.m */; };
-		1BCDC2E21C48C5FC0072FAAC /* MTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCDC2E01C48C5FC0072FAAC /* MTViewController.xib */; };
-		1BCDC2E51C48C6160072FAAC /* MTMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2E41C48C6160072FAAC /* MTMainView.m */; };
-		1BCDC2F01C48C92A0072FAAC /* MTRamdomValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2E91C48C92A0072FAAC /* MTRamdomValues.m */; };
-		1BCDC2F11C48C92A0072FAAC /* UIColor+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2EC1C48C92A0072FAAC /* UIColor+MTExtension.m */; };
-		1BCDC2F21C48C92A0072FAAC /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDC2EF1C48C92A0072FAAC /* UIView+MTExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B41F4711C490B81005C87F2 /* MTMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTMacros.h; sourceTree = "<group>"; };
-		1B41F47A1C493B8F005C87F2 /* MTSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSquare.h; sourceTree = "<group>"; };
-		1B41F47B1C493B8F005C87F2 /* MTSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSquare.m; sourceTree = "<group>"; };
+		1B41F4811C4B8B95005C87F2 /* MTRamdomValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRamdomValues.h; sourceTree = "<group>"; };
+		1B41F4821C4B8B95005C87F2 /* MTRamdomValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRamdomValues.m; sourceTree = "<group>"; };
+		1B41F4841C4B8B95005C87F2 /* UIColor+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MTExtension.h"; sourceTree = "<group>"; };
+		1B41F4851C4B8B95005C87F2 /* UIColor+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MTExtension.m"; sourceTree = "<group>"; };
+		1B41F4871C4B8B95005C87F2 /* UIViewController+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MTExtension.h"; sourceTree = "<group>"; };
+		1B41F4881C4B8B95005C87F2 /* UIViewController+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MTExtension.m"; sourceTree = "<group>"; };
+		1B41F48A1C4B8B95005C87F2 /* UIWindow+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+MTExtension.h"; sourceTree = "<group>"; };
+		1B41F48B1C4B8B95005C87F2 /* UIWindow+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+MTExtension.m"; sourceTree = "<group>"; };
+		1B41F48C1C4B8B95005C87F2 /* MTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMacros.h; sourceTree = "<group>"; };
+		1B41F48F1C4B8B95005C87F2 /* MTSquareHolderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSquareHolderView.h; sourceTree = "<group>"; };
+		1B41F4901C4B8B95005C87F2 /* MTSquareHolderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSquareHolderView.m; sourceTree = "<group>"; };
+		1B41F4911C4B8B95005C87F2 /* MTSquareHolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSquareHolderViewController.h; sourceTree = "<group>"; };
+		1B41F4921C4B8B95005C87F2 /* MTSquareHolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSquareHolderViewController.m; sourceTree = "<group>"; };
+		1B41F4931C4B8B95005C87F2 /* MTSquareHolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSquareHolderViewController.xib; sourceTree = "<group>"; };
 		1BCDC2C01C48BF890072FAAC /* task_#21_UIView_Animation_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "task_#21_UIView_Animation_Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCDC2C41C48BF890072FAAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1BCDC2C61C48BF890072FAAC /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
@@ -31,17 +42,6 @@
 		1BCDC2CF1C48BF8A0072FAAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BCDC2D21C48BF8A0072FAAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BCDC2D41C48BF8A0072FAAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BCDC2DE1C48C5FC0072FAAC /* MTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTViewController.h; sourceTree = "<group>"; };
-		1BCDC2DF1C48C5FC0072FAAC /* MTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTViewController.m; sourceTree = "<group>"; };
-		1BCDC2E01C48C5FC0072FAAC /* MTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTViewController.xib; sourceTree = "<group>"; };
-		1BCDC2E31C48C6160072FAAC /* MTMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMainView.h; sourceTree = "<group>"; };
-		1BCDC2E41C48C6160072FAAC /* MTMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMainView.m; sourceTree = "<group>"; };
-		1BCDC2E81C48C92A0072FAAC /* MTRamdomValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRamdomValues.h; sourceTree = "<group>"; };
-		1BCDC2E91C48C92A0072FAAC /* MTRamdomValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRamdomValues.m; sourceTree = "<group>"; };
-		1BCDC2EB1C48C92A0072FAAC /* UIColor+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MTExtension.h"; sourceTree = "<group>"; };
-		1BCDC2EC1C48C92A0072FAAC /* UIColor+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MTExtension.m"; sourceTree = "<group>"; };
-		1BCDC2EE1C48C92A0072FAAC /* UIView+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtensions.h"; sourceTree = "<group>"; };
-		1BCDC2EF1C48C92A0072FAAC /* UIView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +55,95 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B41F47D1C4B8B95005C87F2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F47E1C4B8B95005C87F2 /* Library */,
+				1B41F48D1C4B8B95005C87F2 /* UI */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1B41F47E1C4B8B95005C87F2 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F47F1C4B8B95005C87F2 /* Extensions */,
+				1B41F48C1C4B8B95005C87F2 /* MTMacros.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		1B41F47F1C4B8B95005C87F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F4801C4B8B95005C87F2 /* MTRandomValues */,
+				1B41F4831C4B8B95005C87F2 /* UIColor+MTExtension */,
+				1B41F4861C4B8B95005C87F2 /* UIViewController+MTExtension */,
+				1B41F4891C4B8B95005C87F2 /* UIWindow+MTExtension */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1B41F4801C4B8B95005C87F2 /* MTRandomValues */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F4811C4B8B95005C87F2 /* MTRamdomValues.h */,
+				1B41F4821C4B8B95005C87F2 /* MTRamdomValues.m */,
+			);
+			path = MTRandomValues;
+			sourceTree = "<group>";
+		};
+		1B41F4831C4B8B95005C87F2 /* UIColor+MTExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F4841C4B8B95005C87F2 /* UIColor+MTExtension.h */,
+				1B41F4851C4B8B95005C87F2 /* UIColor+MTExtension.m */,
+			);
+			path = "UIColor+MTExtension";
+			sourceTree = "<group>";
+		};
+		1B41F4861C4B8B95005C87F2 /* UIViewController+MTExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F4871C4B8B95005C87F2 /* UIViewController+MTExtension.h */,
+				1B41F4881C4B8B95005C87F2 /* UIViewController+MTExtension.m */,
+			);
+			path = "UIViewController+MTExtension";
+			sourceTree = "<group>";
+		};
+		1B41F4891C4B8B95005C87F2 /* UIWindow+MTExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F48A1C4B8B95005C87F2 /* UIWindow+MTExtension.h */,
+				1B41F48B1C4B8B95005C87F2 /* UIWindow+MTExtension.m */,
+			);
+			path = "UIWindow+MTExtension";
+			sourceTree = "<group>";
+		};
+		1B41F48D1C4B8B95005C87F2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F48E1C4B8B95005C87F2 /* MTSquareHolderController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1B41F48E1C4B8B95005C87F2 /* MTSquareHolderController */ = {
+			isa = PBXGroup;
+			children = (
+				1B41F48F1C4B8B95005C87F2 /* MTSquareHolderView.h */,
+				1B41F4901C4B8B95005C87F2 /* MTSquareHolderView.m */,
+				1B41F4911C4B8B95005C87F2 /* MTSquareHolderViewController.h */,
+				1B41F4921C4B8B95005C87F2 /* MTSquareHolderViewController.m */,
+				1B41F4931C4B8B95005C87F2 /* MTSquareHolderViewController.xib */,
+			);
+			path = MTSquareHolderController;
+			sourceTree = "<group>";
+		};
 		1BCDC2B71C48BF890072FAAC = {
 			isa = PBXGroup;
 			children = (
-				1BCDC2DA1C48C5710072FAAC /* Source */,
+				1B41F47D1C4B8B95005C87F2 /* Source */,
 				1BCDC2C21C48BF890072FAAC /* task_#21_UIView_Animation_Test */,
 				1BCDC2C11C48BF890072FAAC /* Products */,
 			);
@@ -91,83 +176,6 @@
 				1BCDC2C41C48BF890072FAAC /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1BCDC2DA1C48C5710072FAAC /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				1B41F4711C490B81005C87F2 /* MTMacros.h */,
-				1BCDC2E61C48C92A0072FAAC /* Library */,
-				1BCDC2DB1C48C58B0072FAAC /* UI */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		1BCDC2DB1C48C58B0072FAAC /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				1BCDC2DC1C48C5D50072FAAC /* Controllers */,
-				1BCDC2DD1C48C5D50072FAAC /* Views */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		1BCDC2DC1C48C5D50072FAAC /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				1BCDC2DE1C48C5FC0072FAAC /* MTViewController.h */,
-				1BCDC2DF1C48C5FC0072FAAC /* MTViewController.m */,
-				1BCDC2E01C48C5FC0072FAAC /* MTViewController.xib */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		1BCDC2DD1C48C5D50072FAAC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1BCDC2E31C48C6160072FAAC /* MTMainView.h */,
-				1BCDC2E41C48C6160072FAAC /* MTMainView.m */,
-				1B41F47A1C493B8F005C87F2 /* MTSquare.h */,
-				1B41F47B1C493B8F005C87F2 /* MTSquare.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1BCDC2E61C48C92A0072FAAC /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				1BCDC2E71C48C92A0072FAAC /* MTRandomValues */,
-				1BCDC2EA1C48C92A0072FAAC /* UIColor+MTExtension */,
-				1BCDC2ED1C48C92A0072FAAC /* UIView+MTExtensions */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		1BCDC2E71C48C92A0072FAAC /* MTRandomValues */ = {
-			isa = PBXGroup;
-			children = (
-				1BCDC2E81C48C92A0072FAAC /* MTRamdomValues.h */,
-				1BCDC2E91C48C92A0072FAAC /* MTRamdomValues.m */,
-			);
-			path = MTRandomValues;
-			sourceTree = "<group>";
-		};
-		1BCDC2EA1C48C92A0072FAAC /* UIColor+MTExtension */ = {
-			isa = PBXGroup;
-			children = (
-				1BCDC2EB1C48C92A0072FAAC /* UIColor+MTExtension.h */,
-				1BCDC2EC1C48C92A0072FAAC /* UIColor+MTExtension.m */,
-			);
-			path = "UIColor+MTExtension";
-			sourceTree = "<group>";
-		};
-		1BCDC2ED1C48C92A0072FAAC /* UIView+MTExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				1BCDC2EE1C48C92A0072FAAC /* UIView+MTExtensions.h */,
-				1BCDC2EF1C48C92A0072FAAC /* UIView+MTExtensions.m */,
-			);
-			path = "UIView+MTExtensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BCDC2D31C48BF8A0072FAAC /* LaunchScreen.storyboard in Resources */,
+				1B41F49A1C4B8B95005C87F2 /* MTSquareHolderViewController.xib in Resources */,
 				1BCDC2D01C48BF8A0072FAAC /* Assets.xcassets in Resources */,
-				1BCDC2E21C48C5FC0072FAAC /* MTViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,14 +250,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BCDC2E51C48C6160072FAAC /* MTMainView.m in Sources */,
-				1BCDC2F01C48C92A0072FAAC /* MTRamdomValues.m in Sources */,
-				1BCDC2F11C48C92A0072FAAC /* UIColor+MTExtension.m in Sources */,
+				1B41F4991C4B8B95005C87F2 /* MTSquareHolderViewController.m in Sources */,
+				1B41F4981C4B8B95005C87F2 /* MTSquareHolderView.m in Sources */,
 				1BCDC2C81C48BF890072FAAC /* MTAppDelegate.m in Sources */,
-				1BCDC2E11C48C5FC0072FAAC /* MTViewController.m in Sources */,
-				1BCDC2F21C48C92A0072FAAC /* UIView+MTExtensions.m in Sources */,
 				1BCDC2C51C48BF890072FAAC /* main.m in Sources */,
-				1B41F47C1C493B8F005C87F2 /* MTSquare.m in Sources */,
+				1B41F4971C4B8B95005C87F2 /* UIWindow+MTExtension.m in Sources */,
+				1B41F4951C4B8B95005C87F2 /* UIColor+MTExtension.m in Sources */,
+				1B41F4941C4B8B95005C87F2 /* MTRamdomValues.m in Sources */,
+				1B41F4961C4B8B95005C87F2 /* UIViewController+MTExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,7 @@
 
 #import "MTAppDelegate.h"
 
-#import "MTViewController.h"
+#import "MTSquareHolderViewController.h"
 
 @interface MTAppDelegate ()
 
@@ -45,7 +45,7 @@
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
     
-    window.rootViewController = [[MTViewController alloc] initWithNibName:@"MTViewController" bundle:nil];
+    window.rootViewController = [[MTSquareHolderViewController alloc] initWithNibName:@"MTSquareHolderViewController" bundle:nil];
     [window makeKeyAndVisible];
     
     return YES;
