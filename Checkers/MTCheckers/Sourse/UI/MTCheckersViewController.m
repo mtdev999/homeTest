@@ -32,24 +32,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    //[self.checkersView setupDeskWithCells];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)onStartAction:(id)sender {
-    
     self.checkersView.newGame = !self.checkersView.newGame;
-    //[self.checkersView createCheckerView];
 }
 
 
 - (IBAction)onStopAction:(id)sender {
-    //self.checkersView = nil;
+    
 }
 
 /*

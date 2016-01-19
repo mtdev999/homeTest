@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B2DF1261C42851E00935CEE /* MTCheckers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2DF1251C42851E00935CEE /* MTCheckers.m */; };
+		1B41F49D1C4C0603005C87F2 /* MTCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41F49C1C4C0603005C87F2 /* MTCheckBox.m */; };
 		1B6DD7061C412EA8002A8C44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DD7051C412EA8002A8C44 /* main.m */; };
 		1B6DD7091C412EA8002A8C44 /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DD7081C412EA8002A8C44 /* MTAppDelegate.m */; };
 		1B6DD7231C412F65002A8C44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DD71C1C412F65002A8C44 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		1B2DF1241C42851E00935CEE /* MTCheckers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCheckers.h; sourceTree = "<group>"; };
 		1B2DF1251C42851E00935CEE /* MTCheckers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCheckers.m; sourceTree = "<group>"; };
+		1B41F49B1C4C0603005C87F2 /* MTCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCheckBox.h; sourceTree = "<group>"; };
+		1B41F49C1C4C0603005C87F2 /* MTCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCheckBox.m; sourceTree = "<group>"; };
 		1B6DD7011C412EA8002A8C44 /* MTCheckers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTCheckers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6DD7051C412EA8002A8C44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B6DD7071C412EA8002A8C44 /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				1B2DF1251C42851E00935CEE /* MTCheckers.m */,
 				1B9B891F1C437EA6008D1B2A /* MTCellsOfDesk.h */,
 				1B9B89201C437EA6008D1B2A /* MTCellsOfDesk.m */,
+				1B41F49B1C4C0603005C87F2 /* MTCheckBox.h */,
+				1B41F49C1C4C0603005C87F2 /* MTCheckBox.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				1B6DD7061C412EA8002A8C44 /* main.m in Sources */,
 				1B9B89701C452E4D008D1B2A /* UIView+MTExtensions.m in Sources */,
 				1B6DD72D1C413011002A8C44 /* MTCheckersView.m in Sources */,
+				1B41F49D1C4C0603005C87F2 /* MTCheckBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

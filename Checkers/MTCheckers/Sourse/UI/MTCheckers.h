@@ -11,6 +11,6 @@
 @interface MTCheckers : UIView
 @property (nonatomic, strong)   UIView  *checkerView;
 
-+ (UIView *)createCheckerWithColor:(UIColor *)color;
++ (UIView *)checkerWithColor:(UIColor *)color;
 
 @end
