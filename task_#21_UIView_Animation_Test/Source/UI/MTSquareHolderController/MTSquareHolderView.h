@@ -17,6 +17,7 @@ typedef NS_ENUM(NSUInteger, MTSquarePosition) {
 };
 
 @interface MTSquareHolderView : UIView
+@property (nonatomic, strong)   UIView                  *testView;
 @property (nonatomic, strong)   IBOutlet    UIView      *squareView;
 @property (nonatomic, strong)   IBOutlet    UIView      *squareTwoView;
 @property (strong, nonatomic)   IBOutlet    UIView      *squareThreeView;
@@ -33,5 +34,7 @@ typedef NS_ENUM(NSUInteger, MTSquarePosition) {
 - (void)setSquarePosition:(MTSquarePosition)position
                  animated:(BOOL)animated
         completionHandler:(void(^)(void))handler;
+
+- (void)createSomeViews;
 
 @end

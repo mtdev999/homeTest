@@ -131,11 +131,11 @@
 		1B41F48E1C4B8B95005C87F2 /* MTSquareHolderController */ = {
 			isa = PBXGroup;
 			children = (
-				1B41F48F1C4B8B95005C87F2 /* MTSquareHolderView.h */,
-				1B41F4901C4B8B95005C87F2 /* MTSquareHolderView.m */,
 				1B41F4911C4B8B95005C87F2 /* MTSquareHolderViewController.h */,
 				1B41F4921C4B8B95005C87F2 /* MTSquareHolderViewController.m */,
 				1B41F4931C4B8B95005C87F2 /* MTSquareHolderViewController.xib */,
+				1B41F48F1C4B8B95005C87F2 /* MTSquareHolderView.h */,
+				1B41F4901C4B8B95005C87F2 /* MTSquareHolderView.m */,
 			);
 			path = MTSquareHolderController;
 			sourceTree = "<group>";

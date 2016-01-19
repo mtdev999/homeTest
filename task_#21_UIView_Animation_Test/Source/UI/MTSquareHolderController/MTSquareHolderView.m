@@ -21,7 +21,7 @@ static const NSTimeInterval kMTAnimationDelayValue = 0.2f;
 @interface MTSquareHolderView ()
 @property (nonatomic, assign, getter=isAnimationInProgress)  BOOL  animationInProgress;
 
-@property (nonatomic, assign)   NSUInteger  numberPosition;
+@property (nonatomic, strong)   NSMutableArray  *mutableViews;
 
 - (void)changeButtonTitle;
 - (void)animateSquare;
@@ -38,7 +38,8 @@ static const NSTimeInterval kMTAnimationDelayValue = 0.2f;
 - (void)setSquareAnimating:(BOOL)squareAnimating {
     if (_squareAnimating != squareAnimating) {
         _squareAnimating = squareAnimating;
-        
+
+        [self animationViews];
         [self animateSquare];
     }
 }
@@ -67,13 +68,12 @@ static const NSTimeInterval kMTAnimationDelayValue = 0.2f;
         completionHandler:(void(^)(void))handler
 {
     self.animationInProgress = YES;
+    
     UIView *viewOne = self.squareView;
     UIView *viewTwo = self.squareTwoView;
     UIView *viewThree = self.squareThreeView;
     UIView *viewFour = self.squareFourView;
     NSTimeInterval duration = animated ? kMTAnimationDurationValue : 0;
-   
-    self.numberPosition = position;
     
     [UIView animateWithDuration:duration
                           delay:kMTAnimationDelayValue
@@ -163,5 +163,58 @@ static const NSTimeInterval kMTAnimationDelayValue = 0.2f;
 
     return squareview;
 }
+
+#pragma mark -
+#pragma mark Level Student
+
+- (void)createSomeViews {
+    NSMutableArray *array = [NSMutableArray new];
+    for (int i = 0; i < 4; i++) {
+        CGRect frame = self.bounds;
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame) +
+                                                                CGRectGetWidth(frame) / 4,
+                                                                CGRectGetMinY(frame) +
+                                                                CGRectGetWidth(frame) / 4 +
+                                                                CGRectGetWidth(frame) / 4 * i,
+                                                                CGRectGetWidth(frame) / 4,
+                                                                CGRectGetWidth(frame) / 4)];
+        view.backgroundColor = [UIColor randomColor];
+        [array addObject:view];
+        
+        [self addSubview:view];
+        self.testView = view;
+    }
+    
+    self.mutableViews = array;
+}
+
+- (void)animationViews {
+    for (int i = 0; i < self.mutableViews.count; i++) {
+        if (self.squareAnimating) {
+            [self setViewOptions:[self optionsAnimationFromNumber:i] view:[self.mutableViews objectAtIndex:i]];
+        }
+    }
+}
+
+- (UIViewAnimationOptions)optionsAnimationFromNumber:(NSUInteger)number {
+    return number << 16 | 1 << 3 | 1 << 4;
+}
+
+- (void)setViewOptions:(UIViewAnimationOptions)options view:(UIView *)view {
+    
+    [UIView animateWithDuration:2
+                          delay:0
+                        options:options
+                     animations:^{
+                         view.transform = CGAffineTransformMakeTranslation(CGRectGetWidth(self.bounds) - CGRectGetWidth(self.bounds)/2,
+                                                                           CGRectGetMinY(self.bounds));
+                         view.backgroundColor = [UIColor randomColor];
+                         
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+}
+
 
 @end

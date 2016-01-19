@@ -20,6 +20,8 @@ MTViewControllerBaseViewProperty(MTSquareHolderViewController, squareView, MTSqu
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.squareView createSomeViews];
 }
 
 - (void)didReceiveMemoryWarning {
