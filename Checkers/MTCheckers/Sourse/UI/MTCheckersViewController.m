@@ -43,8 +43,8 @@
 }
 
 
-- (IBAction)onStopAction:(id)sender {
-    
+- (IBAction)onHelpAction:(id)sender {
+    self.checkersView.help = !self.checkersView.help;
 }
 
 /*

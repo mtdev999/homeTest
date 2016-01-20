@@ -78,6 +78,21 @@
     }
 }
 
+- (void)setHelp:(BOOL)help {
+    if (_help != help) {
+        _help = help;
+        
+        [self changeButtonTitle];
+    }
+}
+
+- (void)changeButtonTitle {
+    UIColor *color = self.help ? [UIColor orangeColor]:[UIColor darkGrayColor];
+
+    [self.animateButton setTitleColor:color
+                             forState:UIControlStateNormal];
+}
+
 #pragma mark -
 #pragma mark Public
 
@@ -106,9 +121,7 @@
     NSMutableArray *array = [NSMutableArray new];
     NSMutableArray *arrayCheckWhite = [NSMutableArray new];
     NSMutableArray *arrayCheckBlack = [NSMutableArray new];
-    
-    
-    
+
     BOOL checkerColor = [checker.backgroundColor isEqual:[UIColor colorWithWhite:1 alpha:1]];
 
     UIView *checkBox = self.checkBoxView;
@@ -123,12 +136,14 @@
     }
 
     for (UIView *object in array) {
+        NSUInteger indexAtObject = [array indexOfObject:object];
+        NSUInteger offsetCount = array.count/2;
         BOOL result = [self containsRectInRect:object.frame];
         
-        if (checkerColor && !result && [array indexOfObject:object] > array.count/2) {
+        if (checkerColor && !result && indexAtObject >= offsetCount) {
             [self animationCheckView:object];
             [arrayCheckWhite addObject:object];
-        } else if (!checkerColor && !result && [array indexOfObject:object] < array.count/2) {
+        } else if (!checkerColor && !result && indexAtObject <= offsetCount) {
             [self animationCheckView:object];
             [arrayCheckBlack addObject:object];
 
@@ -139,15 +154,17 @@
 }
 
 - (void)animationCheckView:(UIView *)view {
-    [UIView animateWithDuration:0.3
-                          delay:0
-                        options: UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAutoreverse
-                     animations:^{
-                         view.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3f];
-                     }
-                     completion:^(BOOL finished) {
-                         view.backgroundColor = UIColorBlack;
-                     }];
+    if (self.isHelp) {
+        [UIView animateWithDuration:0.3
+                              delay:0
+                            options: UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAutoreverse
+                         animations:^{
+                             view.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3f];
+                         }
+                         completion:^(BOOL finished) {
+                             view.backgroundColor = UIColorBlack;
+                         }];
+    }
 }
 
 #pragma mark -
