@@ -104,9 +104,12 @@
 
 - (void)chekingPossibleMovesWithChecker:(UIView *)checker {
     NSMutableArray *array = [NSMutableArray new];
+    NSMutableArray *arrayCheckWhite = [NSMutableArray new];
+    NSMutableArray *arrayCheckBlack = [NSMutableArray new];
+    
+    
     
     BOOL checkerColor = [checker.backgroundColor isEqual:[UIColor colorWithWhite:1 alpha:1]];
-    NSLog(@"%@", checkerColor ? @"White":@"Black");
 
     UIView *checkBox = self.checkBoxView;
     checkBox.center = checker.center;
@@ -124,9 +127,10 @@
         
         if (checkerColor && !result && [array indexOfObject:object] > array.count/2) {
             [self animationCheckView:object];
-
+            [arrayCheckWhite addObject:object];
         } else if (!checkerColor && !result && [array indexOfObject:object] < array.count/2) {
             [self animationCheckView:object];
+            [arrayCheckBlack addObject:object];
 
         } else {
             object.backgroundColor = UIColorBlack;
@@ -293,17 +297,24 @@
         UITouch *touch = [touches anyObject];
         CGPoint pointOnMainView = [touch locationInView:self.frontSideDeskView];
         
+        BOOL checkerColor = [self.dragginView.backgroundColor isEqual:[UIColor whiteColor]];
+
         for (MTCellsOfDesk *cell in self.cellsForCheckBox) {
+            NSUInteger index = [self.cellsForCheckBox indexOfObject:cell];
+            NSUInteger offsetCount = self.cellsForCheckBox.count/2;
             
             BOOL result = [self containsRectInRect:cell.frame];
    
-            if (CGRectContainsPoint(cell.frame, pointOnMainView) && !result) {
+            if (CGRectContainsPoint(cell.frame, pointOnMainView)
+                && !result
+                &&  (checkerColor ? index >= offsetCount : index <= offsetCount))
+            {
                 [UIView animateWithDuration:0.3
                                  animations:^{
                                      self.dragginView.center = cell.center;
                                      [self onTuochesEnded];
                                  }];
-            } else {
+            }  else {
                 [UIView animateWithDuration:0.3
                                  animations:^{
                                      CGPoint correction = CGPointMake(self.startPoint.x + self.touchOffset.x,
