@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface MTCheckersView : UIView
-@property (nonatomic, strong)   IBOutlet UIButton  *startButton;
+@property (nonatomic, strong)   IBOutlet    UIButton    *startButton;
+@property (nonatomic, strong)   IBOutlet    UIButton    *animateButton;
+
 @property (nonatomic, strong)   UIView  *deskView;
 @property (nonatomic, assign)   BOOL    newGame;
+@property (nonatomic, assign, getter=isHelp)   BOOL    help;
 
 - (void)setupDeskWithCells;
 - (void)createCheckerView;

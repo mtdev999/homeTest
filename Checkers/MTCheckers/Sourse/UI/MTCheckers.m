@@ -17,7 +17,7 @@
 #pragma mark -
 #pragma mark Class Methods
 
-+ (UIView *)createCheckerWithColor:(UIColor *)color {
++ (UIView *)checkerWithColor:(UIColor *)color {
     return [[self alloc] initWithFrameAndColor:color];
 }
 
