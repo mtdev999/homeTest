@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B7DFBB01C6A0A070088F1FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBAF1C6A0A070088F1FA /* main.m */; };
+		1B7DFBB31C6A0A070088F1FA /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBB21C6A0A070088F1FA /* MTAppDelegate.m */; };
+		1B7DFBBB1C6A0A070088F1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7DFBBA1C6A0A070088F1FA /* Assets.xcassets */; };
+		1B7DFBBE1C6A0A070088F1FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7DFBBC1C6A0A070088F1FA /* LaunchScreen.storyboard */; };
+		1B7DFBCF1C6A0B3B0088F1FA /* MTCalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBCD1C6A0B3B0088F1FA /* MTCalculatorViewController.m */; };
+		1B7DFBD01C6A0B3B0088F1FA /* MTCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7DFBCE1C6A0B3B0088F1FA /* MTCalculatorViewController.xib */; };
+		1B7DFBD31C6A0B590088F1FA /* MTCalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBD21C6A0B590088F1FA /* MTCalculatorView.m */; };
+		1B7DFBDB1C6B45A50088F1FA /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBDA1C6B45A50088F1FA /* UIView+MTExtensions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B7DFBAB1C6A0A070088F1FA /* MTCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B7DFBAF1C6A0A070088F1FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B7DFBB11C6A0A070088F1FA /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
+		1B7DFBB21C6A0A070088F1FA /* MTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAppDelegate.m; sourceTree = "<group>"; };
+		1B7DFBBA1C6A0A070088F1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B7DFBBD1C6A0A070088F1FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B7DFBBF1C6A0A070088F1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B7DFBCC1C6A0B3B0088F1FA /* MTCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCalculatorViewController.h; sourceTree = "<group>"; };
+		1B7DFBCD1C6A0B3B0088F1FA /* MTCalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCalculatorViewController.m; sourceTree = "<group>"; };
+		1B7DFBCE1C6A0B3B0088F1FA /* MTCalculatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCalculatorViewController.xib; sourceTree = "<group>"; };
+		1B7DFBD11C6A0B590088F1FA /* MTCalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCalculatorView.h; sourceTree = "<group>"; };
+		1B7DFBD21C6A0B590088F1FA /* MTCalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCalculatorView.m; sourceTree = "<group>"; };
+		1B7DFBD91C6B45A50088F1FA /* UIView+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtensions.h"; sourceTree = "<group>"; };
+		1B7DFBDA1C6B45A50088F1FA /* UIView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtensions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B7DFBA81C6A0A070088F1FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B7DFBA21C6A0A070088F1FA = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBC61C6A0AB80088F1FA /* Resource */,
+				1B7DFBC51C6A0A3E0088F1FA /* Source */,
+				1B7DFBAD1C6A0A070088F1FA /* MTCalculator */,
+				1B7DFBAC1C6A0A070088F1FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B7DFBAC1C6A0A070088F1FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBAB1C6A0A070088F1FA /* MTCalculator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B7DFBAD1C6A0A070088F1FA /* MTCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBB11C6A0A070088F1FA /* MTAppDelegate.h */,
+				1B7DFBB21C6A0A070088F1FA /* MTAppDelegate.m */,
+				1B7DFBBA1C6A0A070088F1FA /* Assets.xcassets */,
+				1B7DFBBC1C6A0A070088F1FA /* LaunchScreen.storyboard */,
+				1B7DFBBF1C6A0A070088F1FA /* Info.plist */,
+				1B7DFBAE1C6A0A070088F1FA /* Supporting Files */,
+			);
+			path = MTCalculator;
+			sourceTree = "<group>";
+		};
+		1B7DFBAE1C6A0A070088F1FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBAF1C6A0A070088F1FA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B7DFBC51C6A0A3E0088F1FA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBD71C6B457A0088F1FA /* Extensions */,
+				1B7DFBCA1C6A0ADE0088F1FA /* Models */,
+				1B7DFBCB1C6A0ADE0088F1FA /* UI */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1B7DFBC61C6A0AB80088F1FA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		1B7DFBCA1C6A0ADE0088F1FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B7DFBCB1C6A0ADE0088F1FA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBCC1C6A0B3B0088F1FA /* MTCalculatorViewController.h */,
+				1B7DFBCD1C6A0B3B0088F1FA /* MTCalculatorViewController.m */,
+				1B7DFBCE1C6A0B3B0088F1FA /* MTCalculatorViewController.xib */,
+				1B7DFBD11C6A0B590088F1FA /* MTCalculatorView.h */,
+				1B7DFBD21C6A0B590088F1FA /* MTCalculatorView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1B7DFBD71C6B457A0088F1FA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBD81C6B45A50088F1FA /* UIView+MTExtensions */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1B7DFBD81C6B45A50088F1FA /* UIView+MTExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBD91C6B45A50088F1FA /* UIView+MTExtensions.h */,
+				1B7DFBDA1C6B45A50088F1FA /* UIView+MTExtensions.m */,
+			);
+			path = "UIView+MTExtensions";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B7DFBAA1C6A0A070088F1FA /* MTCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B7DFBC21C6A0A070088F1FA /* Build configuration list for PBXNativeTarget "MTCalculator" */;
+			buildPhases = (
+				1B7DFBA71C6A0A070088F1FA /* Sources */,
+				1B7DFBA81C6A0A070088F1FA /* Frameworks */,
+				1B7DFBA91C6A0A070088F1FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MTCalculator;
+			productName = MTCalculator;
+			productReference = 1B7DFBAB1C6A0A070088F1FA /* MTCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B7DFBA31C6A0A070088F1FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Mark Tezza";
+				TargetAttributes = {
+					1B7DFBAA1C6A0A070088F1FA = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Z662YN573K;
+					};
+				};
+			};
+			buildConfigurationList = 1B7DFBA61C6A0A070088F1FA /* Build configuration list for PBXProject "MTCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B7DFBA21C6A0A070088F1FA;
+			productRefGroup = 1B7DFBAC1C6A0A070088F1FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B7DFBAA1C6A0A070088F1FA /* MTCalculator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B7DFBA91C6A0A070088F1FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B7DFBD01C6A0B3B0088F1FA /* MTCalculatorViewController.xib in Resources */,
+				1B7DFBBE1C6A0A070088F1FA /* LaunchScreen.storyboard in Resources */,
+				1B7DFBBB1C6A0A070088F1FA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B7DFBA71C6A0A070088F1FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B7DFBB31C6A0A070088F1FA /* MTAppDelegate.m in Sources */,
+				1B7DFBB01C6A0A070088F1FA /* main.m in Sources */,
+				1B7DFBDB1C6B45A50088F1FA /* UIView+MTExtensions.m in Sources */,
+				1B7DFBCF1C6A0B3B0088F1FA /* MTCalculatorViewController.m in Sources */,
+				1B7DFBD31C6A0B590088F1FA /* MTCalculatorView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1B7DFBBC1C6A0A070088F1FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B7DFBBD1C6A0A070088F1FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B7DFBC01C6A0A070088F1FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B7DFBC11C6A0A070088F1FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B7DFBC31C6A0A070088F1FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MTCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MT.MTCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1B7DFBC41C6A0A070088F1FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MTCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MT.MTCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B7DFBA61C6A0A070088F1FA /* Build configuration list for PBXProject "MTCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B7DFBC01C6A0A070088F1FA /* Debug */,
+				1B7DFBC11C6A0A070088F1FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B7DFBC21C6A0A070088F1FA /* Build configuration list for PBXNativeTarget "MTCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B7DFBC31C6A0A070088F1FA /* Debug */,
+				1B7DFBC41C6A0A070088F1FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B7DFBA31C6A0A070088F1FA /* Project object */;
+}
