@@ -38,7 +38,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                                     <connections>
-                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="HKt-xN-w4s"/>
+                                                        <action selector="actionTextChanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="0Fb-rp-BDg"/>
                                                         <outlet property="delegate" destination="Ste-Dm-sZx" id="b5d-kH-ywk"/>
                                                     </connections>
                                                 </textField>
@@ -65,7 +65,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" secureTextEntry="YES"/>
                                                     <connections>
-                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="TpE-Z7-zme"/>
+                                                        <action selector="actionTextChanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="Kxz-li-9Pv"/>
                                                         <outlet property="delegate" destination="Ste-Dm-sZx" id="kE5-S3-zXf"/>
                                                     </connections>
                                                 </textField>
@@ -96,7 +96,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
                                                     <connections>
-                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="5Rg-vE-67p"/>
+                                                        <action selector="actionTextChanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="rRe-ql-VRn"/>
                                                         <outlet property="delegate" destination="Ste-Dm-sZx" id="jpd-qT-iZe"/>
                                                     </connections>
                                                 </textField>
@@ -123,7 +123,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                     <connections>
-                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="Tzd-Xi-KOv"/>
+                                                        <action selector="actionTextChanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="D4T-vR-ByW"/>
                                                         <outlet property="delegate" destination="Ste-Dm-sZx" id="cxs-dd-Wmr"/>
                                                     </connections>
                                                 </textField>
@@ -150,7 +150,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     <connections>
-                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="2Fj-O4-5Cd"/>
+                                                        <action selector="actionTextChanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="qvA-TB-UvD"/>
                                                         <outlet property="delegate" destination="Ste-Dm-sZx" id="4hV-MA-l9k"/>
                                                     </connections>
                                                 </textField>
@@ -177,7 +177,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                                     <connections>
-                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="SmI-uq-LIA"/>
+                                                        <action selector="actionTextChanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="662-MH-qOr"/>
                                                         <outlet property="delegate" destination="Ste-Dm-sZx" id="BNV-5u-6uu"/>
                                                     </connections>
                                                 </textField>
@@ -204,7 +204,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                                     <connections>
-                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="bvS-VE-rM6"/>
+                                                        <action selector="actionTextChanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="dYm-Xn-5jd"/>
                                                         <outlet property="delegate" destination="Ste-Dm-sZx" id="Nn0-DH-e0K"/>
                                                     </connections>
                                                 </textField>

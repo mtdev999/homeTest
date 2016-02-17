@@ -11,6 +11,6 @@
 @interface MTSettingViewController : UITableViewController <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *textFieldsButtons;
 
-- (IBAction)actionTextCHanged:(UITextField *)sender;
+- (IBAction)actionTextChanged:(UITextField *)sender;
 
 @end
