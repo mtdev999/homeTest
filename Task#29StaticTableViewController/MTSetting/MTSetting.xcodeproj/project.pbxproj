@@ -12,7 +12,7 @@
 		1B3A680F1C74A98300A7D9E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A680D1C74A98300A7D9E9 /* Main.storyboard */; };
 		1B3A68111C74A98300A7D9E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A68101C74A98300A7D9E9 /* Assets.xcassets */; };
 		1B3A68141C74A98300A7D9E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A68121C74A98300A7D9E9 /* LaunchScreen.storyboard */; };
-		1B3A681D1C74A9B800A7D9E9 /* MTSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A681C1C74A9B800A7D9E9 /* MTSettingTableViewController.m */; };
+		1B3A681D1C74A9B800A7D9E9 /* MTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A681C1C74A9B800A7D9E9 /* MTSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		1B3A68101C74A98300A7D9E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B3A68131C74A98300A7D9E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B3A68151C74A98300A7D9E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B3A681B1C74A9B800A7D9E9 /* MTSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSettingTableViewController.h; sourceTree = "<group>"; };
-		1B3A681C1C74A9B800A7D9E9 /* MTSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSettingTableViewController.m; sourceTree = "<group>"; };
+		1B3A681B1C74A9B800A7D9E9 /* MTSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSettingViewController.h; sourceTree = "<group>"; };
+		1B3A681C1C74A9B800A7D9E9 /* MTSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,8 @@
 		1B3A68031C74A98300A7D9E9 /* MTSetting */ = {
 			isa = PBXGroup;
 			children = (
-				1B3A681B1C74A9B800A7D9E9 /* MTSettingTableViewController.h */,
-				1B3A681C1C74A9B800A7D9E9 /* MTSettingTableViewController.m */,
+				1B3A681B1C74A9B800A7D9E9 /* MTSettingViewController.h */,
+				1B3A681C1C74A9B800A7D9E9 /* MTSettingViewController.m */,
 				1B3A68071C74A98300A7D9E9 /* AppDelegate.h */,
 				1B3A68081C74A98300A7D9E9 /* AppDelegate.m */,
 				1B3A680D1C74A98300A7D9E9 /* Main.storyboard */,
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3A68091C74A98300A7D9E9 /* AppDelegate.m in Sources */,
-				1B3A681D1C74A9B800A7D9E9 /* MTSettingTableViewController.m in Sources */,
+				1B3A681D1C74A9B800A7D9E9 /* MTSettingViewController.m in Sources */,
 				1B3A68061C74A98300A7D9E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +301,7 @@
 				1B3A681A1C74A98300A7D9E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

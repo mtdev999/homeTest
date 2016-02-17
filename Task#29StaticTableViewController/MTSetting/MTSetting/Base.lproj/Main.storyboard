@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Setting Table View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="VSq-vE-5R4">
             <objects>
-                <tableViewController id="Ste-Dm-sZx" customClass="MTSettingTableViewController" sceneMemberID="viewController">
+                <tableViewController id="Ste-Dm-sZx" customClass="MTSettingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QTt-Jw-t8z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter login" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="PiS-ZO-bfI">
+                                                    <rect key="frame" x="162" y="-1" width="150" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingChanged" id="HKt-xN-w4s"/>
+                                                        <outlet property="delegate" destination="Ste-Dm-sZx" id="b5d-kH-ywk"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -49,6 +59,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="oEt-aX-fEa">
+                                                    <rect key="frame" x="162" y="0.0" width="150" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="TpE-Z7-zme"/>
+                                                        <outlet property="delegate" destination="Ste-Dm-sZx" id="kE5-S3-zXf"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -70,6 +90,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="oZf-J3-z2o">
+                                                    <rect key="frame" x="162" y="0.0" width="150" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="5Rg-vE-67p"/>
+                                                        <outlet property="delegate" destination="Ste-Dm-sZx" id="jpd-qT-iZe"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -87,6 +117,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter surname" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Kju-4C-sP3">
+                                                    <rect key="frame" x="162" y="0.0" width="150" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                                    <connections>
+                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="Tzd-Xi-KOv"/>
+                                                        <outlet property="delegate" destination="Ste-Dm-sZx" id="cxs-dd-Wmr"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -104,6 +144,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter age" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="rdD-3V-3vf">
+                                                    <rect key="frame" x="162" y="0.0" width="150" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <connections>
+                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="2Fj-O4-5Cd"/>
+                                                        <outlet property="delegate" destination="Ste-Dm-sZx" id="4hV-MA-l9k"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -121,6 +171,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter phone" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="I0e-70-fNd">
+                                                    <rect key="frame" x="162" y="0.0" width="150" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="SmI-uq-LIA"/>
+                                                        <outlet property="delegate" destination="Ste-Dm-sZx" id="BNV-5u-6uu"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -138,6 +198,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter e-mail" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="oQK-ns-TEt">
+                                                    <rect key="frame" x="162" y="0.0" width="150" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="actionTextCHanged:" destination="Ste-Dm-sZx" eventType="editingDidEnd" id="bvS-VE-rM6"/>
+                                                        <outlet property="delegate" destination="Ste-Dm-sZx" id="Nn0-DH-e0K"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -149,6 +219,15 @@
                             <outlet property="delegate" destination="Ste-Dm-sZx" id="Uzt-ia-9xf"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outletCollection property="textFieldsButtons" destination="PiS-ZO-bfI" id="uhY-NP-o9G"/>
+                        <outletCollection property="textFieldsButtons" destination="oEt-aX-fEa" id="d1W-Up-Nez"/>
+                        <outletCollection property="textFieldsButtons" destination="oZf-J3-z2o" id="HUe-WD-WHO"/>
+                        <outletCollection property="textFieldsButtons" destination="Kju-4C-sP3" id="8uG-Dq-WiQ"/>
+                        <outletCollection property="textFieldsButtons" destination="rdD-3V-3vf" id="9zc-sW-rzv"/>
+                        <outletCollection property="textFieldsButtons" destination="I0e-70-fNd" id="lF1-xW-6tj"/>
+                        <outletCollection property="textFieldsButtons" destination="oQK-ns-TEt" id="fz2-W2-biz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCG-8O-vo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
