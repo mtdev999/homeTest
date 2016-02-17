@@ -49,6 +49,15 @@ typedef NS_ENUM(NSUInteger, MTTextFields) {
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction)actionClearAll:(UIButton *)sender {
+    for (UITextField *object in self.textFieldsButtons) {
+        object.text = nil;
+    }
+}
+
 - (IBAction)actionTextChanged:(UITextField *)sender {
     
     [self settingsSave];

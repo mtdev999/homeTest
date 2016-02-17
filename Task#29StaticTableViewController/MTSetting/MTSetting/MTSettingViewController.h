@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *textFieldsButtons;
 
 - (IBAction)actionTextChanged:(UITextField *)sender;
+- (IBAction)actionClearAll:(UIButton *)sender;
 
 @end
