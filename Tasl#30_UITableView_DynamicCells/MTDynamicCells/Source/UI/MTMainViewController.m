@@ -10,6 +10,7 @@
 
 #import "MTMainView.h"
 #import "MTCustomClass.h"
+#import "MTStudent.h"
 
 #import "MTRamdomValues.h"
 #import "UIColor+MTExtension.h"
@@ -37,7 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.objects = [MTCustomClass arrayWithObjects];
+    //self.objects = [MTCustomClass arrayWithObjects];
+    self.objects = [MTStudent arrayWithStudents];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +62,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indetifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:indetifier];
+        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:indetifier];
     }
 
     [self settingCell:cell cellForRowAtIndexPath:indexPath];
@@ -81,12 +84,21 @@
 
 #pragma mark -
 #pragma mark Private
+
+- (void)settingCell:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MTStudent *student = [self.objects objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", student.name, student.surname];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", student.averageRating];
+}
+
+/*
 // level student
 - (void)settingCell:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MTCustomClass *object = [self.objects objectAtIndex:indexPath.row];
     cell.textLabel.text = object.name;
     cell.backgroundColor = object.color;
 }
+ */
 
 // level pupil:
 /*

@@ -19,6 +19,7 @@
 		1B3FE56E1C75B72800035A34 /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FE56B1C75B72800035A34 /* UIView+MTExtensions.m */; };
 		1B3FE5741C75DE4000035A34 /* MTCustomClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FE5731C75DE4000035A34 /* MTCustomClass.m */; };
 		1B3FE5761C75E5FA00035A34 /* Task#_30.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B3FE5751C75E5FA00035A34 /* Task#_30.rtf */; };
+		1B3FE5791C75E74A00035A34 /* MTStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FE5781C75E74A00035A34 /* MTStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		1B3FE5721C75DE4000035A34 /* MTCustomClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCustomClass.h; sourceTree = "<group>"; };
 		1B3FE5731C75DE4000035A34 /* MTCustomClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCustomClass.m; sourceTree = "<group>"; };
 		1B3FE5751C75E5FA00035A34 /* Task#_30.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Task#_30.rtf"; sourceTree = "<group>"; };
+		1B3FE5771C75E74A00035A34 /* MTStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStudent.h; sourceTree = "<group>"; };
+		1B3FE5781C75E74A00035A34 /* MTStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 			children = (
 				1B3FE5721C75DE4000035A34 /* MTCustomClass.h */,
 				1B3FE5731C75DE4000035A34 /* MTCustomClass.m */,
+				1B3FE5771C75E74A00035A34 /* MTStudent.h */,
+				1B3FE5781C75E74A00035A34 /* MTStudent.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				1B3FE5601C75B53100035A34 /* MTMainViewController.m in Sources */,
 				1B3FE56E1C75B72800035A34 /* UIView+MTExtensions.m in Sources */,
 				1B3FE5341C75A8C700035A34 /* main.m in Sources */,
+				1B3FE5791C75E74A00035A34 /* MTStudent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
