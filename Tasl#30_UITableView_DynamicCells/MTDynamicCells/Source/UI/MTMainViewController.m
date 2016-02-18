@@ -17,7 +17,8 @@
 
 @interface MTMainViewController ()
 @property (nonatomic, strong)   MTMainView      *mainView;
-@property (nonatomic, strong)   NSArray  *objects;
+@property (nonatomic, strong)   NSArray         *objects;
+@property (nonatomic, strong)   NSMutableArray  *arrayAllStudents;
 
 @end
 
@@ -39,7 +40,11 @@
     [super viewDidLoad];
 
     //self.objects = [MTCustomClass arrayWithObjects];
-    self.objects = [MTStudent sortedArrayWithName];
+    
+    MTStudent *std = [MTStudent new];
+    self.objects = [std sortedArrayWithName];
+    
+    [self sortedArrayWithArray];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,11 +55,17 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    //return 1;
+    
+    // level superman:
+    return self.arrayAllStudents.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
+    
+    NSArray *studentsRating =[self.arrayAllStudents objectAtIndex:section];
+    
+    return studentsRating.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -75,28 +86,62 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *result;
+    NSString *string;
     if (section == 0) {
-        result = [NSString stringWithFormat:@"COLORS Part ONE"];
-    } else {
-        result = [NSString stringWithFormat:@"COLORS Part TWO"];
+        string = [NSString stringWithFormat:@"BEST STUDENTS"];
+    } else if (section == 1){
+        string = [NSString stringWithFormat:@"MIDDLE STUDENTS"];
+    } else if (section == 2) {
+        string = [NSString stringWithFormat:@"POOR STUDENTS"];
     }
 
-    return result;
+    return string;
 }
 
 #pragma mark -
 #pragma mark Private
+
+- (void)sortedArrayWithArray {
+    
+    NSMutableArray *arrayGreen = [NSMutableArray array];
+    NSMutableArray *arrayYellow = [NSMutableArray array];
+    NSMutableArray *arrayRed = [NSMutableArray array];
+
+    
+    for (MTStudent *student in self.objects) {
+        NSLog(@"%@", student.description);
+        CGFloat averageRating = student.valueAverageRating;
+        if (averageRating < 5.f) {
+            [arrayRed addObject:student];
+        } else if (averageRating >= 5.f && averageRating <= 8.f) {
+            [arrayYellow addObject:student];
+        } else {
+            [arrayGreen addObject:student];
+        }
+    }
+    
+    NSLog(@"%@",arrayRed.description);
+    
+    self.arrayAllStudents = [NSMutableArray arrayWithObjects:arrayGreen, arrayYellow, arrayRed,  nil];
+
+    
+    NSLog(@"all arraies: %@", self.arrayAllStudents);
+}
+
 // level master
 - (void)settingCell:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MTStudent *student = [self.objects objectAtIndex:indexPath.row];
+    
+    NSArray *array  = [self.arrayAllStudents objectAtIndex:indexPath.section];
+    MTStudent *student = [array objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", student.name, student.surname];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.1f", student.averageRating];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.1f", student.valueAverageRating];
     
     // condition for backgroundColor of cell
-    if (student.averageRating < 5.f) {
+    
+    CGFloat averageRating = student.valueAverageRating;
+    if (averageRating < 5.f) {
         cell.backgroundColor = [UIColor redColor];
-    } else if (student.averageRating > 5.f && student.averageRating < 8.f) {
+    } else if (averageRating >= 5.f && averageRating <= 8.f) {
         cell.backgroundColor = [UIColor yellowColor];
     } else {
         cell.backgroundColor = [UIColor greenColor];

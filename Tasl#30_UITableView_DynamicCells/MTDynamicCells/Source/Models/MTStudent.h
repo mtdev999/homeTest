@@ -12,9 +12,9 @@
 @interface MTStudent : NSObject
 @property (nonatomic, strong)   NSString    *name;
 @property (nonatomic, strong)   NSString    *surname;
-@property (nonatomic, assign)   CGFloat     averageRating;
+@property (nonatomic, assign)   CGFloat     valueAverageRating;
 
-+ (NSArray *)arrayWithStudents;
-+ (NSArray *)sortedArrayWithName;
+- (NSArray *)arrayWithStudents;
+- (NSArray *)sortedArrayWithName;
 
 @end
