@@ -17,7 +17,7 @@
 
 @interface MTMainViewController ()
 @property (nonatomic, strong)   MTMainView      *mainView;
-@property (nonatomic, strong)   NSMutableArray  *objects;
+@property (nonatomic, strong)   NSArray  *objects;
 
 @end
 
@@ -39,7 +39,7 @@
     [super viewDidLoad];
 
     //self.objects = [MTCustomClass arrayWithObjects];
-    self.objects = [MTStudent arrayWithStudents];
+    self.objects = [MTStudent sortedArrayWithName];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,7 +62,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indetifier];
     
     if (!cell) {
+        // level student:
         //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier];
+        
+        // level master:
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:indetifier];
     }
 
@@ -84,11 +87,20 @@
 
 #pragma mark -
 #pragma mark Private
-
+// level master
 - (void)settingCell:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MTStudent *student = [self.objects objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", student.name, student.surname];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", student.averageRating];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.1f", student.averageRating];
+    
+    // condition for backgroundColor of cell
+    if (student.averageRating < 5.f) {
+        cell.backgroundColor = [UIColor redColor];
+    } else if (student.averageRating > 5.f && student.averageRating < 8.f) {
+        cell.backgroundColor = [UIColor yellowColor];
+    } else {
+        cell.backgroundColor = [UIColor greenColor];
+    }
 }
 
 /*

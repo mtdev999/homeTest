@@ -15,5 +15,6 @@
 @property (nonatomic, assign)   CGFloat     averageRating;
 
 + (NSArray *)arrayWithStudents;
++ (NSArray *)sortedArrayWithName;
 
 @end
