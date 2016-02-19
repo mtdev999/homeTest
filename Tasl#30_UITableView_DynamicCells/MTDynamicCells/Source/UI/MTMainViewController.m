@@ -160,17 +160,17 @@
     }
 }
 
-/*
+///*
 // level student
-- (void)settingCell:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MTCustomClass *object = [self.objects objectAtIndex:indexPath.row];
+- (void)settingCellCustom:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MTCustomClass *object = [self.objectsCustom objectAtIndex:indexPath.row];
     cell.textLabel.text = object.name;
     cell.backgroundColor = object.color;
 }
- */
+ //*/
 
 // level pupil:
-///*
+/*
 - (void)settingCellCustom:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat red = [UIColor getRed];
     CGFloat green = [UIColor getGreen];
@@ -182,6 +182,6 @@
     cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1];
     cell.textLabel.text = [NSString stringWithFormat:@"RGB {%.1f, %.1f, %.1f}",red * 255, green* 255, blue* 255];
 }
- //*/
+ */
 
 @end
