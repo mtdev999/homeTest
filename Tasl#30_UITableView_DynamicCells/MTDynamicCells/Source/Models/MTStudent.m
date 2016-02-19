@@ -63,13 +63,18 @@
 }
 
 - (NSString *)nameStudentWithIndex:(NSUInteger)index {
-    NSMutableArray *names = [NSMutableArray arrayWithObjects:@"Jessica", @"Josh", @"Williams", @"Jake", @"Brandon", @"Joshua", @"Scott", @"David", @"Olivia", @"Henry", @"Adam", @"Thomas", @"Jennifer", @"Sarah", @"Harris", @"Martin", @"Amelia", @"Brandon", @"Richard", @"Robert", nil];
+    NSMutableArray *names = [NSMutableArray arrayWithObjects:@"Jessica", @"Josh", @"Williams", @"Jake", @"Brandon",
+                             @"Joshua", @"Scott", @"David", @"Olivia", @"Henry", @"Adam", @"Thomas", @"Jennifer",
+                             @"Sarah", @"Harris", @"Martin", @"Amelia", @"Brandon", @"Richard", @"Robert", nil];
 
     return [names objectAtIndex:index];
 }
 
 - (NSString *)surnameStudentWithIndex:(NSUInteger)index {
-    NSMutableArray *surnames = [NSMutableArray arrayWithObjects:@"Jones", @"Williams", @"Campbell", @"Davis", @"Thompson", @"Kelly", @"Sullivan", @"O'Brien", @"Evans", @"Brown", @"Lewis", @"Wilson", @"Wallace", @"Ryan", @"Moore", @"Anderson", @"Jackson", @"Johnson", @"Smith", @"OMurphy", nil];
+    NSMutableArray *surnames = [NSMutableArray arrayWithObjects:@"Jones", @"Williams", @"Campbell", @"Davis",
+                                @"Thompson", @"Kelly", @"Sullivan", @"O'Brien", @"Evans", @"Brown", @"Lewis",
+                                @"Wilson", @"Wallace", @"Ryan", @"Moore", @"Anderson", @"Jackson", @"Johnson",
+                                @"Smith", @"OMurphy", nil];
     
     return [surnames objectAtIndex:index];
 }
@@ -87,7 +92,8 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"name:%@ surname:%@ averageRating:%.1f", self.name, self.surname, self.valueAverageRating];
+    return [NSString stringWithFormat:@"name:%@ surname:%@ averageRating:%.1f",
+                                        self.name, self.surname, self.valueAverageRating];
 }
 
 @end

@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="he1-8I-hXF">
-                    <rect key="frame" x="40" y="47" width="240" height="493"/>
+                    <rect key="frame" x="0.0" y="47" width="320" height="521"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <inset key="contentInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
