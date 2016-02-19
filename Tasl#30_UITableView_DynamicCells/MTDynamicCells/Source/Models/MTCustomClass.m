@@ -25,7 +25,7 @@
 
 + (NSMutableArray *)arrayWithObjects {
     NSMutableArray *array = [NSMutableArray array];
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         
         
         MTCustomClass *object = [[MTCustomClass alloc] initWithName:[NSString stringWithFormat:@"object name:%d", i] color:[UIColor randomColor]];

@@ -35,19 +35,16 @@
 #pragma mark Public
 
 - (NSArray *)sortedArrayWithName {
-    
     NSArray *array = [NSArray arrayWithArray:[self arrayWithStudents]];
-    
     NSArray *arrayObjects = [array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        if ([obj1 isKindOfClass:[MTStudent class]] && [obj2 isKindOfClass:[MTStudent class]]) {
-            return [[(MTStudent *)obj1 name] compare:[(MTStudent *)obj2 name]];
-        } else if ([obj1 isKindOfClass:[MTStudent class]] && [obj2 isKindOfClass:[MTStudent class]]) {
-            return [[(MTStudent *)obj1 surname] compare:[(MTStudent *)obj2 surname]];
-        } else if ([obj2 isKindOfClass:[MTStudent class]]) {
-            return NSOrderedAscending;
-        } else {
-            return NSOrderedDescending;
+        if ([[obj1 name] compare:[obj2 name]] == NSOrderedAscending) {
+            return (NSComparisonResult)NSOrderedAscending;
         }
+        if ([[obj1 name] compare:[obj2 name]] == NSOrderedDescending) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        return (NSComparisonResult)NSOrderedSame;
     }];
     
     return arrayObjects;
@@ -56,8 +53,8 @@
 - (NSArray *)arrayWithStudents {
     NSMutableArray *array = [NSMutableArray array];
     for (NSUInteger i = 0; i < 20; i++) {
-        MTStudent *student = [[MTStudent alloc] initWithName:[self nameStudentWithIndex:i]
-                                                     surname:[self surnameStudentWithIndex:i]
+        MTStudent *student = [[MTStudent alloc] initWithName:[self nameStudentWithIndex:[self indexNames]]
+                                                     surname:[self surnameStudentWithIndex:[self indexNames]]
                                                averageRating:[self averageRating]];
         [array addObject:student];
     }
@@ -66,7 +63,7 @@
 }
 
 - (NSString *)nameStudentWithIndex:(NSUInteger)index {
-    NSMutableArray *names = [NSMutableArray arrayWithObjects:@"Smith", @"Johnson", @"Williams", @"Jones", @"Brown", @"Davis", @"Miller", @"Wilson", @"Moore", @"Taylor", @"Anderson", @"Thomas", @"Jackson", @"White", @"Harris", @"Martin", @"Thompson", @"Garcia", @"Martinez", @"Robinson", nil];
+    NSMutableArray *names = [NSMutableArray arrayWithObjects:@"Jessica", @"Josh", @"Williams", @"Jake", @"Brandon", @"Joshua", @"Scott", @"David", @"Olivia", @"Henry", @"Adam", @"Thomas", @"Jennifer", @"Sarah", @"Harris", @"Martin", @"Amelia", @"Brandon", @"Richard", @"Robert", nil];
 
     return [names objectAtIndex:index];
 }
@@ -81,6 +78,12 @@
     CGFloat result = arc4random_uniform(10) + 2;
     
     return result;
+}
+
+- (NSUInteger)indexNames {
+    NSUInteger index = arc4random_uniform(20);
+    
+    return index;
 }
 
 - (NSString *)description {

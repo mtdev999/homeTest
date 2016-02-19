@@ -18,6 +18,7 @@
 @interface MTMainViewController ()
 @property (nonatomic, strong)   MTMainView      *mainView;
 @property (nonatomic, strong)   NSArray         *objects;
+@property (nonatomic, strong)   NSArray         *objectsCustom;
 @property (nonatomic, strong)   NSMutableArray  *arrayAllStudents;
 
 @end
@@ -39,7 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    //self.objects = [MTCustomClass arrayWithObjects];
+    self.objectsCustom = [MTCustomClass arrayWithObjects];
     
     MTStudent *std = [MTStudent new];
     self.objects = [std sortedArrayWithName];
@@ -58,18 +59,23 @@
     //return 1;
     
     // level superman:
-    return self.arrayAllStudents.count;
+    return self.arrayAllStudents.count + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSUInteger count = 0;
+    if (section > 2) {
+        return self.objectsCustom.count;
+    } else {
+        NSArray *studentsRating =[self.arrayAllStudents objectAtIndex:section];
+        count = studentsRating.count;
+    }
     
-    NSArray *studentsRating =[self.arrayAllStudents objectAtIndex:section];
-    
-    return studentsRating.count;
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *indetifier = @"cell";
+    NSString *indetifier = indexPath.section < 3 ? @"cell": @"customCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indetifier];
     
     if (!cell) {
@@ -77,10 +83,20 @@
         //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier];
         
         // level master:
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:indetifier];
+        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:indetifier];
+        
+        // lewel mission inpossible!!!
+        cell = indexPath.section < 3
+        ? [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:indetifier]
+        : [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier];
     }
 
-    [self settingCell:cell cellForRowAtIndexPath:indexPath];
+    if (indexPath.section < 3) {
+        [self settingCell:cell cellForRowAtIndexPath:indexPath];
+    } else {
+        [self settingCellCustom:cell cellForRowAtIndexPath:indexPath];
+    }
+    
     
     return cell;
 }
@@ -93,6 +109,8 @@
         string = [NSString stringWithFormat:@"MIDDLE STUDENTS"];
     } else if (section == 2) {
         string = [NSString stringWithFormat:@"POOR STUDENTS"];
+    } else if (section == 3) {
+        string = [NSString stringWithFormat:@"CUSTOM CLASS"];
     }
 
     return string;
@@ -109,7 +127,6 @@
 
     
     for (MTStudent *student in self.objects) {
-        NSLog(@"%@", student.description);
         CGFloat averageRating = student.valueAverageRating;
         if (averageRating < 5.f) {
             [arrayRed addObject:student];
@@ -120,12 +137,7 @@
         }
     }
     
-    NSLog(@"%@",arrayRed.description);
-    
     self.arrayAllStudents = [NSMutableArray arrayWithObjects:arrayGreen, arrayYellow, arrayRed,  nil];
-
-    
-    NSLog(@"all arraies: %@", self.arrayAllStudents);
 }
 
 // level master
@@ -158,8 +170,8 @@
  */
 
 // level pupil:
-/*
-- (void)settingCell:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+///*
+- (void)settingCellCustom:(UITableViewCell *)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat red = [UIColor getRed];
     CGFloat green = [UIColor getGreen];
     CGFloat blue = [UIColor getBlue];
@@ -168,8 +180,8 @@
     cell.textLabel.font = font;
     cell.textLabel.shadowColor = [UIColor whiteColor];
     cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1];
-    cell.textLabel.text = [NSString stringWithFormat:@"Number cell: %lu", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"RGB {%.1f, %.1f, %.1f}",red * 255, green* 255, blue* 255];
 }
- */
+ //*/
 
 @end
