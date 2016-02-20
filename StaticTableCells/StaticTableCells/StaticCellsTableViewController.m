@@ -8,6 +8,8 @@
 
 #import "StaticCellsTableViewController.h"
 
+#define UITrackTintColorDefaults [UIColor colorWithRed:0.5 green:0.5 blue:0.3 alpha:1]
+
 @interface StaticCellsTableViewController ()
 
 @end
@@ -24,19 +26,17 @@
     
     self.soundComponentSlider.minimumTrackTintColor =
     self.musicComponentSlider.minimumTrackTintColor =
-    [UIColor colorWithRed:0.5 green:0.5 blue:0.3 alpha:1];
+    UITrackTintColorDefaults;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark -
 #pragma mark Actions
 
 - (IBAction)actionSoundSlider:(UISlider *)sender {
-    
     [self refreshScreenWithSenderTag:sender.tag];
 }
 
@@ -54,37 +54,40 @@
 #pragma mark Private
 
 - (void)refreshScreenWithSenderTag:(NSUInteger)tag {
-    
     UISlider *soundSlider = self.soundComponentSlider;
     UISlider *musicSlider = self.musicComponentSlider;
     UILabel *maxLevelSoundLabel = self.maxLevelSoundLabel;
     
-    CGFloat valueSound = soundSlider.value;
-    CGFloat valueMusic = musicSlider.value;
-    UIColor *color = nil;
-    CGFloat green = 1;
-    CGFloat red = 0;
     maxLevelSoundLabel.textColor = [UIColor whiteColor];
 
     if (tag == 0) {
-        if (0.8 > valueSound > 0.5) {
-            red -= 0.5;
-        } else if (valueSound > 0.8) {
-            red = 1;
-            maxLevelSoundLabel.textColor = [UIColor redColor];
-        }
-        color = [UIColor colorWithRed:red + valueSound
-                                green:green - valueSound
-                                 blue:0
-                                alpha:1];
-        
-        soundSlider.minimumTrackTintColor = color;
+        [self changeTextColorSubtitle:soundSlider.value];
+        soundSlider.minimumTrackTintColor = [self refreshTrackTintColor:soundSlider.value];
     } else {
-        color = [UIColor colorWithRed:red + valueMusic
-                                green:green - valueMusic
-                                 blue:0 alpha:1];
-        
-        musicSlider.minimumTrackTintColor = color;
+        musicSlider.minimumTrackTintColor = [self refreshTrackTintColor:musicSlider.value];;
+    }
+}
+
+- (UIColor *)refreshTrackTintColor:(CGFloat)value {
+    UIColor *color = nil;
+    CGFloat green = 1;
+    CGFloat red = CGFLOAT_MIN;
+    
+    color = [UIColor colorWithRed:red + value
+                            green:green - value
+                             blue:0
+                            alpha:1];
+    
+    return color;
+}
+
+- (void)changeTextColorSubtitle:(CGFloat)value {
+    CGFloat red = CGFLOAT_MIN;
+    if (0.8 > value > 0.5) {
+        red -= 0.5;
+    } else if (value > 0.8) {
+        red = 1;
+        self.maxLevelSoundLabel.textColor = [UIColor redColor];
     }
 }
 
