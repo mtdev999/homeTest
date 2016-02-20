@@ -10,9 +10,7 @@
 
 #define UITrackTintColorDefaults [UIColor colorWithRed:0.5 green:0.5 blue:0.3 alpha:1]
 
-@interface StaticCellsTableViewController ()
-
-@end
+static CGFloat const kMTValueEqualOne = 1;
 
 @implementation StaticCellsTableViewController
 
@@ -62,31 +60,27 @@
 
     if (tag == 0) {
         [self changeTextColorSubtitle:soundSlider.value];
-        soundSlider.minimumTrackTintColor = [self refreshTrackTintColor:soundSlider.value];
+        soundSlider.minimumTrackTintColor = [self trackTintColor:soundSlider.value];
     } else {
-        musicSlider.minimumTrackTintColor = [self refreshTrackTintColor:musicSlider.value];;
+        musicSlider.minimumTrackTintColor = [self trackTintColor:musicSlider.value];;
     }
 }
 
-- (UIColor *)refreshTrackTintColor:(CGFloat)value {
+- (UIColor *)trackTintColor:(CGFloat)value {
     UIColor *color = nil;
-    CGFloat green = 1;
+    CGFloat green = kMTValueEqualOne;
     CGFloat red = CGFLOAT_MIN;
     
     color = [UIColor colorWithRed:red + value
                             green:green - value
                              blue:0
-                            alpha:1];
+                            alpha:kMTValueEqualOne];
     
     return color;
 }
 
 - (void)changeTextColorSubtitle:(CGFloat)value {
-    CGFloat red = CGFLOAT_MIN;
-    if (0.8 > value > 0.5) {
-        red -= 0.5;
-    } else if (value > 0.8) {
-        red = 1;
+    if (value > 0.8) {
         self.maxLevelSoundLabel.textColor = [UIColor redColor];
     }
 }
@@ -118,6 +112,7 @@
     for (UILabel *object in self.textLabels) {
         object.textColor = color;
     }
+    
     self.segmentControl.tintColor = color;
 }
 
