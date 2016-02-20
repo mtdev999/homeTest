@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B53CB5D1C7845B200B70C91 /* File.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B53CB5C1C7845B200B70C91 /* File.rtf */; };
 		1B6B6ADC1C7722B500B6F00A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B6ADB1C7722B500B6F00A /* main.m */; };
 		1B6B6ADF1C7722B500B6F00A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B6ADE1C7722B500B6F00A /* AppDelegate.m */; };
 		1B6B6AE51C7722B500B6F00A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B6AE31C7722B500B6F00A /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B53CB5C1C7845B200B70C91 /* File.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = File.rtf; sourceTree = "<group>"; };
 		1B6B6AD71C7722B500B6F00A /* StaticTableCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StaticTableCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6B6ADB1C7722B500B6F00A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B6B6ADD1C7722B500B6F00A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		1B6B6ACE1C7722B500B6F00A = {
 			isa = PBXGroup;
 			children = (
+				1B53CB5C1C7845B200B70C91 /* File.rtf */,
 				1B6B6AD91C7722B500B6F00A /* StaticTableCells */,
 				1B6B6AD81C7722B500B6F00A /* Products */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				1B6B6AEA1C7722B500B6F00A /* LaunchScreen.storyboard in Resources */,
 				1B6B6AE71C7722B500B6F00A /* Assets.xcassets in Resources */,
+				1B53CB5D1C7845B200B70C91 /* File.rtf in Resources */,
 				1B6B6AE51C7722B500B6F00A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
