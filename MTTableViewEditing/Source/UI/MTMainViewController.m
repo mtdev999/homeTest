@@ -36,17 +36,7 @@
 - (void)loadView {
     [super loadView];
     
-    CGRect frame  = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
-    
-    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    
-    [self.view addSubview:tableView];
-    
-    self.tableView = tableView;
+    [self createCustomTableView];
 }
 
 - (void)viewDidLoad {
@@ -87,6 +77,22 @@
 
 #pragma mark -
 #pragma mark UITableViewDelegate
+
+#pragma mark -
+#pragma mark Private
+
+- (void)createCustomTableView {
+    CGRect frame = self.view.bounds;
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    
+    [self.view addSubview:tableView];
+    
+    self.tableView = tableView;
+}
 
 
 
