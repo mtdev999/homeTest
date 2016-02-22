@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B2536A91C7AEFAB00A94DA6 /* UITableView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2536A81C7AEFAB00A94DA6 /* UITableView+MTExtensions.m */; };
 		1B53CB9C1C79863100B70C91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B53CB9B1C79863100B70C91 /* main.m */; };
 		1B53CB9F1C79863100B70C91 /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B53CB9E1C79863100B70C91 /* MTAppDelegate.m */; };
 		1B53CBB91C7986A600B70C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B53CBB31C7986A600B70C91 /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B2536A71C7AEFAB00A94DA6 /* UITableView+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MTExtensions.h"; sourceTree = "<group>"; };
+		1B2536A81C7AEFAB00A94DA6 /* UITableView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MTExtensions.m"; sourceTree = "<group>"; };
 		1B53CB971C79863100B70C91 /* MTTableViewEditing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTTableViewEditing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B53CB9B1C79863100B70C91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B53CB9D1C79863100B70C91 /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
@@ -40,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B2536A51C7AEFAB00A94DA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B2536A61C7AEFAB00A94DA6 /* UITableView+MTExtensions */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1B2536A61C7AEFAB00A94DA6 /* UITableView+MTExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B2536A71C7AEFAB00A94DA6 /* UITableView+MTExtensions.h */,
+				1B2536A81C7AEFAB00A94DA6 /* UITableView+MTExtensions.m */,
+			);
+			path = "UITableView+MTExtensions";
+			sourceTree = "<group>";
+		};
 		1B53CB8E1C79863100B70C91 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +109,7 @@
 		1B53CBB61C7986A600B70C91 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1B2536A51C7AEFAB00A94DA6 /* Extensions */,
 				1B53CBB71C7986A600B70C91 /* Models */,
 				1B53CBB81C7986A600B70C91 /* UI */,
 			);
@@ -187,6 +208,7 @@
 				1B53CB9F1C79863100B70C91 /* MTAppDelegate.m in Sources */,
 				1B53CBBD1C79873200B70C91 /* MTMainViewController.m in Sources */,
 				1B53CB9C1C79863100B70C91 /* main.m in Sources */,
+				1B2536A91C7AEFAB00A94DA6 /* UITableView+MTExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +347,7 @@
 				1B53CBB01C79863100B70C91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
