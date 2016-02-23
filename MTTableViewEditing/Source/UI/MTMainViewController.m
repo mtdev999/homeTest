@@ -9,10 +9,13 @@
 #import "MTMainViewController.h"
 
 #import "MTMainView.h"
+#import "MTDay.h"
+#import "MTTimeCell.h"
 
 @interface MTMainViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong)   MTMainView  *mainView;
-@property (nonatomic, strong)   UITableView       *tableView;
+@property (nonatomic, strong)   MTMainView      *mainView;
+@property (nonatomic, strong)   UITableView     *tableView;
+@property (nonatomic, strong)   NSMutableArray  *mutableDays;
 
 @end
 
@@ -41,6 +44,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self createDay];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,11 +57,17 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.mutableDays.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [NSString stringWithFormat:@"Day #%lu", section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    MTDay *day = [self.mutableDays objectAtIndex:section];
+    
+    return day.timeCells.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,11 +79,42 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     }
     
-    cell.textLabel.text = @"New Row";
-    cell.detailTextLabel.text = @"#__";
+    MTDay *day = [self.mutableDays objectAtIndex:indexPath.section];
+    MTTimeCell *timeCell = [day.timeCells objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", timeCell.name];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", timeCell.numberTask];
     
     return cell;
+}
+
+#pragma mark -
+#pragma mark Moving cells
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    MTDay *sourceDay = [self.mutableDays objectAtIndex:sourceIndexPath.section];
+    MTTimeCell *timeCell = [sourceDay.timeCells objectAtIndex:sourceIndexPath.row];
     
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:sourceDay.timeCells];
+
+    if (sourceIndexPath.section == destinationIndexPath.section) {
+        
+        [tempArray removeObjectAtIndex:sourceIndexPath.row];
+        [tempArray insertObject:timeCell atIndex:destinationIndexPath.row];
+        
+        sourceDay.timeCells = tempArray;
+    } else {
+        [tempArray removeObject:timeCell];
+        sourceDay.timeCells = tempArray;
+        
+        MTDay *destinationDay = [self.mutableDays objectAtIndex:destinationIndexPath.section];
+        tempArray = [NSMutableArray arrayWithArray:destinationDay.timeCells];
+        [tempArray insertObject:timeCell atIndex:destinationIndexPath.row];
+        destinationDay.timeCells = tempArray;
+    }
 }
 
 
@@ -92,8 +135,24 @@
     [self.view addSubview:tableView];
     
     self.tableView = tableView;
+    self.tableView.editing = YES;
 }
 
-
+- (void)createDay {
+    self.mutableDays = [NSMutableArray array];
+    
+    for (int i = 0; i < 3; i++) {
+        MTDay *day = [[MTDay alloc] init];
+        day.name = [NSString stringWithFormat:@"Day #%d", i];
+        
+        NSMutableArray *array = [NSMutableArray array];
+        for (int j = 1; j <= 8; j++) {
+            [array addObject:[MTTimeCell timeCellWithIndex:j]];
+        }
+        
+        day.timeCells = array;
+        [self.mutableDays addObject:day];
+    }
+}
 
 @end
