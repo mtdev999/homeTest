@@ -46,6 +46,8 @@
     self.objects = [std sortedArrayWithName];
     
     [self sortedArrayWithArray];
+    
+    self.tableView.editing = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,6 +118,31 @@
     return string;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+    MTStudent *sourceStudent = [self.arrayAllStudents objectAtIndex:sourceIndexPath.row];
+    
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.arrayAllStudents];
+    
+    if (sourceIndexPath.section == destinationIndexPath.section) {
+        [tempArray removeObject:sourceStudent];
+        [tempArray insertObject:sourceStudent atIndex:destinationIndexPath.row];
+        self.arrayAllStudents = tempArray;
+    } else {
+        [tempArray removeObject:sourceStudent];
+        self.arrayAllStudents = tempArray;
+        
+        MTStudent *destinationStudent = [self.arrayAllStudents objectAtIndex:destinationIndexPath.row];
+        [tempArray insertObject:destinationStudent atIndex:destinationIndexPath.row];
+        self.arrayAllStudents = tempArray;
+    }
+}
+
+
 #pragma mark -
 #pragma mark Private
 
@@ -125,7 +152,6 @@
     NSMutableArray *arrayYellow = [NSMutableArray array];
     NSMutableArray *arrayRed = [NSMutableArray array];
 
-    
     for (MTStudent *student in self.objects) {
         CGFloat averageRating = student.valueAverageRating;
         if (averageRating < 5.f) {

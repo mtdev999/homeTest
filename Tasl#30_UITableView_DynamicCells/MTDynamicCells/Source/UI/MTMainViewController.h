@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MTMainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

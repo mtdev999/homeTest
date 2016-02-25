@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTMainViewController">
             <connections>
+                <outlet property="tableView" destination="he1-8I-hXF" id="76r-Rl-OFG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -43,7 +44,7 @@
                 </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="272" y="283"/>
+            <point key="canvasLocation" x="566" y="306"/>
         </view>
     </objects>
 </document>
