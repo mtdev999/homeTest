@@ -10,8 +10,8 @@
 
 @interface MTTimeCell : NSObject
 @property (nonatomic, strong)   NSString    *name;
-@property (nonatomic, assign)   NSUInteger  numberTask;
+@property (nonatomic, strong)   NSString    *taskTime;
 
-+ (MTTimeCell *)timeCellWithIndex:(NSUInteger)index;
++ (MTTimeCell *)timeCell;
 
 @end

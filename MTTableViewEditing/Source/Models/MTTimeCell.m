@@ -10,12 +10,27 @@
 
 @implementation MTTimeCell
 
-+ (MTTimeCell *)timeCellWithIndex:(NSUInteger)index {
+#pragma mark -
+#pragma mark Public
+
++ (MTTimeCell *)timeCell {
     MTTimeCell *cell = [[MTTimeCell alloc] init];
     cell.name = [NSString stringWithFormat:@"Task #"];
-    cell.numberTask = index;
+    [cell currentTime];
     
     return cell;
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)currentTime {
+    NSDate *date = [NSDate date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
+    
+    self.taskTime = [dateFormatter stringFromDate:date];
 }
 
 @end
