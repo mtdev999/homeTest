@@ -48,14 +48,7 @@
     [super viewDidLoad];
     
     [self createDay];
-    
-    //[self.tableView reloadData];
-    
     [self setupNavigationItem];
-    
-    NSDate *date = [NSDate date];
-    NSLog(@"%@", [NSString stringWithFormat:@"%@", date]);
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,14 +77,11 @@
 - (void)actionAddButton:(UIButton *)sender {
     if (!self.tableView.editing) {
         NSDate *date = [NSDate date];
-
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"EEEE, d"];
-        //[dateFormatter setDateFormat:@"EEEE, d HH:mm:ss"];
 
         MTDay *day = [[MTDay alloc] init];
         day.name = [NSString stringWithFormat:@"  #%lu   %@", self.mutableDays.count + 1, [dateFormatter stringFromDate:date]];
-        //day.timeCells = @[[MTTimeCell timeCell],[MTTimeCell timeCell]];
         
         NSUInteger newDayIndex = 0;
         [self.mutableDays insertObject:day atIndex:newDayIndex];
