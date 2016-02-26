@@ -46,11 +46,55 @@
     [super viewDidLoad];
     
     [self createDay];
+    
     [self.tableView reloadData];
+    
+    [self setupNavigationItem];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark -
+#pragma mark Actions
+
+- (void)actionEditButton:(UIButton *)sender {
+    BOOL isEditing = self.tableView.editing;
+    [self.tableView setEditing:!isEditing animated:YES];
+    
+    UIBarButtonSystemItem item = UIBarButtonSystemItemEdit;
+    
+    if (self.tableView.editing) {
+        item = UIBarButtonSystemItemDone;
+    }
+    
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:item
+                                                                                target:self
+                                                                                action:@selector(actionEditButton:)];
+    self.navigationItem.rightBarButtonItem = editButton;
+    
+}
+
+- (void)actionAddButton:(UIButton *)sender {
+    MTDay *day = [[MTDay alloc] init];
+    day.name = [NSString stringWithFormat:@" DAY #%lu", self.mutableDays.count + 1];
+    day.timeCells = @[[MTTimeCell timeCellWithIndex:1],[MTTimeCell timeCellWithIndex:2]];
+    
+    NSUInteger newDayIndex = 0;
+    [self.mutableDays insertObject:day atIndex:newDayIndex];
+    NSIndexSet *set = [NSIndexSet indexSetWithIndex:newDayIndex];
+    
+    [self.tableView beginUpdates];
+    [self.tableView insertSections:set withRowAnimation:UITableViewRowAnimationLeft];
+    [self.tableView endUpdates];
+    
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+    });
+    
 }
 
 #pragma mark -
@@ -61,7 +105,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"Day #%lu", section];
+    return [[self.mutableDays objectAtIndex:section] name];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -121,6 +165,18 @@
 #pragma mark -
 #pragma mark UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone | UITableViewCellEditingStyleDelete; //| UITableViewCellEditingStyleInsert;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Remove";
+}
+
 #pragma mark -
 #pragma mark Private
 
@@ -135,7 +191,7 @@
     [self.view addSubview:tableView];
     
     self.tableView = tableView;
-    self.tableView.editing = YES;
+    self.tableView.editing = NO;
 }
 
 - (void)createDay {
@@ -154,5 +210,23 @@
         [self.mutableDays addObject:day];
     }
 }
+
+- (void)setupNavigationItem {
+    self.navigationItem.title = @"To Do List";
+    
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                                                                target:self
+                                                                                action:@selector(actionEditButton:)];
+    self.navigationItem.rightBarButtonItem = editButton;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                target:self
+                                                                                action:@selector(actionAddButton:)];
+    self.navigationItem.leftBarButtonItem = addButton;
+}
+
+
+
+
 
 @end
