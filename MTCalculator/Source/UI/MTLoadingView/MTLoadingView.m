@@ -10,7 +10,7 @@
 
 #import "UINib+MTExtensions.h"
 
-static NSTimeInterval const kMTDuration = 3;
+static NSTimeInterval const kMTDuration = 1.f;
 static CGFloat const kMTOpaqueAlpha     = 0.0f;
 
 @interface MTLoadingView ()

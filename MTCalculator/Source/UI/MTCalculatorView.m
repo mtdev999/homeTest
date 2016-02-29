@@ -54,6 +54,10 @@ static NSString * const validateSymbols[] = {@"0", @"1", @"2", @"3", @"4", @"5",
     }
 }
 
+- (BOOL)isUserInteractionEnabled {
+    return self.loadingView.visible;
+}
+
 #pragma mark -
 #pragma mark Public
 
@@ -163,7 +167,7 @@ static NSString * const validateSymbols[] = {@"0", @"1", @"2", @"3", @"4", @"5",
     }
     
     tag == 15
-    ? (indicator.text = [NSString stringWithFormat:@"%@=%g ",indicator.text, self.result])
+    ? (indicator.text = [NSString stringWithFormat:@"%@=%.20g ",indicator.text, self.result])
     : (indicator.text = [NSString stringWithFormat:@"%@%@",indicator.text, [NSString stringWithString:validateSymbols[tag]]]);
     
     self.isOperatorEnter = YES;
@@ -181,9 +185,9 @@ static NSString * const validateSymbols[] = {@"0", @"1", @"2", @"3", @"4", @"5",
 
 - (void)printDisplay {
     if (self.pointEntered) {
-        self.indicatorView.text = [NSString stringWithFormat:@"%@%g", self.indicatorView.text, self.result];
+        self.indicatorView.text = [NSString stringWithFormat:@"%@%.20g", self.indicatorView.text, self.result];
     } else {
-        self.indicatorView.text = [NSString stringWithFormat:@"%g", self.result];
+        self.indicatorView.text = [NSString stringWithFormat:@"%.20g", self.result];
     }
 }
 
