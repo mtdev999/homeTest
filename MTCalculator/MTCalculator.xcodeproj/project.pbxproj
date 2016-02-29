@@ -385,6 +385,7 @@
 				1B7DFBC41C6A0A070088F1FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
