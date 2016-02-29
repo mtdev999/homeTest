@@ -8,12 +8,51 @@
 
 #import "MTCalculatorView.h"
 
-@interface MTCalculatorView ()
+#import "MTLoadingView.h"
 
+static NSString * const validateSymbols[] = {@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9",
+                                             @".", @"*", @"/", @"+", @"-", @"="};
+
+@interface MTCalculatorView ()
+@property (nonatomic, strong) MTLoadingView *loadingView;
+@property (nonatomic, assign)   BOOL    isOperatorEnter;
+
+- (void)printDisplay;
+- (void)showInfoSecondLabelWithSenderTag:(NSUInteger)tag;
 
 @end
 
 @implementation MTCalculatorView
+
+#pragma mark -
+#pragma mark Accessors
+
+
+- (BOOL)isHiddenLoadingView {
+    return self.loadingView.visible;
+}
+
+#pragma mark -
+#pragma mark LoadingView
+
+- (MTLoadingView *)newLoadingView {
+    return [MTLoadingView loadingViewWithSuperview:self];
+}
+
+- (void)hideLoadingView {
+    self.loadingView.visible = NO;
+}
+
+- (void)showLoadingView {
+    [self bindLoadingView];
+    self.loadingView.visible = YES;
+}
+
+- (void)bindLoadingView {
+    if (!self.loadingView) {
+        self.loadingView = [self newLoadingView];
+    }
+}
 
 #pragma mark -
 #pragma mark Public
@@ -25,8 +64,11 @@
     self.anyResult = NO;
     self.numberEntered = NO;
     self.percentEntered = NO;
+    self.isOperatorEnter = NO;
+    self.indicatorOperationsView.text = @"0";
     
     [self printDisplay];
+    
 }
 
 - (void)enterPointForNumber {
@@ -55,13 +97,13 @@
     }
     
     [self printDisplay];
+    [self showInfoSecondLabelWithSenderTag:sender.tag];
 }
 
 - (void)enterPointToNumbers:(UIButton *)sender {
     self.numberPoint = self.result;
     self.result = self.numberPoint + sender.tag * 0.1;
     self.pointEntered = NO;
-    
 }
 
 - (void)selectionOperators:(UIButton *)sender {
@@ -95,16 +137,9 @@
     self.numberEntered = YES;
     
     self.operators = sender.tag;
-
+    
     [self printDisplay];
-}
-
-- (void)printDisplay {
-    if (self.pointEntered) {
-        self.indicatorView.text = [NSString stringWithFormat:@"%@%g",self.indicatorView.text, self.result];
-    } else {
-        self.indicatorView.text = [NSString stringWithFormat:@"%g", self.result];
-    }
+    [self showInfoSecondLabelWithSenderTag:sender.tag];
 }
 
 - (void)calculatePercentage {
@@ -115,6 +150,41 @@
 - (void)changeSign {
     self.result = - self.result;
     [self printDisplay];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)showInfoSecondLabelWithSenderTag:(NSUInteger)tag {
+    UILabel *indicator = self.indicatorOperationsView;
+    
+    if (!self.isOperatorEnter) {
+        indicator.text = @"";
+    }
+    
+    tag == 15
+    ? (indicator.text = [NSString stringWithFormat:@"%@=%g ",indicator.text, self.result])
+    : (indicator.text = [NSString stringWithFormat:@"%@%@",indicator.text, [NSString stringWithString:validateSymbols[tag]]]);
+    
+    self.isOperatorEnter = YES;
+    /*
+     if (tag == 15) {
+     indicator.text = [NSString stringWithFormat:@"%@=%g ",indicator.text, self.result];
+     } else {
+     NSString *str = [NSString stringWithString:validateSymbols[tag]];
+     
+     indicator.text = [NSString stringWithFormat:@"%@%@",indicator.text, str];
+     self.isOperatorEnter = YES;
+     }
+     */
+}
+
+- (void)printDisplay {
+    if (self.pointEntered) {
+        self.indicatorView.text = [NSString stringWithFormat:@"%@%g", self.indicatorView.text, self.result];
+    } else {
+        self.indicatorView.text = [NSString stringWithFormat:@"%g", self.result];
+    }
 }
 
 @end

@@ -15,6 +15,9 @@
 		1B7DFBD01C6A0B3B0088F1FA /* MTCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7DFBCE1C6A0B3B0088F1FA /* MTCalculatorViewController.xib */; };
 		1B7DFBD31C6A0B590088F1FA /* MTCalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBD21C6A0B590088F1FA /* MTCalculatorView.m */; };
 		1B7DFBDB1C6B45A50088F1FA /* UIView+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBDA1C6B45A50088F1FA /* UIView+MTExtensions.m */; };
+		1B7DFBE21C6C56F80088F1FA /* MTLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBE01C6C56F80088F1FA /* MTLoadingView.m */; };
+		1B7DFBE31C6C56F80088F1FA /* MTLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7DFBE11C6C56F80088F1FA /* MTLoadingView.xib */; };
+		1B7DFBE71C6C57360088F1FA /* UINib+MTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DFBE61C6C57360088F1FA /* UINib+MTExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,11 @@
 		1B7DFBD21C6A0B590088F1FA /* MTCalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCalculatorView.m; sourceTree = "<group>"; };
 		1B7DFBD91C6B45A50088F1FA /* UIView+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtensions.h"; sourceTree = "<group>"; };
 		1B7DFBDA1C6B45A50088F1FA /* UIView+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtensions.m"; sourceTree = "<group>"; };
+		1B7DFBDF1C6C56F80088F1FA /* MTLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLoadingView.h; sourceTree = "<group>"; };
+		1B7DFBE01C6C56F80088F1FA /* MTLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLoadingView.m; sourceTree = "<group>"; };
+		1B7DFBE11C6C56F80088F1FA /* MTLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTLoadingView.xib; sourceTree = "<group>"; };
+		1B7DFBE51C6C57360088F1FA /* UINib+MTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINib+MTExtensions.h"; sourceTree = "<group>"; };
+		1B7DFBE61C6C57360088F1FA /* UINib+MTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINib+MTExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 		1B7DFBCB1C6A0ADE0088F1FA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1B7DFBDE1C6C56F80088F1FA /* MTLoadingView */,
 				1B7DFBCC1C6A0B3B0088F1FA /* MTCalculatorViewController.h */,
 				1B7DFBCD1C6A0B3B0088F1FA /* MTCalculatorViewController.m */,
 				1B7DFBCE1C6A0B3B0088F1FA /* MTCalculatorViewController.xib */,
@@ -123,6 +132,7 @@
 		1B7DFBD71C6B457A0088F1FA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1B7DFBE41C6C57360088F1FA /* UINib+MTExtensions */,
 				1B7DFBD81C6B45A50088F1FA /* UIView+MTExtensions */,
 			);
 			path = Extensions;
@@ -135,6 +145,25 @@
 				1B7DFBDA1C6B45A50088F1FA /* UIView+MTExtensions.m */,
 			);
 			path = "UIView+MTExtensions";
+			sourceTree = "<group>";
+		};
+		1B7DFBDE1C6C56F80088F1FA /* MTLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBDF1C6C56F80088F1FA /* MTLoadingView.h */,
+				1B7DFBE01C6C56F80088F1FA /* MTLoadingView.m */,
+				1B7DFBE11C6C56F80088F1FA /* MTLoadingView.xib */,
+			);
+			path = MTLoadingView;
+			sourceTree = "<group>";
+		};
+		1B7DFBE41C6C57360088F1FA /* UINib+MTExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DFBE51C6C57360088F1FA /* UINib+MTExtensions.h */,
+				1B7DFBE61C6C57360088F1FA /* UINib+MTExtensions.m */,
+			);
+			path = "UINib+MTExtensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7DFBE31C6C56F80088F1FA /* MTLoadingView.xib in Resources */,
 				1B7DFBD01C6A0B3B0088F1FA /* MTCalculatorViewController.xib in Resources */,
 				1B7DFBBE1C6A0A070088F1FA /* LaunchScreen.storyboard in Resources */,
 				1B7DFBBB1C6A0A070088F1FA /* Assets.xcassets in Resources */,
@@ -210,6 +240,8 @@
 			files = (
 				1B7DFBB31C6A0A070088F1FA /* MTAppDelegate.m in Sources */,
 				1B7DFBB01C6A0A070088F1FA /* main.m in Sources */,
+				1B7DFBE21C6C56F80088F1FA /* MTLoadingView.m in Sources */,
+				1B7DFBE71C6C57360088F1FA /* UINib+MTExtensions.m in Sources */,
 				1B7DFBDB1C6B45A50088F1FA /* UIView+MTExtensions.m in Sources */,
 				1B7DFBCF1C6A0B3B0088F1FA /* MTCalculatorViewController.m in Sources */,
 				1B7DFBD31C6A0B590088F1FA /* MTCalculatorView.m in Sources */,

@@ -34,6 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.calculatorView showLoadingView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,4 +77,5 @@
 - (IBAction)onChangeSign:(UIButton *)sender {
     [self.calculatorView changeSign];
 }
+
 @end

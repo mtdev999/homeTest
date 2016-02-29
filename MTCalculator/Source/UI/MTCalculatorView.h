@@ -18,6 +18,7 @@ typedef NS_ENUM(NSUInteger, MTOperators) {
 };
 
 @interface MTCalculatorView : UIView
+@property (nonatomic, strong) IBOutlet  UILabel         *indicatorOperationsView;
 @property (nonatomic, strong) IBOutlet  UILabel         *indicatorView;
 @property (nonatomic, assign)           MTOperators     operators;
 
@@ -30,8 +31,15 @@ typedef NS_ENUM(NSUInteger, MTOperators) {
 @property (nonatomic, assign,getter=isPointEntered)     BOOL    pointEntered;
 @property (nonatomic, assign,getter=isPercentEntered)   BOOL    percentEntered;
 
+
+@property (nonatomic, readonly, getter=isHiddenLoadingView) BOOL hiddenLoadingView;
+
+- (void)hideLoadingView;
+- (void)showLoadingView;
+
 - (void)enterNumber:(UIButton *)sender;
 - (void)selectionOperators:(UIButton *)sender;
+- (void)showInfoSecondLabelWithSenderTag:(NSUInteger)tag;
 - (void)clearAllValues;
 
 - (void)enterPointForNumber;
