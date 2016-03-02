@@ -8,18 +8,12 @@
 
 #import "MTSettingViewController.h"
 
+#import "MTSettingsUpdate.h"
+
 static NSUInteger const kMTLocalCodeMaxLength = 7;
 static NSUInteger const kMTAreaCodeMaxLength = 3;
 static NSUInteger const kMTCountryCodeMaxLength = 2;
 static NSUInteger const kMTEmailSymbolsMaxLength = 54;
-
-static NSString * const kMTSettingsLogin = @"login";
-static NSString * const kMTSettingsPassword = @"password";
-static NSString * const kMTSettingsName = @"name";
-static NSString * const kMTSettingsSurname = @"surname";
-static NSString * const kMTSettingsAge = @"age";
-static NSString * const kMTSettingsPhone = @"phone";
-static NSString * const kMTSettingsEmail = @"email";
 
 typedef NS_ENUM(NSUInteger, MTTextFields) {
     MTTextFieldsName,
@@ -42,7 +36,8 @@ typedef NS_ENUM(NSUInteger, MTTextFields) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self settingsLoad];
+    MTSettingsUpdate *settings = [MTSettingsUpdate new];
+    [settings settingsLoadWithRootController:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,53 +55,8 @@ typedef NS_ENUM(NSUInteger, MTTextFields) {
 
 - (IBAction)actionTextChanged:(UITextField *)sender {
     
-    [self settingsSave];
-}
-
-#pragma mark -
-#pragma mark Save and Load
-
-- (void)settingsSave {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    UITextField *loginField = [self.textFieldsButtons objectAtIndex:0];
-    UITextField *passwordField = [self.textFieldsButtons objectAtIndex:1];
-    UITextField *nameField = [self.textFieldsButtons objectAtIndex:2];
-    UITextField *surnameField = [self.textFieldsButtons objectAtIndex:3];
-    UITextField *ageField = [self.textFieldsButtons objectAtIndex:4];
-    UITextField *phoneField = [self.textFieldsButtons objectAtIndex:5];
-    UITextField *emailField = [self.textFieldsButtons objectAtIndex:6];
-    
-    [userDefaults setObject:loginField.text forKey:kMTSettingsLogin];
-    [userDefaults setObject:passwordField.text forKey:kMTSettingsPassword];
-    [userDefaults setObject:nameField.text forKey:kMTSettingsName];
-    [userDefaults setObject:surnameField.text forKey:kMTSettingsSurname];
-    [userDefaults setObject:ageField.text forKey:kMTSettingsAge];
-    [userDefaults setObject:phoneField.text forKey:kMTSettingsPhone];
-    [userDefaults setObject:emailField.text forKey:kMTSettingsEmail];
-    
-    [userDefaults synchronize];
-}
-
-- (void)settingsLoad {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    UITextField *loginField = [self.textFieldsButtons objectAtIndex:0];
-    UITextField *passwordField = [self.textFieldsButtons objectAtIndex:1];
-    UITextField *nameField = [self.textFieldsButtons objectAtIndex:2];
-    UITextField *surnameField = [self.textFieldsButtons objectAtIndex:3];
-    UITextField *ageField = [self.textFieldsButtons objectAtIndex:4];
-    UITextField *phoneField = [self.textFieldsButtons objectAtIndex:5];
-    UITextField *emailField = [self.textFieldsButtons objectAtIndex:6];
-    
-    loginField.text = [userDefaults objectForKey:kMTSettingsLogin];
-    passwordField.text = [userDefaults objectForKey:kMTSettingsPassword];
-    nameField.text = [userDefaults objectForKey:kMTSettingsName];
-    surnameField.text = [userDefaults objectForKey:kMTSettingsSurname];
-    ageField.text = [userDefaults objectForKey:kMTSettingsAge];
-    phoneField.text = [userDefaults objectForKey:kMTSettingsPhone];
-    emailField.text = [userDefaults objectForKey:kMTSettingsEmail];
-    
+    MTSettingsUpdate *settings = [MTSettingsUpdate new];
+    [settings settingsSaveWithRootController:self];
 }
 
 #pragma mark -
